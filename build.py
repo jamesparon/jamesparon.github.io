@@ -226,21 +226,23 @@ def paper_head_meta(paper: dict, site: dict) -> str:
 
     lines = [f'<meta name="{n}" content="{html.escape(c, quote=True)}">' for n, c in metas]
 
-    # Open Graph / Twitter
+    # Open Graph / Twitter (large image card)
     desc = paper["abstract_short"]
+    img = f"{url}preview.png"
     og = {
         "og:type": "article",
         "og:title": paper["title"],
         "og:description": desc,
         "og:url": url,
         "og:site_name": "James D. Paron — Research",
+        "og:image": img,
         "article:author": site["homepage"],
         "article:published_time": paper["date"],
     }
     for k, v in og.items():
         lines.append(f'<meta property="{k}" content="{html.escape(v, quote=True)}">')
-    for k, v in {"twitter:card": "summary", "twitter:title": paper["title"],
-                 "twitter:description": desc}.items():
+    for k, v in {"twitter:card": "summary_large_image", "twitter:title": paper["title"],
+                 "twitter:description": desc, "twitter:image": img}.items():
         lines.append(f'<meta name="{k}" content="{html.escape(v, quote=True)}">')
 
     lines.append('<link rel="alternate" type="text/markdown" href="index.md">')
@@ -272,6 +274,75 @@ def paper_head_meta(paper: dict, site: dict) -> str:
         '<script type="application/ld+json">\n' + safe_jsonld(jsonld) + "\n</script>"
     )
     return "\n".join(lines)
+
+
+# --------------------------------------------------------------------------- #
+# BibTeX + social-preview image
+# --------------------------------------------------------------------------- #
+def bibtex(paper: dict, site: dict) -> str:
+    """A BibTeX @techreport entry for a working paper."""
+    first = paper["authors"][0].split()[-1].lower()
+    year = paper["date"][:4]
+    key = f"{first}{year}{paper['slug'].split('-')[0]}"
+    authors = " and ".join(paper["authors"])
+    inst = paper.get("institution") or site["institution"]
+    fields = [
+        ("title", paper["title"]),
+        ("author", authors),
+        ("year", year),
+        ("institution", inst),
+        ("type", "Working Paper"),
+        ("url", paper["url"]),
+    ]
+    body = ",\n".join(f"  {k} = {{{v}}}" for k, v in fields)
+    return f"@techreport{{{key},\n{body}\n}}"
+
+
+def _font(size: int):
+    from PIL import ImageFont
+    for path in ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                 "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+                 "/Library/Fonts/Arial Bold.ttf",
+                 "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"):
+        if Path(path).exists():
+            return ImageFont.truetype(path, size)
+    return ImageFont.load_default()
+
+
+def _wrap(draw, text, font, max_w):
+    words, lines, cur = text.split(), [], ""
+    for w in words:
+        trial = f"{cur} {w}".strip()
+        if draw.textlength(trial, font=font) <= max_w:
+            cur = trial
+        else:
+            lines.append(cur); cur = w
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def make_og_image(paper: dict, site: dict, out_path: Path):
+    """Generate a 1200x630 social-preview card (title + authors + affiliation)."""
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return False
+    W, H = 1200, 630
+    cardinal, ink, muted = (140, 21, 21), (26, 26, 26), (110, 110, 110)
+    img = Image.new("RGB", (W, H), "white")
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, W, 16], fill=cardinal)                      # top bar
+    title_font = _font(58)
+    lines = _wrap(d, paper["title"], title_font, W - 160)[:4]
+    y = 120
+    for ln in lines:
+        d.text((80, y), ln, font=title_font, fill=ink); y += 74
+    d.text((80, y + 24), ", ".join(paper["authors"]), font=_font(34), fill=muted)
+    d.text((80, H - 90), site["affiliation"], font=_font(30), fill=cardinal)
+    d.text((80, H - 50), paper["date_display"], font=_font(26), fill=muted)
+    img.save(out_path, "PNG")
+    return True
 
 
 # --------------------------------------------------------------------------- #
@@ -335,13 +406,17 @@ def build():
         if p.get("legacy_pdf"):
             shutil.copy2(ROOT / p["pdf"], OUT / p["legacy_pdf"])
 
+        bib = bibtex(p, site)
+        (pdir / "citation.bib").write_text(bib + "\n")
+        make_og_image(p, site, pdir / "preview.png")
+
         head_meta = paper_head_meta(p, site)
         (pdir / "index.html").write_text(paper_tpl.render(
             site=site, site_url=SITE_URL,
             page_title=f"{p['title']} — James D. Paron",
             page_description=p["abstract_short"],
             canonical=p["url"], head_meta=head_meta,
-            paper=p,
+            paper=p, bibtex=bib,
             abstract_html=paragraphs_html(p["abstract"]),
             fulltext_html=p["fulltext_html"],
             keywords_str="; ".join(p["keywords"]),
@@ -382,6 +457,10 @@ def build():
         canonical=f"{SITE_URL}/", papers=papers,
         person_jsonld=person_jsonld, has_cv=bool(cv),
     ))
+    make_og_image({"title": f"{site['author_name']} — Research Papers",
+                   "authors": ["Working papers in asset pricing, household finance, macro-finance"],
+                   "date_display": site["homepage"].replace("https://", "")},
+                  site, OUT / "preview.png")
 
     # static assets
     shutil.copy2(ROOT / "static" / "style.css", OUT / "static" / "style.css")

@@ -49,6 +49,12 @@ window.MathJax = {
   {% if keywords_str %}<p class="meta"><strong>Keywords:</strong> {{ keywords_str }}</p>{% endif %}
   {% if jel_str %}<p class="meta"><strong>JEL codes:</strong> {{ jel_str }}</p>{% endif %}
 
+  <details class="cite">
+    <summary>Cite (BibTeX)</summary>
+    <p class="muted"><a href="{{ paper.url }}citation.bib">Download .bib</a></p>
+    <pre class="bibtex">{{ bibtex }}</pre>
+  </details>
+
   <details class="fulltext" open>
     <summary>Full text (with mathematics)</summary>
     <p class="muted">Converted from the paper's LaTeX source, with equations in
