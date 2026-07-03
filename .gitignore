@@ -1,0 +1,18 @@
+# Generated site (built in CI, never committed)
+/site/
+
+# Author's raw paper project folders — READ-ONLY, NEVER a content source, NEVER deployed.
+# One of these zips is ~3.3 GB; GitHub rejects files >100 MB. Do not commit.
+/sources/
+*.zip
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# macOS / editor cruft
+.DS_Store
+__MACOSX/
+Icon?

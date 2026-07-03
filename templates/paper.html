@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block head_extra %}
+{{ head_meta | safe }}
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
+    tags: 'none',
+    macros: {
+      calA: "\\mathcal{A}", calB: "\\mathcal{B}", calC: "\\mathcal{C}",
+      calD: "\\mathcal{D}", calF: "\\mathcal{F}", calG: "\\mathcal{G}",
+      calH: "\\mathcal{H}", calh: "\\mathcal{h}", calI: "\\mathcal{I}",
+      calN: "\\mathcal{N}", caln: "\\mathcal{n}", calR: "\\mathcal{R}",
+      calr: "\\mathcal{r}", calS: "\\mathcal{S}", calT: "\\mathcal{T}",
+      Phat: "\\hat{P}", Nhat: "\\hat{N}", Pti: "\\tilde{P}",
+      lam: "\\lambda", cond: "\\mid", Prob: "\\mathbb{P}", Exp: "\\mathbb{E}",
+      norm: ["\\left\\lVert #1 \\right\\rVert", 1],
+      abs: ["\\left\\lvert #1 \\right\\rvert", 1],
+      myvectorii: ["\\begin{pmatrix}#1\\\\#2\\end{pmatrix}", 2],
+      myvectoriii: ["\\begin{pmatrix}#1\\\\#2\\\\#3\\end{pmatrix}", 3],
+      myvectoriv: ["\\begin{pmatrix}#1\\\\#2\\\\#3\\\\#4\\end{pmatrix}", 4],
+      myvectorv: ["\\begin{pmatrix}#1\\\\#2\\\\#3\\\\#4\\\\#5\\end{pmatrix}", 5]
+    }
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endblock %}
+{% block content %}
+<article class="paper">
+  <p class="breadcrumb"><a href="{{ site_url }}/">← All papers</a></p>
+  <h1>{{ paper.title }}</h1>
+  <p class="meta authors">{{ paper.authors_str }}</p>
+  <p class="meta date">{{ paper.date_display }} · {{ site.affiliation }}</p>
+
+  <p class="cta-row">
+    <a class="btn" href="{{ paper.url }}paper.pdf">Read the PDF (definitive version)</a>
+    <a class="btn btn-secondary" href="{{ site.homepage }}">More at jamesparon.com</a>
+  </p>
+
+  {% if paper.abstract %}
+  <section class="abstract">
+    <h2>Abstract</h2>
+    {{ abstract_html | safe }}
+  </section>
+  {% endif %}
+
+  {% if keywords_str %}<p class="meta"><strong>Keywords:</strong> {{ keywords_str }}</p>{% endif %}
+  {% if jel_str %}<p class="meta"><strong>JEL codes:</strong> {{ jel_str }}</p>{% endif %}
+
+  <details class="fulltext" open>
+    <summary>Full text (with mathematics)</summary>
+    <p class="muted">Converted from the paper's LaTeX source, with equations in
+    TeX/MathJax. Tables and figures are simplified; the
+    <a href="{{ paper.url }}paper.pdf">PDF</a> is the definitive version.</p>
+    <div class="fulltext-body">
+      {{ fulltext_html | safe }}
+    </div>
+  </details>
+</article>
+{% endblock %}

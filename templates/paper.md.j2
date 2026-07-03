@@ -1,0 +1,19 @@
+# {{ paper.title }}
+
+**Authors:** {{ paper.authors_str }}
+**Date:** {{ paper.date_display }}
+**Affiliation:** {{ site.affiliation }}
+**PDF (definitive version):** {{ paper.url }}paper.pdf
+{% if keywords_str %}**Keywords:** {{ keywords_str }}
+{% endif %}{% if jel_str %}**JEL codes:** {{ jel_str }}
+{% endif %}
+
+> Full text below is converted from the paper's LaTeX source, with mathematics in TeX math mode. The linked PDF is the definitive version.
+
+## Abstract
+
+{{ paper.abstract }}
+
+## Full text
+
+{{ paper.fulltext_md }}

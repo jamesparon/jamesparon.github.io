@@ -1,0 +1,1017 @@
+<div class="center">
+<p><em></em></p>
+</div>
+<p><span>JEL codes: E03, G02<br />
+keywords: interference; base-rate neglect; context; diagnostic expectations; recognition memory </span></p>
+<h2>Introduction</h2>
+<p>Our memories of past experiences guide not only our thoughts but also our choices. We choose to save when we think about the need for future resources, or when we fear a negative shock to our wealth, and we choose to consume a specific product when positive experiences associated with that product come to mind. Whereas economic choice theories have traditionally assumed that rational agents recall the correct probability distributions associated with different states of the world, some economic models contemplate the role of memory in shaping how we construct these distributions from our record of past experiences <span class="citation" data-cites="Bordetal:18 Bordetal:19Stock Bordetal:20MAC NageXu:18 Mull:02 WachKaha:24">(Bordalo et al. 2018, 2019a, 2020; Nagel and Xu 2018; Mullainathan 2002; Wachter and Kahana 2024)</span>.</p>
+<p>Memory takes as its starting place not the rational agent, but the fundamental forces of recency, similarity, and temporal contiguity. Yet economics and psychology for many years traveled together because of a basic fact about cognition: if a pair of words, concepts, or objects frequently occur together, they will form an association, and the more they co-occur the stronger that association will be. Memory should enable agents to learn about reality, which means accurately learning conditional probability distributions. Work such as Estes (<span class="citation" data-cites="Este:72">(1972)</span>, <span class="citation" data-cites="Este:76">(1976)</span>) emphasized the ability of memory theories to reproduce Bayesian findings. Among the first to question the resulting consensus was Kahneman and Tversky (<span class="citation" data-cites="KahnTver:72">(1972)</span>, <span class="citation" data-cites="KahnTver:73Pred">(1973)</span>) and <span class="citation" data-cites="TverKahn73">(Tversky and Kahneman 1973)</span>, who showed, in a series of experiments, that agents do not follow Bayesian updating. The core aspect of their findings, reproduced in a tighter setting by <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, is that even if subjects observe many pairs <span class="math inline">\((-h,d)\)</span>, they will remember instead <span class="math inline">\((h,d)\)</span>, if they also learn <span class="math inline">\((-h,-d)\)</span>.</p>
+<p>We explain this finding with a cognitive theory. Our work is based on the retrieved context theory of <span class="citation" data-cites="HowaKaha02">(Howard and Kahana 2002)</span>, and thus follows the basic principles of associative memory and contextual retrieval. However, their model is based on the free recall paradigm. Free recall tends to lead to the basic result observed by <span class="citation" data-cites="Este:76">(Estes 1976)</span>, and also derived in <span class="citation" data-cites="WachKaha:24">(Wachter and Kahana 2024)</span>. Observations that occur more frequently will tend to be judged as having higher probability. The point of the representativeness heuristic is that this compelling intuition sometimes fails, and it fails in a predictable way. The key step in our model is treating the probabilistic judgement problem not as a process of recalling instances from memory, but rather as a flash of recognition. Think of recognition as a handshake between a cue and a target. The subject or agent determines, based on the cue, whether the cue and target go together. This determination is not based on the frequency with which they are observed together but whether they were observed under the same context. In other words, it is the similarity of the retrieved contexts that determines the recognition of an association between two objects. We model probabilistic judgement as an associative recognition problem, amenable to the same modeling tools as that well-studied experimental paradigm.</p>
+<p>The distinction between recognition and recall is not merely terminological; it generates qualitatively different predictions. In a recall-based model, the agent samples specific episodes from memory and counts successes. Because a conjunction (<span class="math inline">\(A \cap B\)</span>) is a subset of each component (<span class="math inline">\(A\)</span>), any sample in which the conjunction is counted as a success also counts the component as a success, so the conjunction count can never exceed the component count. In our recognition-based model, by contrast, the agent computes a global signal—the cosine similarity of retrieved context vectors—that can, through composite representations, rate a conjunction higher than a component. Our model thus generates the <em>conjunction fallacy</em> <span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span>, a prediction that neither probability-distortion models nor recall-based sampling models can produce. We derive the conditions under which the conjunction fallacy arises and show that it serves as a litmus test for the recognition mechanism.</p>
+<p>To demonstrate the economic consequences of this mechanism, we develop a new application to negative stub values in equity carve-outs <span class="citation" data-cites="LamoThal:03">(Lamont and Thaler 2003)</span>. In the famous Palm/3Com episode, the market priced the subsidiary (Palm) above the parent (3Com) that owned 95% of it, implying a negative value for 3Com’s non-Palm assets. Our model explains this anomaly through two complementary channels. First, Palm and 3Com retrieve different associative contexts—Palm evokes high-growth technology associations while 3Com evokes legacy-networking associations—so the market effectively prices them in different probability spaces. Second, because the states in which Palm pays off are necessarily a conjunction (“Palm does well” <span class="math inline">\(\cap\)</span> “3Com is solvent”), the conjunction fallacy predicts that investors can judge this conjunction as more probable than the component “3Com is solvent” alone, generating a negative stub value. No existing model of representativeness—whether based on probability distortion, recall, or salience-driven attention—can produce this pattern.</p>
+<p>We also show how our theory can account for financial market anomalies such as excess volatility and the value premium.</p>
+<p>Our paper relates to multiple strands of literature. Recent work by <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> casts light back to the work of <span class="citation" data-cites="KahnTver:72">(Kahneman and Tversky 1972)</span>, who conceived of non-Bayesian probabilistic judgement as arising from heuristics, one of which they termed “representativeness.” Over time, representativeness appeared to merge with another heuristic, which <span class="citation" data-cites="TverKahn73">(Tversky and Kahneman 1973)</span> term “availability.” This merging suggests that Kahneman and Tversky thought of probabilistic judgement as in part a model of memory.<sup>1</sup> Their idea was that enhanced retrievability of certain instances boosts probability judgement for the category to which these instances belong. This idea that retrievability is linked with probability judgement was not unique to Tversky and Kahneman, and does not, by itself, explain the failure of Bayesian updating.</p>
+<p>A second strand of literature is in economics and finance. Early work in behavioral finance recognized the importance of the representativeness heuristic <span class="citation" data-cites="Barbetal:98">(Barberis et al. 1998)</span>. Later, building on <span class="citation" data-cites="GennShle:10">(Gennaioli and Shleifer 2010)</span>, <span class="citation" data-cites="Bordetal:16">(Bordalo et al. 2016)</span> develop a model, based on a probability distortion, that can account for the key experimental finding: the mistaken application of the co-occurence of <span class="math inline">\(-h\)</span> and <span class="math inline">\(-d\)</span> (in the notation above). This model became the basis for diagnostic expectations <span class="citation" data-cites="Bordetal:18">(Bordalo et al. 2018)</span>, applied to a wide range of phenomena such as the cross-section of stock returns <span class="citation" data-cites="Bordetal:19Stock">(Bordalo et al. 2019a)</span>, financial crises <span class="citation" data-cites="GennShle:18">(Gennaioli and Shleifer 2018)</span>, and why aggregate real investment rates vary over time <span class="citation" data-cites="Bordetal:19Macro">(Bordalo et al. 2019b)</span>. Nonetheless diagnostic expectations is an ad hoc model. Our model produces a cognitive explanation for the same patterns.</p>
+<p>Our model is most closely related to that of <span class="citation" data-cites="Bhat:17">(Bhatia 2017)</span>. Building on <span class="citation" data-cites="KahnTver:72">(Kahneman and Tversky 1972)</span>’s basic insight that frequency judgements arise from similarity, <span class="citation" data-cites="Bhat:17">Bhatia (2017)</span> uses word-embedding models to create a vector representation for each word in the experiment. He then shows that similarity-based judgements match the proximity of the words to each other in a high-dimensional vector space. Frequency of word usage, as captured by the word-embedding model, determines the location of the words and their proximity. His work traces the representativeness heuristic back to information that emerges in language based on common usage. In contrast, we trace the heuristic back to a model of memory, one that is also based on proximity in a vector space. Notably, it can be used in novel situations where researchers already control for any prior language based similarities, as in <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>. <span class="citation" data-cites="Bhat:17">Bhatia (2017)</span>’s results emerge as a special case of our model.</p>
+<p>The remainder of the paper is organized as follows. Section 2 gives a formal definition of the heuristic and connects our definition with related concepts in the literature. Section 3 describes a cognitive model of the representativeness heuristic and fits data from recent experimental results. Section 4 extends the model to the conjunction fallacy. Section 5 develops a series of applications to financial markets, including negative stub values in equity carve-outs, name-change effects, stock-split anomalies, mental accounting for prices and dividends, the cross-section of stock returns, and excess volatility. Section 6 concludes.</p>
+<h2>Defining the representativeness heuristic</h2>
+<p>According to <span class="citation" data-cites="KahnTver:72">(Kahneman and Tversky 1972)</span>, “A person who follows [the representativeness] heuristic evaluates the probability of an uncertain event, or a sample, by the degree to which it is: (i) similar in essential properties to its parent population; and (ii) reflects the salient features of the process by which it is generated.” Perhaps recognizing the limitations of this definition, the authors also note that representativeness is “easier to assess than to characterize.” The experiments in the 1972 paper highlight misperceptions of randomness and that subjects struggle to compute posterior probabilities from sample proportions. These experiments convincingly showed that subjects depart from Bayesian reasoning, in part because they made use of settings where the Bayesian outcome was clear. However, the settings were contrived, and clearly differed from those in which people make decisions relevant to their lives using knowledge obtained from experience.</p>
+<p>It was later, in their <span class="citation" data-cites="TverKahn:83">(1983)</span> study, that Tversky and Kahneman wrote that what makes a hypothesis <span class="math inline">\(h\)</span> representative of data <span class="math inline">\(d\)</span> is both the co-occurence of <span class="math inline">\(h\)</span> and <span class="math inline">\(d\)</span>, and the lack of co-occurence of <span class="math inline">\(h\)</span> and alternative data <span class="math inline">\(-d\)</span>. The latter is fundamentally non-Bayesian. In the meantime, in <span class="citation" data-cites="KahnTver:73Pred">(1973)</span>, the authors put forward the experiment that elucidated the concept of representativeness as it is now understood.</p>
+<div class="example">
+<p><strong>Example 1</strong> (<span class="citation" data-cites="KahnTver:73Pred">(Kahneman and Tversky 1973)</span>).  <em>Subjects are given a brief description of an intelligent, organized, and introverted student and are asked to rank several fields of graduate study in order of likelihood. The subjects tend to state that the student is more likely to study computer science than the humanities, even though there are many more students in the humanities than in computer science.</em></p>
+</div>
+<p>The authors asked one group of study participants to estimate the base rates of academic subjects in nine fields. A second group received a detailed description of an introverted man (Tom W.) and was asked to rank the nine fields in terms of similarity, while the third group was asked to rank the nine fields “in order of the likelihood that Tom W. is now a graduate student in each of these fields." They found a negative correlation between base rate estimates and likelihood (the opposite of what Bayesian probability computations would predict), and a near-perfect correlation between the similarity measures and the likelihood. Participants judged the base rate of humanities as far higher than that of computer science, but both the similarity and the likelihood of computer science as higher than those of the humanities.</p>
+<p>A more recent experiment provides another example of representativeness:</p>
+<div class="example">
+<p><strong>Example 2</strong> (<span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>).  <em>Study participants view a sequence of images: 10 orange numbers, 15 blue numbers, and 25 blue words. When asked the likely color of an object, given that it is a number, 50% of participants say orange is the likely color. </em></p>
+</div>
+<p>Crucially, both examples draw on subjects’ experience of events. In the prior example, answers from the first group of participants (the group asked to estimate the base case) proxies for that experience. In the second, the experiment itself produces the experience. In neither case are the results reflective of an inability to solve a math problem, but rather capture something about everyday life.</p>
+<p>In both cases, subjects’ mistaken assessments have a <em>kernel of truth</em> <span class="citation" data-cites="Bordetal:16">(Bordalo et al. 2016)</span>. Computer science students are more likely to be introverted than the general population. In the <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> experiment, if an item is orange, it must be a number. However, inference by study participants goes further, to the incorrect conclusion that introverted students are more likely to study computer science, ignoring the base rate of computer science students in the population (as of the 1970s) and concluding that numbers are more likely to be orange, ignoring the base rate of blue images. However, while subjects report incorrect probabilities, their inference does not seem <em>that</em> irrational — we can see ourselves making a similar mistake. One senses that these examples are getting at a specific cognitive deficit to which humans are subject, analogous to an optical illusion.</p>
+<p>To formalize these notions, define the set <span class="math inline">\(\Omega\)</span> to be the population of interest. Each element of <span class="math inline">\(\Omega\)</span> consists of a pair of features (for example, being a number and being blue, or being an introvert and being a salesman). In the two experiments above, one of the elements of the pair forms the cue. Following <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, we refer to the set of possible cues as <span class="math inline">\(\calD = \{d_1, \ldots, d_K\}\)</span>. By analogy with Bayesian updating, the cue forms the “data” on which the agent conditions. The other element of the pair is subject to retrieval based on the cue. Again following <span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span>, we refer to this as the <em>hypothesis</em> and denote the set of possible hypotheses by <span class="math inline">\(\calH = \{h_1, \ldots, h_J\}\)</span>. Let <span class="math inline">\(P\)</span> be the physical probability measure over <span class="math inline">\(\Omega = \calH\times
+\calD\)</span>.</p>
+<p>The experiment or survey asks questions pertaining to probabilities. Our theory is that subjects’ answers need not reflect a probability measure in the traditional sense. The psychological theory implicit in many models of economic decision-making is that an agent carries a probability measure in their head and updates it in a manner that either approximates the laws of probability or departs from these laws in defined ways. Our view is different: the agent responds to cues, and it is the associations the agent carries in their head and updates. The laws of associations, not the mathematical laws of probability, govern the updating process. Nonetheless, it is convenient to use the notation <span class="math inline">\(\Phat\)</span> to denote elicited probabilities, keeping in mind that <span class="math inline">\(\Phat\)</span> need not have the properties of a probability measure.</p>
+<p>We now formulate a general statement of the kernel of truth and the representativeness heuristic. Our definitions are based on those of <span class="citation" data-cites="Bordetal:16">(Bordalo et al. 2016)</span>.</p>
+<div class="definition">
+<p><strong>Definition 1</strong>.  <em>Given a physical probability measure <span class="math inline">\(P\)</span>,the hypothesis-data pair <span class="math inline">\((h,d)\)</span> exhibits the <em>kernel of truth</em> if <span class="math display">\[
+P(h|d)&gt;P(h),
+
+\]</span> or equivalently <span class="math display">\[
+P(h|d)&gt;P(h|{-d}),
+
+\]</span> where <span class="math inline">\(-d\)</span> represents <span class="math inline">\(\calD\setminus\{d\}\)</span>, the elements of <span class="math inline">\(\calD\)</span> that are not equal to <span class="math inline">\(d\)</span>.</em></p>
+</div>
+<p>The definitions () and () are equivalent because <span class="math display">\[
+  P(h) = P(h|d)P(d) + P(h|{-d})P(-d).
+  
+\]</span> That is, <span class="math inline">\(P(h)\)</span> is a weighted average of <span class="math inline">\(P(h|d)\)</span> and <span class="math inline">\(P(h|{-d})\)</span>. <span class="math inline">\(P(h|d)\)</span> exceeds the average, <span class="math inline">\(P(h)\)</span>, if and only if it exceeds the item with which it is averaged, <span class="math inline">\(P(h|{-d})\)</span>.<sup>2</sup> <span class="citation" data-cites="Bordetal:16">(Bordalo et al. 2016)</span> refer to the ratio <span class="math inline">\(P(h|d)/P(h|{-d})\)</span> as the <em>representativeness of data <span class="math inline">\(d\)</span> for hypothesis <span class="math inline">\(h\)</span></em>.</p>
+<div class="definition">
+<p><strong>Definition 2</strong>.  <em>Elicited probabilities <span class="math inline">\(\Phat\)</span> for the hypothesis-data pair <span class="math inline">\((h,d)\)</span> exhibit the <em>representativeness heuristic</em> if <span class="math inline">\((h,d)\)</span> exhibits the kernel of truth, and if <span class="math display">\[
+\Phat(h|d)&gt;\Phat({-h}|d),
+
+\]</span> while <span class="math display">\[
+P(h|d)\leq P({-h}|d).
+
+\]</span></em></p>
+</div>
+<p>An observation <span class="math inline">\(d\)</span> increases the probability of <span class="math inline">\(h\)</span> (condition ()); such an observation does not go so far as to imply that <span class="math inline">\(h\)</span> is more probable than the alternative <span class="math inline">\(-h\)</span> (condition ()). However, the subject states that it does (condition ()). Condition () is to rule out the less interesting case where the elicited probabilities and physical probabilities agree on the relative likelihood of <span class="math inline">\(h\)</span> and its alternative.</p>
+<p>In Example 1, the cue <span class="math inline">\(d\)</span> is the statement that Tom is “intelligent, organized, and introverted.” The hypotheses <span class="math inline">\(h\)</span> and <span class="math inline">\(-h\)</span> are that he majors in computer science or the humanities, respectively. The fact that he is introverted makes him more likely to be a computer science major than if we knew nothing about him; equivalently, computer science majors are more likely to be introverted than humanities majors. However, it does not follow that he is more likely to major in computer science than in the humanities simply because he is introverted; this ignores the base rate of humanities majors. In Example 2, ‘Number’ forms the cue. The hypotheses are orange and blue. The knowledge that the image is a number implies that orange is more likely than if one knew nothing. It is also the case that knowing that an image is orange implies that it must be a number. However, knowing that an image is a number does not imply that it must be orange.</p>
+<p>The puzzle can be stated in both probabilistic and cognitive terms. Probabilistically, suppose one is attempting to measure the likelihood of hypothesis <span class="math inline">\(h\)</span> given data <span class="math inline">\(d\)</span>. What one wants is the posterior probability of <span class="math inline">\(h\)</span> given <span class="math inline">\(d\)</span>, and to rank this probability across various hypotheses. Because the distribution of <span class="math inline">\(d\)</span> does not matter, this is equivalent to the joint likelihood — that is, the joint occurrence — of <span class="math inline">\(h\)</span> and <span class="math inline">\(d\)</span>. Alternatively, it corresponds to the likelihood of observing <span class="math inline">\(d\)</span> conditional on <span class="math inline">\(h\)</span>, multiplied by the prior probability of <span class="math inline">\(h\)</span>. In this Bayesian analysis, the distribution of <span class="math inline">\(h\)</span> conditional on <span class="math inline">\(-d\)</span> plays no role. Once the agent has computed the probability of a joint occurence of <span class="math inline">\(h\)</span> and <span class="math inline">\(d\)</span>, what happens when <span class="math inline">\(-d\)</span> occurs is completely irrelevant.</p>
+<p>In cognitive terms, a memory system that stores joint occurrences of events should retrieve the hypothesis most frequently paired with the cue. If <span class="math inline">\(d\)</span> co-occurs more often with <span class="math inline">\(-h\)</span> than with <span class="math inline">\(h\)</span>, then cueing on <span class="math inline">\(d\)</span> should preferentially retrieve <span class="math inline">\(-h\)</span> rather than <span class="math inline">\(h\)</span>; the strength of the <span class="math inline">\(d\)</span> and <span class="math inline">\(-h\)</span> “handshake” ought to exceed that of <span class="math inline">\(d\)</span> and <span class="math inline">\(h\)</span>. Yet the data show this is not what happens: irrelevant memories associated with <span class="math inline">\(-d\)</span> contaminate the connection between <span class="math inline">\(d\)</span> and <span class="math inline">\(-h\)</span>.</p>
+<p><span class="citation" data-cites="KahnTver:72">(Kahneman and Tversky 1972)</span> appeal to “representativeness” and “availability”: <span class="math inline">\(h\)</span> is (mistakenly) judged more probable than <span class="math inline">\(-h\)</span> because <span class="math inline">\(h\)</span> is representative of <span class="math inline">\(d\)</span>. But why should <span class="math inline">\(h\)</span>, and not <span class="math inline">\(-h\)</span>, be representative of <span class="math inline">\(d\)</span>? Why should <span class="math inline">\(h\)</span> be more available than <span class="math inline">\(-h\)</span>? <span class="citation" data-cites="Bordetal:16">(Bordalo et al. 2016)</span> noted that the key missing ingredient in the literature is the explicit role of <span class="math inline">\(P(h|{-d})\)</span>, which has no normative role in Bayesian inference.</p>
+
+<h2>A cognitive theory of the representativeness heuristic</h2>
+<p>Here, we offer a cognitive theory of the representativeness heuristic. Our theory is based on <em>associative recognition</em>, one of the main experimental paradigms in the literature on human memory <span class="citation" data-cites="Hock92 OsthDenn24">(Hockley 1992; Osth and Dennis 2024)</span>.</p>
+<p>In the associative recognition task, the subjects memorize a list of pairs. Following a delay, subjects are presented with a pair and asked if the pair was on the list. The term associative recognition arises from the need for subjects to recognize the association between one member of the pair and the other. The set of pairs presented to subjects is known as <em>paired associates</em>. Paired associates are used not only in associative recognition, but also in cued recall, in which one item of the pair cues the subject to try to recall the second item. Note that cued recall, like free recall, requires production.</p>
+<p>At first glance, there may seem to be little relation between associative recognition and representativeness. The experiments described in Section 2 require a probabilistic judgment, not recognition of whether two items form a pair. However, we argue that this difference is merely superficial. At a deeper level, probabilistic judgment as measured by these tasks is a matter of answering the question: do two traits belong together or not?</p>
+<h3>Model</h3>
+<p>We start with the <span class="citation" data-cites="WachKaha:24">(Wachter and Kahana 2024)</span> model of associations, which is ultimately based on the temporal context model of <span class="citation" data-cites="HowaKaha02">(Howard and Kahana 2002)</span>. The <span class="citation" data-cites="HowaKaha02">Howard and Kahana (2002)</span> model accounts for data from the <em>free recall</em> task. In free recall, subjects learn a list of words and then remember the words in any order. Free recall has proven to be a highly useful paradigm in memory theory because it sheds light on how people transition from one thought to another. The literature on human learning and memory highlights three major laws: similarity, recency, and temporal contiguity. Similarity refers to the priority accorded to information that is similar to the presently active features, recency refers to priority given to recently experienced features, and temporal contiguity refers to the priority given to features that share a history of co-occurrence with the presently active features. These laws determine what information get priority in memory. Using free recall, it is possible to isolate the temporal contiguity effect: subjects exhibit better memories for items that occurred close in time to a just-recalled item. This effect, originally conjectured by Aristotle, has broad and deep empirical support.<sup>3</sup></p>
+<p><span class="citation" data-cites="WachKaha:24">(Wachter and Kahana 2024)</span> model lifetime portfolio decisions. According to this model, the agent simulates future states by freely recalling prior experiences, with weights determined by present context and by the associations between features and context. In contrast, the probabilistic judgment task that is the focus of this paper is best thought of as <em>recognition</em>. Recognition and recall are distinct: recall requires production on the part of the subject; recognition does not. Recently, <span class="citation" data-cites="Jinetal:24">(Jin et al. 2024)</span> adapt the <span class="citation" data-cites="HowaKaha02">(Howard and Kahana 2002)</span> model to recognition memory, and show how it can explain a range of experimental phenomena. We combine elements of <span class="citation" data-cites="Jinetal:24">Jin et al. (2024)</span> with <span class="citation" data-cites="WachKaha:24">Wachter and Kahana (2024)</span>.</p>
+<p>While similarity, recency, and temporal contiguity are all present both in free recall and in associative recognition, they are not present to the same degree. Specifically, <span class="citation" data-cites="OsthFox:19">(Osth and Fox 2019)</span> show that recency and temporal contiguity effects are muted in associative recognition compared with how they appear in free recall. However, subjects clearly bind a pair together in memory, suggesting a strong form of temporal contiguity intra-pair. These findings inform our modeling decisions.</p>
+<p>As in <span class="citation" data-cites="WachKaha:24">(Wachter and Kahana 2024)</span>, the central object is the <em>memory matrix</em> <span class="math inline">\(M\)</span>, a matrix of fixed dimension whose rows correspond to context states and whose columns correspond to features. The dimensions of <span class="math inline">\(M\)</span> are determined by the agent’s cognitive architecture—the richness of the feature and context spaces—not by the number of experiences. Before any experiences have been encoded, <span class="math inline">\(M\)</span> may equal zero (a blank slate) or may contain pre-existing associations <span class="math inline">\(M_0\)</span> that capture prior knowledge.</p>
+<p>Agents view features <span class="math inline">\(f_i\)</span>, vectors in the feature space, together with a temporal context <span class="math inline">\(x_i\)</span>, an internal mental state that evolves through time. Each experience adds an outer product to the memory matrix: <span class="math display">\[\begin{eqnarray}
+ M_n    &amp; \equiv &amp;    M_{n-1} + x_i f_{i}^\top 
+  \\
+&amp; = &amp;   M_0 + \sum^n_{i = 1} x_i f_i^\top.  
+\end{eqnarray}\]</span> Because each outer product <span class="math inline">\(x_i f_i^\top\)</span> has the same dimension as <span class="math inline">\(M\)</span>, new memories are simply accumulated into the existing matrix; its size never changes.</p>
+<p>Context, through the memory matrix, governs what comes to mind. Say that the environment presents the agent with features <span class="math inline">\(f_{\textsc{ Cue}}\)</span>. These features cue context <span class="math inline">\(\boldsymbol{x}_{\textsc{ Cue}}\)</span>: <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Cue}}\propto M_n f_{\textsc{ Cue}},
+
+\]</span> where context is determined up to a scalar multiple. Substituting () into () yields the following: <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Cue}}\propto M_0f_{\textsc{ Cue}}+ \sum^n_{i = 1} x_i (f_i^\top  f_{\textsc{ Cue}}).
+
+\]</span> Equation  shows that features evoke the past contexts under which they are experienced. A context <span class="math inline">\(x\)</span> appears in the sum in () if the corresponding <span class="math inline">\(f_i\)</span> has a positive inner product with the current feature; otherwise it does not. Thus, retrieved context is a weighted average of past contexts associated with the current feature. This basic contextual retrieval enabled the jump back in time that drove decision making in <span class="citation" data-cites="WachKaha:24">(Wachter and Kahana 2024)</span>, and it will drive probabilistic assessments in this paper.</p>
+<p>To capture the strength of intra-pair associations and the relative lack of inter-pair associations, we assume that items viewed (nearly) simultaneously are viewed under the same context, and those viewed at different times are viewed under orthogonal contexts. To operationalize this, we assume that context only evolves if something distracts the agent. If there is no distraction, then context remains the same. If there is a distraction, by definition, that introduces orthogonal features, and context jumps to a point that is orthogonal to current context: <span class="math display">\[
+  x_{i + 1} \left\{\begin{array}{lll}  = &amp;  x_i &amp;  if no distractor, \\
+  \in &amp; \{x_1,\ldots,x_i\}^\perp &amp;  otherwise. \end{array} \right.,
+
+\]</span> where <span class="math inline">\(\{x_1,\ldots,x_i\}^\perp\)</span> denotes the set of vectors orthogonal to previous contexts. This assumption on contextual evolution significantly simplifies our analysis. It accounts for strong intra-pair associations because pairs of attributes, such as ‘Blue’ and ‘Number,’ occur under the same context and are retrieved together. It accounts for the relative lack of inter-pair associations, because it lacks a contextual link between pairs. If our purpose was to advance the modeling of human memory, we would retain this link at the cost of a much more complicated model, because memory data supports inter-pair contextual linkage (just less than in free recall). For this reason, <span class="citation" data-cites="Jinetal:24">(Jin et al. 2024)</span>, incorporate autoregressive context into their model.<sup>4</sup> The effect of inter-pair temporal contiguity, however, is unlikely to be first-order when accounting for representativeness, which is our focus.</p>
+<p>Allowing intra-pair characteristics to be observed under the same context solves a technical problem: how to account for objects having multiple attributes (for example, being both blue and a number). In our framework, ‘Blue’ and ‘Number’ form a pair which subjects learn, in a similar manner to learning pairs of words in the associative recognition task. For simplicity, we treat ‘Blue’ and ‘Number’ as orthogonal feature vectors. Subjects build a <em>composite representation</em> <span class="citation" data-cites="Metc91">(Metcalfe 1991)</span> using autoregressive context. The only similarity in the model comes through items sharing a context.</p>
+<p>In the <span class="citation" data-cites="Jinetal:24">(Jin et al. 2024)</span>, extension of the <span class="citation" data-cites="HowaKaha02">(Howard and Kahana 2002)</span> model, whether recognition occurs or not depends on <em>contextual similarity</em>. The cue <span class="math inline">\(f_{\textsc{ Cue}}\)</span> retrieves context <span class="math inline">\(\boldsymbol{x}_{\textsc{ Cue}}\)</span>, (). To recognize an association, the agent considers the context retrieved by target feature <span class="math inline">\(f_{\textsc{ Target}}\)</span>: <span class="math display">\[\boldsymbol{x}_{\textsc{ Target}}\propto Mf_{\textsc{ Target}}\]</span> (suppressing the subscript <span class="math inline">\(n\)</span>). The agent compares these retrieved contexts based on their inner products to some threshold criterion <span class="math inline">\(c_{\rm recog}\in (0,1)\)</span>: <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Cue}}\cdot \boldsymbol{x}_{\textsc{ Target}}&gt; c_{\rm recog}
+
+\]</span> <span class="citation" data-cites="StanTodo99">(Stanislaw and Todorov 1999)</span>. If the inner product exceeds the threshold, the cue and target are recognized as a pair. If there are two targets, as is the case with the representativeness heuristic, the one with the higher inner product is the one the agent chooses as the match. Retrieved contexts are scaled so as to be norm 1 according to the standard Euclidean (<span class="math inline">\(L^2\)</span>) norm, implying that the inner product is equivalent to cosine similarity (we discuss the choice of norm below). In Section 3.4, we generalize the model to allow an error term to combine with () to determine recognition. We now summarize the model.</p>
+<div class="modelsummarytmp">
+<p><strong>Model Summary 1</strong>.  <em>Suppose an agent views <span class="math inline">\(n\)</span> elements of <span class="math inline">\(\calH\times \calD\)</span> as feature vectors <span class="math inline">\(f_i,\)</span> <span class="math inline">\(i =
+1,\ldots, n\)</span>. That is, <span class="math inline">\(f_i\)</span> is a composite representation <span class="math display">\[
+f_i  = f_h + f_d, \quad  h\in \calH, d\in \calD,
+
+\]</span> where, for simplicity, <span class="math inline">\(f_h\)</span> and <span class="math inline">\(f_d\)</span> are orthogonal vectors. Feature vectors <span class="math inline">\(f_i\)</span> combine with orthogonal contexts <span class="math inline">\(x_i\)</span> to form memory <span class="math inline">\(M\)</span> as in (), with <span class="math inline">\(M_0\)</span> the zero matrix. Let <span class="math inline">\(f_\mathcal{j},\)</span> <span class="math inline">\(\mathcal{j}\in \calH\cup \calD\)</span>, represent either a cue (<span class="math inline">\(d\in \calD\)</span>) or a target (<span class="math inline">\(h\in \calH\)</span>). When cued with <span class="math inline">\(d\)</span>, the agent recognizes target <span class="math inline">\(h\)</span> as more likely than some other target <span class="math inline">\(-h\)</span> if <span class="math display">\[\boldsymbol{x}_{h}\cdot \boldsymbol{x}_d &gt; \boldsymbol{x}_{-h} \cdot \boldsymbol{x}_d\]</span> where <span class="math inline">\(\boldsymbol{x}_\mathcal{j},\)</span> <span class="math inline">\(\mathcal{j}\in \calH\cup \calD\)</span>, is a norm-1 retrieved context vector such that <span class="math inline">\(\boldsymbol{x}_{\mathcal{j}} \propto M
+f_{\mathcal{j}}\)</span>.</em></p>
+</div>
+<p>To understand how this model accounts for the representativeness heuristic, consider the following simplified version of Example 2. There is a list of three elements: a blue number 5, an orange number 3, and a blue word ‘CAT.’ Each becomes embedded in its own context: <span class="math display">\[\begin{array}{cccc}
+&#39;5&#39; &amp; - &amp; Blue &amp; \leftrightarrow x_1 \\
+&#39;3&#39; &amp; - &amp; Orange &amp;  \leftrightarrow x_2 \\
+&#39;CAT&#39; &amp; - &amp; Blue &amp; \leftrightarrow x_3
+\end{array}\]</span></p>
+<p>We model these items in the feature space as follows: <span class="math display">\[\begin{array}{cccc}
+\textsc{Number} &amp; \textsc{Word} &amp; \textsc{Blue} &amp; \textsc{Orange} \\ 
+~\\
+\updownarrow  &amp;\updownarrow &amp; \updownarrow &amp; \updownarrow\\
+~\\
+\myvectoriv{1}{0}{0}{0}&amp; \myvectoriv{0}{1}{0}{0}&amp; \myvectoriv{0}{0}{1}{0}&amp; \myvectoriv{0}{0}{0}{1}
+\end{array}\]</span></p>
+<p>The following represents how features are bound together with context in a participant’s mental representation of the list: <span class="math display">\[
+\begin{array}{ccccc}
+Blue  &#39;5&#39; &amp; // &amp; Orange  &#39;3&#39; &amp; // &amp; Blue  &#39;CAT&#39; \\
+ \underbrace{\myvectoriv{0}{0}{1}{0}, \myvectoriv{1}{0}{0}{0}}_{ }  &amp; &amp; \underbrace{\myvectoriv{0}{0}{0}{1}, \myvectoriv{1}{0}{0}{0}}_{ } &amp; &amp;   \underbrace{\myvectoriv{0}{0}{1}{0}, \myvectoriv{0}{1}{0}{0}}_{ }\\
+x_1 &amp; &amp; x_2 &amp; &amp; x_3 \\
+\myvectoriii{1}{0}{0}&amp; &amp; \myvectoriii{0}{1}{0}&amp; &amp; \myvectoriii{0}{0}{1}
+\end{array}
+
+\]</span> and this results in the memory matrix <span class="math display">\[\begin{eqnarray}
+M_n &amp; = &amp; M_0 + \sum^n_{i = 1}  x_i f_i^\top   \\
+&amp; = &amp; M_0+ \myvectoriii{1}{0}{0}\left(\myvectoriv{0}{0}{1}{0}+ \myvectoriv{1}{0}{0}{0}
+      \right)^\top\!\!\!\!
++
+  \myvectoriii{0}{1}{0}\left(\myvectoriv{0}{0}{0}{1}+ \myvectoriv{1}{0}{0}{0}\right)^\top
+\!\!\!\!+
+ \myvectoriii{0}{0}{1}
+\left(
+     \myvectoriv{0}{0}{1}{0}+ \myvectoriv{0}{1}{0}{0}\right)^\top  \\
+&amp; = &amp; M_0 + \myvectoriii{1}{0}{0}
+\!\begin{array}{c}[\,1 \ \ 0 
+                                             \ \ 1 \ \ 0\,]\\ ~ \\
+                          ~\end{array} +
+      \myvectoriii{0}{1}{0}\!\begin{array}{c}[\,1 \ \ 0 
+                                             \ \ 0 \ \ 1\,]\\ ~ \\
+                          ~\end{array} +
+      \myvectoriii{0}{0}{1}\!\begin{array}{c}[\,0 \ \ 1 
+                                             \ \ 1 \ \ 0\,]\\ ~ \\
+                          ~\end{array}
+
+\end{eqnarray}\]</span> We abstract away from pre-experimental associations by setting all elements of <span class="math inline">\(M_0\)</span> to zero. Then, suppressing subscripts,<sup>5</sup> <span class="math display">\[
+M = \begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 0
+\end{bmatrix}.
+
+\]</span></p>
+<p>The cue is the feature ‘Number,’ which retrieves context <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Number}}\equiv  \frac{Mf_{\textsc{ Number}}}{||Mf_{\textsc{ Number}}||} \propto M \myvectoriv{1}{0}{0}{0}= \myvectoriii{1}{1}{0} \propto
+\myvectoriii{1/\sqrt{2}}{1/\sqrt{2}}{0}.
+
+\]</span> Targets are ‘Blue’ and ‘Orange’: <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Blue}}\equiv \frac{Mf_{\textsc{ Blue}}}{||Mf_{\textsc{ Blue}}||} \propto \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+\propto \begin{bmatrix} 1/\sqrt{2} \\ 0 \\ 1/\sqrt{2} \end{bmatrix}
+\]</span> and <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Orange}}\equiv \frac{Mf_{\textsc{ Orange}}}{||Mf_{\textsc{ Orange}}||} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} .
+\]</span> Note how <span class="math display">\[\begin{array}{ccc}
+       \boldsymbol{x}_{\textsc{ Number}}\cdot \boldsymbol{x}_{\textsc{ Orange}}&amp; &gt; &amp; \boldsymbol{x}_{\textsc{ Number}}\cdot \boldsymbol{x}_{\textsc{ Blue}}\\
+       \mathrel{$=$}&amp; &amp; \mathrel{$=$}\\
+       1/\sqrt{2} &amp; &amp; 1/2
+       \end{array}\]</span> Because the context of ‘Number’ more closely resembles that of ‘Orange,’ the participant reports ‘Orange’ as the more likely color. The presence of the blue words, in effect, drives out the memory of the blue numbers.</p>
+<p>Before stating general properties of the model, we develop intuition with two additional examples. First, we consider a list that adds one more blue number. When we lengthen the “experiment” above by one blue number, we add one more row to the block of <span class="math inline">\(M\)</span> that we are considering: <span class="math display">\[M = \begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}.\]</span> Now, the following retrieved contexts are <span class="math display">\[\begin{eqnarray*}
+    \boldsymbol{x}_{\textsc{ Blue}}\propto \begin{bmatrix} 1 \\ 0 \\ 1 \\ 1\end{bmatrix}
+    \propto \begin{bmatrix} 1/\sqrt{3} \\ 0 \\ 1/\sqrt{3} \\
+      1/\sqrt{3}\end{bmatrix}, \quad
+    \boldsymbol{x}_{\textsc{ Orange}}= \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+\end{eqnarray*}\]</span> whereas <span class="math display">\[\boldsymbol{x}_{\textsc{ Number}}\propto \begin{bmatrix} 1 \\ 1 \\ 0 \\ 1\end{bmatrix}
+\propto \begin{bmatrix} 1/\sqrt{3} \\ 1/\sqrt{3} \\ 0 \\ 1/\sqrt{3}\end{bmatrix}\]</span> We see that <span class="math display">\[\begin{array}{ccc}
+        \boldsymbol{x}_{\textsc{ Number}}\cdot \boldsymbol{x}_{\textsc{ Blue}}&amp; &gt;&amp; \boldsymbol{x}_{\textsc{ Number}}\cdot \boldsymbol{x}_{\textsc{ Orange}}\\
+        \mathrel{$=$}&amp; &amp; \mathrel{$=$}\\
+        2/3 &amp; &amp; 1/\sqrt{3}
+\end{array}\]</span> This example suggests that inner products have the reasonable property that, as instances of a pair increase, the likelihood of recognition, as measured by the inner product, also increases.</p>
+<p>Second, we replace the blue words with gray shapes. In the <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> experiment, the effect disappears. A simple calculation explains why. We first add a feature vector, <span class="math display">\[\begin{array}{ccccc}
+\textsc{Number} &amp; \textsc{Shape} &amp; \textsc{Blue} &amp; \textsc{Orange} &amp;  \textsc{Gray}\\ 
+~\\
+\updownarrow  &amp;\updownarrow &amp; \updownarrow &amp; \updownarrow &amp; \updownarrow\\
+~\\
+\begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix}&amp; \begin{bmatrix}0 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}&amp; \begin{bmatrix}0 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}&amp; \begin{bmatrix}0 \\ 0 \\ 0 \\ 1 \\ 0  \end{bmatrix}&amp; \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1  \end{bmatrix}
+\end{array}\]</span> and then assume the following simple list: <span class="math display">\[
+\begin{array}{ccccc}
+Blue  &#39;5&#39; &amp; // &amp; Orange  &#39;3&#39; &amp; // &amp; Gray  \square\\
+ \underbrace{\begin{bmatrix}0 \\ 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix}}_{ }  &amp; &amp;
+                                           \underbrace{\begin{bmatrix}0 \\ 0 \\ 0 \\ 1 \\ 0  \end{bmatrix}, \begin{bmatrix}1 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix}}_{ } &amp; &amp;
+                                                                                   \underbrace{\begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1  \end{bmatrix}, \begin{bmatrix}0 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}}_{ }\\
+x_1 &amp; &amp; x_2 &amp; &amp; x_3 \\
+\myvectoriii{1}{0}{0}&amp; &amp; \myvectoriii{0}{1}{0}&amp; &amp; \myvectoriii{0}{0}{1}
+\end{array}
+
+\]</span> Applying the same reasoning as in () implies that the memory matrix equals <span class="math display">\[
+M = \begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+
+\]</span> ‘Number’ again forms the cue. The cue retrieves the context (). The targets are each of the two possible colors. Each color retrieves a basis vector context: <span class="math display">\[\boldsymbol{x}_{\textsc{ Blue}}= \begin{bmatrix} 1 \\ 0 \\ 0
+    \end{bmatrix}, \quad \boldsymbol{x}_{\textsc{ Orange}}= \begin{bmatrix} 0 \\ 1 \\
+      0 \end{bmatrix}, \quad \boldsymbol{x}_{\textsc{ Gray}}= \begin{bmatrix} 0 \\ 0 \\ 1\end{bmatrix}\]</span> The inner product with the context vector <span class="math inline">\(\boldsymbol{x}_{\textsc{ Number}}\)</span> now gives the correct ranking — namely, equal likelihood for blue and orange.</p>
+<p>Retrieved context theory, combined with the tools of recognition memory, offers an entirely novel hypothesis. Likelihoods arise from associative strengths in memories retrieved in response to a cue. The agent looks directly at the similarity to the latent context evoked by the cue. Probabilities do not emerge from the process of recall, but rather from an instant of recognition.</p>
+<p>The assumptions we have made above are not innocuous. There are situations where previous experience, captured in <span class="math inline">\(M_0\)</span> becomes important. One place is in creating subject-specific variation, which we incorporate below through a noise term. A second case arises when one of the targets is a better match for previous associations than for the list. For example, <span class="citation" data-cites="Bordetal:23">(Bordalo et al. 2023)</span> present subjects with two lists, one containing animals and names and the other containing animals and other heterogeneous words. In both cases, the animals made up 40% of the list. Subjects are then asked, as in the Example 2 above, “Suppose the computer randomly chose a word from the words you just saw. What is the percent chance that it is an animal?” They show that subjects report a significantly higher probability that the word is an animal when the list contains animals and names versus when the list contains animals and heterogenous words. If the cue is “word on the list,” then “animal” and “name” are approximately equally good targets. On the other hand, the target “heterogeneous words” would most likely be a greater match for a prior list context, which in our model would be captured by pre-existing associations in <span class="math inline">\(M_0\)</span>.</p>
+<h3>Properties</h3>
+<p>We now formally prove the properties suggested by the simple examples above.</p>
+<div class="theorem">
+<p><strong>Theorem 1</strong>.  <em>Suppose that the agent views an unbiased sample of elements of <span class="math inline">\(\calH\times
+\calD\)</span>. Assuming the cognitive process described in the 1, the agent ranks the relative probability of targets <span class="math inline">\(h\in\calH\)</span> given cue <span class="math inline">\(d\in \calD\)</span> according to: <span class="math display">\[\begin{eqnarray}
+  \boldsymbol{x}_h\cdot \boldsymbol{x}_d  &amp; = &amp; \frac{P(h,d)}{\sqrt{P(h)P(d)}}   \\
+  &amp; \propto &amp;  \frac{P(h,d)}{\sqrt{P(h,d) + P(h,-d)}}. 
+\end{eqnarray}\]</span> Thus, for elements <span class="math inline">\(h,{-h}\in\calH\)</span>, inner products satisfy <span class="math display">\[
+\boldsymbol{x}_{h}\cdot \boldsymbol{x}_d &gt; \boldsymbol{x}_{-h}\cdot
+\boldsymbol{x}_d
+
+\]</span> if and only if <span class="math display">\[
+  P(h|d) &gt;P(-h|d) \sqrt{\frac{P(h)}{P(-h)}}.
+  
+\]</span> In the case where <span class="math inline">\(\calH = \{h, {-h}\}\)</span>, namely <span class="math inline">\(\calH\)</span> consists of only two elements, inner products satisfy () if and only if <span class="math display">\[
+  P(h|d) &gt;P({-h}|d) \sqrt{\frac{P(h)}{1-P(h)}}.
+  
+\]</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> It follows from () and the features definition () that, when cued by <span class="math inline">\(f_\mathcal{j}, \mathcal{j}\in
+\calH \cup \calD\)</span>, <span class="math display">\[\boldsymbol{x}_{\mathcal{j}} \propto M f_\mathcal{j}\propto \sum_{i = 1}^n x_i\mathbb{1}_{f_{i}^\top
+  f_\mathcal{j}= 1},\]</span> where <span class="math inline">\(x_i\)</span> is context as of time <span class="math inline">\(i\)</span>. For a given <span class="math inline">\(\mathcal{j}\)</span>, there are <span class="math inline">\(\#\{i : f_{i}^\top
+  f_\mathcal{j}= 1\}\)</span> nonzero elements of <span class="math inline">\(\boldsymbol{x}_{\mathcal{j}}\)</span>, equal to the number of occurrences of primary features vector <span class="math inline">\(f_{\mathcal{j}}\)</span> in the sample. Because context lies on the unit circle, <span class="math inline">\(\boldsymbol{x}_{\mathcal{j}}\)</span> is the unit vector with nonzero entries corresponding to locations in the list or time in the sample when elements of <span class="math inline">\(\mathcal{j}\)</span> are observed: <span class="math display">\[\boldsymbol{x}_\mathcal{j}(i) = \frac{1}{\sqrt{\#\{ i : f_i^\top
+   f_\mathcal{j}= 1\} }} \times \left\{\begin{array}{c}1 \quad f_i^\top f_\mathcal{j}= 1, \\ 0 \quad otherwise. \end{array}\right.\]</span></p>
+<p>Now consider the inner product <span class="math inline">\(\boldsymbol{x}_\mathcal{j}\cdot
+\boldsymbol{x}_{\mathcal{k}}\)</span>: the sum of products of entries of <span class="math inline">\(\boldsymbol{x}_{\mathcal{j}}\)</span> and <span class="math inline">\(\boldsymbol{x}_{\mathcal{k}}\)</span>. These are entries of ones and zeros scaled by the square root of the number of non-zero entries. Thus <span class="math display">\[\begin{eqnarray*}
+\boldsymbol{x}_\mathcal{j}\cdot \boldsymbol{x}_{\mathcal{k}} &amp; = &amp;  \#\{ i :
+                                                 (f_{i}^\top
+                                                 f_\mathcal{j}\neq 0) \, \&amp;\,
+(f_{i}^\top f_{\mathcal{k}} \neq 0)\} \times \frac{1}{\sqrt{\#\{i : f_{i}^\top
+  f_\mathcal{j}= 1\} } }\frac{1}{\sqrt{\# \{i : f_{i}^\top
+  f_\mathcal{k}= 1\} } } \\
+&amp; = &amp; P(\mathcal{j}, \mathcal{k})n \times
+      \frac{1}{\sqrt{P(\mathcal{j})n}}\frac{1}{\sqrt{P(\mathcal{k})n}}.
+\end{eqnarray*}\]</span> Dividing both the numerator and the denominator by <span class="math inline">\(n\)</span> gives the relative frequency in the observed sample. Assuming the frequency in the observed sample equals the population density yields ().</p>
+<p>Finally, () follows from <span class="math display">\[P(h)P(d) =( P(h,d) + P(h,-d))P(d),\]</span> and dropping the constant of proportionality <span class="math inline">\(1/\sqrt{P(d)}\)</span>. Equation () follows from applying () to both sides of () and rearranging. ◻</p>
+</div>
+<p>Theorem 1 has a geometric interpretation. Because context vectors are unit 1, the inner product is the cosine of the angle between the vectors. If the vectors lie on top of each other, this corresponds to the case in which <span class="math inline">\(\mathcal{j}\)</span> and <span class="math inline">\(\mathcal{k}\)</span> are always seen together. When they are never seen together, the vectors are orthogonal, and everything else lies somewhere in between. See, for example, Figure 1. In Panel (a), the context vectors are orthogonal and therefore have zero cosine similarity. In Panel (b), the similarity of the contexts is captured by the fact that the angle between them is smaller, implying a higher cosine similarity.</p>
+
+
+<figcaption>Geometric interpretation of cosine similarity between context vectors.</figcaption>
+</figure>
+<p>An immediate consequence of this theorem is how likelihood judgments depend on the probability distribution viewed by the agent. We first ask what happens when, conditional on <span class="math inline">\(d\)</span>, <span class="math inline">\(h\)</span> becomes more likely, holding fixed the distribution of <span class="math inline">\(d\)</span> and the conditional probability of <span class="math inline">\(h\)</span> given <span class="math inline">\(-d\)</span>, where <span class="math inline">\(-d\)</span> should be understood as any element of <span class="math inline">\(\calD\)</span> not equal to <span class="math inline">\(d\)</span>.</p>
+<p>The first statement below says that if <span class="math inline">\(h\)</span> is judged to be more likely than <span class="math inline">\(-h\)</span>, and more evidence accumulates in favor of <span class="math inline">\(h\)</span> in the sense that <span class="math inline">\(P(h|d)\)</span> rises, then <span class="math inline">\(h\)</span> will be judged as still more likely than <span class="math inline">\(-h\)</span> when cued by <span class="math inline">\(d\)</span>. This is in line with Bayesian reasoning. The second statement says that if <span class="math inline">\(h\)</span> is considered more likely than <span class="math inline">\(-h\)</span>, and evidence accumulates that reduces the probability of <span class="math inline">\(h\)</span> conditional on <span class="math inline">\(-d\)</span>, then <span class="math inline">\(h\)</span> will be considered as still more likely than <span class="math inline">\(-h\)</span> when cued by <span class="math inline">\(d\)</span>. This is contrary to Bayesian reasoning.<sup>6</sup></p>
+<div class="theorem">
+<p><strong>Theorem 2</strong>.  <em>Suppose that pairs of features are observed in proportion to probabilities <span class="math inline">\(P(\cdot)\)</span>, resulting in <span class="math inline">\(\boldsymbol{x}_{h}\cdot \boldsymbol{x}_d&gt;\boldsymbol{x}_{-h}\cdot
+  \boldsymbol{x}_d\)</span> for some <span class="math inline">\(h,{-h}\in\calH\)</span>. Assume a new set of feature pairs are observed, updating probabilities to <span class="math inline">\(P&#39;(\cdot)\)</span> such that</em></p>
+<ol>
+<li><p><em><span class="math inline">\(P&#39;(h|d)&gt;P(h|d)\)</span> but with <span class="math inline">\(P(d)\)</span> and <span class="math inline">\(P(\cdot|{-d})\)</span> unchanged, and with <span class="math inline">\(P({-h}|d)\)</span> either falling or remaining the same; or</em></p></li>
+<li><p><em><span class="math inline">\(P&#39;(h|{-d})&lt;P(h|{-d})\)</span> but with <span class="math inline">\(P(d)\)</span> and <span class="math inline">\(P(\cdot|{d})\)</span> unchanged, and with <span class="math inline">\(P({-h}|{-d})\)</span> either increasing or remaining the same.</em></p></li>
+</ol>
+<p><em>Then, if <span class="math inline">\(\boldsymbol{x}&#39;\)</span> represents the new retrieved context: <span class="math display">\[
+\boldsymbol{x}_h&#39;\cdot \boldsymbol{x}_d&#39; &gt;\boldsymbol{x}_h\cdot
+\boldsymbol{x}_d&gt;\boldsymbol{x}_{-h}\cdot
+\boldsymbol{x}_d\geq\boldsymbol{x}&#39;_{-h}\cdot \boldsymbol{x}&#39;_d
+
+\]</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Because we are only concerned about the relative ranking of <span class="math inline">\(\boldsymbol{x}_{h}\cdot \boldsymbol{x}_d\)</span> and <span class="math inline">\(\boldsymbol{x}_{-h}\cdot
+  \boldsymbol{x}_d\)</span>, it suffices to consider (), which we can rewrite as: <span class="math display">\[\begin{eqnarray}
+\boldsymbol{x}_h \cdot \boldsymbol{x}_d &amp; \propto &amp; \frac{P(h|d)P(d)}{\sqrt{P(h|d)P(d)
+    + P(h|{-d})P({-d})}} \\ 
+&amp; \propto &amp; \sqrt{\frac{P(h|d)}{P(d)
+    + (P(h|{-d})/P(h|d))P(-d)}}  
+\end{eqnarray}\]</span> which is increasing in <span class="math inline">\(P(h|d)\)</span> and decreasing in of <span class="math inline">\(P(h|{-d})\)</span>.</p>
+<p>Suppose the first condition in the theorem holds. <span class="math inline">\(P&#39;(h|d)&gt;P(h|d)\)</span> implies <span class="math display">\[\begin{eqnarray*}
+\sqrt{\frac{P&#39;(h|d)}{P&#39;(d)
+    + (P&#39;(h|{-d})/P&#39;(h|d))P&#39;({-d})}} &amp; = &amp;  \sqrt{\frac{P&#39;(h|d)}{P(d)
+    + (P(h|{-d})/P&#39;(h|d))P({-d})}} \\ &amp; &gt;&amp;   \sqrt{\frac{P(h|d)}{P(d)
+    + (P(h|{-d})/(P(h|d))P({-d})}} ,
+\end{eqnarray*}\]</span> where the equality follows from the assumption that <span class="math inline">\(P(d)\)</span> and <span class="math inline">\(P(h|{-d})\)</span> remain unchanged, and the inequality follows from the fact that () is increasing in <span class="math inline">\(P(h|d)\)</span>. This shows <span class="math inline">\(\boldsymbol{x}&#39;_{h}\cdot \boldsymbol{x}&#39;_d&gt;\boldsymbol{x}_h\cdot
+  \boldsymbol{x}_d\)</span>. Moreover, because we have assumed that <span class="math inline">\(P&#39;({-h}|d)\leq P({-h}|d)\)</span> for hypothesis <span class="math inline">\({-h}\in\calH\)</span>, similar reasoning implies <span class="math display">\[\begin{eqnarray*}
+\sqrt{\frac{P&#39;({-h}|d)}{P&#39;(d)
+    + (P&#39;({-h}|{-d})/P&#39;({-h}|d))P&#39;({-d})}} &amp; = &amp;  \sqrt{\frac{P&#39;({-h}|d)}{P(d)
+    + (P({-h}|{-d})/P&#39;({-h}|d))P({-d})}} \\ &amp; \leq&amp;   \sqrt{\frac{P({-h}|d)}{P(d)
+    + (P({-h}|{-d})/(P({-h}|d))P({-d})}} ,
+\end{eqnarray*}\]</span> so <span class="math inline">\(\boldsymbol{x}_{-h}\cdot \boldsymbol{x}_d\geq \boldsymbol{x}&#39;_{-h}\cdot \boldsymbol{x}&#39;_d\)</span>. Putting these together, we have ().</p>
+<p>Now suppose instead that the second condition in the theorem holds. <span class="math inline">\(P&#39;(h|{-d})&lt;P(h|{-d})\)</span> implies <span class="math display">\[\begin{eqnarray*}
+\sqrt{\frac{P&#39;(h|d)}{P&#39;(d)
+    + (P&#39;(h|{-d})/P&#39;(h|d))P&#39;({-d})}} &amp; = &amp;  \sqrt{\frac{P(h|d)}{P(d)
+    + (P&#39;(h|{-d})/P(h|d))P({-d})}} \\ &amp; &gt;&amp;   \sqrt{\frac{P(h|d)}{P(d)
+    + (P(h|{-d})/(P(h|d))P({-d})}} ,
+\end{eqnarray*}\]</span> where the first equality follows from the assumption that <span class="math inline">\(P(d)\)</span> and <span class="math inline">\(P(h|d)\)</span> remain unchanged, and the second follows from the fact that () is decreasing in <span class="math inline">\(P(h|{-d})\)</span>. This shows <span class="math inline">\(\boldsymbol{x}&#39;_{h}\cdot \boldsymbol{x}&#39;_d&gt;\boldsymbol{x}_h\cdot
+  \boldsymbol{x}_d\)</span>. Moreover, because we have assumed that <span class="math inline">\(P&#39;({-h}|{-d})\geq P({-h}|{-d})\)</span> for hypothesis <span class="math inline">\({-h}\in\calH\)</span>, similar reasoning implies <span class="math display">\[\begin{eqnarray*}
+\sqrt{\frac{P&#39;({-h}|d)}{P&#39;(d)
+    + (P&#39;({-h}|{-d})/P&#39;({-h}|d))P&#39;({-d})}} &amp; = &amp;  \sqrt{\frac{P({-h}|d)}{P(d)
+    + (P&#39;({-h}|{-d})/P({-h}|d))P({-d})}} \\ &amp; \leq&amp;   \sqrt{\frac{P({-h}|d)}{P(d)
+    + (P({-h}|{-d})/(P({-h}|d))P({-d})}} ,
+\end{eqnarray*}\]</span> so <span class="math inline">\(\boldsymbol{x}_{-h}\cdot \boldsymbol{x}_d\geq \boldsymbol{x}&#39;_{-h}\cdot \boldsymbol{x}&#39;_d\)</span>. Putting these together, we have (). ◻</p>
+</div>
+<p>We can also show that, given sufficient evidence of <span class="math inline">\(h\)</span> conditional on <span class="math inline">\(d\)</span>, the agent will rank the likelihood of <span class="math inline">\(h\)</span> above any alternatives when cued with <span class="math inline">\(d\)</span>. This is consistent with Bayesian reasoning.</p>
+<div class="theorem">
+<p><strong>Theorem 3</strong>.  <em>Keeping <span class="math inline">\(P(d)\)</span> and <span class="math inline">\(P(h|{-d})\)</span> fixed, for <span class="math inline">\(P(h|d)\)</span> sufficiently close to 1, <span class="math inline">\(\boldsymbol{x}_{h}\cdot \boldsymbol{x}_d&gt;\boldsymbol{x}_{-h}\cdot
+  \boldsymbol{x}_d\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Suppose that the statement were false. Then there is a sequence of samples, indexed by <span class="math inline">\(n\)</span>, such that as <span class="math inline">\(P^{(n)}(h|d)\)</span> approaches 1, the inequality is violated. Consider a subsequence such that <span class="math inline">\(P^{(n)}(h|d)\)</span> monotonically approaches 1, and simultaneously <span class="math inline">\(P^{(n)}(-h|d)\)</span> monotonically approaches zero. The latter is possible because <span class="math inline">\(P(-h|d)\leq 1- P(h|d)\)</span>, and is bounded below by zero. It follows from () that <span class="math display">\[\begin{eqnarray*}
+\lim_{n\rightarrow\infty} \frac{\boldsymbol{x}^{(n)}_{-h}\cdot \boldsymbol{x}^{(n)}_d}{\boldsymbol{x}^{(n)}_{h}\cdot 
+  \boldsymbol{x}^{(n)}_d}  &amp; = &amp; \lim_{n\rightarrow\infty} 
+                        \frac{P^{(n)}(-h,d)}{\sqrt{P^{(n)}(-h)}}\frac{\sqrt{P^{(n)}(h)}}{P^{(n)}(h,d)}\\
+&amp; = &amp; \lim_{n\rightarrow\infty}
+      \sqrt{\frac{P^{(n)}(h)}{P^{(n)}(-h)}}\frac{P^{(n)}(-h|d)}{P^{(n)}(h|d)}
+  \\
+ &amp; = &amp;
+       \lim_{n\rightarrow\infty}\sqrt{\frac{P^{(n)}(h)}{P^{(n)}(-h)}}
+       \lim_{n\rightarrow\infty}\frac{P^{(n)}(-h|d)}{P^{(n)}(h|d)}
+       = 0
+\end{eqnarray*}\]</span> The last line follows because the limits of both terms are well-defined because <span class="math inline">\(P(-h|-d)\)</span> is unchanged. Moreover, <span class="math inline">\(\frac{P^{(n)}(-h|d)}{P^{(n)}(h|d)}\)</span> decreases monotonically to zero, whereas <span class="math inline">\(\sqrt{\frac{P^{(n)}(h)}{P^{(n)}(-h)}}\)</span> is bounded. Therefore, there exists an <span class="math inline">\(N\)</span> such that <span class="math inline">\(\frac{\boldsymbol{x}^{(n)}_{-h}\cdot \boldsymbol{x}^{(n)}_d}{\boldsymbol{x}^{(n)}_{h}\cdot 
+  \boldsymbol{x}^{(n)}_d}&lt;1\)</span> for <span class="math inline">\(n&gt; N\)</span>, which is a contradiction. ◻</p>
+</div>
+<p>However, if <span class="math inline">\(h\)</span> becomes sufficiently associated with <span class="math inline">\(-d\)</span>, then the agent will rank <span class="math inline">\(h\)</span> below any of the alternatives, inconsistent with Bayesian reasoning.</p>
+<div class="theorem">
+<p><strong>Theorem 4</strong>.  <em>Keeping <span class="math inline">\(P(\cdot|d)\)</span> fixed (with <span class="math inline">\(P({-h}|d)&gt;0\)</span>), for <span class="math inline">\(P(h)\)</span> sufficiently close to 1, <span class="math inline">\(\boldsymbol{x}_{h}\cdot \boldsymbol{x}_d&lt;\boldsymbol{x}_{-h}\cdot
+  \boldsymbol{x}_d\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Suppose that the statement were false. Then there is a sequence of samples, indexed by <span class="math inline">\(n\)</span>, such that as <span class="math inline">\(P^{(n)}(h)\)</span> monotonically approaches 1 and <span class="math inline">\(P^{(n)}(-h)\)</span> monotonically approaches zero, the inequality is violated. It follows from () that <span class="math display">\[\begin{eqnarray*}
+\lim_{n\rightarrow\infty} \frac{\boldsymbol{x}^{(n)}_{h}\cdot \boldsymbol{x}^{(n)}_d}{\boldsymbol{x}^{(n)}_{-h}\cdot 
+  \boldsymbol{x}^{(n)}_d}  &amp; = &amp; \lim_{n\rightarrow\infty} 
+                        \frac{P^{(n)}(h,d)}{\sqrt{P^{(n)}(h)}}\frac{\sqrt{P^{(n)}(-h)}}{P^{(n)}(-h,d)}\\
+&amp; = &amp; \lim_{n\rightarrow\infty}
+      \sqrt{\frac{P^{(n)}(-h)}{P^{(n)}(h)}}\frac{P^{(n)}(h|d)}{P^{(n)}(-h|d)}
+  \\
+ &amp; = &amp;
+       \lim_{n\rightarrow\infty}\sqrt{\frac{P^{(n)}(-h)}{P^{(n)}(h)}}
+       \lim_{n\rightarrow\infty}\frac{P^{(n)}(h|d)}{P^{(n)}(-h|d)}
+       = 0
+\end{eqnarray*}\]</span> The last line follows because both terms are well-defined, and indeed <span class="math inline">\(\frac{P^{(n)}(h|d)}{P^{(n)}(-h|d)}\)</span> is constant. Moreover, <span class="math inline">\(\sqrt{\frac{P^{(n)}(-h)}{P^{(n)}(h)}}\)</span> monotonically decreases to zero. Therefore, there exists an <span class="math inline">\(N\)</span> such that <span class="math inline">\(\frac{\boldsymbol{x}^{(n)}_{h}\cdot \boldsymbol{x}^{(n)}_d}{\boldsymbol{x}^{(n)}_{-h}\cdot 
+  \boldsymbol{x}^{(n)}_d}&lt;1\)</span> for <span class="math inline">\(n&gt; N\)</span>, which is a contradiction. ◻</p>
+</div>
+<p>For example, consider Example 2. <span class="math inline">\(P(\textsc{ Orange})n\)</span> is the count of orange items in the list, and <span class="math inline">\(P(\textsc{ Orange},\textsc{ Number})n\)</span> is the count of orange numbers. Feature <span class="math inline">\(\textsc{ Orange}\)</span> will retrieve a context vector with <span class="math inline">\(P(\textsc{ Orange})n\)</span> nonzero elements. Because the context vector must have norm 1, each of these elements equals <span class="math inline">\(1/\sqrt{P(\textsc{ Orange})n}\)</span>. Analogous results hold true for feature <span class="math inline">\(\textsc{ Number}\)</span>. Now consider the inner product of these two context vectors. Because the inner product sums the nonzero elements, of which there are at most <span class="math inline">\(\min(P(\textsc{ Number}),P(\textsc{ Orange}))n\)</span>. In this example, there are exactly <span class="math inline">\(P(\textsc{ Orange})n\)</span> nonzero elements, not only because there are fewer orange items, but because all orange items are numbers. If there were some orange items that were not numbers, the context overlap would be less than perfect, and there would be fewer than <span class="math inline">\(P(\textsc{ Orange})n\)</span> nonzero elements. Regardless, the number of nonzero elements scales with <span class="math inline">\(n\)</span>. Thus, the inner product does not depend on <span class="math inline">\(n\)</span>. In the specific case of orange numbers, the inner product equals <span class="math inline">\(P(\textsc{ Orange},\textsc{ Number})/\sqrt{P(\textsc{ Number})P(\textsc{ Orange})}\)</span>, where <span class="math inline">\(P(\textsc{ Orange},\textsc{ Number})\)</span> is the joint likelihood of orange and number.</p>
+<p>The discussion in this section highlights the importance of using <span class="math inline">\(L^2\)</span> scaling, namely, the standard Euclidean norm. If we were to use <span class="math inline">\(L^1\)</span> scaling, the inner product would actually fall with the sample size, a counterintuitive result. Each of the elements in the context vector associated with feature <span class="math inline">\(\textsc{ Orange}\)</span> would equal <span class="math inline">\(1/(P(\textsc{ Orange})n)\)</span>, whereas each item in the context vector associated with <span class="math inline">\(\textsc{ Number}\)</span> equals <span class="math inline">\(1/(P(\textsc{ Number})n)\)</span>. The inner product would equal <span class="math inline">\(P(\textsc{ Number},\textsc{ Orange})/(n\sqrt{P(\textsc{ Number})P(\textsc{ Orange})})\)</span>, a decreasing function of <span class="math inline">\(n\)</span>. While one could redefine cognitive processes through cosine similarity (namely, use not the inner product but the scaled inner product), and thus recover the same result under context vectors scaled under the <span class="math inline">\(L^1\)</span> norm, such an approach introduces an extra step without adding explanatory power.</p>
+<h3>Qualitative results</h3>
+<p>We first show that this model fits the results of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, Study 1 of which forms the basis of Example 2 above. In this experiment, associations are formed only during the presentation of the items, ruling out the possibility that the subject learned biased conditional probabilities outside of the experiment. This controlled setting also allows the experimenter to vary the number of targets and decoys and assess how this affects likelihood judgments. For these reasons, we emphasize the results in this study when we fit the model to the data. We first examine the qualitative predictions of the model.</p>
+<p>To control for possible differences in the mental database for orange and blue, <span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span> randomly assign participants to one of two treatments. Each participant sees a sequence of 50 of these abstract images. In the first condition, they see 10 orange numbers, 15 blue numbers, and 25 gray shapes (<em>gray</em> treatment). In the second condition, they see 10 orange numbers, 15 blue numbers, and 25 blue words (the <em>blue</em> treatment). Participants are then asked “An image was randomly drawn from the images that were just shown to you. The chosen image showed a number. What is the likely color of the chosen image?” They find the following two results:</p>
+<ol>
+<li><p>Participants are significantly more likely to say that orange is the more likely color in the blue treatment versus the gray treatment.<span data-label="result:1"></span></p></li>
+<li><p>The percentage of participants who say that orange is the most likely color declines with <span class="math inline">\(k\)</span>, as <span class="math inline">\(k\)</span> blue words are replaced with <span class="math inline">\(k\)</span> orange words. <span data-label="result:2"></span></p></li>
+</ol>
+<p><span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> also ask questions regarding the probability and number of orange words. Appendix 7 shows how the model can be extended to handle probabilistic questions, and then shows that our model matches results analogous to Results  and  for probability judgments.</p>
+<p>Table 1 illustrates the mapping between this setting and our model. The cue <span class="math inline">\(d=\textsc{ Number}\)</span> and the decoy <span class="math inline">\(-d\)</span> is shape in the gray treatment and word in the blue treatment. The targets are the colors <span class="math inline">\(h=\textsc{ Orange}\)</span> and <span class="math inline">\(-h=\textsc{ Blue}\)</span>.<sup>7</sup></p>
+<p>At the beginning of this section, we showed how the model can produce differential results for the blue versus gray treatment in a toy example. We now use the numbers from the <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> experiment. We find, for the gray treatment, <span class="math display">\[\begin{eqnarray*}
+\boldsymbol{x}_{\textsc{ Blue}}\cdot \boldsymbol{x}_{\textsc{ Number}}&amp; = &amp;  \frac{P_g(\textsc{ Blue},\textsc{ Number})}{\sqrt{P_g(\textsc{ Blue})P_g(\textsc{ Number})}} =
+    \frac{15}{\sqrt{15}\sqrt{15+10}} = 0.77 \\
+\boldsymbol{x}_{\textsc{ Orange}}\cdot \boldsymbol{x}_{\textsc{ Number}}&amp; = &amp;  \frac{P_g(\textsc{ Orange},\textsc{ Number})}{\sqrt{P_g(\textsc{ Orange})P_g(\textsc{ Number})}} =
+    \frac{10}{\sqrt{10}\sqrt{15+10}} = 0.63
+\end{eqnarray*}\]</span> Under the gray treatment, the agent correctly recalls a greater likelihood that the number is blue.</p>
+<p>In contrast, in the blue treatment, <span class="math display">\[\begin{eqnarray*}
+\boldsymbol{x}_{\textsc{ Blue}}\cdot \boldsymbol{x}_{\textsc{ Number}}&amp; = &amp;  \frac{P_b(\textsc{ Blue},\textsc{ Number})}{\sqrt{P_b(\textsc{ Blue})P_b(\textsc{ Number})}} =
+    \frac{15}{\sqrt{15+25}\sqrt{15+10}} = 0.47 \\
+\boldsymbol{x}_{\textsc{ Orange}}\cdot \boldsymbol{x}_{\textsc{ Number}}&amp; = &amp;  \frac{P_b(\textsc{ Orange},\textsc{ Number})}{\sqrt{P_b(\textsc{ Orange})P_b(\textsc{ Number})}} =
+    \frac{10}{\sqrt{10}\sqrt{15+10}} = 0.63
+\end{eqnarray*}\]</span> The introduction of blue words weakens the association between the color blue and numbers, so that, under the blue treatment, the agent incorrectly recalls a greater likelihood of the number being orange: <span class="math display">\[P_b(\textsc{ Orange}|\textsc{ Number}) &gt; P_b(\textsc{ Blue}|\textsc{ Number})\sqrt{\frac{P_b(\textsc{ Orange})}{P_b(\textsc{ Blue})}}.\]</span> However, <span class="math display">\[P_g(\textsc{ Orange}|\textsc{ Number}) &lt; P_g(\textsc{ Blue}|\textsc{ Number})\sqrt{\frac{P_g(\textsc{ Orange})}{P_g(\textsc{ Blue})}}. 
+\]</span></p>
+<p>To build intuition regarding Result , we add an orange word to our toy model from Section 3.1: <span class="math display">\[\begin{array}{cccc}
+&#39;5&#39; &amp; - &amp; Blue &amp; \leftrightarrow x_1 \\
+&#39;3&#39; &amp; - &amp; Orange &amp;  \leftrightarrow x_2 \\
+  &#39;CAT&#39; &amp; - &amp; Blue &amp; \leftrightarrow x_3\\
+   &#39;DOG&#39; &amp; - &amp; Orange &amp; \leftrightarrow x_4
+\end{array}\]</span> The list becomes: <span class="math display">\[
+\begin{array}{ccccccc}
+Blue  &#39;5&#39; &amp; // &amp; Orange  &#39;3&#39; &amp; // &amp; Blue 
+                                                  &#39;CAT&#39;  &amp; // &amp; 
+                                                                  Orange
+                                                                       
+                                                                       &#39;DOG&#39;\\
+ \underbrace{\myvectoriv{0}{0}{1}{0}, \myvectoriv{1}{0}{0}{0}}_{ }  &amp; &amp;
+                                             \underbrace{\myvectoriv{0}{0}{0}{1},\myvectoriv{1}{0}{0}{0}}_{ } &amp; &amp;   \underbrace{\myvectoriv{0}{0}{1}{0},\myvectoriv{0}{1}{0}{0}}_{ }
+&amp; &amp; \underbrace{\myvectoriv{0}{0}{0}{1},\myvectoriv{0}{1}{0}{0}}_{ }
+  \\
+x_1 &amp; &amp; x_2 &amp; &amp; x_3 &amp; &amp; x_4\\
+\myvectoriv{1}{0}{0}{0}&amp; &amp; \myvectoriv{0}{1}{0}{0}&amp; &amp; \myvectoriv{0}{0}{1}{0}&amp; &amp; \myvectoriv{0}{0}{0}{1}
+\end{array}
+
+\]</span> Following the reasoning of (), we have: <span class="math display">\[M =  \myvectoriv{1}{0}{0}{0}\!\begin{array}{c}[\,1 \ \ 0 
+                                             \ \ 1 \ \ 0\,]\\ ~ \\~\\
+                          ~\end{array} \!\! + \, \,\myvectoriv{0}{1}{0}{0}
+\!\begin{array}{c}[\,1 \ \ 0 
+                                             \ \ 0 \ \ 1\,]\\ ~ \\~\\
+                          ~\end{array} \!\! + \, \,\myvectoriv{0}{0}{1}{0}\!\begin{array}{c}[\,0 \ \ 1 
+                                             \ \ 1 \ \ 0\,]\\ ~ \\~\\
+                          ~\end{array} \!\!+\,\,
+\myvectoriv{0}{0}{0}{1}\!\begin{array}{c}[\,0 \ \ 1 
+                                             \ \ 0 \ \ 1\,]\\ ~ \\~\\
+                          ~\end{array}\]</span> Note that the first three rows of <span class="math inline">\(M\)</span> are the same as what we had before adding an orange word. <span class="math display">\[
+M=  \begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1
+\end{bmatrix}.
+
+\]</span> As in Study 1, participants are asked “What is the likely color of the number?” The cue, feature ‘Number,’ retrieves context <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Number}}\propto M \myvectoriv{1}{0}{0}{0}= \myvectoriv{1}{1}{0}{0} \propto
+\myvectoriv{1/\sqrt{2}}{1/\sqrt{2}}{0}{0}.
+
+\]</span> The answer can only be blue or orange. We find the following retrieved contexts: <span class="math display">\[\boldsymbol{x}_{\textsc{ Blue}}= \begin{bmatrix} 1/\sqrt{2} \\ 0 \\ 1/\sqrt{2} \\0
+\end{bmatrix}, \quad
+\boldsymbol{x}_{\textsc{ Orange}}= \begin{bmatrix} 0 \\ 1/\sqrt{2} \\ 0 \\ 1/\sqrt{2} 
+\end{bmatrix}.\]</span> Now, orange and blue are equally good matches for the cue ‘Number’: <span class="math display">\[\begin{array}{ccc}
+    \boldsymbol{x}_{\textsc{ Number}}\cdot \boldsymbol{x}_{\textsc{ Blue}}&amp; = &amp;
+                                  \boldsymbol{x}_{\textsc{ Number}}\cdot \boldsymbol{x}_{\textsc{ Orange}}.
+  \end{array}\]</span></p>
+<p>In general, suppose we replace <span class="math inline">\(k\)</span> blue words in the blue treatment with <span class="math inline">\(k\)</span> orange words. Using numbers from the experiment: <span class="math display">\[
+\boldsymbol{x}_{\textsc{ Blue}}\cdot \boldsymbol{x}_{\textsc{ Number}}=  \frac{P_b(\textsc{ Blue},\textsc{ Number})}{\sqrt{P_b(\textsc{ Blue})P_b(\textsc{ Number})}} =
+    \frac{15}{\sqrt{15+25 - k}\sqrt{15+10}}
+\]</span> and <span class="math display">\[\boldsymbol{x}_{\textsc{ Orange}}\cdot \boldsymbol{x}_{\textsc{ Number}}=  \frac{P_b(\textsc{ Orange},\textsc{ Number})}{\sqrt{P_b(\textsc{ Orange})P_b(\textsc{ Number})}} =
+    \frac{10}{\sqrt{10 + k}\sqrt{15+10}}\]</span> At around <span class="math inline">\(k = 5.4\)</span>, the model no longer predicts that participants will recall that orange is more likely.</p>
+<p>We next show how the model addresses results in <span class="citation" data-cites="KahnTver:73Pred">(Kahneman and Tversky 1973)</span>, and in particular, Example 1. In this case, we do not know subjects’ database (other than the base rates), which was an advantage we had in modeling the <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> experimental framework.</p>
+<p>Recall that the first group of subjects is not given the description of Tom W., and is asked to report the base rates of the 9 fields of study <span class="citation" data-cites="KahnTver:73Pred">(Kahneman and Tversky 1973, Table 2)</span>. This table gives a base rate for the humanities, for example, as 20%, and for computer science as 7%. The second and third groups are given the description and asked to rank the likelihood that Tom W. majors in a subject and the “similarity” (the words of <span class="citation" data-cites="KahnTver:73Pred">Kahneman and Tversky (1973)</span>) between Tom W. and the subject, respectively. For the moment, we ignore the similarity rank and focus on what <span class="citation" data-cites="KahnTver:73Pred">Kahneman and Tversky (1973)</span> term the likelihood rank of a major, which corresponds to the Bayesian posterior. The Bayesian calculation implies <span class="math display">\[
+P(\textsc{ Field}| \textsc{ Tom}) \propto P(\textsc{ Tom}|\textsc{ Field})\underbrace{P(\textsc{ Field})}_{\text{base rate}}, 
+\quad \textsc{ Field}\in\{\textsc{ Computers},\textsc{ Humanities}\}.
+
+\]</span> If there were zero humanities majors that resembled Tom W. in subjects’ database then ranking the probability that Tom W. is a computer scientist higher than a humanities major is consistent with Bayesian reasoning. This is clearly not what <span class="citation" data-cites="KahnTver:73Pred">Kahneman and Tversky (1973)</span> have in mind, and they argue against this possibility. Nevertheless, without knowledge of the subjects’ database, it is not possible to rule this scenario out. In this case, both the Bayesian model and our model would produce the observed result.</p>
+<p>However, there is a wide range of probabilities under which our model would produce a different result than the Bayesian model. This range consists of cases that broadly resemble Study 1 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, namely instances of Tom W. appear more frequently among humanities majors than computer science majors, but that they are difficult to recall because there are many other types of people majoring in the humanities. Table  maps the Tom W. experiment into the words/numbers experiment.</p>
+<div class="center">
+<p> <span data-label="tab:map_examples_model"></span></p>
+<div>
+<table>
+<caption>Mapping between cognitive model and experimental settings</caption>
+<tbody>
+<tr>
+<td style="text-align: left;">Role in</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Theorem 1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="KahnTver:73Pred">Kahneman and Tversky (1973)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">cognitive model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">notation</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">experiment</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">experiment</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cue</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Tom W.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Decoy</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(-d\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Other people</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Word</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Target 1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Computer science</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Orange</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Target 2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(-h\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Humanities</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Specifically, consider Tom W. to be the cue and the targets to be the various fields of study (majors). As an illustration of where our model would make a different prediction than Bayesian inference, consider the case in which there are 7 computer science majors for every 20 humanities majors, therefore matching the proportions in base rates. Assume all computer science majors resemble Tom W., but half of the humanities majors do so. In this case, memory databases will be such that <span class="math display">\[\begin{eqnarray*}
+\boldsymbol{x}_{\textsc{ Computers}}\cdot \boldsymbol{x}_{\textsc{ Tom}}&amp; \propto &amp;
+                                   \frac{P(\textsc{ Computers},\textsc{ Tom})}{\sqrt{P(\textsc{ Computers})}}
+  = \frac{7}{\sqrt{7}}\\
+\boldsymbol{x}_{\textsc{ Humanities}}\cdot \boldsymbol{x}_{\textsc{ Tom}}&amp; \propto &amp;
+                                \frac{P(\textsc{ Humanities},\textsc{ Tom})}{\sqrt{P(\textsc{ Humanities})}}
+                                = \frac{10}{\sqrt{20}}
+\end{eqnarray*}\]</span> and thus, <span class="math inline">\(\boldsymbol{x}_{\textsc{ Computers}}\cdot \boldsymbol{x}_{\textsc{ Tom}}&gt;\boldsymbol{x}_{\textsc{ Humanities}}\cdot \boldsymbol{x}_{\textsc{ Tom}}\)</span>. Assuming (as <span class="citation" data-cites="KahnTver:73Pred">(Kahneman and Tversky 1973)</span> implicitly do) that the memory databases on average are the same among the third group that assess likelihoods as the first group that assesses base rates, this would explain why computer science is judged as a more likely major for Tom W. than is the humanities. Note that Bayesian inference leads to the opposite conclusion in this case: <span class="math display">\[\begin{eqnarray*}
+P(\textsc{ Computers}\cond \textsc{ Tom}) &amp; \propto &amp; P(\textsc{ Tom}\cond\textsc{ Computers})P(\textsc{ Computers}) = P(\textsc{ Tom},\textsc{ Computers}) = 7/27 \\
+ P(\textsc{ Humanities}\cond\textsc{ Tom}) &amp; \propto &amp; P(\textsc{ Tom}\cond\textsc{ Humanities})P(\textsc{ Humanities}) = P(\textsc{ Tom},\textsc{ Humanities}) = 10/27
+\end{eqnarray*}\]</span> Thus the model accounts for the Tom W. experiment in <span class="citation" data-cites="KahnTver:73Pred">(Kahneman and Tversky 1973)</span>.</p>
+<p>Finally, recall that there is a second group that assesses similarities. While the analysis above does not require that we take a stance on what <span class="citation" data-cites="KahnTver:73Pred">(Kahneman and Tversky 1973)</span> mean by “similarity,” their use of the word is consistent with the general idea that it is contextual similarity that drives probabilistic judgement.</p>
+<h3>Quantitative results</h3>
+<p>The model above is stylized. It abstracts, for example, from initial associations <span class="math inline">\(M_0\)</span>. It also abstracts from contextual dynamics, employing a minimalist version of autoregressive context. Finally, the temporal context model does not itself explain all aspects of memory. All of these are potential sources of errors in the model. We encapsulate these sources of error in a simple way by assuming that inner products are perceived with noise by the agent. Assuming perception occurs with noise is standard <span class="citation" data-cites="StanTodo99">(Stanislaw and Todorov 1999)</span>, see also <span class="citation" data-cites="Kaha12">(Kahana 2012, chap. 2)</span>. The addition of a single parameter allows the model to quantitatively fit the data of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>.</p>
+<p>In this extension, the criterion for stating orange is more likely is <span class="math display">\[(\boldsymbol{x}_{\textsc{ Orange}}\cdot \boldsymbol{x}_{\textsc{Number}})e^{\tilde{\epsilon}_{\textsc{Orange}}} &gt; \left(\boldsymbol{x}_{\textsc{Blue}}\cdot\boldsymbol{x}_{\textsc{Number}}\right)e^{\tilde{\epsilon}_{\textsc{Blue}}},\]</span> where <span class="math inline">\(\tilde{\epsilon}\)</span> are agent-specific random variables.<sup>8</sup> Substituting into the solution and expressing in terms of the error terms, this threshold is equivalently <span class="math display">\[\frac{P_b(\textsc{ Orange},\textsc{ Number})}{P_b(\textsc{ Blue},\textsc{ Number})}\sqrt{\frac{P_b(\textsc{ Blue})}{P_b(\textsc{ Orange})}} &gt; e^{\tilde{\epsilon}_{\textsc{Blue}} -\tilde{\epsilon}_{\textsc{Orange}}}.\]</span> Taking the log and substituting in the values from <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, we find that a participant in the gray treatment states that <span class="math display">\[\log\left(\frac{10}{15}\right) + \frac{1}{2}\log\left(\frac{15}{10}\right) \approx -0.20 &gt; \tilde{\epsilon}_{\textsc{Blue}} -\tilde{\epsilon}_{\textsc{Orange}},\]</span> and a participant in the blue treatment will say that orange is more likely if <span class="math display">\[\log\left(\frac{10}{15}\right) + \frac{1}{2}\log\left(\frac{40}{10}\right) \approx 0.29  &gt; \tilde{\epsilon}_{\textsc{Blue}} -\tilde{\epsilon}_{\textsc{Orange}}.\]</span> The latter criterion is more likely to be met, so those in the blue condition will tend to respond orange at a higher rate.</p>
+<p>Suppose now that <span class="math inline">\(\tilde{\epsilon}_{\textsc{Blue}}\)</span> and <span class="math inline">\(\tilde{\epsilon}_{\textsc{Orange}}\)</span> are iid normally distributed. In this case, their difference <span class="math display">\[\tilde{\epsilon} \equiv \tilde{\epsilon}_{\textsc{Blue}} -\tilde{\epsilon}_{\textsc{Orange}} \sim N(0,\sigma^2)\]</span> for some variance <span class="math inline">\(\sigma^2\)</span>. Under this assumption, the proportion of participants who judge orange numbers to be more likely than blue numbers will simply be given by the normal CDF. Let <span class="math inline">\(\Phi(z)\)</span> denote the standard normal CDF. The proportion in the gray treatment equals <span class="math display">\[\Phi\left(\frac{1}{\sigma}\left(\log\left(\frac{10}{15}\right) + \frac{1}{2}\log\left(\frac{15}{10}\right)\right)\right),\]</span> and the proportion in the blue treatment will equal <span class="math display">\[\Phi\left(\frac{1}{\sigma}\left(\log\left(\frac{10}{15}\right) + \frac{1}{2}\log\left(\frac{40}{10}\right)\right)\right).\]</span> The latter is larger than the former, as found in the experiment.</p>
+<p>For Study 2, we want to know how the answer changes if we replace the <span class="math inline">\(k\)</span> blue words in the blue treatment with the <span class="math inline">\(k\)</span> orange words. In this case, the participant will say that orange is more likely if <span class="math display">\[\log\left(\frac{10}{15}\right) + \frac{1}{2}\log\left(\frac{40-k}{10+k}\right) &gt; \tilde{\epsilon},\]</span> which is less likely to be true for high values of <span class="math inline">\(k\)</span>. The proportion of participants is then <span class="math display">\[\Phi\left(\frac{1}{\sigma}\left(\log\left(\frac{10}{15}\right) + \frac{1}{2}\log\left(\frac{40-k}{10+k}\right)\right)\right),\]</span> which falls in <span class="math inline">\(k\)</span>, matching the experimental results.</p>
+<h4>Model fit</h4>
+<p>To fit the model to the data of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, we estimate <span class="math inline">\(\sigma\)</span> by minimizing the distance between all moments in the data and model, where the data come from Figures 1 and 2 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>.<sup>9</sup> Specifically, we estimate <span class="math inline">\(\sigma\)</span> to be <span class="math display">\[\hat{\sigma} = \underset{\sigma}{\text{argmin}} \biggl\{\text{error}(\sigma)^\top\text{error}(\sigma)\biggr\},\]</span> where <span class="math inline">\(\text{error}(\sigma)\)</span> is a vector of (percent) errors with <span class="math inline">\(j\)</span>th element <span class="math display">\[\text{error}_j(\sigma) = \frac{\textrm{data moment}_j - \textrm{model moment}_j(\sigma)}{\textrm{data moment}_j}.\]</span> This procedure gives an estimate of <span class="math display">\[\hat{\sigma} \approx 1.3737.\]</span> Figures 2 and 3 plot the resulting moments, and show that the model provides an excellent fit across the experimental conditions.</p>
+
+
+
+<figcaption>Study 2, Figure 2 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>. The noise parameter <span class="math inline">\(\sigma\)</span> is estimated to match all moments in Figures 2 and 3.</figcaption>
+</figure>
+<h3>Comparison with a probabilistic model</h3>
+<p>The previous sections, together with Appendices 7 and 8, show that the model can account for the evidence in <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>. Here, we compare our model to theirs.</p>
+<p>Building on <span class="citation" data-cites="GennShle:10">(Gennaioli and Shleifer 2010)</span> and <span class="citation" data-cites="Bordetal:16">(Bordalo et al. 2016)</span>, <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> specify a reduced-form model with the ability to capture deviations from Bayesian updating. They define a similarity function <span class="math inline">\(S(d,h)\)</span>, to which they apply a Luce choice rule (see Appendix 7) to determine the subjective probability: <span class="math display">\[
+\Pti(h|d) = \frac{e^{S(d,h)}}{e^{S(d,h)} + e^{S(d,\neg h)}},
+
+\]</span> where <span class="math display">\[
+S(d,h) = \alpha f(P(d,h)) - \gamma f(P(-d,h)),
+
+\]</span> and where <span class="math inline">\(f\)</span> is an increasing function, parameterized by <span class="math inline">\(f(x) =
+\log (c +x)\)</span> for a constant <span class="math inline">\(c\)</span>. Under this parameterization, the model captures Bayesian inference when <span class="math inline">\(\alpha = 1\)</span> and <span class="math inline">\(\gamma = c =
+0\)</span>. Note that in this model, by construction, the likelihood assessments increase in <span class="math inline">\(P(h|d)\)</span> (which is necessary for basic plausibility) and decrease in <span class="math inline">\(P(h|{-d})\)</span> (without which the model would ultimately resemble a Bayesian one). As described above, these are also key implications of our cognitive theory.</p>
+<p>An important difference between the models is that, in the <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> model, <span class="math inline">\(\gamma\)</span> is a flexible parameter, introduced to fit the representativeness heuristic. In contrast, our model provides a cognitive foundation for <span class="math inline">\(\gamma\)</span>, and in so doing eliminates <span class="math inline">\(\gamma\)</span> entirely as a free parameter.<sup>10</sup> A second key difference is that the <span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span> model is fundamentally based on probability distortion, whereas our model is based on recognition memory. To illustrate the benefits of a cognitive framework, we turn to the conjunction fallacy.</p>
+<h2>The conjunction fallacy</h2>
+<p>In the previous section, the possible targets were mutually exclusive: for example, a number could be either blue or orange, but not both. We now relax that assumption, and in the process address a second puzzle, the conjunction fallacy. <span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span> present a wide range of experimental findings in which subjects judge a conjunction of two statements to be significantly more likely than one of the constituent statements, a violation of the laws of probability. We describe one of their experiments in detail.</p>
+<div class="example">
+<p><strong>Example 3</strong> (<span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span>).  <em>Subjects are given a description of an outspoken, single woman who is passionate about social-justice issues. They report that it is less likely that she is a bank teller than that she is both a bank teller and a feminist, even though this is logically impossible. Similarly, when given a description of a mathematical but unimaginative man, subjects report that it is less likely that he is a jazz player than that he is an accountant and a jazz player.</em></p>
+</div>
+<div class="center">
+<p></p>
+<div>
+<table>
+<caption>This table lists the possibilities given to participants in the conjunction experiment of <span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span>. See the main text for details about the experiment.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Possibilities for Linda</th>
+<th style="text-align: left;">Possibilities for Bill</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Linda is a teacher in elementary school.</td>
+<td style="text-align: left;">Bill is a physician who plays poker for a hobby.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda works in a bookstore and takes Yoga classes.</td>
+<td style="text-align: left;">Bill is an architect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda is active in the feminist movement. (F)</td>
+<td style="text-align: left;">Bill is an accountant. (A)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda is a psychiatric social worker.</td>
+<td style="text-align: left;">Bill plays jazz for a hobby. (J)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda is a member of the League of Women Voters.</td>
+<td style="text-align: left;">Bill surfs for a hobby.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda is a bank teller. (T)</td>
+<td style="text-align: left;">Bill is a reporter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda is an insurance salesperson.</td>
+<td style="text-align: left;">Bill is an accountant who plays jazz for a</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linda is a bank teller and is active in the feminist</td>
+<td style="text-align: left;">hobby. (A&amp;J)</td>
+</tr>
+<tr>
+<td style="text-align: left;">movement. (T&amp;F)</td>
+<td style="text-align: left;">Bill climbs mountains for a hobby.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+</p>
+</div>
+<p>In this experiment, participants read a description of a woman named Linda and a man named Bill. About Linda, they read: “Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations." About Bill, they read: “Bill is 34 years old. He is intelligent, but unimaginative, compulsive, and generally lifeless. In school, he was strong in mathematics but weak in social studies and humanities." Subjects were then asked to rank, in order of likelihood, the possibilities given in Table 2. Over 80% of participants rank, from more to less likely, F<span class="math inline">\(&gt;\)</span>T&amp;F<span class="math inline">\(&gt;\)</span>T for Linda and A<span class="math inline">\(&gt;\)</span>A&amp;J<span class="math inline">\(&gt;\)</span>J for Bill. Regardless of beliefs, this likelihood ranking is a logical impossibility. <span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span> refer to the tendency of subjects to rank the conjunction as more likely than one of the constituents as the <em>conjunction fallacy</em>.</p>
+<p>Here, we show how the model explains this fallacy. We first give an example and then a formal proof. Consider subjects asked to rank the probability that Bill is an accountant (<span>A</span>), a jazz player (<span>J</span>), or both (<span>A</span> <span class="math inline">\(\cap\)</span> <span>J</span>) (see Table 2). While Bill as presented in the <span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span> experiment may be a composite representation, we simplify notation by representing Bill as basis vector <span class="math inline">\(f_{\textsc{ Bill}}\)</span>. The features space in this simplified example is: <span class="math display">\[\begin{array}{ccc}
+\sc Bill&amp;  \sc Accountant (A)&amp;  \sc Jazz player (J) \\
+\updownarrow &amp; \updownarrow &amp; \updownarrow \\
+\myvectoriii{1}{0}{0}&amp; \myvectoriii{0}{1}{0}&amp; \myvectoriii{0}{0}{1}
+\end{array}\]</span> Assume Bill is seen in a context that makes it clear that he is an accountant. Subjects see jazz players, and they also see accountants who are not Bill. Thus: <span class="math display">\[
+\begin{array}{ccccc}
+   Bill as Accountant &amp; // &amp; Accountant&amp; // &amp;  Jazz Player  \\
+  \underbrace{\myvectoriii{1}{0}{0},\myvectoriii{0}{1}{0}} &amp; &amp; \myvectoriii{0}{1}{0}&amp; &amp;
+                                                           \myvectoriii{0}{0}{1}\\
+  \boldsymbol{x}_1 &amp; &amp; \boldsymbol{x}_2 &amp; &amp; \boldsymbol{x}_3\\
+  \myvectoriii{1}{0}{0}&amp;  &amp;\myvectoriii{0}{1}{0}&amp; &amp; \myvectoriii{0}{0}{1}
+\end{array}
+
+\]</span> The mental representation () implies that the memory matrix is equal to: <span class="math display">\[M = M_0 + \myvectoriii{1}{0}{0}\!\begin{array}{c}[\,1 \ \ 1 
+                                             \ \ 0 \,]\\ ~ \\
+                          ~\end{array} + \myvectoriii{0}{1}{0}\!\begin{array}{c}[\,0 \ \ 1 
+                                             \ \ 0 \,]\\ ~ \\
+                          ~\end{array} + \myvectoriii{0}{0}{1}\!\begin{array}{c}[\,0 \ \ 0 
+                                             \ \ 1 \,]\\ ~ \\
+                          ~\end{array},\]</span> With <span class="math inline">\(M_0\)</span> equal to the zero matrix, <span class="math display">\[M = \begin{bmatrix}
+      1 &amp; 1 &amp; 0 \\
+      0 &amp; 1 &amp; 0\\
+      0 &amp; 0 &amp; 1
+      \end{bmatrix}\]</span> In the experiment, the cue is the feature ‘Bill’: <span class="math display">\[\boldsymbol{x}_{\textsc{ Bill}}\equiv \frac{M f_{\textsc{ Bill}}}{\norm{Mf_{\textsc{ Bill}}}} \propto  \myvectoriii{1}{0}{0},\]</span> which picks up the single context in which Bill is seen.</p>
+<p>The targets are Accountant together with Jazz, Accountant, and Jazz: <span class="math display">\[\begin{eqnarray}
+\boldsymbol{x}_{\textsc{
+      A}\cap\textsc{ J}}&amp; \equiv &amp; \frac{M(f_{\textsc{ A}}+ f_{\textsc{ J}}) }{\norm{M(f_{\textsc{ A}}+ f_{\textsc{ J}}) }}  =
+    \begin{bmatrix} 1/\sqrt{3} \\ 1/\sqrt{3} \\ 1/\sqrt{3}\end{bmatrix}\\
+\boldsymbol{x}_{\textsc{ J}}&amp; \equiv &amp;  \frac{Mf_{\textsc{ J}}}{\norm{Mf_{\textsc{ J}}} }   =  \myvectoriii{0}{0}{1}\\ 
+\boldsymbol{x}_{\textsc{ A}}&amp; \equiv &amp; \frac{Mf_{\textsc{ A}}}{\norm{Mf_{\textsc{ A}}}}  =  \begin{bmatrix}
+    1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{bmatrix}
+\end{eqnarray}\]</span> From which we see that <span class="math display">\[\boldsymbol{x}_{\textsc{ Bill}}\cdot \boldsymbol{x}_{\textsc{ A}}&gt; \boldsymbol{x}_{\textsc{ Bill}}\cdot \boldsymbol{x}_{\textsc{
+      A}\cap\textsc{ J}}&gt; \boldsymbol{x}_{\textsc{ Bill}}\cdot \boldsymbol{x}_{\textsc{ J}}.\]</span> Rather than assessing probabilities through traditional inference (which would lead, through the laws of probability, to the chance of Accountant and Jazz player being less than or equal to Jazz player), participants assess probabilities through context matches with a target. Because Accountant and Jazz player contains within it the word “Accountant,” this composite feature brings up the context associated with Accountant. While not as good a match as Accountant on its own, it is still better than Jazz on its own.</p>
+<p>To generalize from this specific example, we translate the problem into the formal language of Section 3. Recall that <span class="math inline">\(\Omega = \calH\times \calD\)</span>. Implicit in this definition is that members of the population are identified by a single hypothesis and a single cue. We now allow members to be potentially identified by two hypotheses, one in the set <span class="math inline">\(\calH_1\)</span>, and one in the set <span class="math inline">\(\calH_2\)</span>, so that <span class="math inline">\(\Omega = \calH_1\times\calH_2\times\calD\)</span>. Note that any probability measure <span class="math inline">\(P\)</span> over <span class="math inline">\(\Omega\)</span> is also a probability measure over <span class="math inline">\(\calH_1\)</span> and <span class="math inline">\(\calH_2\)</span>. Thus, <span class="math inline">\(P(h_{1,j}) =
+\sum_{h_{2,k}\in \calH_2}  P(h_{1,j},h_{2,k})\)</span>, for <span class="math inline">\(h_{1,j}\in\calH_1\)</span>. Clearly <span class="math inline">\(P(h_{1,j},h_{2,k})\leq P(h_{1,j})\)</span>, with a strict inequality provided that <span class="math inline">\(P\)</span> allows some instances of <span class="math inline">\(h_{1,j}\)</span> to occur with an element of <span class="math inline">\(\calH_2\)</span> other than <span class="math inline">\(h_{2,k}\)</span>.</p>
+<p>In this example, it is useful to allow agents to view elements that are in <span class="math inline">\(\calH_1\times\calH_2\times\calD\)</span>, in <span class="math inline">\(\calH_1\times \calD\)</span>, in <span class="math inline">\(\calH_2\times\calD\)</span>, or only in <span class="math inline">\(\calH_1\)</span> and <span class="math inline">\(\calH_2\)</span>. Because all elements of <span class="math inline">\(\Omega\)</span> have attributes in each of these sets, we need to extend our definitions to allow the agent to view certain subsets <span class="math inline">\(\Omega\)</span>. For example, if an agent observes someone to be an accountant but does not know if the person also plays jazz, then the agent is observing a subset of <span class="math inline">\(\Omega\)</span> rather than a specific element. If it becomes known whether the individual is a jazz player or not, the subset resolves into a single element. We let <span class="math inline">\(\wp(\Omega)\)</span> denote this broader set of admissible subsets.</p>
+<p>We maintain the assumption of Section 3 that <span class="math inline">\(f_{h_{1, j}}\)</span> and <span class="math inline">\(f_{h_{2,j}}\)</span>, etc., are basis vectors. The following naturally extends to the model of Section 3 to account for the conjunction fallacy.</p>
+<div class="modelsummarytmp">
+<p><strong>Model Summary 2</strong> (Conjunctions).  <em>Suppose that an agent views the <span class="math inline">\(n\)</span> elements of <span class="math inline">\(\wp(\Omega)\)</span> as feature vectors <span class="math inline">\(f_i,\)</span> <span class="math inline">\(i = 1,\ldots, n\)</span>. If <span class="math inline">\(f_i =  f_{h_1}, f_{h_2}, f_d\)</span>, for <span class="math inline">\(h_j \in \calH_j\)</span>, <span class="math inline">\(f_d\in\calD\)</span>, then <span class="math inline">\(f_i\)</span> is a basis vector; otherwise <span class="math inline">\(f_i\)</span> is a composite representation. Feature vectors <span class="math inline">\(f_i\)</span> combine with orthogonal contexts <span class="math inline">\(\boldsymbol{x}_i\)</span> to form memory <span class="math inline">\(M\)</span> as in (), with <span class="math inline">\(M_0\)</span> the zero matrix. Let <span class="math inline">\(f_\mathcal{j},\)</span> <span class="math inline">\(\mathcal{j}\in \calH_1\cup
+\calH_2 \cup (\calH_1\times\calH_2) \cup \calD\)</span> represent a cue (<span class="math inline">\(d\in \calD\)</span>), a target (<span class="math inline">\(h_1\in \calH_1, h_2\in\calH_2\)</span>), or a conjunction target (<span class="math inline">\(h_1\cap h_2\in\calH_1\times\calH_2\)</span>). In the case of the conjunction target, the agent forms the composite representation. When cued with <span class="math inline">\(d\)</span>, the agent ranks the conjunction target <span class="math inline">\(h_1\cap h_2\)</span> as more likely than <span class="math inline">\(h_1\)</span> (given cue <span class="math inline">\(d\)</span>) if <span class="math display">\[
+\boldsymbol{x}_d\cdot \boldsymbol{x}_{h_1\cap h_2} &gt; \boldsymbol{x}_d \cdot \boldsymbol{x}_{h_1},
+
+\]</span> where <span class="math inline">\(\boldsymbol{x}_\mathcal{j}\)</span> is a norm-1 retrieved context vector such that <span class="math inline">\(\boldsymbol{x}_{\mathcal{j}} \propto M
+f_{\mathcal{j}}\)</span>.<sup>11</sup></em></p>
+</div>
+<p>In this setting, the conjunction fallacy arises under the following conditions.</p>
+<div class="theorem">
+<p><strong>Theorem 5</strong>.  <em>Suppose that the agent’s sample matches the population in that items appear in their correct proportions. Then <span class="math display">\[\begin{eqnarray}
+\boldsymbol{x}_d\cdot \boldsymbol{x}_{h_1\cap h_2} &amp; = &amp;  
+\frac{P(h_1,d)+P(h_2,d)}{\sqrt{(P(h_1)+P(h_2)+2P(h_1\cap h_2)) P(d)}}  \\
+\boldsymbol{x}_d\cdot \boldsymbol{x}_{h_1} &amp; = &amp; \frac{P(h_1,d)}{\sqrt{P(h_1)P(d)}}. 
+\end{eqnarray}\]</span> Moreover, () is equivalent to: <span class="math display">\[
+1 + \frac{P(h_2|d)}{P(h_1|d)} &gt;
+\sqrt{1+\frac{P(h_2)}{P(h_1)}+2P(h_1|h_2)}.
+
+\]</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Equation  follows from the 2, with the composite representation <span class="math inline">\(f_{h_1} + f_{h_2}\)</span> forming the cue. Equation  follows from Theorem 1. Given (), () follows from substituting () and () into (), dividing both sides by <span class="math inline">\(\sqrt{P(d)}\)</span> to create conditional probabilities and then rearranging, noting that, by the laws of probabilities, <span class="math inline">\(P(h_1\cap h_2)/P(h_2) = P(h_1\cond h_2)\)</span>.</p>
+<p>Therefore, it suffices to prove (). Consider that <span class="math display">\[\boldsymbol{x}_{h_1\cap h_2} \propto M(f_{h_1} + f_{h_2})\]</span> The unscaled context vector <span class="math inline">\(M(f_{h_1} + f_{h_2})\)</span> will have entries equal to 1 corresponding to times when either <span class="math inline">\(h_1\)</span> or <span class="math inline">\(h_2\)</span> are observed (but not both) and a 2 corresponding to times when both <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span> are observed. Therefore, <span class="math inline">\((M(f_{h_1} +
+f_{h_2}))^\top M(f_{h_1} +
+f_{h_2}) = \#\{h_1\cap (-h_2) \} + \#\{h_2\cap (-h_1)\} + 4\#\{h_1\cap
+h_2\}  = \#\{h_1\} + \#\{h_2\} + 2\#\{h_1\cap h_2\}\)</span>. When divided by the total number of elements in the population, this becomes <span class="math inline">\(P(h_1)+P(h_2)+2P(h_1\cap h_2)\)</span>. In the numerator, we see cases where <span class="math inline">\(d\)</span> and <span class="math inline">\(h_1\)</span> coincide, and <span class="math inline">\(d\)</span> and <span class="math inline">\(h_2\)</span> coincide. There are <span class="math inline">\(\#\{h_1\cap d\} + \#\{h_2 \cap d\}\)</span> cases. Dividing by the number of elements in the population yields (). ◻</p>
+</div>
+<p>Suppose, for instance, that there are no observations of Bill as a jazz player. The assessed probability that Bill could be both a Jazz player and an accountant is still greater than zero, though less than an accountant alone.</p>
+<p>This application highlights the role of the cognitive model in that one would not obtain these results by applying the probability rule () to the conjunction. To consider a simple example, suppose that someone like Bill was never observed to be a jazz player. According to (), the subject would rank the probability as zero. In contrast, the model above allows the cue jazz and accountant to work together, so that relevant instances are still brought to mind.</p>
+<h2>Associative recognition in financial markets</h2>
+<p>The recognition mechanism has broad implications for financial markets. In this section, we develop a series of applications in which associative recognition—the retrieval of different contexts by different cues—leads to systematic departures from rational pricing. Each application shares a common structure: a cue <span class="math inline">\(d\)</span> retrieves a context <span class="math inline">\(\boldsymbol{x}_d\)</span> that determines how investors assess the probability of a financial outcome. When cues that are economically equivalent retrieve dissimilar contexts, prices diverge from fundamentals.</p>
+<h3>Negative stub values</h3>
+<p><span class="citation" data-cites="LamoThal:03">(Lamont and Thaler 2003)</span> document cases in which a parent company is valued by the market at less than the value of its ownership stake in a publicly traded subsidiary, implying that the parent’s remaining assets have negative value. The most prominent case involves 3Com and Palm. On March 2, 2000, 3Com sold a fraction of its stake in Palm via an IPO. 3Com retained ownership of 95% of Palm’s shares and announced its intention to spin off the remaining shares to 3Com shareholders. After the first day of trading, Palm closed at $95.06 per share, implying that the price of 3Com should have been at least $145 (given 3Com shareholders’ claim on 1.5 Palm shares each). Instead, 3Com fell to $81.81. The “stub value” of 3Com—the implied value of its non-Palm assets—was <span class="math inline">\(-\$63\)</span>.</p>
+<p>Why does this violate the law of one price so dramatically? <span class="citation" data-cites="LamoThal:03">(Lamont and Thaler 2003)</span> identify short-sale constraints as the proximate friction, but note that frictions alone cannot explain why investors willingly pay more to own Palm directly than to own Palm embedded in 3Com. The demand side requires “irrational” investors. Our model provides a specific cognitive mechanism.</p>
+<p>In the framework of Theorem 1, the cues are the company names themselves: “Palm” (<span class="math inline">\(d_{\textsc{ Palm}}\)</span>) and “3Com” (<span class="math inline">\(d_{\textsc{ 3Com}}\)</span>). The hypotheses are whether the company is a new-economy stock (<span class="math inline">\(h\)</span>) or an old-economy stock (<span class="math inline">\(-h\)</span>). In March 2000, new-economy stocks had recently experienced extraordinary returns, so being classified as new-economy is associated with high expected returns.</p>
+<p>The name “Palm” retrieves a context vector <span class="math inline">\(\boldsymbol{x}_{d_{\textsc{ Palm}}}\)</span> rich in new-economy, high-growth technology associations. The name “3Com” retrieves a different context vector <span class="math inline">\(\boldsymbol{x}_{d_{\textsc{ 3Com}}}\)</span> laden with legacy-networking, old-economy associations. Even though Palm’s payoffs are mechanically a subset of 3Com’s, the two names evoke different contexts, and investors judge <span class="math display">\[\boldsymbol{x}_{d_{\textsc{ Palm}}}\cdot\boldsymbol{x}_h \;&gt;\;
+\boldsymbol{x}_{d_{\textsc{ 3Com}}}\cdot\boldsymbol{x}_h.\]</span> The market effectively prices the two companies as if they inhabit different probability spaces. Investors bid up Palm because its name retrieves a context in which firms like Palm have done well, while 3Com’s name does not—despite the fact that owning 3Com is economically superior to owning Palm alone.</p>
+<p>This prediction is unique to our framework. In models based on probability distortion, such as diagnostic expectations <span class="citation" data-cites="Bordetal:18">(Bordalo et al. 2018)</span>, the distorted probability preserves the algebra of probability: if Palm’s payoffs are a subset of 3Com’s, then <span class="math inline">\(\hat{P}(\text{Palm does well} | d) \leq \hat{P}(\text{3Com does well} | d)\)</span>. In recall-based models, sampling from memory and counting successes mechanically ensures that a subset cannot outrank the whole. Our model breaks this logic because Palm and 3Com are evaluated via different cues that retrieve different contexts. The prediction of negative stubs is thus a qualitative test that separates the recognition mechanism from all existing alternatives.<sup>12</sup></p>
+<h3>Name changes</h3>
+<p>The recognition mechanism predicts that changes to the cue—even those carrying no new information about fundamentals—will shift investor beliefs if they alter the retrieved context. A striking example is the effect of corporate name changes during the dot-com era. <span class="citation" data-cites="CoopDimRau:01">(Cooper et al. 2001)</span> document that firms adding “.com” or “Internet” to their names experienced cumulative abnormal returns of approximately 74% in the ten days surrounding the announcement, regardless of the extent of their actual Internet involvement. When the bubble burst, firms that dropped Internet-related names saw positive abnormal returns.</p>
+<p>In our framework, the company name is a component of the cue <span class="math inline">\(d\)</span>. Appending “.com” transforms <span class="math inline">\(d\)</span> into <span class="math inline">\(d&#39;\)</span>, which retrieves a context vector <span class="math inline">\(\boldsymbol{x}_{d&#39;}\)</span> laden with high-growth technology associations—even if the firm’s operations are unchanged. The retrieved context has higher cosine similarity with the “high returns” target <span class="math inline">\(\boldsymbol{x}_h\)</span>, so investors judge the firm more likely to be a high-growth company: <span class="math display">\[\boldsymbol{x}_{d&#39;}\cdot\boldsymbol{x}_h &gt; \boldsymbol{x}_d\cdot\boldsymbol{x}_h.\]</span> No new information has arrived. The name change simply alters which past experiences the cue brings to mind. This is a pure recognition effect: the investor’s flash of recognition—does this firm “go with” high returns?—is governed by the context the cue retrieves, and a name carrying Internet connotations retrieves a fundamentally different context than a traditional industrial name. Dropping the Internet-related name reverses the effect, as the cue <span class="math inline">\(d\)</span> reverts to retrieving its original context.</p>
+<h3>Stock splits and reverse splits</h3>
+<p>A stock split changes the nominal share price without altering the firm’s market capitalization, cash flows, or any other fundamental. Yet splits are associated with substantial abnormal returns. <span class="citation" data-cites="IkenRankStic:96">(Ikenberry et al. 1996)</span> find one-year abnormal returns of approximately 8% following two-for-one splits, and <span class="citation" data-cites="DesaJain:97">(Desai and Jain 1997)</span> find one-year abnormal returns of approximately <span class="math inline">\(-11\)</span>% following reverse splits, with three-year returns of <span class="math inline">\(-34\)</span>%.</p>
+<p>Our model identifies two distinct recognition channels through which a split affects investor beliefs. The first operates through the split event itself. Firms that split their stock tend to be high-quality, high-growth firms whose managers are confident about future performance <span class="citation" data-cites="IkenRankStic:96">(Ikenberry et al. 1996)</span>. This creates an association in the memory matrix <span class="math inline">\(M\)</span>: the feature “this firm split its stock” is encoded in contexts associated with subsequent high returns. When a new split is announced, the cue <span class="math inline">\(d_{\mathrm{split}}\)</span> retrieves these contexts, and investors judge the firm more likely to be a high-quality investment. The second channel operates through the nominal price level. <span class="citation" data-cites="BirrWang:16">(Birru and Wang 2016)</span> document a “nominal price illusion”: investor expectations of upside potential jump discontinuously on the split date, even though actual future skewness decreases. In our framework, the lower post-split price retrieves contexts associated with high-growth firms (which tend to have low share prices), reinforcing the first channel. <span class="citation" data-cites="BakeGreeWurg:09">(Baker et al. 2009)</span> provide complementary evidence that firms actively manage their nominal share price to cater to time-varying investor preferences for certain price ranges.</p>
+<p>Reverse splits provide further evidence for the event-association channel. Firms that reverse-split are overwhelmingly distressed firms trying to avoid delisting. The cue <span class="math inline">\(d_{\mathrm{reverse}}\)</span> therefore retrieves contexts laden with associations of financial distress, and the strongly negative abnormal returns (<span class="math inline">\(-11\)</span>% at one year, <span class="math inline">\(-34\)</span>% at three years) confirm this prediction.<sup>13</sup> Letting <span class="math inline">\(h\)</span> denote the hypothesis of high future returns, <span class="math display">\[\boldsymbol{x}_{d_{\mathrm{split}}}\cdot\boldsymbol{x}_h \;&gt;\;
+\boldsymbol{x}_{d}\cdot\boldsymbol{x}_h \;&gt;\;
+\boldsymbol{x}_{d_{\mathrm{reverse}}}\cdot\boldsymbol{x}_h,\]</span> where <span class="math inline">\(d\)</span> denotes the cue without the split event. Both forward and reverse splits illustrate the same principle: the event creates an association in memory, and that association shifts beliefs about future returns through the recognition channel.</p>
+<h3>Mental accounts for prices and dividends</h3>
+<p><span class="citation" data-cites="HartSolo:19">(Hartzmark and Solomon 2019)</span> document that investors treat stock price changes and dividends as disconnected attributes rather than combining them into total returns as standard finance theory predicts. Individual investors, mutual funds, and institutions are all less likely to sell dividend-paying stocks; the disposition effect—the tendency to sell winners and hold losers—tracks price changes rather than total returns; analysts’ price forecasts neglect the mechanical price decline on ex-dividend dates; and dividend reinvestment is rare even among institutional investors. <span class="citation" data-cites="HartSolo:19">Hartzmark and Solomon (2019)</span> term the resulting error the “free dividends fallacy”: because investors do not perceive the tradeoff between dividends and price declines, dividends appear to be a costless source of income.</p>
+<p>Associative recognition provides a cognitive foundation for this disconnect. In our framework, the relevant cue is the stock’s recent performance. However, a stock’s performance has two attributes: the price change <span class="math inline">\(\Delta p\)</span> and the dividend payment <span class="math inline">\(\delta\)</span>. When these attributes are encoded in separate contexts (because they are experienced at different times or through different information channels), they retrieve dissimilar context vectors, just as Palm and 3Com retrieve different contexts despite being economically linked.</p>
+<p>Formally, let <span class="math inline">\(d_{\Delta p}\)</span> denote the cue associated with the price change and <span class="math inline">\(d_\delta\)</span> the cue associated with the dividend payment. When the investor assesses whether the stock is performing well (target <span class="math inline">\(h\)</span>), each cue retrieves its own context: <span class="math inline">\(\boldsymbol{x}_{d_{\Delta p}}\)</span> and <span class="math inline">\(\boldsymbol{x}_{d_\delta}\)</span>. Because dividends are experienced as small, stable, positive payments while price changes are experienced as large, volatile movements, these cues retrieve different contexts: <span class="math display">\[\boldsymbol{x}_{d_\delta}\cdot\boldsymbol{x}_h \neq
+\boldsymbol{x}_{d_{\Delta p}}\cdot\boldsymbol{x}_h.\]</span> The investor evaluates the two attributes separately rather than combining them into a single return <span class="math inline">\(r = \Delta p/p + \delta/p\)</span>. Dividends, encoded in a context of stability and positive income, consistently retrieve a context similar to the “good outcome” target. This generates the free dividends fallacy: the investor judges dividend-paying stocks favorably on the dividend dimension while separately (and independently) evaluating them on the price-change dimension. The result is a failure of the arbitrage mechanism embedded in Miller–Modigliani irrelevance, as investors who mentally account for price and dividend returns separately will pay a premium for dividend-paying stocks when the appeal of stable income is high—precisely the pattern <span class="citation" data-cites="HartSolo:19">Hartzmark and Solomon (2019)</span> document.</p>
+<h3>The cross-section of stock returns and excess volatility</h3>
+<p>The recognition mechanism also speaks to two long-standing quantitative puzzles in finance: the value premium and excess volatility.</p>
+<h5>The cross-section of stock returns.</h5>
+<p>Growth stocks—those with low book-to-market ratios—earn lower average returns than value stocks, a pattern difficult to attribute to conventional risk <span class="citation" data-cites="FamaFren:92 LettWach:07">(Fama and French 1992; Lettau and Wachter 2007)</span>. <span class="citation" data-cites="LaPo:96">(La Porta 1996)</span> documents that stocks with high analyst long-term growth (LTG) forecasts subsequently underperform, a result replicated by <span class="citation" data-cites="Bordetal:19Stock">(Bordalo et al. 2019a)</span>; <span class="citation" data-cites="GuoWach:25">(Guo and Wachter 2025)</span> connect this bias explicitly to the value premium, showing that growth companies receive upward-biased forecasts relative to value companies.</p>
+<p>Let <span class="math inline">\(\Omega\)</span> denote the population of firms. Each firm <span class="math inline">\(i\in\Omega\)</span> has an expected annual growth rate of earnings <span class="math inline">\(\lambda_i\in\{\lambda_\ell,\lambda_\calh\}\)</span>, where <span class="math inline">\(\lambda_\ell&lt;\lambda_\calh\)</span>. Let <span class="math inline">\(G_{iT}\)</span> denote average past growth for firm <span class="math inline">\(i\)</span>, categorized as either high (<span class="math inline">\(G_{iT}\in\mathcal{G}_\calh\equiv d\)</span>) or low (<span class="math inline">\(G_{iT}\in\mathcal{G}_\ell\equiv {-d}\)</span>). Analysts observe each firm and encode the pair <span class="math inline">\(\{G_{iT},\lambda_i\}\)</span> in the same context, forming the memory matrix <span class="math inline">\(M\)</span>.<sup>14</sup> We are in the setting of Theorem 1. The cue is past growth <span class="math inline">\(\calG_\calh\)</span>; the targets are <span class="math inline">\(\lambda_\calh\)</span> and <span class="math inline">\(\lambda_\ell\)</span>. The agent judges a high-past-growth firm to be high-growth if <span class="math display">\[\boldsymbol{x}_{\lambda_\calh}\cdot\boldsymbol{x}_{\calG_\calh} = \frac{P(\lambda_\calh,G\in\mathcal{G}_\calh)}{\sqrt{P(\lambda_\calh)}}
+&gt; \frac{P(\lambda_\ell,G\in\mathcal{G}_\calh)}{\sqrt{P(\lambda_\ell)}} = \boldsymbol{x}_{\lambda_\ell}\cdot\boldsymbol{x}_{\calG_\calh},\]</span> which is more likely when high-growth firms are rare. Table 3 maps the variables. The mechanism is the same as in the experimental setting: the abundance of low-past-growth firms with <span class="math inline">\(\lam_\ell\)</span> erodes the retrieval strength of the decoy association (<span class="math inline">\(\calG_\calh\)</span>, <span class="math inline">\(\lam_\ell\)</span>). Investors bid up the prices of firms they judge as high-growth; as more data arrives and <span class="math inline">\(P(\lam_\calh|\calG_\calh)\to 0\)</span> or <span class="math inline">\(1\)</span> (Theorem 3), errors correct and returns disappoint—generating the value premium.</p>
+<div class="center">
+<p> <span data-label="tab:cross-section"></span></p>
+<div>
+<table>
+<caption>Mapping between cognitive model and economic forecasts</caption>
+<tbody>
+<tr>
+<td style="text-align: left;">Role in</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Theorem 1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Earnings</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Recession</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">cognitive model</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">notation</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">experiment</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">expectation</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Forecasting</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cue</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">High past growth <span class="math inline">\(\calG_\calh\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Recession indicators <span class="math inline">\(\calG_\calr\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Decoy</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(-d\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Word</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Low past growth <span class="math inline">\(\calG_\ell\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Normal-times indicators <span class="math inline">\(\calG_\caln\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Target 1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Orange</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">High future growth <span class="math inline">\(\lam_\calh\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Recession <span class="math inline">\(z_{t+1}=1\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Target 2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(-h\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Low future growth <span class="math inline">\(\lam_\ell\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Normal times <span class="math inline">\(z_{t+1}=0\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h5>Excess volatility.</h5>
+<p>Stock prices, investment, and unemployment all exhibit volatility that rational-expectations models struggle to match <span class="citation" data-cites="CampShil:88 Gour:12 Hall:17">(Campbell and Shiller 1988; Gourio 2012; Hall 2017)</span>. Our framework offers a parsimonious explanation. Let <span class="math inline">\(z_t\in\{0,1\}\)</span> indicate a recession and let <span class="math inline">\(\calG_t\in\{\calG_\calr,\calG_\caln\}\)</span> summarize current economic indicators. As above, agents encode indicator–outcome pairs <span class="math inline">\((\calG_t,z_{t+1})\)</span> in their memory matrix and judge the likelihood of a recession by comparing <span class="math inline">\(\boldsymbol{x}_{\calG_t}\cdot\boldsymbol{x}_\calr\)</span> with <span class="math inline">\(\boldsymbol{x}_{\calG_t}\cdot\boldsymbol{x}_{\caln}\)</span>. Because growth is largely unpredictable, even mildly negative indicators evoke the recession context—agents overreact to signals that a Kalman filter would largely ignore.<sup>15</sup> These exaggerated beliefs lower stock valuations and depress hiring and capital expenditures; when the recession fails to materialize, valuations rebound on surprisingly good news—generating the excess volatility observed in the data.</p>
+<h2>Conclusion</h2>
+<p>This paper provides a cognitive foundation for Kahneman and Tversky’s representativeness heuristic based on associate principles of memory. Our key insight is that, while apparently probabilistic in nature, the questions posed by the Kahneman and Tversky experiments are in fact about similarity. Thus, they are amenable to the tools of associative memory and, in particular, of retrieved context. Whether or not items are experienced under the same context governs whether the agent or subject views such items as similar, and ultimately drives likelihood judgements.</p>
+<p>The associative memory approach leads to a theory of inference that is highly non-Bayesian but also tightly disciplined by both theory and experimental observation. We build on the foundational work of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> to show that our model can not only explain the qualitative and narrative-based Kahneman and Tversky results, but also provide a quantitative fit to the experimental results obtained in a controlled setting. We build on a previous model of the paired associates (specifically associative recognition) task. Indeed, offering a unified explanation of such seemingly disparate paradigms as paired associates and representativeness is part of the appeal of our approach.</p>
+<p>The reason that contextual retrieval is able to explain the representativeness heuristic is that it naturally provides a role for observations in which targets co-occur with decoy distributions. What matters isn’t, for example, how many high growth companies turn out to resemble Nvidia, but rather how many low growth companies do not. The futures of low-growth companies erode contextual similarity, even though they have no role in Bayesian reasoning. At the same time, this cognitive mechanism is “almost right” and is thus challenging to correct with conscious effort. This may help explain the persistence of financial anomalies.</p>
+<p>Our model successfully demonstrates the role of the kernel of truth and the role of alternative associations, as well as providing an excellent quantitative fit to experimental data. The conjunction fallacy emerges naturally when composite representations simultaneously bring to mind multiple associations. In financial markets, the recognition mechanism accounts for a range of anomalies: negative stub values in equity carve-outs, the price effects of corporate name changes and stock splits, the disconnect between prices and dividends, and the long-standing puzzles of the value premium and excess volatility.</p>
+<p>Several avenues for future research emerge from this work. First, the model predicts that the representativeness heuristic arises from the dynamics of paired associates. Further experiments could explore this link. Second, while highly tractable, the model abstracts from essential principles of memory, such as temporal contiguity. Re-introducing these memory features will eventually be important in producing a unified theory. Third, the model may provide the potential to explain other behavioral anomalies, such as the disposition effect <span class="citation" data-cites="Yeunetal:25">(Yeung et al. 2025)</span>.</p>
+<p>Finally, while the representativeness heuristic leads to systematic errors in probability judgment, it may serve an adaptive function. The examples presented here have as a key feature that they involve asymmetric associations. It may be that in cases where associations are more symmetric, the heuristic does not face these problems and may have advantages in computability. Further work could also elucidate these advantages, pointing to a more general theory of cognition.</p>
+<p><strong>Appendix</strong></p>
+<h2>Questions regarding probability and number</h2>
+<p>Throughout the main text, we focus on what the model implies for the relative likelihood of hypotheses—that is, whether an agent judges one hypothesis to be more likely than another. However, the model can be naturally extended to explain a broader range of phenomena, including those in which agents state a probability.</p>
+<p>As before, free recall is <em>not</em> required—the agent need not generate features from memory. For example, in the <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> experiment, in which agents are rapidly shown a set of words or numbers, it would not be realistic for subjects to remember specific instances and then count them up. Rather, subjects translate the similarities into probabilities. The Luce choice rule <span class="citation" data-cites="Luce:59">(Luce 1959)</span> provides a natural way to do this.</p>
+<p>Let <span class="math inline">\(F(\cdot)\)</span> be an increasing continuous function defined on the non-negative real numbers. For example <span class="math inline">\(F(x) = x^\eta\)</span> for <span class="math inline">\(\eta&gt;0\)</span>. Assume the setting in the 1. The Luce choice rule gives the following for elicited probability <span class="math inline">\(\Phat\)</span>: <span class="math display">\[
+\Phat(h|d) = \frac{F(\boldsymbol{x}_h\cdot \boldsymbol{x}_d)}{\sum_{h&#39;\in \calH}F(\boldsymbol{x}_{h&#39;}\cdot \boldsymbol{x}_d)}
+
+\]</span> If the question pertains to the number of instances, the agents estimate a quantity <span class="math inline">\(\Nhat\)</span> and then apply <span class="math inline">\(\Phat(h|d)\Nhat\)</span>. Restricting attention to <span class="math inline">\(F(x) = x^\eta\)</span>, the lower is <span class="math inline">\(\eta\)</span>, the more elicited probabilities will shrink toward equal probabilities. Regardless of <span class="math inline">\(\eta\)</span>, elicited probabilities will be equal if the inner products are equal and will be one or zero as the relative inner products diverge (preserving the results of Section 3.3).</p>
+<p>To summarize:</p>
+<ol>
+<li><p>Agents form judgments of relative likelihood based on the cosine similarity of the retrieved context vectors (see 1).</p></li>
+<li><p>Agents assess probabilities based on cosine similarity combined with a Luce choice rule.</p></li>
+<li><p>Agents assess quantities by multiplying probability assessments with estimates of the total number of items.</p></li>
+</ol>
+<p>These assumptions suffice to map the associative recognition task into probabilistic judgment. The model could be easily extended to account for processing noise, as in Section 3.4.</p>
+<p>These assumptions only rely on subjects understanding that probabilities sum to one and knowing, roughly, the number of items they have seen. It is straightforward to show that, given these assumptions, the model satisfies Predictions 1–3 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>. The correlational patterns reported by <span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span> further support the hypothesis of the same fundamental mechanism driving the qualitative likelihood statement and the quantitative probabilistic and numerical ones.<sup>16</sup></p>
+<p>However, there are circumstances where these assumptions may not be reasonable. One, described by <span class="citation" data-cites="Bordetal:23">(Bordalo et al. 2023)</span> and in recent work by <span class="citation" data-cites="ConlKwon:25">(Conlon and Kwon 2025)</span>, is that the list of possible hypotheses is not obvious. In that case, free recall most likely comes into play, and the probability of any given item may be biased upward or downward based on what the presence of features does to cue or suppress items during free recall. A second is when subjects are explicitly cued with a probability. Because so much of the literature on probabilistic reasoning involves a probability as a cue, we consider one such case in detail.</p>
+<p>One example, frequently cited in the context of the representativeness heuristic is <span class="citation" data-cites="Cassetal:78">(Casscells et al. 1978)</span>. <span class="citation" data-cites="Cassetal:78">Casscells et al. (1978)</span> asked a group of medical professionals the following question: “If a test to detect a disease whose prevalence is 1/1000 has a false positive rate of 5 percent, what is the chance that a person found to have a positive result actually has the disease, assuming that you know nothing about the person’s symptoms or signs?" The correct answer is around 1 in 51 (less than <span class="math inline">\(2\%\)</span>): 1 of the 1000 will have an accurate positive test, and 5% of the remaining 999 (about 50 people) will have false positives. The mean response was 55.9% and the modal response, given by 45% of the participants, was 95%.<sup>17</sup> 18% of the participants gave the correct answer.</p>
+<p>This and similar studies <span class="citation" data-cites="Eddy:82">(Eddy 1982)</span> are subject to the criticism that they are asking agents to solve a probability problem, whereas in real-life settings, agents form judgements based on their experience. Suppose, however, we were to assume that the example was an accurate representation of cases considered by physicians and stored in their memory. Our model would predict that physicians would give an overstated probability of disease, but one that nonetheless is below 50%. However, there is no reason to believe that the example is an accurate representation; physicians may generally handle conditions with greater prevalence. Moreover, 95% itself represents a cue. Thus subjects, drawing from their memory, believe that the test makes disease more likely than otherwise, and then produce the number that is given to them. <span class="citation" data-cites="Bordetal:25">(Bordalo et al. 2025)</span> consider several examples of incorrect probabilistic reasoning, emphasizing the importance of the cue.</p>
+<h2>Manipulation of recall through cues</h2>
+<p>Not surprisingly, this model which is designed to account for the role of cues, also accounts for cue-dependent recall as demonstrated by the third study of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>. Study 3 manipulates Study 1 by introducing a third attribute to the items: font size.<sup>18</sup> All subjects are shown 10 large orange numbers, 15 small blue numbers, and 25 large blue words. There are then two treatments. Subjects in the color treatment are asked 18 (what is the likely color of a number) and 18 (what is the probability that a number is orange). Subjects in the size treatment are instead asked about size:</p>
+<ol start="5">
+<li><p>“An image was randomly drawn from the images that were just shown to you. The chosen image showed a number. What is the likely font size of a randomly drawn number?” <span data-label="Q:5"></span></p></li>
+<li><p>“An image was randomly drawn from the images that were just shown to you. The chosen image showed a number. What is the probability that a randomly drawn number is large?” <span data-label="Q:6"></span></p></li>
+</ol>
+<p>Regardless of the treatment, the Bayesian response should be the same. The goal of the study is therefore to study the importance of the cue, specifically to test whether the associations formed with the large blue words affect the judgments, despite their irrelevance to the questions. However, <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> show in the data that</p>
+<p><span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> predict that the in the color treatment, agents are more likely to recall that the item is orange than they are that the item is large in the size treatment, which is in fact what the data show.</p>
+<p>Our model makes the same prediction. Intuitively, in the color treatment, the presence of large <em>blue</em> words weakens the association between number and blue; whereas in the size treatment, the presence of <em>large</em> blue words weakens the association between number and orange (since both are large).</p>
+<p>Formally, in the color treatment, the agent evaluates the inner products: <span class="math display">\[\boldsymbol{x}_{\textsc{ Blue}}\cdot \boldsymbol{x}_{\textsc{ Number}}= \frac{P(\textsc{ Blue},\textsc{ Number})}{\sqrt{P(\textsc{ Blue})P(\textsc{ Number})}} = \frac{15}{\sqrt{15+25}\sqrt{25}},\]</span> and <span class="math display">\[\boldsymbol{x}_{\textsc{ Orange}}\cdot \boldsymbol{x}_{\textsc{ Number}}= \frac{P(\textsc{ Orange},\textsc{ Number})}{\sqrt{P(\textsc{ Orange})P(\textsc{ Number})}} = \frac{10}{\sqrt{10}\sqrt{25}}.\]</span> In the size treatment, the agent instead evaluates <span class="math display">\[\boldsymbol{x}_{\textsc{ Small}}\cdot \boldsymbol{x}_{\textsc{ Number}}= \frac{P(\textsc{ Small},\textsc{ Number})}{\sqrt{P(\textsc{ Small})P(\textsc{ Number})}} = \frac{15}{\sqrt{15}\sqrt{25}}\]</span> and <span class="math display">\[\boldsymbol{x}_{\textsc{ Large}}\cdot \boldsymbol{x}_{\textsc{ Number}}= \frac{P(\textsc{ Large},\textsc{ Number})}{\sqrt{P(\textsc{ Large})P(\textsc{ Number})}} = \frac{10}{\sqrt{10 + 25}\sqrt{25}}.\]</span> In the color treatment, the ratio of inner products is <span class="math display">\[\frac{\boldsymbol{x}_{\textsc{ Orange}}\cdot \boldsymbol{x}_{\textsc{ Number}}}{\boldsymbol{x}_{\textsc{ Blue}}\cdot \boldsymbol{x}_{\textsc{ Number}}} \approx 1.3,\]</span> whereas in the size treatment, the corresponding ratio is <span class="math display">\[\frac{\boldsymbol{x}_{\textsc{ Large}}\cdot \boldsymbol{x}_{\textsc{ Number}}}{\boldsymbol{x}_{\textsc{ Small}}\cdot \boldsymbol{x}_{\textsc{ Number}}} \approx 0.4.\]</span> Thus, the model predicts that subjects are more likely to judge the number to be orange in the color treatment versus large in the size treatment. Likewise, under a Luce choice rule, the subjective probability of orange/large will be higher in the color treatment.</p>
+<h2>Alternative model fit to <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span></h2>
+<p>In the main text, we estimate <span class="math inline">\(\sigma\)</span> using all moments in Figures 1 and 2 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>. Here, we show that we can alternatively calibrate the value of <span class="math inline">\(\sigma^2\)</span> to a single moment: the proportion of subjects who judged orange to be more likely in the gray treatment. From the computations in the main text and Figure 1 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span>, <span class="math inline">\(\sigma^2\)</span> solves <span class="math display">\[P(-0.2027  &gt; \tilde{\epsilon}) = 0.295.\]</span> Letting <span class="math inline">\(\Phi(z)\)</span> denote the standard normal CDF, this means that<sup>19</sup> <span class="math display">\[\hat{\sigma} = \frac{-0.2027}{\Phi^{-1}(0.295)} \approx 0.3762.\]</span> Given this calibration, we can then compute the model-implied moments for the blue treatment in Figures 1 and 2 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> from the normal CDF, as described above. Figure 4 compares the data in their Figure 1 to that implied by our model. Figure 5 plots the comparison for their Figure 2.</p>
+
+
+
+<figcaption>Study 2, Figure 2 of <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> The noise parameter <span class="math inline">\(\sigma\)</span> is calibrated to match the gray treatment in Figure 1.</figcaption>
+</figure>
+<div class="references csl-bib-body hanging-indent" role="list">
+<div class="csl-entry" role="listitem">
+Baker, Malcolm, Robin Greenwood, and Jeffrey Wurgler. 2009. <span>“Catering Through Nominal Share Prices.”</span> <em>Journal of Finance</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Barberis, N., A. Shleifer, and R. Vishny. 1998. <em>A Model of Investor Sentiment</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bhatia, S. 2017. <em>Associative Judgement and Vector Space Semantics</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Birru, Justin, and Baolian Wang. 2016. <span>“Nominal Price Illusion.”</span> <em>Journal of Financial Economics</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., K. Coffman, N. Gennaioli, F. Schwerter, and A. Shleifer. 2021. <em>Memory and Representativeness</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., K. Coffman, N. Gennaioli, and A. Shleifer. 2016. <em>Stereotypes</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., J. J. Conlon, N. Gennaioli, S. Y. Kwon, and A. Shleifer. 2023. <em>Memory and Probability</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., J. J. Conlon, N. Gennaioli, S. Y. Kwon, and A. Shleifer. 2025. <em>How People Use Statistics</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., N. Gennaioli, R. L. Porta, and A. Shleifer. 2019b. <em>Diagnostic Expectations and Stock Returns</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., N. Gennaioli, R. L. Porta, and A. Shleifer. 2019a. <em>Diagnostic Expectations and Stock Returns</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., N. Gennaioli, and A. Shleifer. 2018. <em>Diagnostic Expectations and Credit Cycles</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Bordalo, P., N. Gennaioli, and A. Shleifer. 2020. <em>Memory, Attention, and Choice</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Campbell, J. Y., and R. J. Shiller. 1988. <em>The Dividend-Price Ratio and Expectations of Future Dividends and Discount Factors</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Casscells, W., A. Schoenberger, and T. B. Graboys. 1978. <em>Interpretation by Physicians of Clinical Laboratory Results</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Conlon, J. J., and S. Y. Kwon. 2025. <em>Beliefs from Cues</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Cooper, Michael J., Orlin Dimitrov, and P. Raghavendra Rau. 2001. <span>“A Rose.com by Any Other Name.”</span> <em>Journal of Finance</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Desai, Hemang, and Prem C. Jain. 1997. <span>“Long-Run Common Stock Returns Following Stock Splits and Reverse Splits.”</span> <em>Journal of Business</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Eddy, D. M. 1982. <em>Probabilistic Reasoning in Clinical Medicine: Problems and Opportunities</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Estes, W. K. 1972. <em>Research and Theory on the Learning of Probabilities</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Estes, W. K. 1976. <em>The Cognitive Side of Probability Learning</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Fama, E. F., and K. R. French. 1992. <em>The Cross-Section of Expected Returns</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Gennaioli, N., and A. Shleifer. 2010. <em>What Comes to Mind</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Gennaioli, N., and A. Shleifer. 2018. <em>A Crisis of Beliefs: Investor Psychology and Financial Fragility</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Gomes, J. F., M. Grotteria, and J. A. Wachter. 2019. <em>Cyclical Dispersion in Expected Defaults</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Gourio, F. 2012. <em>Disaster Risk and Business Cycles</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Guo, H., and J. A. Wachter. 2025. <em><span>“Superstitious”</span> Investors</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Hall, R. E. 2017. <em>High Discounts and High Unemployment</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Hartzmark, Samuel M., and David H. Solomon. 2019. <span>“The Dividend Disconnect.”</span> <em>Journal of Finance</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Healey, M. K., N. M. Long, and M. J Kahana. 2019. <span>“Contiguity in Episodic Memory.”</span> <em>Psychonomic Bulletin &amp; Review</em> 26 (3): 699—720.
+</div>
+<div class="csl-entry" role="listitem">
+Hockley, W. E. 1992. <span>“Item Versus Associative Information: <span>F</span>urther Comparisons of Forgetting Rates.”</span> <em>Journal of Experimental Psychology: Learning, Memory, and Cognition</em> 18: 1321–30.
+</div>
+<div class="csl-entry" role="listitem">
+Howard, M. W., and M. J. Kahana. 2002. <span>“A Distributed Representation of Temporal Context.”</span> <em>Journal of Mathematical Psychology</em> 46 (3): 269–99. <a href="https://doi.org/10.1006/jmps.2001.1388">https://doi.org/10.1006/jmps.2001.1388</a>.
+</div>
+<div class="csl-entry" role="listitem">
+Ikenberry, David L., Graeme Rankine, and Earl K. Stice. 1996. <span>“What Do Stock Splits Really Signal?”</span> <em>Journal of Financial and Quantitative Analysis</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Jin, B. J., M. Kahana, and D. J. Halpern. 2024. <em>A Theory of Memory for Items and Associations</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Kahana, M. J. 2012. <em>Foundations of Human Memory</em>. Oxford University Press.
+</div>
+<div class="csl-entry" role="listitem">
+Kahneman, D., and A. Tversky. 1972. <em>Subjective Probability: A Judgment of Representativeness</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Kahneman, D., and A. Tversky. 1973. <em>On the Psychology of Prediction</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Kilic, M., and J. A. Wachter. 2018. <em>Risk, Unemployment, and the Stock Market: A Rare-Event-Based Explanation of Labor Market v</em>.
+</div>
+<div class="csl-entry" role="listitem">
+La Porta, Rafael. 1996. <span>“Expectations and the Cross-Section of Stock Returns.”</span> <em>Journal of Finance</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Lamont, Owen A., and Richard H. Thaler. 2003. <span>“Can the Market Add and Subtract? Mispricing in Tech Stock Carve-Outs.”</span> <em>Journal of Political Economy</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Lettau, M., and J. A. Wachter. 2007. <em>Why Is Long-Horizon Equity Less Risky? A Duration-Based Explanation of the Value Premium</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Luce, R. D. 1959. <em>Individual Choice Behavior</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Manning, J. R., J. C. Hulbert, J. Williams, L. Piloto, L. Sahakyan, and K. A. Norman. 2016. <span>“A Neural Signature of Contextually Mediated Intentional Forgetting.”</span> <em>Psychonomic Bulletin &amp; Review</em> 23: 1534–42.
+</div>
+<div class="csl-entry" role="listitem">
+Metcalfe, J. 1991. <span>“Recognition Failure and the Composite Memory Trace in <span>CHARM</span>.”</span> <em>Psychological Review</em> 98: 529–53. <a href="https://doi.org/10.1037/0033-295X.98.4.529">https://doi.org/10.1037/0033-295X.98.4.529</a>.
+</div>
+<div class="csl-entry" role="listitem">
+Mullainathan, S. 2002. <em>A Memory-Based Model of Bounded Rationality</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Nagel, S., and Z. Xu. 2018. <em>Asset Pricing with Fading Memory</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Osth, A. F., and J. Fox. 2019. <em>Are Associations Formed Across Pairs? A Test of Learning by Temporal Contiguity in Associa</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Osth, Adam F, and Simon Dennis. 2024. <span>“Global Matching Models of Recognition Memory.”</span> In <em>Oxford Handbook of Human Memory</em>, edited by Michael J. Kahana and Anthony D. Wagner, vol. 1. Oxford University Press.
+</div>
+<div class="csl-entry" role="listitem">
+Stanislaw, Harold, and Natasha Todorov. 1999. <span>“Calculation of Signal Detection Theory Measures.”</span> <em>Behavior Research Methods, Instruments, &amp; Computers</em> 31 (1): 137–49. <a href="https://doi.org/10.3758/bf03207704">https://doi.org/10.3758/bf03207704</a>.
+</div>
+<div class="csl-entry" role="listitem">
+Tversky, A., and D. Kahneman. 1974. <em>Judgment Under Uncertainty: Heuristics and Biases</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Tversky, A., and D. Kahneman. 1983. <em>Extensional Versus Intuitive Reasoning: The Conjunction Fallacy in Probability Judgment</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Tversky, A, and D Kahneman. 1973. <span>“<span class="nocase">Availability: A heuristic for judging frequency and probability</span>.”</span> <em>Cognitive Psychology</em> 5 (2): 207–32.
+</div>
+<div class="csl-entry" role="listitem">
+Wachter, J. A., and M. J. Kahana. 2024. <em>A Retrieved-Context Theory of Financial Decisions</em>.
+</div>
+<div class="csl-entry" role="listitem">
+Yeung, T. L., R. Liu, J. A. Wachter, M. J. Kahana, and Y. Zhang. 2025. <em>Navigating Through Fear and Greed: The Experience-Driven Disposition Effect</em>.
+</div>
+</div>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li><p>While <span class="citation" data-cites="TverKahn73">(Tversky and Kahneman 1973)</span> consider availability as a heuristic distinct from representativeness, and later cite these two as separate when developing a taxonomy of heuristics <span class="citation" data-cites="TverKahn:74">(Tversky and Kahneman 1974)</span>, <span class="citation" data-cites="TverKahn:83">(Tversky and Kahneman 1983)</span> merge the concepts, as do <span class="citation" data-cites="GennShle:10">(Gennaioli and Shleifer 2010)</span>. The advantage of a cognitive theory is that it can offer a unified theory for various heuristics.↩︎</p></li>
+<li><p>We use the notation <span class="math inline">\(-h, h\)</span> to denote generic distinct elements of <span class="math inline">\(\calH\)</span>. In contrast, we use <span class="math inline">\(-d\)</span> to denote <span class="math inline">\(\calD\setminus\{d\}\)</span>. This removes the need for unnecessary subscripts. In all of the examples we consider, <span class="math inline">\(\calD\)</span> consists of two elements, which implies that the notation is consistent across <span class="math inline">\(\calD\)</span> and <span class="math inline">\(\calH\)</span>. However, nothing in the analysis requires that <span class="math inline">\(\calD\)</span> consist of only two elements.↩︎</p></li>
+<li><p>See <span class="citation" data-cites="WachKaha:24">Wachter and Kahana (2024, fig. 2)</span>.↩︎</p></li>
+<li><p>The data on free recall and associative recognition can be reconciled by allowing contextual persistence to vary over time. The data strongly suggest such time-variation. It has long been known that context can be “reset,” through the use of distractor tasks, and the resetting of context has become a standard element of experimental design <span class="citation" data-cites="HealEtal19">(Healey et al. 2019)</span>. Resetting of contexts implies that the autoregressive coefficient is temporarily equal to zero. To memorize a pair or a set of features experienced together, it may be optimal for a subject to deliberately orthogonalize a context. The idea that a subject can do this for themselves may be surprising, but neural data suggests it is possible <span class="citation" data-cites="MannEtal16">(Manning et al. 2016)</span>.↩︎</p></li>
+<li><p>More realistically, the dimensionality of features and context spaces is probably on the order of <span class="math inline">\(10^7\)</span> or more, with <span class="math inline">\(10^7\)</span> considered a lower bound on neurons in the brain involved in memory storage. We consider a submatrix of <span class="math inline">\(M\)</span>, and the corresponding subvector of features and context.↩︎</p></li>
+<li><p>The theorems below highlight the importance of <span class="math inline">\(P(h,{-d})\)</span> in likelihood judgments regarding <span class="math inline">\(P(h,d)\)</span>. The importance of <span class="math inline">\(P(h,-d)\)</span> is also recognized by <span class="citation" data-cites="Bordetal:21Rep">(Bordalo et al. 2021)</span> who explicitly incorporate it into a reduced-form model of probabilities. Appendix 3.5 compares our model with theirs.↩︎</p></li>
+<li><p>In the gray treatment, gray could also be considered as a third target. However, because no gray numbers were ever observed, its similarity to the cue is trivially zero, so we ignore it.↩︎</p></li>
+<li><p>For gray, the inner product will be zero, so no subject would ever say gray is most likely.↩︎</p></li>
+<li><p>In Appendix 9, we also consider a simpler calibration that exactly identifies <span class="math inline">\(\sigma\)</span> from one moment, the gray treatment.↩︎</p></li>
+<li><p>This statement is an approximate one because the functional form (–) does not nest our results. Rather, our model offers a cognitive foundation for why <span class="math inline">\(P(h,-d)\)</span> would enter the probability assessment of <span class="math inline">\(P(h|d)\)</span>.↩︎</p></li>
+<li><p><em>We use the notation <span class="math inline">\(h_1\)</span> to denote a generic element of <span class="math inline">\(\calH_1\)</span>, and similarly <span class="math inline">\(h_2\)</span> to denote a generic element of <span class="math inline">\(\calH_2\)</span> when the second subscript is not necessary for clarity.</em>↩︎</p></li>
+<li><p>The formal structure also maps into the conjunction fallacy of Section 4. Define <span class="math inline">\(\calH_1\)</span> as indexing states regarding Palm’s specific business prospects and <span class="math inline">\(\calH_2\)</span> as indexing 3Com’s overall solvency. The states in which Palm pays off are the conjunction <span class="math inline">\(h_1 \cap h_2\)</span>: Palm succeeds <em>and</em> 3Com remains solvent. Under condition (), investors can judge this conjunction as more probable than <span class="math inline">\(h_2\)</span> alone, generating a negative stub value. <span class="citation" data-cites="Bordetal:23">(Bordalo et al. 2023)</span> cite <span class="citation" data-cites="LamoThal:03">(Lamont and Thaler 2003)</span> and argue that sub-additivity (state prices summing to more than one) can account for carve-out mispricing. But sub-additivity is weaker than the conjunction fallacy: it says the parts sum to more than the whole, but it does not imply that a conjunction is judged more likely than a component.↩︎</p></li>
+<li><p>The price-level channel is ambiguous for reverse splits: the relationship between nominal price and retrieved associations need not be monotonic, as very low prices can retrieve contexts associated with either high-growth potential or financial distress. The event-association channel, by contrast, is unambiguous.↩︎</p></li>
+<li><p>This memory database could arise from the analyst organizing historical data at the time of analysis, or through the mechanism of thoughts becoming data <span class="citation" data-cites="WachKaha:24">(Wachter and Kahana 2024)</span>. <span data-label="fn:thoughtsbecomedata"></span>↩︎</p></li>
+<li><p>See <span class="citation" data-cites="GuoWach:25">(Guo and Wachter 2025)</span>, <span class="citation" data-cites="Bordetal:19Macro">(Bordalo et al. 2019b)</span>, <span class="citation" data-cites="Gomeetal:19">(Gomes et al. 2019)</span>, and <span class="citation" data-cites="KiliWach:18">(Kilic and Wachter 2018)</span> for quantitative models built on biased beliefs about profitability.↩︎</p></li>
+<li><p>The link between judgments of likelihood, probability assessments, and numerical assessments is most likely enhanced when subjects are asked these questions as part of the same experiment, as in <span class="citation" data-cites="Bordetal:21Rep">Bordalo et al. (2021)</span>. In this case, the initial answer given by the subject becomes a data point <span class="citation" data-cites="WachKaha:24 Mull:02">(Wachter and Kahana 2024; Mullainathan 2002)</span> in their memory database.↩︎</p></li>
+<li><p>This exhibits kernel of truth because <span class="math inline">\(P(h|d) = P(h,d)/P(d) \approx 0.001/0.05  =1/50\)</span>, whereas <span class="math inline">\(P(h) = 1/1000\)</span>. Note that we have used <span class="math inline">\(P(h,d) = P(h)\)</span> under the assumption that the false negative rate <span class="math inline">\(P(-d|h) = P(h,-d)/P(h) = 0\)</span>; further note <span class="math inline">\(P(d) = P(h,d) + P({-h},d) = 0.001 + 0.05\times 0.999\approx
+  0.05\)</span>. However, subjects are not reversing conditional probabilities. The model response of 0.95 is <span class="math inline">\(P(h|d)\)</span>, nor <span class="math inline">\(P(d|h)\)</span>, but rather <span class="math inline">\(P({-d}|{-h})\)</span>, or one minus the false positive rate of <span class="math inline">\(P(d|{-h})\)</span>.↩︎</p></li>
+<li><p>In Study 1, subjects are shown 10 orange numbers, 15 blue numbers, and 25 blue words. After observing the sequence, subjects are asked a series of questions:</p>
+<ol>
+<li><p>“An image was randomly drawn from the images that were just shown to you. The chosen image showed a number. What is the likely color of the chosen image?” <span data-label="Q:1"></span></p></li>
+<li><p>“An image was randomly drawn from the images that were just shown to you. The chosen image showed a number. What is the probability that the number is orange?” <span data-label="Q:2"></span></p></li>
+<li><p>“How many orange numbers were shown to you?” <span data-label="Q:3"></span></p></li>
+<li><p>“How many blue numbers were shown to you?” <span data-label="Q:4"></span></p></li>
+</ol>
+↩︎</li>
+<li><p>The threshold <span class="math inline">\(-0.20\)</span> is <span class="math inline">\(z=\Phi^{-1}(0.3)\)</span> standard deviations <span class="math inline">\(\sigma\)</span> away from zero, so <span class="math inline">\(-0.20 = \sigma z\)</span>.↩︎</p></li>
+</ol>
+</section>
