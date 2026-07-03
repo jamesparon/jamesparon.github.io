@@ -1,0 +1,19 @@
+# {{ paper.title }}
+
+**Authors:** {{ paper.authors_str }}
+**Date:** {{ paper.date_display }}
+**Affiliation:** {{ site.affiliation }}
+**PDF (definitive version):** {{ paper.url }}paper.pdf
+{% if keywords_str %}**Keywords:** {{ keywords_str }}
+{% endif %}{% if jel_str %}**JEL codes:** {{ jel_str }}
+{% endif %}
+
+> Text below is extracted from the final PDF for machine reading. The PDF is authoritative.
+
+## Abstract
+
+{{ paper.abstract }}
+
+## Full text
+
+{{ paper.fulltext }}

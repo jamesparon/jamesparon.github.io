@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block head_extra %}
+{{ head_meta | safe }}
+{% endblock %}
+{% block content %}
+<article class="paper">
+  <p class="breadcrumb"><a href="{{ site_url }}/">← All papers</a></p>
+  <h1>{{ paper.title }}</h1>
+  <p class="meta authors">{{ paper.authors_str }}</p>
+  <p class="meta date">{{ paper.date_display }} · {{ site.affiliation }}</p>
+
+  <p class="cta-row">
+    <a class="btn" href="{{ paper.url }}paper.pdf">Read the PDF (definitive version)</a>
+    <a class="btn btn-secondary" href="{{ site.homepage }}">More at jamesparon.com</a>
+  </p>
+
+  {% if paper.abstract %}
+  <section class="abstract">
+    <h2>Abstract</h2>
+    {{ abstract_html | safe }}
+  </section>
+  {% endif %}
+
+  {% if keywords_str %}<p class="meta"><strong>Keywords:</strong> {{ keywords_str }}</p>{% endif %}
+  {% if jel_str %}<p class="meta"><strong>JEL codes:</strong> {{ jel_str }}</p>{% endif %}
+
+  <details class="fulltext">
+    <summary>Full text (machine-readable transcript extracted from the PDF)</summary>
+    <p class="muted">Automatically extracted from the final PDF for search engines
+    and LLMs. Formatting, tables, and equations may be imperfect — the
+    <a href="{{ paper.url }}paper.pdf">PDF</a> is authoritative.</p>
+    <div class="fulltext-body">
+      {{ fulltext_html | safe }}
+    </div>
+  </details>
+</article>
+{% endblock %}

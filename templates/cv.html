@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head_extra %}
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Curriculum Vitae — {{ site.author_name }}">
+<meta property="og:url" content="{{ site_url }}/cv/">
+{% endblock %}
+{% block content %}
+<article class="cv">
+  <h1>Curriculum Vitae</h1>
+  <p>{{ site.author_name }} — {{ site.affiliation }}.</p>
+  <p class="cta-row">
+    <a class="btn" href="{{ site_url }}/cv/ParonCV.pdf">Download CV (PDF)</a>
+    <a class="btn btn-secondary" href="{{ site.homepage }}">jamesparon.com</a>
+  </p>
+</article>
+{% endblock %}
