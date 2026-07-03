@@ -36,8 +36,21 @@ h1 { font-size: 1.7rem; line-height: 1.25; margin: 28px 0 10px; }
 h2 { font-size: 1.2rem; margin: 34px 0 10px; }
 h3 { font-size: 1.12rem; margin: 0 0 4px; }
 
-.intro p { color: #333; }
-.cta a { font-weight: 600; }
+.intro h1 { margin-bottom: 6px; }
+.affiliation {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  margin: 0 0 18px;
+}
+.blurb { color: #333; margin: 0 0 22px; }
+.mainsite { margin: 0 0 8px; }
+.mainsite a {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.venue { color: var(--accent); font-weight: 600; }
 
 .paper-list { list-style: none; padding: 0; margin: 0; }
 .paper-item { padding: 20px 0; border-bottom: 1px solid var(--border); }

@@ -32,7 +32,8 @@ window.MathJax = {
   <p class="breadcrumb"><a href="{{ site_url }}/">← All papers</a></p>
   <h1>{{ paper.title }}</h1>
   <p class="meta authors">{{ paper.authors_str }}</p>
-  <p class="meta date">{{ paper.date_display }} · {{ site.affiliation }}</p>
+  <p class="meta date">{{ paper.date_display }} · {{ site.affiliation }}{% if paper.venue %}
+    · <span class="venue">Forthcoming, {{ paper.venue }}</span>{% endif %}</p>
 
   <p class="cta-row">
     <a class="btn" href="{{ paper.url }}paper.pdf">Read the PDF (definitive version)</a>
@@ -56,7 +57,7 @@ window.MathJax = {
   </details>
 
   <details class="fulltext" open>
-    <summary>Full text (with mathematics)</summary>
+    <summary>Full text</summary>
     <p class="muted">Converted from the paper's LaTeX source, with equations in
     TeX/MathJax. Tables and figures are simplified; the
     <a href="{{ paper.url }}paper.pdf">PDF</a> is the definitive version.</p>

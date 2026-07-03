@@ -390,8 +390,7 @@ def build():
         print(f"  {p['slug']:38s} src={p['fulltext_source']:3s} "
               f"abstract={len(abstract):4d}  fulltext={len(p['fulltext_md'])}")
 
-    papers.sort(key=sort_key, reverse=True)
-
+    # Display order is the explicit order in papers.yaml (no date sort).
     paper_tpl = env.get_template("paper.html")
     md_tpl = env.get_template("paper.md.j2")
 
@@ -455,6 +454,8 @@ def build():
         page_description=(f"Working papers by {site['author_name']}, {site['affiliation']}. "
                           "Full abstracts and machine-readable text for each paper."),
         canonical=f"{SITE_URL}/", papers=papers,
+        working=[p for p in papers if p.get("status") != "forthcoming"],
+        publications=[p for p in papers if p.get("status") == "forthcoming"],
         person_jsonld=person_jsonld, has_cv=bool(cv),
     ))
     make_og_image({"title": f"{site['author_name']} — Research Papers",

@@ -14,26 +14,44 @@
 {% block content %}
 <section class="intro">
   <h1>{{ site.author_name }}</h1>
-  <p>{{ site.affiliation }}. Working papers in asset pricing, household finance,
-  and macro-finance. This page collects each paper with its full abstract and a
-  machine-readable transcript; the PDF is the definitive version.</p>
-  <p class="cta"><a href="{{ site.homepage }}">→ Main website: jamesparon.com</a></p>
+  <p class="affiliation">Assistant Professor of Finance<br>
+  Stanford Graduate School of Business</p>
+
+  <p class="blurb">This page collects James Paron's research papers, with full
+  abstracts and machine-readable full text so that search engines, Google Scholar,
+  and AI assistants can find and read them. The linked PDF is the definitive
+  version of each paper.</p>
+
+  <p class="mainsite"><a href="{{ site.homepage }}">Visit my main website →
+  jamesparon.com</a></p>
 </section>
+
+{% macro paper_list(items) %}
+<ol class="paper-list">
+  {% for p in items %}
+  <li class="paper-item">
+    <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
+    <p class="meta">{{ p.authors_str }} · {{ p.date_display }}{% if p.venue %} ·
+      <span class="venue">Forthcoming, {{ p.venue }}</span>{% endif %}</p>
+    {% if p.abstract %}<p class="abstract-snippet">{{ p.abstract_short }}</p>{% endif %}
+    <p class="links">
+      <a href="{{ p.url }}">Details &amp; full text</a> ·
+      <a href="{{ p.url }}paper.pdf">PDF</a>
+    </p>
+  </li>
+  {% endfor %}
+</ol>
+{% endmacro %}
 
 <section class="papers">
   <h2>Working Papers</h2>
-  <ol class="paper-list">
-    {% for p in papers %}
-    <li class="paper-item">
-      <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
-      <p class="meta">{{ p.authors_str }} · {{ p.date_display }}</p>
-      {% if p.abstract %}<p class="abstract-snippet">{{ p.abstract_short }}</p>{% endif %}
-      <p class="links">
-        <a href="{{ p.url }}">Details &amp; full text</a> ·
-        <a href="{{ p.url }}paper.pdf">PDF</a>
-      </p>
-    </li>
-    {% endfor %}
-  </ol>
+  {{ paper_list(working) }}
 </section>
+
+{% if publications %}
+<section class="papers">
+  <h2>Publications</h2>
+  {{ paper_list(publications) }}
+</section>
+{% endif %}
 {% endblock %}
