@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block head_extra %}
 {{ head_meta | safe }}
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {% endblock %}
 {% block content %}
 <article class="paper">
@@ -24,11 +31,11 @@
   {% if keywords_str %}<p class="meta"><strong>Keywords:</strong> {{ keywords_str }}</p>{% endif %}
   {% if jel_str %}<p class="meta"><strong>JEL codes:</strong> {{ jel_str }}</p>{% endif %}
 
-  <details class="fulltext">
-    <summary>Full text (machine-readable transcript extracted from the PDF)</summary>
-    <p class="muted">Automatically extracted from the final PDF for search engines
-    and LLMs. Formatting, tables, and equations may be imperfect — the
-    <a href="{{ paper.url }}paper.pdf">PDF</a> is authoritative.</p>
+  <details class="fulltext" open>
+    <summary>Full text (with mathematics)</summary>
+    <p class="muted">Converted from the paper's LaTeX source, with equations in
+    TeX/MathJax. Tables and figures are simplified; the
+    <a href="{{ paper.url }}paper.pdf">PDF</a> is the definitive version.</p>
     <div class="fulltext-body">
       {{ fulltext_html | safe }}
     </div>

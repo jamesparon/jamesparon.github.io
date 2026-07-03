@@ -1,107 +1,177 @@
-# =============================================================================
-# papers.yaml — the ONE file you edit to add or update a paper.
-#
-# HARD RULE: every field here must reflect the FINAL PDF only. The generator
-# extracts the abstract and full text directly from the PDF at build time.
-# Never copy content from slides, code, notes, or draft/older manuscript
-# versions — see docs/plans/2026-07-03-001-feat-searchable-paper-site-plan.md.
-#
-# To add a paper:  1) drop the final PDF in pdfs/  2) add a block below.
-# =============================================================================
-
 site:
-  author_name: "James D. Paron"
-  affiliation: "Stanford University Graduate School of Business"
-  homepage: "https://jamesparon.com"
-  orcid: "https://orcid.org/0009-0001-5768-6424"
-  scholar: "https://scholar.google.com/citations?user=OhpTkHEAAAAJ"
-  gsb: "https://www.gsb.stanford.edu/faculty-research/faculty/james-d-paron"
-  email: "jparon@stanford.edu"
-  # Default institution used for citation_technical_report_institution
-  institution: "Stanford University Graduate School of Business"
-
-# The CV keeps its own page + preserves its existing URL, but is NOT a paper.
+  author_name: James D. Paron
+  affiliation: Stanford University Graduate School of Business
+  homepage: https://jamesparon.com
+  orcid: https://orcid.org/0009-0001-5768-6424
+  scholar: https://scholar.google.com/citations?user=OhpTkHEAAAAJ
+  gsb: https://www.gsb.stanford.edu/faculty-research/faculty/james-d-paron
+  email: jparon@stanford.edu
+  institution: Stanford University Graduate School of Business
 cv:
   pdf: pdfs/ParonCV.pdf
   legacy_pdf: ParonCV.pdf
-
 papers:
-  - slug: wealth-of-stagnation
-    title: "The Wealth of Stagnation: Falling Growth, Rising Valuations"
-    authors: ["James D. Paron"]
-    date: "2026-01-19"
-    date_display: "January 19, 2026"
-    keywords: []
-    jel: []
-    pdf: pdfs/WealthofStagnation.pdf
-    legacy_pdf: WealthofStagnation.pdf
-
-  - slug: depopulation
-    title: "Making Room on an Empty Planet: The Spatial Consequences of Depopulation"
-    authors: ["Tim de Silva", "James D. Paron"]
-    date: "2026-06-25"
-    date_display: "June 25, 2026"
-    keywords: []
-    jel: []
-    pdf: pdfs/Depopulation.pdf
-    legacy_pdf: Depopulation.pdf
-
-  - slug: treasury-ai
-    title: "U.S. Treasury Investors Are Long in AI"
-    authors: ["Howard Kung", "Hanno Lustig", "James D. Paron"]
-    date: "2026-06"
-    date_display: "June 2026"
-    keywords: ["Artificial intelligence", "productivity growth", "Treasury yields", "government debt valuation", "fiscal policy", "term premia"]
-    jel: ["G12", "E43", "H63", "E62", "O33"]
-    pdf: pdfs/TreasuryAI.pdf
-    legacy_pdf: TreasuryAI.pdf
-
-  - slug: who-gains-interest-rates
-    title: "Who Gains When Interest Rates Fall?"
-    authors: ["Sylvain Catherine", "Max Miller", "James D. Paron", "Natasha Sarin"]
-    date: "2026-03-20"
-    date_display: "March 20, 2026"
-    keywords: ["Interest rates", "Portfolio choices", "Inequality", "Social Security"]
-    jel: ["D31", "E21", "G51", "H55"]
-    pdf: pdfs/CMPS.pdf
-    legacy_pdf: CMPS.pdf
-
-  - slug: racial-wealth-gap
-    title: "A Dynamic Model of the Racial Wealth Gap"
-    authors: ["Sylvain Catherine", "Ellen Jiayang Lu", "James D. Paron"]
-    date: "2025-12-16"
-    date_display: "December 16, 2025"
-    keywords: ["Household finance", "Labor income risk", "Portfolio choices", "Life-cycle models", "Wealth inequality", "Racial inequality"]
-    jel: ["G11", "G12", "D14", "D91", "J24", "H06"]
-    pdf: pdfs/CLP.pdf
-    legacy_pdf: CLP.pdf
-
-  - slug: sovereign-default
-    title: "Sovereign Default and the Decline in Interest Rates"
-    authors: ["Max Miller", "James D. Paron", "Jessica A. Wachter"]
-    date: "2025-11-21"
-    date_display: "November 21, 2025"
-    keywords: ["Savings glut", "Inflation expectations", "Rare disasters", "Secular stagnation"]
-    jel: ["E31", "E43", "G12"]
-    pdf: pdfs/MPW.pdf
-    legacy_pdf: MPW.pdf
-
-  - slug: representativeness
-    title: "Associative Learning and Representativeness"
-    authors: ["Michael Jacob Kahana", "James D. Paron", "Jessica A. Wachter"]
-    date: "2025-12-06"
-    date_display: "December 6, 2025"
-    keywords: ["interference", "base-rate neglect", "context", "diagnostic expectations", "recognition"]
-    jel: ["E03", "G02"]
-    pdf: pdfs/Representativeness.pdf
-    legacy_pdf: Representativeness.pdf
-
-  - slug: heterogeneous-agent-asset-pricing
-    title: "Heterogeneous-Agent Asset Pricing: Timing and Pricing Idiosyncratic Risks"
-    authors: ["James D. Paron"]
-    date: "2022-12-15"
-    date_display: "December 15, 2022"
-    keywords: ["Asset pricing", "Incomplete markets", "Heterogeneous agents", "Human capital"]
-    jel: ["E21", "E24", "E32", "E44", "G11", "G12", "J24"]
-    pdf: pdfs/HAAP.pdf
-    legacy_pdf: HAAP.pdf
+- slug: wealth-of-stagnation
+  title: 'The Wealth of Stagnation: Falling Growth, Rising Valuations'
+  authors:
+  - James D. Paron
+  date: '2026-01-19'
+  date_display: January 19, 2026
+  keywords: []
+  jel: []
+  pdf: pdfs/WealthofStagnation.pdf
+  legacy_pdf: WealthofStagnation.pdf
+  tex_dir: _work/wealth-of-stagnation/Decomposition/Paper
+  tex_main: decomp_v04.tex
+- slug: depopulation
+  title: 'Making Room on an Empty Planet: The Spatial Consequences of Depopulation'
+  authors:
+  - Tim de Silva
+  - James D. Paron
+  date: '2026-06-25'
+  date_display: June 25, 2026
+  keywords: []
+  jel: []
+  pdf: pdfs/Depopulation.pdf
+  legacy_pdf: Depopulation.pdf
+  tex_dir: _work/depopulation/Spatial Housing/Paper
+  tex_main: main.tex
+- slug: treasury-ai
+  title: U.S. Treasury Investors Are Long in AI
+  authors:
+  - Howard Kung
+  - Hanno Lustig
+  - James D. Paron
+  date: 2026-06
+  date_display: June 2026
+  keywords:
+  - Artificial intelligence
+  - productivity growth
+  - Treasury yields
+  - government debt valuation
+  - fiscal policy
+  - term premia
+  jel:
+  - G12
+  - E43
+  - H63
+  - E62
+  - O33
+  pdf: pdfs/TreasuryAI.pdf
+  legacy_pdf: TreasuryAI.pdf
+  tex_dir: _work/treasury-ai/treasury_ai_replication/paper
+  tex_main: bonds_long_ai.tex
+- slug: who-gains-interest-rates
+  title: Who Gains When Interest Rates Fall?
+  authors:
+  - Sylvain Catherine
+  - Max Miller
+  - James D. Paron
+  - Natasha Sarin
+  date: '2026-03-20'
+  date_display: March 20, 2026
+  keywords:
+  - Interest rates
+  - Portfolio choices
+  - Inequality
+  - Social Security
+  jel:
+  - D31
+  - E21
+  - G51
+  - H55
+  pdf: pdfs/CMPS.pdf
+  legacy_pdf: CMPS.pdf
+  tex_dir: _work/who-gains-interest-rates/CMPS/aer_revision/text
+  tex_main: CMPS_AER.tex
+- slug: racial-wealth-gap
+  title: A Dynamic Model of the Racial Wealth Gap
+  authors:
+  - Sylvain Catherine
+  - Ellen Jiayang Lu
+  - James D. Paron
+  date: '2025-12-16'
+  date_display: December 16, 2025
+  keywords:
+  - Household finance
+  - Labor income risk
+  - Portfolio choices
+  - Life-cycle models
+  - Wealth inequality
+  - Racial inequality
+  jel:
+  - G11
+  - G12
+  - D14
+  - D91
+  - J24
+  - H06
+  pdf: pdfs/CLP.pdf
+  legacy_pdf: CLP.pdf
+  tex_dir: _work/racial-wealth-gap/Text - Revision 2
+  tex_main: CLP.tex
+- slug: sovereign-default
+  title: Sovereign Default and the Decline in Interest Rates
+  authors:
+  - Max Miller
+  - James D. Paron
+  - Jessica A. Wachter
+  date: '2025-11-21'
+  date_display: November 21, 2025
+  keywords:
+  - Savings glut
+  - Inflation expectations
+  - Rare disasters
+  - Secular stagnation
+  jel:
+  - E31
+  - E43
+  - G12
+  pdf: pdfs/MPW.pdf
+  legacy_pdf: MPW.pdf
+  tex_dir: sovereign-default/source/paper
+  tex_main: inventory_rfs.tex
+- slug: representativeness
+  title: Associative Learning and Representativeness
+  authors:
+  - Michael Jacob Kahana
+  - James D. Paron
+  - Jessica A. Wachter
+  date: '2025-12-06'
+  date_display: December 6, 2025
+  keywords:
+  - interference
+  - base-rate neglect
+  - context
+  - diagnostic expectations
+  - recognition
+  jel:
+  - E03
+  - G02
+  pdf: pdfs/Representativeness.pdf
+  legacy_pdf: Representativeness.pdf
+  tex_dir: representativeness/draft
+  tex_main: repv14.tex
+- slug: heterogeneous-agent-asset-pricing
+  title: 'Heterogeneous-Agent Asset Pricing: Timing and Pricing Idiosyncratic Risks'
+  authors:
+  - James D. Paron
+  date: '2022-12-15'
+  date_display: December 15, 2022
+  keywords:
+  - Asset pricing
+  - Incomplete markets
+  - Heterogeneous agents
+  - Human capital
+  jel:
+  - E21
+  - E24
+  - E32
+  - E44
+  - G11
+  - G12
+  - J24
+  pdf: pdfs/HAAP.pdf
+  legacy_pdf: HAAP.pdf
+  tex_dir: _work/heterogeneous-agent-asset-pricing/Incomplete Markets
+  tex_main: incompletemarkets_v14.tex

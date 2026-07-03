@@ -1,40 +1,58 @@
 # jamesparon.github.io
 
 Source for a search- and LLM-discoverable index of James D. Paron's working
-papers. A small static-site generator (`build.py`) turns `papers.yaml` + the
-final PDFs into per-paper HTML pages with Google Scholar `citation_*` tags,
-JSON-LD structured data, full machine-readable text, a sitemap, `robots.txt`,
-and `llms.txt`. Humans are pointed to [jamesparon.com](https://jamesparon.com);
-each PDF remains the definitive version of its paper.
+papers. Per-paper HTML pages carry Google Scholar `citation_*` tags, JSON-LD
+structured data, and the **full paper text with mathematics in TeX/MathJax**,
+plus a sitemap, `robots.txt`, and `llms.txt`. Humans are pointed to
+[jamesparon.com](https://jamesparon.com); each PDF is the definitive version.
+
+## How content is produced
+
+Two stages, so the heavy LaTeX conversion runs locally while GitHub Pages
+rebuilds are fast and dependency-light:
+
+1. **`tex_to_content.py` (local)** — converts each paper's final LaTeX
+   manuscript (in the git-ignored `sources/`) to `content/<slug>.md` (TeX math)
+   and `content/<slug>.html` (MathJax) using pandoc. Every conversion is
+   **verified against the paper's final PDF** (word overlap) before it's used,
+   guarding against outdated/wrong `.tex`. The `content/` files are committed.
+2. **`build.py` (local + CI)** — reads `papers.yaml` + `content/` and renders
+   `site/`. Uses the PDF only for the clean abstract. No pandoc/sources needed,
+   so it runs in GitHub Actions.
+
+> **Content rule:** the manuscript `.tex` used for each paper must be the one
+> that compiles to the final PDF (verified by `tex_to_content.py`). Never use
+> slides, code, notes, or older/other manuscript versions. `sources/` and
+> `*.zip` are git-ignored and never deployed.
 
 ## Add or update a paper
 
-1. Drop the **final PDF** into `pdfs/`.
-2. Add a block to `papers.yaml` (title, authors, date, keywords, JEL, `pdf`,
-   and `legacy_pdf` if it had an old root URL).
-3. Commit and push to `main` — GitHub Actions rebuilds and deploys.
-
-> **Content rule:** every field and all on-page text comes from the **final
-> PDF only**. Never source content from slides, code, notes, or draft/older
-> manuscript versions. The `sources/` folder (raw project files) is
-> git-ignored and is **not** a content source.
+1. Drop the final PDF in `pdfs/` and the manuscript project in `sources/`.
+2. Add a block to `papers.yaml` (metadata + `tex_dir`/`tex_main`; `legacy_pdf`
+   if it had an old root URL).
+3. `./.venv/bin/python tex_to_content.py <slug>` — check overlap is high (~0.8+).
+4. Commit `content/` + the PDF + `papers.yaml`; push to `main`. CI deploys.
 
 ## Build locally
 
 ```bash
 python -m venv .venv && ./.venv/bin/pip install -r requirements.txt
-./.venv/bin/python build.py   # outputs ./site
+brew install pandoc                      # for tex_to_content.py only
+./.venv/bin/python tex_to_content.py     # sources/ -> content/  (local)
+./.venv/bin/python build.py              # content/ -> site/
 ```
 
 ## Layout
 
 | Path | Purpose |
 |------|---------|
-| `papers.yaml` | Paper metadata (the file you edit) |
-| `build.py` | Generator (extracts text from PDFs, renders `site/`) |
-| `templates/` | Jinja2 HTML/markdown templates |
-| `static/style.css` | Styles |
-| `pdfs/` | Final paper PDFs (sole content source) |
+| `papers.yaml` | Paper metadata + manuscript paths (the file you edit) |
+| `tex_to_content.py` | LaTeX → `content/` converter (local; needs pandoc + sources) |
+| `build.py` | `content/` + `papers.yaml` → `site/` (local + CI) |
+| `content/` | Committed LaTeX-derived text (`.md` TeX math, `.html` MathJax) |
+| `templates/`, `static/style.css` | Jinja2 templates and styles |
+| `pdfs/` | Final paper PDFs (definitive version; source of the abstract) |
+| `sources/` | Raw LaTeX projects — git-ignored, never deployed |
 | `.github/workflows/build.yml` | CI build + deploy to GitHub Pages |
 | `site/` | Generated output (git-ignored; built in CI) |
 

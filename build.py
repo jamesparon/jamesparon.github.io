@@ -32,6 +32,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 ROOT = Path(__file__).parent.resolve()
 SITE_URL = "https://jamesparon.github.io"
 OUT = ROOT / "site"
+CONTENT = ROOT / "content"  # committed LaTeX-derived text (see tex_to_content.py)
 
 env = Environment(
     loader=FileSystemLoader(str(ROOT / "templates")),
@@ -288,28 +289,35 @@ def build():
     (OUT / "papers").mkdir(parents=True)
     (OUT / "static").mkdir(parents=True)
 
-    # Process each paper: extract from the FINAL PDF only, dropping footnotes /
-    # running heads / page numbers so the body reads continuously.
+    # Full text comes from the committed LaTeX-derived content/ files (math in
+    # TeX math mode). The abstract is taken from the PDF (clean prose, good for
+    # metadata). If a paper has no content/ file, fall back to PDF extraction.
     for p in papers:
         pdf_path = ROOT / p["pdf"]
         if not pdf_path.exists():
             raise SystemExit(f"Missing PDF for {p['slug']}: {pdf_path}")
         body_blocks, note_blocks = extract_pdf_blocks(pdf_path)
-        fulltext = "\n\n".join(clean_blocks(body_blocks))
-        p["fulltext"] = fulltext
-        abstract = extract_abstract(fulltext)
-        if not abstract:  # fallback: abstract may sit in a small-font block
+        abstract = extract_abstract("\n\n".join(clean_blocks(body_blocks)))
+        if not abstract:
             abstract = extract_abstract("\n\n".join(clean_blocks(body_blocks + note_blocks)))
         p["abstract"] = abstract
         p["abstract_short"] = (abstract[:297] + "…") if len(abstract) > 300 else abstract
         p["url"] = f"{SITE_URL}/papers/{p['slug']}/"
         p["authors_str"] = ", ".join(p["authors"])
-        # Diagnostics: how much of the text was kept as body vs dropped as notes.
-        body_chars = sum(len(b) for b in body_blocks)
-        note_chars = sum(len(b) for b in note_blocks)
-        total = body_chars + note_chars or 1
-        print(f"  {p['slug']:38s} body={100*body_chars//total:3d}%  "
-              f"abstract={len(abstract):4d}  fulltext={len(fulltext)}")
+
+        html_frag = CONTENT / f"{p['slug']}.html"
+        md_file = CONTENT / f"{p['slug']}.md"
+        if html_frag.exists() and md_file.exists():
+            p["fulltext_html"] = html_frag.read_text()
+            p["fulltext_md"] = md_file.read_text()
+            p["fulltext_source"] = "tex"
+        else:  # fallback: PDF-extracted plain text
+            ft = "\n\n".join(clean_blocks(body_blocks))
+            p["fulltext_html"] = paragraphs_html(ft)
+            p["fulltext_md"] = ft
+            p["fulltext_source"] = "pdf"
+        print(f"  {p['slug']:38s} src={p['fulltext_source']:3s} "
+              f"abstract={len(abstract):4d}  fulltext={len(p['fulltext_md'])}")
 
     papers.sort(key=sort_key, reverse=True)
 
@@ -335,7 +343,7 @@ def build():
             canonical=p["url"], head_meta=head_meta,
             paper=p,
             abstract_html=paragraphs_html(p["abstract"]),
-            fulltext_html=paragraphs_html(p["fulltext"]),
+            fulltext_html=p["fulltext_html"],
             keywords_str="; ".join(p["keywords"]),
             jel_str=", ".join(p["jel"]),
         ))
@@ -428,8 +436,9 @@ def write_llms(out: Path, site: dict, papers: list[dict]):
 
     # /llms-full.txt — everything in one file
     chunks = [f"# {site['author_name']} — Research Papers (full text)",
-              f"# Source of truth: the linked PDFs at {SITE_URL}. "
-              f"Text below is extracted from those final PDFs.", ""]
+              f"# Full text is converted from each paper's LaTeX source, with math "
+              f"in TeX math mode. The definitive version of each paper is the PDF "
+              f"linked at {SITE_URL}.", ""]
     for p in papers:
         chunks += ["=" * 78, f"TITLE: {p['title']}",
                    f"AUTHORS: {p['authors_str']}", f"DATE: {p['date_display']}",
@@ -438,7 +447,7 @@ def write_llms(out: Path, site: dict, papers: list[dict]):
             chunks.append(f"KEYWORDS: {', '.join(p['keywords'])}")
         if p["jel"]:
             chunks.append(f"JEL: {', '.join(p['jel'])}")
-        chunks += ["", "ABSTRACT:", p["abstract"], "", "FULL TEXT:", p["fulltext"], ""]
+        chunks += ["", "ABSTRACT:", p["abstract"], "", "FULL TEXT:", p["fulltext_md"], ""]
     (out / "llms-full.txt").write_text("\n".join(chunks) + "\n")
 
 
