@@ -21,6 +21,7 @@ import html
 import json
 import re
 import shutil
+from collections import Counter
 from datetime import date, datetime
 from pathlib import Path
 
@@ -42,60 +43,115 @@ env = Environment(
 
 # --------------------------------------------------------------------------- #
 # PDF text extraction (final PDF is the ONLY content source)
+#
+# Footnotes, running heads, and page numbers are typeset in a smaller font than
+# the body. Because PDF text comes out in geometric (top-to-bottom) order, that
+# small-font material gets spliced into the middle of the body and breaks
+# sentences that continue across a page. We classify each text block by its font
+# size, keep only body-size (and larger, e.g. headings) blocks, drop the small
+# ones, and then stitch sentences that span block/page boundaries back together
+# so the paper reads continuously for an LLM/crawler.
 # --------------------------------------------------------------------------- #
-def extract_pdf_text(pdf_path: Path) -> str:
-    """Return the full text of a PDF in reading order (PyMuPDF)."""
+def _body_font_size(pages: list[dict]) -> float:
+    """Most common font size across the document, weighted by character count."""
+    sizes: Counter = Counter()
+    for d in pages:
+        for b in d.get("blocks", []):
+            if b.get("type") != 0:  # text blocks only
+                continue
+            for line in b["lines"]:
+                for span in line["spans"]:
+                    t = span["text"].strip()
+                    if t:
+                        sizes[round(span["size"] * 2) / 2] += len(t)
+    return sizes.most_common(1)[0][0] if sizes else 10.0
+
+
+def extract_pdf_blocks(pdf_path: Path) -> tuple[list[str], list[str]]:
+    """Return (body_blocks, note_blocks) split by font size.
+
+    A block goes to notes if its largest span is clearly smaller than the body
+    font (footnotes, running heads, page numbers). The 1.5pt margin keeps
+    near-body content \u2014 e.g. a \\small abstract or block quote \u2014 in the body.
+    """
     doc = fitz.open(pdf_path)
     try:
-        return "\n".join(page.get_text("text") for page in doc)
+        pages = [page.get_text("dict") for page in doc]
     finally:
         doc.close()
+    threshold = _body_font_size(pages) - 1.5
+    body_blocks: list[str] = []
+    note_blocks: list[str] = []
+    for d in pages:
+        for b in d.get("blocks", []):
+            if b.get("type") != 0:
+                continue
+            spans = [s for line in b["lines"] for s in line["spans"] if s["text"].strip()]
+            if not spans:
+                continue
+            block_max = max(s["size"] for s in spans)
+            text = "\n".join("".join(s["text"] for s in line["spans"]) for line in b["lines"])
+            (note_blocks if block_max < threshold else body_blocks).append(text)
+    return body_blocks, note_blocks
+
+
+def clean_blocks(blocks: list[str]) -> list[str]:
+    """Reflow blocks into paragraphs and rejoin sentences split across blocks."""
+    paras: list[str] = []
+    for blk in blocks:
+        blk = blk.replace("\u00ad", "")                       # soft hyphen
+        blk = re.sub(r"-[ \t]*\n[ \t]*(?=[a-z])", "", blk)   # de-hyphenate line breaks
+        p = re.sub(r"\s+", " ", blk).strip()
+        if p:
+            paras.append(p)
+    # Merge continuations: a paragraph that doesn't end with sentence-ending
+    # punctuation is almost always a sentence cut by a page/footnote break (or,
+    # if short, a heading). Merge it with the next block when the next starts
+    # lowercase OR the current block is long enough to not be a heading.
+    ends_sentence = re.compile(r'[.!?:;\u201d")\]]\s*$')
+    merged: list[str] = []
+    for p in paras:
+        prev = merged[-1] if merged else ""
+        if prev and not ends_sentence.search(prev) and (p[:1].islower() or len(prev) > 80):
+            if re.search(r'[A-Za-z]-$', prev):        # word hyphenated across a block break
+                merged[-1] = prev[:-1] + p
+            else:
+                merged[-1] = prev + " " + p
+        else:
+            merged.append(p)
+    return merged
 
 
 def clean_text(raw: str) -> str:
-    """Normalize extracted PDF text into readable paragraphs.
-
-    PyMuPDF emits one newline per visual line and (usually) a blank line
-    between paragraphs. De-hyphenate line-broken words, split paragraphs on
-    blank lines, and reflow the lines within each paragraph.
-    """
-    text = raw.replace("\x0c", "\n\n")            # form feed -> paragraph break
-    text = text.replace("\u00ad", "")              # soft hyphen
-    text = re.sub(r"-\n(?=[a-z])", "", text)        # de-hyphenate line-broken words
-    paras = re.split(r"\n[ \t]*\n", text)          # paragraph breaks = blank lines
-    cleaned = []
-    for para in paras:
-        para = re.sub(r"\s+", " ", para).strip()
-        if para:
-            cleaned.append(para)
-    return "\n\n".join(cleaned)
+    """Normalize a plain text blob into reflowed paragraphs (used for fallbacks)."""
+    text = raw.replace("\x0c", "\n\n")
+    text = text.replace("\u00ad", "")
+    text = re.sub(r"-\n(?=[a-z])", "", text)
+    return "\n\n".join(
+        re.sub(r"\s+", " ", p).strip()
+        for p in re.split(r"\n[ \t]*\n", text) if p.strip()
+    )
 
 
 def extract_abstract(fulltext: str) -> str:
-    """Pull the abstract verbatim from the extracted text.
+    """Return the abstract as its own paragraph/block.
 
-    Looks for an 'Abstract' heading and stops at Keywords / JEL / an
-    'Introduction' section heading, whichever comes first.
+    The abstract is a single block bounded by paragraph breaks, so we find the
+    'Abstract' heading and take that block (or the next one if 'Abstract' is a
+    standalone heading), then trim any trailing Keywords/JEL line. This is far
+    more robust than scanning for a section heading that may be absent.
     """
-    m = re.search(r"\bAbstract\b[\s:.]*", fulltext, re.IGNORECASE)
-    if not m:
-        return ""
-    tail = fulltext[m.end():]
-    # After reflow, paragraph text is space-joined, so match on words/markers.
-    stops = [
-        r"\bKeywords\b", r"\bJEL\b",
-        r"\b\d+\.?\s+Introduction\b", r"\bIntroduction\b",
-        r"∗", r"\s\*\s+[A-Z]",          # acknowledgements footnote (∗ or plain *)
-        r"\bFirst draft\b",
-    ]
-    end = len(tail)
-    for pat in stops:
-        sm = re.search(pat, tail)
-        if sm and sm.start() < end:
-            end = sm.start()
-    abstract = re.sub(r"\s+", " ", tail[:end]).strip()
-    # Guard against runaway matches (bad extraction): cap length.
-    return abstract[:3000].strip()
+    paras = [p.strip() for p in fulltext.split("\n\n") if p.strip()]
+    for i, para in enumerate(paras):
+        m = re.match(r"Abstract\b[\s:.\-]*", para, re.IGNORECASE)
+        if not m:
+            continue
+        rest = para[m.end():].strip()
+        if len(rest) < 100 and i + 1 < len(paras):
+            rest = paras[i + 1]          # 'Abstract' was a standalone heading
+        rest = re.split(r"\b(?:Keywords|JEL)\b", rest)[0].strip()
+        return re.sub(r"\s+", " ", rest)[:3000].strip()
+    return ""
 
 
 # --------------------------------------------------------------------------- #
@@ -232,18 +288,28 @@ def build():
     (OUT / "papers").mkdir(parents=True)
     (OUT / "static").mkdir(parents=True)
 
-    # Process each paper: extract from the FINAL PDF only.
+    # Process each paper: extract from the FINAL PDF only, dropping footnotes /
+    # running heads / page numbers so the body reads continuously.
     for p in papers:
         pdf_path = ROOT / p["pdf"]
         if not pdf_path.exists():
             raise SystemExit(f"Missing PDF for {p['slug']}: {pdf_path}")
-        fulltext = clean_text(extract_pdf_text(pdf_path))
+        body_blocks, note_blocks = extract_pdf_blocks(pdf_path)
+        fulltext = "\n\n".join(clean_blocks(body_blocks))
         p["fulltext"] = fulltext
         abstract = extract_abstract(fulltext)
+        if not abstract:  # fallback: abstract may sit in a small-font block
+            abstract = extract_abstract("\n\n".join(clean_blocks(body_blocks + note_blocks)))
         p["abstract"] = abstract
         p["abstract_short"] = (abstract[:297] + "…") if len(abstract) > 300 else abstract
         p["url"] = f"{SITE_URL}/papers/{p['slug']}/"
         p["authors_str"] = ", ".join(p["authors"])
+        # Diagnostics: how much of the text was kept as body vs dropped as notes.
+        body_chars = sum(len(b) for b in body_blocks)
+        note_chars = sum(len(b) for b in note_blocks)
+        total = body_chars + note_chars or 1
+        print(f"  {p['slug']:38s} body={100*body_chars//total:3d}%  "
+              f"abstract={len(abstract):4d}  fulltext={len(fulltext)}")
 
     papers.sort(key=sort_key, reverse=True)
 
