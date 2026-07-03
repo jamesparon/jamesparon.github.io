@@ -420,7 +420,8 @@ def write_llms(out: Path, site: dict, papers: list[dict]):
     lines = [f"# {site['author_name']} — Research Papers", "",
              f"> Machine-readable index of working papers by {site['author_name']} "
              f"({site['affiliation']}). Each link is a plain-text/markdown version of a "
-             f"paper with its full abstract and text extracted from the definitive PDF. "
+             f"paper (full text converted from its LaTeX source, with mathematics in TeX "
+             f"math mode). The PDF is the definitive version of each paper. "
              f"Author's main site: {site['homepage']}", "", "## Papers", ""]
     for p in papers:
         lines.append(f"- [{p['title']}]({p['url']}index.md): "

@@ -74,10 +74,57 @@ def _unwrap(t: str, cmd: str) -> str:
     return "".join(out)
 
 
+def _unwrap_n(t: str, cmd: str, skip: int) -> str:
+    """Replace \\cmd{a}...{content} with content, skipping `skip` leading args."""
+    tag = "\\" + cmd
+    out, i = [], 0
+    while (j := t.find(tag, i)) >= 0:
+        out.append(t[i:j])
+        k = j + len(tag)
+        groups = []
+        while len(groups) <= skip and k < len(t):
+            while k < len(t) and t[k] in " \n\t":
+                k += 1
+            if k < len(t) and t[k] == "[":            # optional arg
+                depth = 1; k += 1
+                while k < len(t) and depth:
+                    depth += (t[k] == "[") - (t[k] == "]"); k += 1
+                continue
+            if k >= len(t) or t[k] != "{":
+                break
+            depth, start = 1, k + 1; k += 1
+            while k < len(t) and depth:
+                depth += (t[k] == "{") - (t[k] == "}"); k += 1
+            groups.append(t[start:k - 1])
+        out.append(groups[skip] if len(groups) > skip else "")
+        i = k
+    out.append(t[i:])
+    return "".join(out)
+
+
+def _normalize_tables(t: str) -> str:
+    """Rewrite tabularx/tabu into plain tabular pandoc can parse."""
+    t = re.sub(r"\\begin\{tabularx\}\{[^}]*\}\{([^}]*)\}",
+               lambda m: r"\begin{tabular}{" + re.sub(r"X(\[[^\]]*\])?", "l", m.group(1)) + "}", t)
+    t = t.replace(r"\end{tabularx}", r"\end{tabular}")
+    t = re.sub(r"\\begin\{tabu\}(?:\s*to\s*[^\{]*?)?\{([^}]*)\}",
+               lambda m: r"\begin{tabular}{" + re.sub(r"X(\[[^\]]*\])?", "l", m.group(1)) + "}", t)
+    t = t.replace(r"\end{tabu}", r"\end{tabular}")
+    return t
+
+
 def fix_tex(t: str) -> str:
-    """Neutralize constructs pandoc's LaTeX reader can't parse."""
-    t = re.sub(r"\\cite[a-zA-Z]*<[^>]*>", r"\\cite", t)   # \cite<see>{k} -> \cite{k}
-    for cmd in ("centerline", "mbox", "hbox"):            # wrappers around block envs
+    """Neutralize constructs pandoc's LaTeX reader can't parse or mis-handles."""
+    t = re.sub(r"\\cite[a-zA-Z]*<[^>]*>", r"\\cite", t)      # \cite<see>{k} -> \cite{k}
+    # apacite textual citations pandoc drops -> natbib \citet (author (year))
+    t = re.sub(r"\\(shortciteA|citeA|citeN)\b", r"\\citet", t)
+    t = re.sub(r"\\cmidrule(\([^)]*\))?\s*\{[^}]*\}", "", t)  # partial rules leak as cells
+    t = re.sub(r"\\cline\{[^}]*\}", "", t)
+    t = _normalize_tables(t)
+    t = _unwrap_n(t, "resizebox", 2)                         # \resizebox{w}{h}{T} -> T
+    t = _unwrap_n(t, "scalebox", 1)                          # \scalebox{s}{T} -> T
+    t = _unwrap_n(t, "adjustbox", 1)
+    for cmd in ("centerline", "mbox", "hbox"):               # wrappers around block envs
         t = _unwrap(t, cmd)
     return t
 
@@ -91,8 +138,52 @@ def pandoc(main: str, cwd: Path, to: str, extra: list[str]) -> str:
     return r.stdout
 
 
+# Residual LaTeX to strip from converted output (math-mode noise pandoc keeps).
+_MATH_NOISE = [
+    (re.compile(r"\\label\{[^}]*\}"), ""),                      # equation labels
+    (re.compile(r"\\(vspace|hspace|vphantom|phantom|hphantom)\*?\{[^{}]*\}"), ""),
+    (re.compile(r"\\rotatebox\{[^}]*\}\{([^{}]*)\}"), r"\1"),   # keep inner content
+    (re.compile(r"\\setcounter\{[^}]*\}\{[^}]*\}"), ""),
+    (re.compile(r"\\mathds\{1\}"), r"\\mathbb{1}"),
+    (re.compile(r"\\(footnotesize|scriptsize|normalsize|small|large|Large|huge|"
+                r"displaystyle|textstyle|nonumber|notag)\b"), ""),
+]
+
+
+def _strip_math_noise(s: str) -> str:
+    for pat, rep in _MATH_NOISE:
+        s = pat.sub(rep, s)
+    return s
+
+
+def _strip_common(s: str) -> str:
+    """Cleanups common to markdown and HTML output."""
+    s = s.replace("`<!-- -->`{=html}", "").replace("<!-- -->", "")
+    s = re.sub(r"\{=html\}", "", s)
+    s = s.replace('\\"', '"')                                   # unescape quotes
+    # stray table/spacing tokens pandoc emits from unconverted layout
+    s = re.sub(r"(?m)^\s*(to \.?\d[\d.]*|-?\d+(?:\.\d+)?(?:cm|in|pt|em))\s*$", "", s)
+    s = re.sub(r"<span>-?\d+(?:\.\d+)?(?:cm|in|pt|em)</span>", "", s)
+    s = re.sub(r"\*\*\[\]\*\*|(?<=\s)\[\](?=\s)", "", s)        # stray empty [] markers
+    # redundant equation env inside $$/\[ ... \] display delimiters trips MathJax
+    s = re.sub(r"\\(begin|end)\{equation\*?\}", "", s)
+    # a `tabular` used only to lay out aligned-equation columns inside math:
+    # flatten into a single stacked \begin{aligned} block so MathJax renders it.
+    if "\\begin{tabular}" in s:
+        s = re.sub(r"\\begin\{tabular\}\{[^}]*\}", "", s)
+        s = s.replace(r"\end{tabular}", "")
+        s = re.sub(r"\$\s*\\begin\{aligned\}(\[[a-z]\])?", r"\\begin{aligned}", s)
+        s = re.sub(r"\\end\{aligned\}\s*\$", r"\\end{aligned}", s)
+        # merge adjacent aligned blocks (column gap "& &" / "& {1cm} &") into one
+        s = re.sub(r"\\end\{aligned\}\s*&[^&]*&\s*\\begin\{aligned\}(\[[a-z]\])?",
+                   r"\\\\", s)
+    return _strip_math_noise(s)
+
+
 def clean_md(md: str) -> str:
     """Strip pandoc cross-ref cruft and non-content bits, keep text + TeX math."""
+    # Dangling refs to unnumbered targets: "([\[eq:x\]](#eq:x))" -> drop (+ wrapping parens)
+    md = re.sub(r"\(?\[\\?\[[^\]]*\\?\]\]\(#[^)]*\)\)?", "", md)
     md = re.sub(r"\[([^\]]+)\]\(#[^)]*\)\{[^}]*\}", r"\1", md)   # [2](#sec){...} -> 2
     md = re.sub(r"\[([^\]]+)\]\(#[^)]*\)", r"\1", md)            # [2](#sec) -> 2
     md = re.sub(r"\{#[^}]*\}", "", md)                          # {#sec:foo}
@@ -101,6 +192,8 @@ def clean_md(md: str) -> str:
     md = re.sub(r"^:::.*$", "", md, flags=re.M)                 # fenced-div markers
     md = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", md)                # images
     md = re.sub(r"\{width=\"[^\"]*\"[^}]*\}", "", md)
+    md = _strip_common(md)
+    md = re.sub(r"[ \t]{2,}", " ", md)
     md = re.sub(r"\n{3,}", "\n\n", md)
     return md.strip() + "\n"
 
@@ -109,7 +202,9 @@ def clean_html(h: str) -> str:
     h = re.sub(r"<figure[^>]*>.*?</figure>", "", h, flags=re.S)   # drop image figures
     h = re.sub(r"<img[^>]*>", "", h)
     h = re.sub(r'\s(id|data-reference[a-z-]*|reference-type)="[^"]*"', "", h)
+    h = re.sub(r'<a href="#[^"]*"[^>]*>\s*\[[^\]]*\]\s*</a>', "", h)  # dangling label links -> drop
     h = re.sub(r'<a href="#[^"]*"[^>]*>(.*?)</a>', r"\1", h, flags=re.S)  # internal links -> text
+    h = _strip_common(h)
     return h.strip() + "\n"
 
 
@@ -137,6 +232,11 @@ def convert(paper: dict) -> dict:
                 seen_names.add(b.name)
                 bibs.append(b)
         d = d.parent
+    # Supplementary bib for citations missing from the uploaded .bib, built from
+    # the PDF by gen_supplement_bib.py (committed, hand-editable).
+    supp = ROOT / "bib_supplements" / f"{slug}.bib"
+    if supp.exists():
+        bibs.append(supp)
     cite = ["--citeproc"] if bibs else []
     for b in bibs:
         cite += ["--bibliography", str(b)]

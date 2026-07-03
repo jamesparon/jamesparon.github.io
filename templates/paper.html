@@ -3,7 +3,25 @@
 {{ head_meta | safe }}
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  tex: {
+    inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
+    tags: 'none',
+    macros: {
+      calA: "\\mathcal{A}", calB: "\\mathcal{B}", calC: "\\mathcal{C}",
+      calD: "\\mathcal{D}", calF: "\\mathcal{F}", calG: "\\mathcal{G}",
+      calH: "\\mathcal{H}", calh: "\\mathcal{h}", calI: "\\mathcal{I}",
+      calN: "\\mathcal{N}", caln: "\\mathcal{n}", calR: "\\mathcal{R}",
+      calr: "\\mathcal{r}", calS: "\\mathcal{S}", calT: "\\mathcal{T}",
+      Phat: "\\hat{P}", Nhat: "\\hat{N}", Pti: "\\tilde{P}",
+      lam: "\\lambda", cond: "\\mid", Prob: "\\mathbb{P}", Exp: "\\mathbb{E}",
+      norm: ["\\left\\lVert #1 \\right\\rVert", 1],
+      abs: ["\\left\\lvert #1 \\right\\rvert", 1],
+      myvectorii: ["\\begin{pmatrix}#1\\\\#2\\end{pmatrix}", 2],
+      myvectoriii: ["\\begin{pmatrix}#1\\\\#2\\\\#3\\end{pmatrix}", 3],
+      myvectoriv: ["\\begin{pmatrix}#1\\\\#2\\\\#3\\\\#4\\end{pmatrix}", 4],
+      myvectorv: ["\\begin{pmatrix}#1\\\\#2\\\\#3\\\\#4\\\\#5\\end{pmatrix}", 5]
+    }
+  },
   options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
 };
 </script>

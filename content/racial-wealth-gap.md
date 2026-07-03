@@ -2,7 +2,7 @@ Over the past three decades, the wealth gap between Black and White Americans ha
 
 <figure id="fig:wealth gap" data-latex-placement="H">
 <div class="center">
-<p><span>-2cm</span> <embed src="Figs/Combined_WealthGap.eps" style="width:100.0%" /></p>
+<p> <embed src="Figs/Combined_WealthGap.eps" style="width:100.0%" /></p>
 </div>
 <p>This figure displays the evolution of the White-to-Black wealth gap, defined as the ratio of mean per-household net worth between White and Black Americans. The solid green line represents the observed wealth gap in the Survey of Consumer Finances (SCF) dataset. The dashed orange line represents a counterfactual in which Black households invested equal shares of their wealth in stocks and housing as White households, in every survey years. We exclude the top 1% of the wealth distribution from the data. We report a version without business owners on the left and report the full population version on the right. Appendix <a href="#app:wealth gap" data-reference-type="ref" data-reference="app:wealth gap">7</a> details the construction of this figure.</p>
 <figcaption><strong>Contribution of portfolio shares to the evolution of the racial wealth gap</strong></figcaption>
@@ -52,23 +52,23 @@ Households can invest in a riskless one-period bond. The gross return on this bo
 
 #### Stock market
 
-The stock market delivers risky return $R_{St}$. The log return is the sum of two components: $$\begin{equation}
+The stock market delivers risky return $R_{St}$. The log return is the sum of two components: $$
 r_{Sjt} = r_{fj} + s_{1t} + s_{2t}.
-\end{equation}$$ The term $s_{2t}$ represents i.i.d. normal noise with variance $\sigma_{s_2}^2$. The term $s_{1t}$ represents the cyclical component of returns, which is correlated with the condition of the labor market. With probability $p_s$, $s_1$ is likely to be low, representing a stock-market crash. Mathematically, this is summarized by the normal mixture distribution $$\begin{equation}
+$$ The term $s_{2t}$ represents i.i.d. normal noise with variance $\sigma_{s_2}^2$. The term $s_{1t}$ represents the cyclical component of returns, which is correlated with the condition of the labor market. With probability $p_s$, $s_1$ is likely to be low, representing a stock-market crash. Mathematically, this is summarized by the normal mixture distribution $$
 s_{1t} =
 \left\{
-    \begin{array}{lll}
-        s^-_{1t} \sim \mathcal{N}(\mu_s^-,\sigma_{s_1}^2) & with probability & p_s,     \\
-        s^+_{1t} \sim \mathcal{N}(\mu_s^+,\sigma_{s_1}^2) & with probability & 1-p_s,  \\
-    \end{array}
+ \begin{array}{lll}
+ s^-_{1t} \sim \mathcal{N}(\mu_s^-,\sigma_{s_1}^2) & with probability & p_s, \\
+ s^+_{1t} \sim \mathcal{N}(\mu_s^+,\sigma_{s_1}^2) & with probability & 1-p_s, \\
+ \end{array}
 \right.
-\end{equation}$$ where $\mu_s^-$ is the average excess return in a crash and, of course, $\mu_s^+>\mu_s^-$.
+$$ where $\mu_s^-$ is the average excess return in a crash and, of course, $\mu_s^+>\mu_s^-$.
 
 #### House prices
 
-Households face stochastic local house prices and choose whether to own or rent. One unit of housing has local market price $P_t$, implying gross return $R_{Ht}=P_t/P_{t-1}$. Log housing returns (price changes) follow $$\begin{equation}
+Households face stochastic local house prices and choose whether to own or rent. One unit of housing has local market price $P_t$, implying gross return $R_{Ht}=P_t/P_{t-1}$. Log housing returns (price changes) follow $$
 r_{Hjt} = p_{jt}-p_{j,t-1}= r_{fj} + \mu_p + \varepsilon_{pt},
-\end{equation}$$ where $\varepsilon_{pt}$ is i.i.d. normally distributed with variance $\sigma_p^2$. Because the correlation between housing and equity returns is almost zero in the data (Flavin and Yamashita 2002), we assume that shocks to these asset prices are uncorrelated.
+$$ where $\varepsilon_{pt}$ is i.i.d. normally distributed with variance $\sigma_p^2$. Because the correlation between housing and equity returns is almost zero in the data (Flavin and Yamashita 2002), we assume that shocks to these asset prices are uncorrelated.
 
 ## Labor income
 
@@ -76,55 +76,55 @@ Before retirement, household $i$ receives labor income $L_{it}=L_{1t}\cdot L_{2i
 
 #### Aggregate labor income
 
-As in the data, the growth in the national wage index $L_1$ is correlated with both stock-market and housing returns. Specifically, we assume that its log growth rate is $$\begin{equation}
+As in the data, the growth in the national wage index $L_1$ is correlated with both stock-market and housing returns. Specifically, we assume that its log growth rate is $$
 l_{1t}-l_{1,t-1}= \mu_l + \lambda_{ls} s_{1t} + \lambda_{lp} \varepsilon_{pt} + \varepsilon_{lt},
-\end{equation}$$ where $\varepsilon_{lt}$ are normally distributed shocks with variance $\sigma_l^2$; $\mu_l$ is the growth rate of aggregate income; and $\lambda_{ls}$ and $\lambda_{lp}$ govern the sensitivity of income growth to stock-market crashes and house-price shocks, respectively.
+$$ where $\varepsilon_{lt}$ are normally distributed shocks with variance $\sigma_l^2$; $\mu_l$ is the growth rate of aggregate income; and $\lambda_{ls}$ and $\lambda_{lp}$ govern the sensitivity of income growth to stock-market crashes and house-price shocks, respectively.
 
 #### Idiosyncratic labor income
 
-The idiosyncratic component $L_{2it}$ is the product of a deterministic trend $f_{it}$, a persistent component $z_{it}$, and a transitory component $\eta_{it}$: $$\begin{equation}
+The idiosyncratic component $L_{2it}$ is the product of a deterministic trend $f_{it}$, a persistent component $z_{it}$, and a transitory component $\eta_{it}$: $$
 L_{2it} = \exp\{f_{it} + z_{it} + \eta_{it}\}.
-\end{equation}$$ The deterministic component $f_{it}$ is a function of the household's age $a_t$, race $j$, and structure $\{n_A,k\}$ --- that is, $f_{it}=f(a_t,j,n_A,k)$.
+$$ The deterministic component $f_{it}$ is a function of the household's age $a_t$, race $j$, and structure $\{n_A,k\}$ --- that is, $f_{it}=f(a_t,j,n_A,k)$.
 
-The persistent component $z_{it}$ captures the fact that workers face long-lived shocks to their labor income from negative events, like job loss, and positive events, like promotions. We assume $z_i$ evolves as an AR(1) with cyclical skewness, $$\begin{equation}
+The persistent component $z_{it}$ captures the fact that workers face long-lived shocks to their labor income from negative events, like job loss, and positive events, like promotions. We assume $z_i$ evolves as an AR(1) with cyclical skewness, $$
 z_{it} = \rho_{z,k}z_{it-1} + \zeta_{it},
-\end{equation}$$ where shocks arrive according to a mixture of normals: $$\begin{equation}
+$$ where shocks arrive according to a mixture of normals: $$
 \zeta_{it} =
 \left\{
 \begin{array}{lll}
-\zeta^-_{it} \sim \mathcal{N}\left(\mu^{-}_{z,jkt},\sigma^{-^2}_{z,k}\right)  & with probability & p_{z,k},   \\
-\zeta^+_{it} \sim \mathcal{N}\left(\mu^{+}_{z,jkt},\sigma^{+^2}_{z,k}\right)  & with probability & 1-p_{z,k}. \\
+\zeta^-_{it} \sim \mathcal{N}\left(\mu^{-}_{z,jkt},\sigma^{-^2}_{z,k}\right) & with probability & p_{z,k}, \\
+\zeta^+_{it} \sim \mathcal{N}\left(\mu^{+}_{z,jkt},\sigma^{+^2}_{z,k}\right) & with probability & 1-p_{z,k}. \\
 \end{array}
 \right.
-\label{eq:permincome_mixture}
-\end{equation}$$ With probability $p_{z,k}<0.5$, the average household of demographic $\{j,k\}$ experiences a persistent permanent-income shock $\mu^{-}_{z,jkt}$. Unconditional cross-sectional skewness is negative, so these shocks tend to be negative. Bad shocks tend to be more negatively skewed in bad macroeconomic states, so we assume that $\mu^{-}_{z,jkt}$ is lower when aggregate income falls, including during stock-market crashes. The sensitivity of $\mu^{-}_{z,jkt}$ to aggregate income depends on the number of earners $k$, because multiple incomes diversify risk, and on race $j$, because Black and White individuals have different labor-income cyclicality. These conditions are captured by letting the mean negative income shock be an affine function of wage-index growth: $$\begin{equation}
-\mu^{-}_{z,jkt} = \overline{\mu^{-}_{z,k}} + (\alpha_j -1)(l_{1t}-l_{1,t-1}) + \lambda_{zl,k}\alpha_j(l_{1t}-l_{1,t-1}).
-\label{muz1}
-\end{equation}$$ The coefficients $\alpha_j$ are "racial income betas\" and govern the excess cyclical skewness of each racial group---their population-weighted average is $\sum_j\omega_j\alpha_j=1$. The more negative is $\mu^{-}_{z,jkt}$, the more skewed is the cross-sectional distribution; the larger is $\alpha_j$, the more cyclical is this skewness for racial group $j$. To ensure that idiosyncratic shocks $\zeta_{it}$ are mean-zero in the population of households, we impose the condition that $\mu^{+}_{z,jkt}$ satisfies $$\begin{equation}
-\label{mumu}
-p_{z,k} \mu^{-}_{z,jkt} + (1-p_{z,k}) \mu^{+}_{z,jkt}= (\alpha_j-1)(l_{1t}-l_{1,t-1})
-\end{equation}$$ for each $j$ and $k$.[^8] Finally, we assume $\sigma^{-}_{z,k}\gg \sigma^{+}_{z,k}$ such that "big events\" like unemployment and promotions occur principally in the $\zeta^-_{it}$ state.
 
-The final component of idiosyncratic income is the transitory shock $\eta_{it}$, which represents short-lived noise in income. It is also drawn from a mixture of normals: $$\begin{equation}
-\label{transitoryshocks}
+$$ With probability $p_{z,k}<0.5$, the average household of demographic $\{j,k\}$ experiences a persistent permanent-income shock $\mu^{-}_{z,jkt}$. Unconditional cross-sectional skewness is negative, so these shocks tend to be negative. Bad shocks tend to be more negatively skewed in bad macroeconomic states, so we assume that $\mu^{-}_{z,jkt}$ is lower when aggregate income falls, including during stock-market crashes. The sensitivity of $\mu^{-}_{z,jkt}$ to aggregate income depends on the number of earners $k$, because multiple incomes diversify risk, and on race $j$, because Black and White individuals have different labor-income cyclicality. These conditions are captured by letting the mean negative income shock be an affine function of wage-index growth: $$
+\mu^{-}_{z,jkt} = \overline{\mu^{-}_{z,k}} + (\alpha_j -1)(l_{1t}-l_{1,t-1}) + \lambda_{zl,k}\alpha_j(l_{1t}-l_{1,t-1}).
+
+$$ The coefficients $\alpha_j$ are "racial income betas" and govern the excess cyclical skewness of each racial group---their population-weighted average is $\sum_j\omega_j\alpha_j=1$. The more negative is $\mu^{-}_{z,jkt}$, the more skewed is the cross-sectional distribution; the larger is $\alpha_j$, the more cyclical is this skewness for racial group $j$. To ensure that idiosyncratic shocks $\zeta_{it}$ are mean-zero in the population of households, we impose the condition that $\mu^{+}_{z,jkt}$ satisfies $$
+
+p_{z,k} \mu^{-}_{z,jkt} + (1-p_{z,k}) \mu^{+}_{z,jkt}= (\alpha_j-1)(l_{1t}-l_{1,t-1})
+$$ for each $j$ and $k$.[^8] Finally, we assume $\sigma^{-}_{z,k}\gg \sigma^{+}_{z,k}$ such that "big events" like unemployment and promotions occur principally in the $\zeta^-_{it}$ state.
+
+The final component of idiosyncratic income is the transitory shock $\eta_{it}$, which represents short-lived noise in income. It is also drawn from a mixture of normals: $$
+
 \eta_{it} =
 \left\{
 \begin{array}{lll}
-\eta^-_{it} \sim \mathcal{N}\left(0,\sigma^{-^2}_{\eta,k}\right)  & if & \zeta_{it}=\zeta^-_{it},   \\
-\eta^+_{it} \sim \mathcal{N}\left(0,\sigma^{+^2}_{\eta,k}\right)  & if & \zeta_{it}=\zeta^+_{it}.
+\eta^-_{it} \sim \mathcal{N}\left(0,\sigma^{-^2}_{\eta,k}\right) & if & \zeta_{it}=\zeta^-_{it}, \\
+\eta^+_{it} \sim \mathcal{N}\left(0,\sigma^{+^2}_{\eta,k}\right) & if & \zeta_{it}=\zeta^+_{it}.
 \end{array}
 \right.
-\end{equation}$$ The occurrence of each state coincides with the occurrence of the persistent income shock, capturing the idea that large persistent and transitory shocks may happen at the same time.
+$$ The occurrence of each state coincides with the occurrence of the persistent income shock, capturing the idea that large persistent and transitory shocks may happen at the same time.
 
 ## Health expenditures and benefits
 
-In addition to income risk, households face exogenous shocks to their health that require medical expenditures $$\begin{equation}
-    M_{it} = \exp\{g_{it} + \delta_{it}\}L_{1t},
-    \label{eq:medicalexp_total}
-\end{equation}$$ where $g_{it}=g(a_t,j,n_A)$ is a deterministic function and $\delta_{it}$ is a stochastic component following $$\begin{equation}
-    \delta_{it} = \rho_\delta(j,n_A)\delta_{i,t-1} + \sigma_\delta(j,n_A)\epsilon_{\delta it},
-    \label{eq:medicalexp_stoch}
-\end{equation}$$ where $\epsilon_{\delta it}\sim N(0,1)$.
+In addition to income risk, households face exogenous shocks to their health that require medical expenditures $$
+ M_{it} = \exp\{g_{it} + \delta_{it}\}L_{1t},
+ 
+$$ where $g_{it}=g(a_t,j,n_A)$ is a deterministic function and $\delta_{it}$ is a stochastic component following $$
+ \delta_{it} = \rho_\delta(j,n_A)\delta_{i,t-1} + \sigma_\delta(j,n_A)\epsilon_{\delta it},
+ 
+$$ where $\epsilon_{\delta it}\sim N(0,1)$.
 
 Households are partially insured against these medical expenses either privately or through government programs. Let $M_{it}^{\rm OOP}$ denote the portion of $M_{it}$ not covered by insurance or transfers, i.e. the out-of-pocket expenditure.
 
@@ -140,28 +140,28 @@ To account for the effects of taxes and transfers in the U.S., we model the Soci
 
 #### Social Security
 
-Before retirement, households pay $12.4\%$ of their earnings towards the Social Security system, up to the maximum taxable earnings cap, which represents 2.5 times the wage index $L_{1t}$ per earner. Thus payroll tax expenses are: $$\begin{equation}
+Before retirement, households pay $12.4\%$ of their earnings towards the Social Security system, up to the maximum taxable earnings cap, which represents 2.5 times the wage index $L_{1t}$ per earner. Thus payroll tax expenses are: $$
 T_{it}^{\rm SS}=0.124 \min \left\{L_{it}, (2.5 k) L_{1t} \right\}
-\end{equation}$$
+$$
 
-Households retire at a full-retirement age $a_{\rm ret}$. Social Security benefits are a function of lifetime income, summarized by the average indexed yearly earnings (AIYE) at age 60. The AIYE is the average of past taxable earnings, adjusted for growth in the wage index. Mathematically, it is defined as: $$\begin{equation}
-    \label{AIYEeuqation}
+Households retire at a full-retirement age $a_{\rm ret}$. Social Security benefits are a function of lifetime income, summarized by the average indexed yearly earnings (AIYE) at age 60. The AIYE is the average of past taxable earnings, adjusted for growth in the wage index. Mathematically, it is defined as: $$
+ 
 \textrm{AIYE}_{it} = \frac{1}{t-t_0}\sum_{s=t_0}^t \min\left\{L_{is}, (2.5 k) L_{1s} \right\}\frac{L_{1t_{60}}}{L_{1s}},
-\end{equation}$$ where $t_{60}$ denotes the year the household reaches age 60.
+$$ where $t_{60}$ denotes the year the household reaches age 60.
 
-Benefits are a concave, piece-wise linear function of the AIYE and indexed to inflation. The concavity of the benefit function offers higher replacement rates to workers with lower lifetime earnings. Specifically, a single-adult household receives benefits $$\begin{equation}
+Benefits are a concave, piece-wise linear function of the AIYE and indexed to inflation. The concavity of the benefit function offers higher replacement rates to workers with lower lifetime earnings. Specifically, a single-adult household receives benefits $$
 B_{it}^{\rm SS} =
 \left\{
 \begin{array}{ll}
-0.9  \textrm{AIYE}_{it_{60}}                    & if  \textrm{AIYE}_{it_{60}}/L_{1t_{\rm ret}}  < 0.2, \\
-0.116L_{1t_{\rm ret}} + 0.32 \textrm{AIYE}_{it_{60}}    & if  0.2 \leq \textrm{AIYE}_{it_{60}}/L_{1t_{\rm ret}}  < 1.25,  \\ 
-0.286L_{1t_{\rm ret}} + 0.15 \textrm{AIYE}_{it_{60}}    & if  \textrm{AIYE}_{it_{60}}/L_{1t_{\rm ret}}\geq 1.25. \\
+0.9 \textrm{AIYE}_{it_{60}} & if \textrm{AIYE}_{it_{60}}/L_{1t_{\rm ret}} < 0.2, \\
+0.116L_{1t_{\rm ret}} + 0.32 \textrm{AIYE}_{it_{60}} & if 0.2 \leq \textrm{AIYE}_{it_{60}}/L_{1t_{\rm ret}} < 1.25, \\ 
+0.286L_{1t_{\rm ret}} + 0.15 \textrm{AIYE}_{it_{60}} & if \textrm{AIYE}_{it_{60}}/L_{1t_{\rm ret}}\geq 1.25. \\
 \end{array}
 \right.
-\label{eq:ss_benef_formula}
-\end{equation}$$ where $t_{\rm ret}$ denotes the retirement year.
 
-For a double-income household, the formula ([\[eq:ss_benef_formula\]](#eq:ss_benef_formula)) needs to apply to the first and second earner separately because (i) the benefits of the higher earner are capped at $2.5$ times the average wage and (ii) the lower earner is guaranteed a minimum benefit equal to one-half of the higher earner's benefit (the "spousal benefit\"). Thus, if the higher earner accounts for a fraction $w_1$ of total household income, then that earner's benefits $B_{i_1t}^{\rm SS}$ are calculated from ([\[eq:ss_benef_formula\]](#eq:ss_benef_formula)) using $\min\{w_1\textrm{AIYE}_{it_{60}},2.5L_{1t_{\rm ret}}\}$ instead of just $\textrm{AIYE}_{it_{60}}$. The lower earner's benefits $B_{i_2t}^{\rm SS}$ are then the maximum of $0.5B_{i_1t}^{\rm SS}$ and the benefit calculated from ([\[eq:ss_benef_formula\]](#eq:ss_benef_formula)) using $(1-w_1)\textrm{AIYE}_{it_{60}}$.
+$$ where $t_{\rm ret}$ denotes the retirement year.
+
+For a double-income household, the formula ) needs to apply to the first and second earner separately because (i) the benefits of the higher earner are capped at $2.5$ times the average wage and (ii) the lower earner is guaranteed a minimum benefit equal to one-half of the higher earner's benefit (the "spousal benefit"). Thus, if the higher earner accounts for a fraction $w_1$ of total household income, then that earner's benefits $B_{i_1t}^{\rm SS}$ are calculated from ) using $\min\{w_1\textrm{AIYE}_{it_{60}},2.5L_{1t_{\rm ret}}\}$ instead of just $\textrm{AIYE}_{it_{60}}$. The lower earner's benefits $B_{i_2t}^{\rm SS}$ are then the maximum of $0.5B_{i_1t}^{\rm SS}$ and the benefit calculated from ) using $(1-w_1)\textrm{AIYE}_{it_{60}}$.
 
 #### Social safety net
 
@@ -171,17 +171,17 @@ Households are eligible for SNAP benefits if they meet two criteria, laid out in
 
 SSI benefits support retirees with very low Social Security benefits. Eligible one-adult households receive a supplement ensuring that total retirement income reaches at least 17.74% of the wage index in that year, provided that their wealth remains below approximately 3% of the wage index. For two-adult households, the wealth threshold rises to 4.17%, and SSI guarantees total retirement income of at least 26.62% of the wage index.
 
-In summary, welfare benefits from the social safety net are $$\begin{equation}
-\label{eq:safetynet}
-    B_{it}^{\rm SN} =
-    \left\{
-    \begin{array}{ll}
-        \left(b^{\rm SN}(N_{it})L_{1t}-0.3 L_{it}^{\rm n} \right)^+ & if  L_{it}^{\rm g} \leq 1.3\varrho(N_{it})L_{1t}, L_{it}^{\rm n} \leq \varrho(N_{it})L_{1t}, \text{ and } t < t_{\rm ret},\\
-        \left(0.1774 L_{1t}-B_{it}^{\rm SS}\right)^+            & if  W_{it} < 0.0314 L_{1t}, t \geq t_{\rm ret}, \text{ and } n_A=1,\\
-        \left(0.2662 L_{1t}-B_{it}^{\rm SS}\right)^+            & if  W_{it} < 0.047 L_{1t}, t \geq t_{\rm ret}, \text{ and } n_A=2.\\
-    \end{array}
-    \right.
-\end{equation}$$
+In summary, welfare benefits from the social safety net are $$
+
+ B_{it}^{\rm SN} =
+ \left\{
+ \begin{array}{ll}
+ \left(b^{\rm SN}(N_{it})L_{1t}-0.3 L_{it}^{\rm n} \right)^+ & if L_{it}^{\rm g} \leq 1.3\varrho(N_{it})L_{1t}, L_{it}^{\rm n} \leq \varrho(N_{it})L_{1t}, \text{ and } t < t_{\rm ret},\\
+ \left(0.1774 L_{1t}-B_{it}^{\rm SS}\right)^+ & if W_{it} < 0.0314 L_{1t}, t \geq t_{\rm ret}, \text{ and } n_A=1,\\
+ \left(0.2662 L_{1t}-B_{it}^{\rm SS}\right)^+ & if W_{it} < 0.047 L_{1t}, t \geq t_{\rm ret}, \text{ and } n_A=2.\\
+ \end{array}
+ \right.
+$$
 
 #### Income taxes and tax credits
 
@@ -189,86 +189,86 @@ Households pay income taxes on labor income and Social Security benefits. The U.
 
 #### Disposable income
 
-Disposable income $Y_{it}$ is the sum of its labor income $L$ and non-medical benefits $B=B^{\rm SS}+B^{\rm SN}+B^{\rm EITC}$ net of taxes $T=T^{\rm SS}+T^{\rm inc} + T^{\rm M}$: $$\begin{equation}
-    Y_{it}=L_{it} + B_{it}- T_{it}.
-\end{equation}$$ Households also pay out-of-pocket medical expenses $M_{it}^{\rm OOP}$ (i.e., net of payments by private insurance, Medicare, and Medicaid) and medical premiums $\Phi_{Mt}$.
+Disposable income $Y_{it}$ is the sum of its labor income $L$ and non-medical benefits $B=B^{\rm SS}+B^{\rm SN}+B^{\rm EITC}$ net of taxes $T=T^{\rm SS}+T^{\rm inc} + T^{\rm M}$: $$
+ Y_{it}=L_{it} + B_{it}- T_{it}.
+$$ Households also pay out-of-pocket medical expenses $M_{it}^{\rm OOP}$ (i.e., net of payments by private insurance, Medicare, and Medicaid) and medical premiums $\Phi_{Mt}$.
 
 #### Inheritance
 
-Households receive inheritances over the life cycle. The arrival rate and size of inheritance are functions of age $a_t$, race $j$, and income $\hat{y}_{it}$ (which equals the permanent income shock $\zeta_{it}$ in working life or Social Security benefits $B_{it}^{\rm SS}$ in retirement). In summary, inheritance is distributed according to $$\begin{equation}
-    I_{it}=\begin{cases} I_{it}^+ \sim \textrm{lognormal}(\mu_I(a_t,j,\hat{y}_{it}),\sigma_I(j)^2) &\textrm{with prob. }p_I(a_t,j,\hat{y}_{it}), \\
-        0 &\textrm{otherwise}.
-    \end{cases}
-\end{equation}$$ The probability $p_I(a_t,j,\hat{y}_{it})$ and mean $\mu_I(a_t,j,\hat{y}_{it})$ are race-dependent polynomials of age and income and the variance $\sigma_I(j)^2$ is a race-dependent constant. In making this assumption, we capture the fact that inheritances are both more frequent and conditionally larger for White and high-income households in the data.
+Households receive inheritances over the life cycle. The arrival rate and size of inheritance are functions of age $a_t$, race $j$, and income $\hat{y}_{it}$ (which equals the permanent income shock $\zeta_{it}$ in working life or Social Security benefits $B_{it}^{\rm SS}$ in retirement). In summary, inheritance is distributed according to $$
+ I_{it}=\begin{cases} I_{it}^+ \sim \textrm{lognormal}(\mu_I(a_t,j,\hat{y}_{it}),\sigma_I(j)^2) &\textrm{with prob. }p_I(a_t,j,\hat{y}_{it}), \\
+ 0 &\textrm{otherwise}.
+ \end{cases}
+$$ The probability $p_I(a_t,j,\hat{y}_{it})$ and mean $\mu_I(a_t,j,\hat{y}_{it})$ are race-dependent polynomials of age and income and the variance $\sigma_I(j)^2$ is a race-dependent constant. In making this assumption, we capture the fact that inheritances are both more frequent and conditionally larger for White and high-income households in the data.
 
 ## Housing market
 
-Households can either rent or own a house. Let $H_{it}$ denote the size of the house they choose to occupy and $P_tH_{it}$ its value. Renters must pay $P_{t}H_{it}/\Upsilon_j$ to occupy a house of size $H_{it}$, whereas homeowners must pay property taxes $P_{t}H_{it} \tau^H_j$. The cost of occupying a house is therefore: $$\begin{equation}
-    X_{it} =
-    \left\{
-    \begin{array}{ll}
-        P_{t}H_{it}/\Upsilon_j      & if renter,\\
-        P_{t}H_{it} \tau^H_j    & if homeowner,\\
-    \end{array} 
-    \right.
-\end{equation}$$ where $\Upsilon_j$ is the price-to-rent ratio, $\tau^H_j$ is the property tax rate, and both depend on race.
+Households can either rent or own a house. Let $H_{it}$ denote the size of the house they choose to occupy and $P_tH_{it}$ its value. Renters must pay $P_{t}H_{it}/\Upsilon_j$ to occupy a house of size $H_{it}$, whereas homeowners must pay property taxes $P_{t}H_{it} \tau^H_j$. The cost of occupying a house is therefore: $$
+ X_{it} =
+ \left\{
+ \begin{array}{ll}
+ P_{t}H_{it}/\Upsilon_j & if renter,\\
+ P_{t}H_{it} \tau^H_j & if homeowner,\\
+ \end{array} 
+ \right.
+$$ where $\Upsilon_j$ is the price-to-rent ratio, $\tau^H_j$ is the property tax rate, and both depend on race.
 
 When purchasing a property, households are subject to two constraints. First, the property price must be above a minimum value as in (Cocco 2005), which represents a multiple $\kappa_{\rm min}$ of the wage index. Second, the purchase can be financed by a one-year renegotiable mortgage, but borrowers are subject to a downpayment constraint, such that the property cannot be worth more than a multiple $\kappa_{\rm max}$ of their net worth. Overall, the house value must respect the condition:
 
-$$\begin{equation}
-    \underbrace{\vphantom\kappa_{\rm min}L_{1t}}_{\textrm{minimum house value}} \leq P_tH_{it} \leq \underbrace{\kappa_{\rm max}W_{it}}_{\textrm{downpayment constraint}}.
-    \label{eq:maxhousesize}
-\end{equation}$$
+$$
+ \underbrace{\vphantom\kappa_{\rm min}L_{1t}}_{\textrm{minimum house value}} \leq P_tH_{it} \leq \underbrace{\kappa_{\rm max}W_{it}}_{\textrm{downpayment constraint}}.
+ 
+$$
 
 Borrowers must pay a spread between the mortgage rate $r_{Mit}$ and the riskfree interest rate $r_{fj}$. This spread depends on household's disposable income, leverage (debt-to-value ratio), and race. Because of leverage, wealth can become negative when a of large negative house price shock occurs. In this case, the agent defaults, gives up all assets, and starts the next period with zero wealth, housing, and debt.
 
-When selling a property, households incur proportional transaction costs equal to a percentage $c_H$ of the property value. In addition, households selling in distress sell at a discount $\theta_j > 0$. We define a distress sale as any transaction occurring in the large-income-shock state ($\zeta_{it}=\zeta_{it}^-$). The overall transaction cost is: $$\begin{equation}
-    \Phi_{Hit} =
-    \left\{
-    \begin{array}{ll}
-        c_HP_{t}H_{it} + \theta_j\mathbb{I}_{\zeta_{it}=\zeta_{it}^-}P_{t}H_{it-1}  & if selling\\
-        0       & otherwise.\\
-    \end{array}
-    \right.
-\end{equation}$$
+When selling a property, households incur proportional transaction costs equal to a percentage $c_H$ of the property value. In addition, households selling in distress sell at a discount $\theta_j > 0$. We define a distress sale as any transaction occurring in the large-income-shock state ($\zeta_{it}=\zeta_{it}^-$). The overall transaction cost is: $$
+ \Phi_{Hit} =
+ \left\{
+ \begin{array}{ll}
+ c_HP_{t}H_{it} + \theta_j\mathbb{I}_{\zeta_{it}=\zeta_{it}^-}P_{t}H_{it-1} & if selling\\
+ 0 & otherwise.\\
+ \end{array}
+ \right.
+$$
 
 ## Other frictions
 
 #### Liquidity constraint in large-income-shock state
 
-In the large-income-shock state ($\zeta_{it}=\zeta_{it}^-$), a household can only finance its consumption against income and the liquid part of its wealth, which we assume to be a fraction $\varpi$ of $W_{it}$. This amounts to the constraint $$\begin{equation}
-    (Y_{it} + \varpi W_{it} - C_{it})\mathbb{I}_{\zeta_{it}=\zeta_{it}^-} \geq 0,
-\end{equation}$$ where $Y_{it}$ is disposable (i.e., post-transfer) income, defined below. Homeowners can fully liquidate their wealth by selling their house but are then subject to the distress sale discount.
+In the large-income-shock state ($\zeta_{it}=\zeta_{it}^-$), a household can only finance its consumption against income and the liquid part of its wealth, which we assume to be a fraction $\varpi$ of $W_{it}$. This amounts to the constraint $$
+ (Y_{it} + \varpi W_{it} - C_{it})\mathbb{I}_{\zeta_{it}=\zeta_{it}^-} \geq 0,
+$$ where $Y_{it}$ is disposable (i.e., post-transfer) income, defined below. Homeowners can fully liquidate their wealth by selling their house but are then subject to the distress sale discount.
 
 #### Stock market participation costs and short-sale constraint
 
-Participation in the stock market results in two forms of cost. The first is a fixed cost that grows in proportion to the aggregate wage: $$\begin{equation}
-    \Phi_{\pi it} =
-    \left\{
-    \begin{array}{ll}
-        c_\pi L_{1t}        & if  \pi_{it} > 0\\
-        0       & otherwise.\\
-    \end{array}
-    \right.
-\end{equation}$$ The second is a proportionate cost of capital-gains taxation. To account for these taxes, we will consider post-tax equity returns in the data. A household cannot short-sell or borrow against future earnings.
+Participation in the stock market results in two forms of cost. The first is a fixed cost that grows in proportion to the aggregate wage: $$
+ \Phi_{\pi it} =
+ \left\{
+ \begin{array}{ll}
+ c_\pi L_{1t} & if \pi_{it} > 0\\
+ 0 & otherwise.\\
+ \end{array}
+ \right.
+$$ The second is a proportionate cost of capital-gains taxation. To account for these taxes, we will consider post-tax equity returns in the data. A household cannot short-sell or borrow against future earnings.
 
 ## Households
 
 #### Evolution of wealth
 
-Wealth $W_{it}$ is defined as the sum of asset holdings before receipt of income and before expenditures on consumption, housing, medical costs, and participation costs. Hence, wealth evolves as follows: $$\begin{equation}
-    \label{wealthdynamics}
-    W_{it+1} = \left( W_{it}+Y_{it} + I_{it} -C_{it} -X_{it} - M_{it}^{\rm OOP} - \Phi_{Mit} - \Phi_{Hit} - \Phi_{\pi it} \right)R_{Wi,t+1},
-\end{equation}$$ where the gross return on wealth equals $$\begin{equation}
-    R_{Wi,t+1} = R_{fj}+ \pi_{it}(R_{Sj,t+1}-R_{fj})+h_{it}(R_{Hj,t+1}-R_{fj}) - (h_{it}-1)^+(R_{Mit}-R_{fj}).
-\end{equation}$$ In this wealth-return expression, $\pi_{it}$ is the equity share and $h_{it}$ is the housing share. The term $(h_{it}-1)^+(R_{Mit}-R_{fj})$ represents the fact that, if $h_{it}>1$, the household requires a mortgage and must pay the premium on it.
+Wealth $W_{it}$ is defined as the sum of asset holdings before receipt of income and before expenditures on consumption, housing, medical costs, and participation costs. Hence, wealth evolves as follows: $$
+ 
+ W_{it+1} = \left( W_{it}+Y_{it} + I_{it} -C_{it} -X_{it} - M_{it}^{\rm OOP} - \Phi_{Mit} - \Phi_{Hit} - \Phi_{\pi it} \right)R_{Wi,t+1},
+$$ where the gross return on wealth equals $$
+ R_{Wi,t+1} = R_{fj}+ \pi_{it}(R_{Sj,t+1}-R_{fj})+h_{it}(R_{Hj,t+1}-R_{fj}) - (h_{it}-1)^+(R_{Mit}-R_{fj}).
+$$ In this wealth-return expression, $\pi_{it}$ is the equity share and $h_{it}$ is the housing share. The term $(h_{it}-1)^+(R_{Mit}-R_{fj})$ represents the fact that, if $h_{it}>1$, the household requires a mortgage and must pay the premium on it.
 
 #### Preferences and objective
 
-Household have constant relative risk aversion preference and choose goods consumption $C_{it}$, housing consumption $H_{it}$, equity share $\pi_{it}$, and homeownership status $\mathbb{I}_{{\rm own},it}$ to maximize expected lifetime utility: $$\begin{equation}
-    \label{eq:bellman}
-    V_{it} =  \max_{\{C,H,\pi,\mathbb{I}_{\rm own}\}} \left\lbrace  \frac{1}{1-\gamma}\left(\frac{C_{it}^{1-\nu} H_{it}^{\nu}}{\sqrt{N_{it}}}\right)^{1-\gamma} +  (1-m_{it}) \beta \mathbb{E}_{t} V_{it+1} \right\rbrace
-\end{equation}$$ where $\gamma$ is the coefficient of relative risk aversion, $\nu$ captures the preference weight on housing relative to goods, $\beta$ is the subjective discount factor, and $m_{it}=m(a_t,j,n_A)$ is the period mortality rate that depend on age, race, and household composition. Total household consumption is divided by $\sqrt{N_{it}}$ to account for synergies within the family.[^11]
+Household have constant relative risk aversion preference and choose goods consumption $C_{it}$, housing consumption $H_{it}$, equity share $\pi_{it}$, and homeownership status $\mathbb{I}_{{\rm own},it}$ to maximize expected lifetime utility: $$
+ 
+ V_{it} = \max_{\{C,H,\pi,\mathbb{I}_{\rm own}\}} \left\lbrace \frac{1}{1-\gamma}\left(\frac{C_{it}^{1-\nu} H_{it}^{\nu}}{\sqrt{N_{it}}}\right)^{1-\gamma} + (1-m_{it}) \beta \mathbb{E}_{t} V_{it+1} \right\rbrace
+$$ where $\gamma$ is the coefficient of relative risk aversion, $\nu$ captures the preference weight on housing relative to goods, $\beta$ is the subjective discount factor, and $m_{it}=m(a_t,j,n_A)$ is the period mortality rate that depend on age, race, and household composition. Total household consumption is divided by $\sqrt{N_{it}}$ to account for synergies within the family.[^11]
 
 We abstract from modeling bequest motives explicitly. Introducing such motives would add flexibility to match the wealth accumulation profile over the life cycle. However, differences in estimated bequest motives and discount factors between Black and White households can both be interpreted as differences in their effective preference for the present. We therefore summarize this heterogeneity using a single structural parameter, which offers a more parsimonious and transparent interpretation of the unexplained component of the racial wealth gap. Importantly, even without bequest motives, the model accurately reproduces the wealth trajectory of Black households during retirement, the population for which we conduct all our counterfactual analyses.
 
@@ -298,11 +298,17 @@ For medical expenditures, we use the Medical Expenditure Panel Survey (MEPS). Th
 
 Eleven parameters summarize the dynamics of stock-market returns, aggregate income shocks, and house prices. The estimation process and results follow from (Catherine 2022).
 
-Table [\[macrocalibration\]](#macrocalibration) reports the result of the estimation. The house price growth rate ($\mu_p$) is estimated using the 1977--2013 Case-Shiller indices, and the volatility ($\sigma_p$) is set to 14%, following (Flavin and Yamashita 2002). The stock-market dynamics are characterized by the crash probability $p_s$, the expected returns during crashes and normal times ($\mu_s^-$ and $\mu_s^+$), and the standard deviations in cyclical and noise components of returns ($\sigma_{s_1}$ and $\sigma_{s_2}$). Aggregate income parameters include the growth rate $\mu_l$, the sensitivity to stock and housing markets ($\lambda_{ls}$ and $\lambda_{lp}$), and the standard deviation $\sigma_l$. These moments and correlation coefficients are estimated by SMM from yearly S&P 500 returns (1900--2015) and from average wage growth time series (1978--2010).
+Table 1 reports the result of the estimation. The house price growth rate ($\mu_p$) is estimated using the 1977--2013 Case-Shiller indices, and the volatility ($\sigma_p$) is set to 14%, following (Flavin and Yamashita 2002). The stock-market dynamics are characterized by the crash probability $p_s$, the expected returns during crashes and normal times ($\mu_s^-$ and $\mu_s^+$), and the standard deviations in cyclical and noise components of returns ($\sigma_{s_1}$ and $\sigma_{s_2}$). Aggregate income parameters include the growth rate $\mu_l$, the sensitivity to stock and housing markets ($\lambda_{ls}$ and $\lambda_{lp}$), and the standard deviation $\sigma_l$. These moments and correlation coefficients are estimated by SMM from yearly S&P 500 returns (1900--2015) and from average wage growth time series (1978--2010).
 
-lX\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\] & & &\
-(r)2-6 (lr)7-10 (l)11-12 & $p_s$ & $\mu_s^-$ & $\mu_s^+$ & $\sigma_{s_1}$ & $\sigma_{s_2}$ & $\mu_l$ & $\lambda_{ls}$ & $\lambda_{lp}$ & $\sigma_l$ & $\mu_p$ & $\sigma_p$\
-& .146 & -.245 & .115 & .077 & .114 & .008 & .161 & .053 & .017 & .01 & .14\
++:--+:------+:----------+:----------+:---------------+:---------------+:---------+:---------------+:---------------+:-----------+:--------+:-----------+
+| | Stock-market returns | Aggregate income shocks | House prices |
++---+-------+-----------+-----------+----------------+----------------+----------+----------------+----------------+------------+---------+------------+
+| | $p_s$ | $\mu_s^-$ | $\mu_s^+$ | $\sigma_{s_1}$ | $\sigma_{s_2}$ | $\mu_l$ | $\lambda_{ls}$ | $\lambda_{lp}$ | $\sigma_l$ | $\mu_p$ | $\sigma_p$ |
++---+-------+-----------+-----------+----------------+----------------+----------+----------------+----------------+------------+---------+------------+
+| | .146 | -.245 | .115 | .077 | .114 | .008 | .161 | .053 | .017 | .01 | .14 |
++---+-------+-----------+-----------+----------------+----------------+----------+----------------+----------------+------------+---------+------------+
+
+: Estimated Parameters: Market returns, aggregate income shocks, and house prices
 
 The table reports estimates for our return and aggregate-income processes. The S&P 500 log return in year $t$ is $r_{st}=r_f+s_{1t}+s_{2t}$, where $s_{2,t} \sim \mathcal{N}(0,\sigma^2_{s_2})$. With probability $p_s$, the stock market crashes in year $t$ and $s_{1,t}=s^-_{1,t} \sim \mathcal{N}(\mu_s^-,\sigma^2_{s_1})$. With probability $1-p_s$, $s_{1,t}=s^+_{1,t} \sim \mathcal{N}(\mu_s^+,\sigma^2_{s_1})$. The log growth rate of aggregate wage index is $l_{1t}-l_{1,t-1}=\mu_l+\lambda_{ls}s_{1t}+\lambda_{lp}\epsilon_{pt}+\epsilon_{lt}$, where $\epsilon_{lt} \sim \mathcal(0,\sigma_l^2)$. The estimation uses SMM and is detailed in (Catherine 2022).
 
@@ -314,7 +320,7 @@ Panel A of Figure 2 plots average three-year income growth for each racial grou
 
 <figure id="fig:cyclicality_data" data-latex-placement="p">
 <div class="center">
-<p><span>-2cm</span></p>
+<p></p>
 <table>
 <tbody>
 <tr>
@@ -344,7 +350,7 @@ Panel A of Figure 2 plots average three-year income growth for each racial grou
 
 ## Idiosyncratic income risk
 
-We use eight parameters to describe the distribution of idiosyncratic labor-income shocks: $p_{z}$, $\rho_z$, $\overline{\mu^-_z}$, $\lambda_{zl}$, $\sigma^-_z$, $\sigma^+_z$, $\sigma^-_{\eta}$, and $\sigma^+_{\eta}$. Table [\[idiocalibration\]](#idiocalibration) reports the estimated parameters for both single- and double-earner processes.
+We use eight parameters to describe the distribution of idiosyncratic labor-income shocks: $p_{z}$, $\rho_z$, $\overline{\mu^-_z}$, $\lambda_{zl}$, $\sigma^-_z$, $\sigma^+_z$, $\sigma^-_{\eta}$, and $\sigma^+_{\eta}$. Table 2 reports the estimated parameters for both single- and double-earner processes.
 
 The labor-income process for single earners follows from (Catherine 2022), which employs SMM to estimate parameters. This estimation targets the empirical moments of individual earnings growth from 1978 to 2010 using Social Security Administration data from (Guvenen et al. 2014). Targeting the cross-sectional mean, variance, and skewness at 1-, 3-, and 5-year horizons allows for disentangling between transitory and persistent shocks. To address the overestimation of income persistence, potentially due to different life-cycle income profiles that workers face ex ante (Guvenen 2009), parameters $\sigma_{\alpha}$ and $\sigma_{\varphi}$ are introduced to capture heterogeneity in levels and trends.
 
@@ -352,22 +358,29 @@ For the double-earner income process, we first generate simulated data for coupl
 
 Within a double-earner household, the probability of experiencing a significant career shock increases to $p_{z} = 0.188$, compared to $p_{z} = 0.136$ in a single-earner household. Since every earner is subject to this labor income shock, it is intuitive that it is more likely for households to experience this shock if there are two earners. However, due to diversification, the standard deviation of this shock for a double-earner household is nearly halved ($\sigma^-_z=0.290$) compared to single earners ($\sigma^-_z=0.562$). Similarly, the magnitude of a transitory shock under a large career shock also decreases from $\sigma^-_{\eta} = 0.895$ to $0.588$. Additionally, diversification provides several benefits. First, it reduces the negative skewness of income shocks at the household level: $\overline{\mu^-_z}$ decreases from $-0.086$ to $-0.031$. Second, it reduces cyclicality, with $\lambda_{zl}$ decreasing from $4.291$ to $3.146$.
 
-lX\[c\]X\[c\]X\[c\]X\[c\]X\[c\]X\[c\]cX\[c\]X\[c\]cX\[c\]X\[c\] & & & & & &\
-& & & & & &\
++:--------+:--------+:---------+:---------------------+:---------------+:-------------+:-------------+:-:+:------------------+:------------------+:-:+:------------------+:-------------------+
+| | | | | Transitory | | Heterogeneous |
++---------+---------+--------------------------------------------------------------------------------+---+---------------------------------------+---+----------------------------------------+
+| | | Persistent shocks | | shocks | | profiles |
++---------+---------+----------+----------------------+----------------+--------------+--------------+---+-------------------+-------------------+---+-------------------+--------------------+
+| Earners | $p_{z}$ | $\rho_z$ | $\overline{\mu^-_z}$ | $\lambda_{zl}$ | $\sigma^-_z$ | $\sigma^+_z$ | | $\sigma^-_{\eta}$ | $\sigma^+_{\eta}$ | | $\sigma_{\alpha}$ | $\sigma_{\varphi}$ |
++---------+---------+----------+----------------------+----------------+--------------+--------------+---+-------------------+-------------------+---+-------------------+--------------------+
+| Single | .136 | .967 | -.086 | 4.291 | .562 | .037 | | .895 | .089 | | .280 | .004 |
++---------+---------+----------+----------------------+----------------+--------------+--------------+---+-------------------+-------------------+---+-------------------+--------------------+
+| Double | .188 | .984 | -.031 | 3.146 | .290 | .047 | | .588 | .113 | | .295 | .024 |
++---------+---------+----------+----------------------+----------------+--------------+--------------+---+-------------------+-------------------+---+-------------------+--------------------+
 
-Earners & $p_{z}$ & $\rho_z$ & $\overline{\mu^-_z}$ & $\lambda_{zl}$ & $\sigma^-_z$ & $\sigma^+_z$ & & $\sigma^-_{\eta}$ & $\sigma^+_{\eta}$ & & $\sigma_{\alpha}$ & $\sigma_{\varphi}$\
-Single & .136 & .967 & -.086 & 4.291 & .562 & .037 & & .895 & .089 & & .280 & .004\
-Double & .188 & .984 & -.031 & 3.146 & .290 & .047 & & .588 & .113 & & .295 & .024\
+: **Estimated parameters: Idiosyncratic labor-income shocks**
 
 This table reports parameter estimates for the idiosyncratic income process, conditional on the group-level aggregate shock. The single-earner process is estimated as in (Catherine 2022) by targeting the time-series of cross-sectional moments of individual income log growth rates in the SSA administrative data from (Guvenen et al. 2014). To estimate the double-earner process, we first simulate data for couples using the single-earner process and recompute the target moments using the sum of two incomes. We assume a 30% gap between the highest and lowest earner and no assortative matching. Appendix 9.2 provides details regarding our estimation and reports the values of targeted and simulated moments.
 
 ## Life-cycle income profiles
 
-We estimate the deterministic income profiles $f_{it}$ as a cubic polynomial of age, which we calibrate to match the observed mean income path of each race$\times$family type in the CPS. We report the coefficients for each group in Appendix [\[app:incomefit\]](#app:incomefit). Figure 3 plots the fit of income profile using stochastic returns across age for six types of households.
+We estimate the deterministic income profiles $f_{it}$ as a cubic polynomial of age, which we calibrate to match the observed mean income path of each race$\times$family type in the CPS. We report the coefficients for each group in Appendix . Figure 3 plots the fit of income profile using stochastic returns across age for six types of households.
 
 <figure id="fig:IncomeProfile" data-latex-placement="H">
 <div class="center">
-<p><embed src="Figs/income_profile_combined.eps" style="width:120.0%" /> <span>-2cm</span></p>
+<p><embed src="Figs/income_profile_combined.eps" style="width:120.0%" /> </p>
 </div>
 <p>This figure reports, for each family type and race, the life-cycle profile of labor income, relative to the National Average Wage Index, in the CPS from 1978 to 2021 and in the model.</p>
 <figcaption><strong>Income profile fit</strong></figcaption>
@@ -375,7 +388,7 @@ We estimate the deterministic income profiles $f_{it}$ as a cubic polynomial of 
 
 ## Health expenditures
 
-We estimate the deterministic and stochastic components of health expenditures, ([\[eq:medicalexp_total\]](#eq:medicalexp_total)) and ([\[eq:medicalexp_stoch\]](#eq:medicalexp_stoch)), using the MEPS data. For each combination of race $j$ and number of adults $n_A$, the deterministic component is a polynomial function of age. The persistence $\rho_\delta(j,n_A)$ and volatility $\sigma_\delta(j,n_A)$ of the autoregressive component are then inferred from the residuals. Persistence is similar between Black and White households, but volatility is higher for Black households, implying more uncertain and larger health expenditures.[^14] Appendix 9.3 reports coefficient estimates and gives details about the procedure.
+We estimate the deterministic and stochastic components of health expenditures, ) and ), using the MEPS data. For each combination of race $j$ and number of adults $n_A$, the deterministic component is a polynomial function of age. The persistence $\rho_\delta(j,n_A)$ and volatility $\sigma_\delta(j,n_A)$ of the autoregressive component are then inferred from the residuals. Persistence is similar between Black and White households, but volatility is higher for Black households, implying more uncertain and larger health expenditures.[^14] Appendix 9.3 reports coefficient estimates and gives details about the procedure.
 
 ## Housing market
 
@@ -403,12 +416,19 @@ We set the price-to-rent ratio $\chi_j$ at 24 for White homeowners and 16.9 for 
 
 #### Family structures
 
-In a comparison limited to Black and White households, Black families represent $17\%$ of the overall population. Table [\[Family structure\]](#Family structure) categorizes households into six types of family structures and reports the proportions within each racial group.
+In a comparison limited to Black and White households, Black families represent $17\%$ of the overall population. Table 3 categorizes households into six types of family structures and reports the proportions within each racial group.
 
-to 0.6 & &\
-(r)3-4 & Single & One earner & Two Earners\
-Black & 0.62 & 0.08 & 0.29\
-White & 0.34 & 0.16 & 0.49\
++:------+:-------+:-----------+:------------+
+| | | Couple |
++-------+--------+------------+-------------+
+| | Single | One earner | Two Earners |
++-------+--------+------------+-------------+
+| Black | 0.62 | 0.08 | 0.29 |
++-------+--------+------------+-------------+
+| White | 0.34 | 0.16 | 0.49 |
++-------+--------+------------+-------------+
+
+: **Family structure**
 
 This table reports the within-race population share of three family types. We obtain this table using 2016 to 2022 SCF surveys and limit to individuals aged 30 to 50.
 
@@ -428,7 +448,7 @@ The probability and conditional expected value of receiving an inheritance over 
 
 <figure id="fig:inheritance" data-latex-placement="H">
 <div class="center">
-<p><embed src="Figs/Combined_Inheritance.eps" style="width:100.0%" /> <span>-2cm</span></p>
+<p><embed src="Figs/Combined_Inheritance.eps" style="width:100.0%" /> </p>
 </div>
 <p>This table plots the probability of receiving inheritance and the mean of log inheritances per adult for Black and White households from ages 23 to 85. Inheritances are normalized by the wage index. The points represent the empirical averages calculated from 1989–2022 SCF surveys, and the lines are fitted values.</p>
 <figcaption><strong>Inheritance fit</strong></figcaption>
@@ -446,29 +466,49 @@ This section presents the results of our structural estimation of the model. We 
 
 We structurally estimate three parameters using the most recent three waves (2016, 2019, and 2022) of the SCF. The three parameters are the subjective discount factor $\beta$, the coefficient of relative risk aversion $\gamma$, and the participation cost $c_\pi$ of entering the stock market. Three moment conditions identify these parameters:
 
-1.  *Mean wealth* -- Average wealth identifies the discount factor $\beta$. As households become more patient, they save at higher rates and accumulate more wealth.
+1. *Mean wealth* -- Average wealth identifies the discount factor $\beta$. As households become more patient, they save at higher rates and accumulate more wealth.
 
-2.  *Equity share of wealth* -- The allocation of wealth to stocks is falling in risk aversion, identifying $\gamma$.
+2. *Equity share of wealth* -- The allocation of wealth to stocks is falling in risk aversion, identifying $\gamma$.
 
-3.  *Stock-market participation rate* -- A higher stock-market participation cost $c_\pi$ reduces the number of households willing to enter the stock market.
+3. *Stock-market participation rate* -- A higher stock-market participation cost $c_\pi$ reduces the number of households willing to enter the stock market.
 
-Table [\[tab:Estimated params\]](#tab:Estimated params) reports the results of this estimation under two different approaches. The "Pooled\" condition assumes that Black and White households have identical preferences and participation costs; accordingly, these estimates target pooled data moments. The pooled parameter estimates fall in a reasonable range: $\beta = 0.96$ and $\gamma = 6.0$. They agree with the estimates of (Catherine 2022), for instance. Alternatively, the "White\" and "Black\" conditions separately estimate the three parameters for each racial group using race-specific data moments. Compared to White households, Black households have lower $\beta$ and $\gamma$. Since, in the model, Black households have more precautionary savings (for instance, in response to countercyclical labor-income risks), we need a lower discount factor $\beta$ to match the data. Panel B confirms that all three sets of estimates explain the data well.
+Table 5 reports the results of this estimation under two different approaches. The "Pooled" condition assumes that Black and White households have identical preferences and participation costs; accordingly, these estimates target pooled data moments. The pooled parameter estimates fall in a reasonable range: $\beta = 0.96$ and $\gamma = 6.0$. They agree with the estimates of (Catherine 2022), for instance. Alternatively, the "White" and "Black" conditions separately estimate the three parameters for each racial group using race-specific data moments. Compared to White households, Black households have lower $\beta$ and $\gamma$. Since, in the model, Black households have more precautionary savings (for instance, in response to countercyclical labor-income risks), we need a lower discount factor $\beta$ to match the data. Panel B confirms that all three sets of estimates explain the data well.
 
-to\
-& & Pooled & &\
-$\beta$ & Discount factor & 0.956 & 0.968 & 0.942\
-& & (.003) & (.004) & (.010)\
-$\gamma$ & Relative risk aversion & 6.014 & 6.129 & 4.959\
-& & (.065) & (.073) & (.361)\
-$c_\pi$ & Stock-market participation cost & 0.026 & 0.026 & 0.022\
-& & (.001) & (.001) & (.003)\
++---------------------------------------------------------------------------------+
+| Panel A: Estimated parameters |
++:==========+:================================+:==========+:==========+:==========+
+| | | Pooled | White | Black |
++-----------+---------------------------------+-----------+-----------+-----------+
+| $\beta$ | Discount factor | 0.956 | 0.968 | 0.942 |
++-----------+---------------------------------+-----------+-----------+-----------+
+| | | (.003) | (.004) | (.010) |
++-----------+---------------------------------+-----------+-----------+-----------+
+| $\gamma$ | Relative risk aversion | 6.014 | 6.129 | 4.959 |
++-----------+---------------------------------+-----------+-----------+-----------+
+| | | (.065) | (.073) | (.361) |
++-----------+---------------------------------+-----------+-----------+-----------+
+| $c_\pi$ | Stock-market participation cost | 0.026 | 0.026 | 0.022 |
++-----------+---------------------------------+-----------+-----------+-----------+
+| | | (.001) | (.001) | (.003) |
++-----------+---------------------------------+-----------+-----------+-----------+
 
-lX\[r\]X\[r\]X\[r\]cX\[r\]X\[r\]X\[r\]\
-& & &\
-& Pooled & White & Black & & Pooled & White & Black\
-Mean wealth & 6.59 & 7.55 & 2.34 & & 6.59 & 7.57 & 2.34\
-Cond. equity share & 0.41 & 0.40 & 0.52 & & 0.41 & 0.40 & 0.52\
-Participation rate & 0.53 & 0.57 & 0.29 & & 0.52 & 0.58 & 0.29\
+: **Estimated parameters and moments**
+
++------------------------------------------------------------------------------------------+
+| Panel B: Identifying moments |
++:===================+:========+:========+:========+:=======:+:========+:========+:========+
+| | Model | | SCF |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+| | Pooled | White | Black | | Pooled | White | Black |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+| Mean wealth | 6.59 | 7.55 | 2.34 | | 6.59 | 7.57 | 2.34 |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+| Cond. equity share | 0.41 | 0.40 | 0.52 | | 0.41 | 0.40 | 0.52 |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+| Participation rate | 0.53 | 0.57 | 0.29 | | 0.52 | 0.58 | 0.29 |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+
+: **Estimated parameters and moments**
 
 This table reports all estimated parameters and their identifying moments. Panel A presents the three structurally estimated parameters and their standard errors for Black and White households. Panel B lists the identifying moment conditions and compares the model-produced moments with the 2016--2022 SCF moments. The "Pooled" specification assumes the same parameters for Black and White households and targets moments from the joint population of Black and White households. Parameters are estimated using the algorithm of (Catherine, Ebrahimian, et al. 2024).
 
@@ -478,7 +518,7 @@ We validate the model by comparing additional dimensions of portfolio difference
 
 ### Balance sheet by race and household type
 
-Table [\[tab:SCFstats\]](#tab:SCFstats) reports average portfolio decisions in the data within the two racial groups using SCF waves from 2016 to 2022. We disaggregate these statistics by single-earner, double-earner, and retired households, and by homeowners and renters. Table [\[tab:modelstats\]](#tab:modelstats) is the model-implied counterpart.
+Table  reports average portfolio decisions in the data within the two racial groups using SCF waves from 2016 to 2022. We disaggregate these statistics by single-earner, double-earner, and retired households, and by homeowners and renters. Table is the model-implied counterpart.
 
 Despite targeting only three aggregated moments for each racial group, the model does remarkably well at explaining wealth and portfolio differences in the disaggregated data. Broadly, the model captures the fact that equity shares, housing shares, and wealth tend to be lower among single-earner households than among double-earner households, not only within racial groups but also within the subsets of renters and homeowners. While the model slightly underestimates the overall level of homeownership for both Black and White households, it correctly captures that White households are 55% more likely to be homeowners. The model also matches the fact that renters invest less in equity, which (Catherine 2022) shows is difficult to explain without countercyclical labor-income risk. The model generates differences in wealth and portfolio choices between narrow subsets of Black and White households (e.g., double-earner homeowners). The model slightly underestimates the wealth of retirees, but this could be explained by the inclusion of a bequest motive without much consequence for the overall population or our main results.
 
@@ -490,7 +530,7 @@ Finally, we report Social Security wealth---defined as the net present value of 
 
 l\*8c\
 & &\
-(lr)2-5(lr)6-9 &&&&&&&&\
+&&&&&&&&\
 Homeowners & & & & & & & &\
 Population share& 0.20& 0.13& 0.14& & 0.21& 0.25& 0.26&\
 Housing share& 1.86& 2.23& 1.36& 1.81& 1.54& 1.54& 0.78& 1.26\
@@ -519,7 +559,7 @@ This table decomposes the balance sheets of Black and White households in the 20
 
 l\*8c\
 & &\
-(lr)2-5(lr)6-9 &&&&&&&&\
+&&&&&&&&\
 Homeowners & & & & & & & &\
 Population share&0.26&0.13&0.14& &0.16&0.35&0.30&\
 Housing share&2.03&2.11&1.41&1.89&1.60&1.76&1.08&1.48\
@@ -544,7 +584,7 @@ Cond. equity share&0.52&0.58&0.45&0.52&0.39&0.48&0.32&0.40\
 Wealth&1.39&4.05&3.22&2.34&3.96&7.21&10.34&7.55\
 Social Security wealth&1.87&5.36&4.53&3.18&3.00&6.59&6.98&5.89\
 
-This table reports the average model-implied balance sheets of Black and White households in different subgroups. The data are generated using the separate "Black\" and "White\" estimated parameters from Table [\[tab:Estimated params\]](#tab:Estimated params). Social Security wealth is the net present value using the same discounting method as in (Catherine et al. 2025) but with a discount rate of 1%. It is a model counterpart to Table [\[tab:SCFstats\]](#tab:SCFstats).
+This table reports the average model-implied balance sheets of Black and White households in different subgroups. The data are generated using the separate "Black" and "White" estimated parameters from Table 5. Social Security wealth is the net present value using the same discounting method as in (Catherine et al. 2025) but with a discount rate of 1%. It is a model counterpart to Table .
 
 ### Balance sheets of Black Americans over the life cycle
 
@@ -556,7 +596,7 @@ We find that our model matches the evolution of wealth very well. Both in the mo
 
 <figure id="fig:LifeCycleBalanceSheet" data-latex-placement="H">
 <div class="center">
-<p><embed src="Figs/LifeCycleBalanceSheet.eps" style="width:100.0%" /> <span>-2cm</span></p>
+<p><embed src="Figs/LifeCycleBalanceSheet.eps" style="width:100.0%" /> </p>
 </div>
 <p>These figures plot Black households’ life-cycle profiles of wealth, equity share, home ownership rate, and conditional housing share in the model and in the data. Our baseline sample excludes business owners, but former entrepreneurs are hard to identify in the retired population, creating a discontinuity around retirement age. To correct this problem, we adjust the SCF demographic weights for the probability of being an entrepreneur conditional on wealth. Specifically, we group Black households aged from 55 to 62 into 10 groups based on their wealth level and we calculate the probability of not being an entrepreneur within each wealth group. Lastly, we multiply retirees’ demographic weights by this wealth-group conditional probability. We report 95% confidence intervals estimated by bootstrapping the data. Wealth is scaled by the national average wage index.</p>
 <figcaption><strong>Life-cycle profiles of Black wealth and portfolios in the model and data</strong></figcaption>
@@ -580,10 +620,10 @@ One final question that arises from heterogeneous discount factors is how much o
 
 <figure id="fig:compstat_beta" data-latex-placement="H">
 <div class="center">
-<p><span>-2cm</span></p>
+<p></p>
 <img src="Figs/compstat_beta" style="width:75.0%" />
 </div>
-<p>This figure plots average wealth (as a multiple of the average wage) for Black and White households as a function of the subjective discount factor <span class="math inline"><em>β</em></span>. Both solid curves assume that Black and White risk aversion and equity participation costs are the same and equal to the “White" parameter estimates from Table <a href="#tab:Estimated params" data-reference-type="ref" data-reference="tab:Estimated params">[tab:Estimated params]</a>. The green vertical line marks the estimated White subjective discount factor <span class="math inline">$\beta_{\rm W}$</span> from Table <a href="#tab:Estimated params" data-reference-type="ref" data-reference="tab:Estimated params">[tab:Estimated params]</a>. The blue and red horizontal dashed lines show the empirical average wealth for White and Black households, respectively; the black dashed line between them shows the level of Black wealth implied by setting the Black subjective discount factor equal to the White subjective discount factor. The region labeled “Racial wealth gap with identical preferences" spans the wealth gap if Black households had White discount factors; the region labeled “Residual wealth gap" spans the portion of the wealth gap explained by a lower Black <span class="math inline"><em>β</em></span>.</p>
+<p>This figure plots average wealth (as a multiple of the average wage) for Black and White households as a function of the subjective discount factor <span class="math inline"><em>β</em></span>. Both solid curves assume that Black and White risk aversion and equity participation costs are the same and equal to the “White" parameter estimates from Table <a href="#tab:Estimated params" data-reference-type="ref" data-reference="tab:Estimated params">5</a>. The green vertical line marks the estimated White subjective discount factor <span class="math inline">$\beta_{\rm W}$</span> from Table <a href="#tab:Estimated params" data-reference-type="ref" data-reference="tab:Estimated params">5</a>. The blue and red horizontal dashed lines show the empirical average wealth for White and Black households, respectively; the black dashed line between them shows the level of Black wealth implied by setting the Black subjective discount factor equal to the White subjective discount factor. The region labeled “Racial wealth gap with identical preferences" spans the wealth gap if Black households had White discount factors; the region labeled “Residual wealth gap" spans the portion of the wealth gap explained by a lower Black <span class="math inline"><em>β</em></span>.</p>
 <figcaption><strong>Comparative statics with respect to discount factor</strong></figcaption>
 </figure>
 
@@ -591,21 +631,21 @@ One final question that arises from heterogeneous discount factors is how much o
 
 We use the life-cycle model to decompose racial differences in portfolio composition and wealth into distinct economic channels, including the earnings gaps, income risk, distressed home sales, house prices, mortgage rates, property taxes, inheritances, race-specific returns, health expenditures, mortality, family structure, and preferences.
 
-In the CPS data, the average Black household earns 51.7% of the income of the average White household. We are particularly interested in the portion of the wealth gap that cannot be attributed to this earnings disparity. To quantify it, we define the excess wealth gap as the difference in wealth-to-earnings ratios between White and Black households: $$\begin{equation}
-    \chi = \frac{\overline{W}_{\rm W}}{\overline{L}_{\rm W}} - \frac{\overline{W}_{\rm B}}{\overline{L}_{\rm B}},
-\end{equation}$$ where $\overline{W}_j$ and $\overline{L}_j$ are the average wealth and average earnings of racial group $j$.
+In the CPS data, the average Black household earns 51.7% of the income of the average White household. We are particularly interested in the portion of the wealth gap that cannot be attributed to this earnings disparity. To quantify it, we define the excess wealth gap as the difference in wealth-to-earnings ratios between White and Black households: $$
+ \chi = \frac{\overline{W}_{\rm W}}{\overline{L}_{\rm W}} - \frac{\overline{W}_{\rm B}}{\overline{L}_{\rm B}},
+$$ where $\overline{W}_j$ and $\overline{L}_j$ are the average wealth and average earnings of racial group $j$.
 
 To evaluate how much of the excess wealth gap is explained by a given economic factor $F$, we conduct a counterfactual experiment. Starting from the Black calibration ($F=F_{\rm B}$), we "turn off" factor $F$ by setting its parameters to the White calibration $(F=F_{\rm W}$), while keeping all other parameters fixed at their Black values. We define this counterfactual excess wealth gap as $\chi(F;{\rm B})$, where the first argument denotes the calibration of factor $F$ (either $F_{\rm B}$ or $F_{\rm W}$) and the second argument indicates which group's calibration applies to all other parameters (${\rm B}$ for Black, ${\rm W}$ for White). The contribution of factor $F$ is then measured as the change in the wealth-to-earnings ratio relative to the excess wealth gap: $$\begin{align}
-    \label{eq:shareexcesswealth}
-    \Delta \chi (F;{\rm B}) = \frac{\chi(F_{\rm B};{\rm B}) - \chi(F_{\rm W};{\rm B})}{\chi}.
+ 
+ \Delta \chi (F;{\rm B}) = \frac{\chi(F_{\rm B};{\rm B}) - \chi(F_{\rm W};{\rm B})}{\chi}.
 \end{align}$$ In words, $\Delta \chi(F;{\rm B})$ isolates the marginal effect of $F$ on Black households, holding constant all other disparities.
 
 We also compute the reverse experiment, in which we start from the White calibration and switch factor $F$ to its Black value: $$\begin{align}
-    \label{eq:shareexcesswealth_interact}
-    \Delta \chi (F;{\rm W}) = \frac{\chi(F_{\rm B};{\rm W}) - \chi(F_{\rm W};{\rm W})}{\chi}.
+ 
+ \Delta \chi (F;{\rm W}) = \frac{\chi(F_{\rm B};{\rm W}) - \chi(F_{\rm W};{\rm W})}{\chi}.
 \end{align}$$ The difference between $\Delta \chi(F;{\rm W})$ and $\Delta \chi(F;{\rm B})$ captures the interaction effects of factor $F$ with all other economic differences between the two groups.
 
-Table [\[tab:ChanelContribution\]](#tab:ChanelContribution) details the results of these experiments. Column (0) reports the total differences in portfolio composition and wealth between Black and White households. Each subsequent column turns off one channel at a time to quantify its individual contribution to Black households' portfolio choices, wealth, and expected lifetime utility. The last three rows report the aggregate interaction terms, with the final row reporting $\Delta \chi(F;{\rm W})$ and $\Delta \chi(F;{\rm B})$, as discussed above.
+Table 6 details the results of these experiments. Column (0) reports the total differences in portfolio composition and wealth between Black and White households. Each subsequent column turns off one channel at a time to quantify its individual contribution to Black households' portfolio choices, wealth, and expected lifetime utility. The last three rows report the aggregate interaction terms, with the final row reporting $\Delta \chi(F;{\rm W})$ and $\Delta \chi(F;{\rm B})$, as discussed above.
 
 #### Earnings gap
 
@@ -625,7 +665,7 @@ Income risk also interacts strongly with other economic factors. Its impact on w
 
 #### House prices
 
-(Diamond and Diamond 2023) document that Black households earn rental yields (rent-to-price ratios) that are 1.3 percentage points higher than those of White households. Because owning is relatively more affordable for them, Black households are more likely to purchase homes. In our model, this higher affordability raises Black homeownership rates by 21.48 percentage points and conditional housing shares by 40.17 percentage points, implying that Black homeowners choose larger dwellings on average. Higher rental yields and housing shares also translate into substantially higher expected returns to wealth---by 2.02 percentage points.[^20] This response to lower price-to-rent ratios increases average Black wealth by roughly \$12,000 per adult (in 2022 dollars). As a result, lower house prices narrow the racial wealth gap, accounting for a sizable and negative share ($-$`<!-- -->`{=html}14.66%) of the existing excess wealth gap.
+(Diamond and Diamond 2023) document that Black households earn rental yields (rent-to-price ratios) that are 1.3 percentage points higher than those of White households. Because owning is relatively more affordable for them, Black households are more likely to purchase homes. In our model, this higher affordability raises Black homeownership rates by 21.48 percentage points and conditional housing shares by 40.17 percentage points, implying that Black homeowners choose larger dwellings on average. Higher rental yields and housing shares also translate into substantially higher expected returns to wealth---by 2.02 percentage points.[^20] This response to lower price-to-rent ratios increases average Black wealth by roughly \$12,000 per adult (in 2022 dollars). As a result, lower house prices narrow the racial wealth gap, accounting for a sizable and negative share ($-$14.66%) of the existing excess wealth gap.
 
 The interaction effect with other channels, however, is large and of opposite sign. If Black households were closer to their White counterparts in income and wealth, housing affordability would play a smaller role in enabling homeownership.
 
@@ -655,68 +695,117 @@ Differences in family structure---namely, the fact that more Black households te
 
 In the model, preferences account for 43% of the excess wealth gap and interact with other factors to generate an additional 11.7% of the gap. This implies that the remaining factors, taken together, explain 100% -- 43% -- 11.7% = 45.3% of the gap on their own. If we attribute half of the interaction effect to each side, preferences contribute about 49% in total, while the combined contribution of the other economic factors rises to roughly 51%.
 
-to &\
-(lr)2-8 & & & & & & &\
-& & & & & & &\
-& & & & & & &\
-\
-Stock market part. (%) & $-28.18$ & $-9.01$ & $-4.25$ & $-0.03$ & $-0.40$ & $-0.14$ & $-0.15$\
-Equity share (%) & $-7.89$ & $-4.68$ & $-3.81$ & $-0.01$ & $-1.29$ & $-0.15$ & $0.02$\
-Cond. equity share (%) & $11.68$ & $-0.10$ & $-4.93$ & $0.01$ & $-3.75$ & $-0.26$ & $0.35$\
-Homeownership rate (%) & $-28.27$ & $-7.67$ & $0.02$ & $-0.05$ & $21.48$ & $-1.69$ & $-1.84$\
-Housing share (%) & $-20.24$ & $-9.46$ & $2.40$ & $-0.05$ & $52.87$ & $-5.98$ & $-5.24$\
-Cond. housing share (%) & $41.03$ & $8.35$ & $4.52$ & $0.09$ & $40.17$ & $-5.19$ & $-3.28$\
-Exp. return on wealth (%) & $-1.10$ & $-0.74$ & $-0.23$ & $0.00$ & $2.02$ & $-0.28$ & $-0.33$\
-\
-Welfare (%) & & $-10.95$ & $-0.74$ & $-0.03$ & $8.14$ & $0.01$ & $0.01$\
-\
-Wealth per adult & $-2.55$ & $-0.55$ & $-0.05$ & $0.00$ & $0.19$ & $-0.01$ & $-0.03$\
-Wealth per household & $-5.20$ & $-0.71$ & $-0.07$ & $0.00$ & $0.24$ & $-0.01$ & $-0.04$\
-& $13.14$ & $4.10$ & $0.20$ & $-14.66$ & $0.79$ & $2.18$\
-\
-Wealth per adult & & $-0.35$ & $-0.24$ & $0.00$ & $-0.12$ & $0.00$ & $-0.02$\
-Wealth per household & & $-0.85$ & $-0.44$ & $-0.01$ & $-0.12$ & $0.00$ & $-0.04$\
-& $-0.29$ & $9.15$ & $0.14$ & $10.83$ & $-0.29$ & $0.25$\
++:--------------------------+----------------:+------------:+------------:+------------:+------------:+------------:+------------:+
+| | **Effect of channel on Black households** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | \(0\) | \(1\) | \(2\) | \(3\) | \(4\) | \(5\) | \(6\) |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | Black--White | Earnings | Income | Distressed | House | Mortgage | Property |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | difference | gap | risk | sale | price | rate | tax |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Balance sheet composition:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Stock market part. (%) | $-28.18$ | $-9.01$ | $-4.25$ | $-0.03$ | $-0.40$ | $-0.14$ | $-0.15$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Equity share (%) | $-7.89$ | $-4.68$ | $-3.81$ | $-0.01$ | $-1.29$ | $-0.15$ | $0.02$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. equity share (%) | $11.68$ | $-0.10$ | $-4.93$ | $0.01$ | $-3.75$ | $-0.26$ | $0.35$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Homeownership rate (%) | $-28.27$ | $-7.67$ | $0.02$ | $-0.05$ | $21.48$ | $-1.69$ | $-1.84$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Housing share (%) | $-20.24$ | $-9.46$ | $2.40$ | $-0.05$ | $52.87$ | $-5.98$ | $-5.24$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. housing share (%) | $41.03$ | $8.35$ | $4.52$ | $0.09$ | $40.17$ | $-5.19$ | $-3.28$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Exp. return on wealth (%) | $-1.10$ | $-0.74$ | $-0.23$ | $0.00$ | $2.02$ | $-0.28$ | $-0.33$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Welfare:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Welfare (%) | | $-10.95$ | $-0.74$ | $-0.03$ | $8.14$ | $0.01$ | $0.01$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, standalone effect:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | $-2.55$ | $-0.55$ | $-0.05$ | $0.00$ | $0.19$ | $-0.01$ | $-0.03$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | $-5.20$ | $-0.71$ | $-0.07$ | $0.00$ | $0.24$ | $-0.01$ | $-0.04$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $13.14$ | $4.10$ | $0.20$ | $-14.66$ | $0.79$ | $2.18$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, interaction with other channels:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.35$ | $-0.24$ | $0.00$ | $-0.12$ | $0.00$ | $-0.02$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.85$ | $-0.44$ | $-0.01$ | $-0.12$ | $0.00$ | $-0.04$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $-0.29$ | $9.15$ | $0.14$ | $10.83$ | $-0.29$ | $0.25$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+: **Effect of economic channels on Black balance sheet**
 
 This table decomposes the effect of each economic factor on Black households' portfolio composition, wealth, and welfare in the model. Column (0) reports the total difference between Black and White households; negative values indicate that the variable is lower for Black households. Columns (1) through (12) report the difference between a Black household and a counterfactual Black household in which the parameters associated with one economic factor are set to their White values. For example, column (1) compares Black households to otherwise identical Black households with the same earnings level as White households. Wealth is expressed in units of the national wage index. The expected return to wealth is the portfolio-weighted sum of returns on bonds, equities, housing, and mortgage costs. Housing returns can be further decomposed into changes in house prices, implicit rental yields, distress-sale costs, and property taxes. Welfare measures the change in lifetime consumption (in percentage points) associated with exposure to each factor; a negative welfare change indicates that the factor lowers equivalent lifetime consumption. Welfare gains are computed under the stochastic return specification (rather than actual historical returns).
 
-to &\
-(lr)2-8 & & & & & & &\
-& & & & & & &\
-& & & & & & &\
++:--------------------------+----------------:+------------:+------------:+------------:+------------:+------------:+------------:+
+| | **Effect of channel on Black households** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | \(7\) | \(8\) | \(9\) | \(10\) | \(11\) | \(12\) |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | Inheritance | Race-dep. | Health | Mortality | Family | Preference |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | | return | exp. | rate | structure | |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Balance sheet composition:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Stock market part. (%) | | $-1.55$ | $-0.87$ | $-0.75$ | $-0.34$ | $-8.19$ | $9.61$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Equity share (%) | | $-0.54$ | $-0.15$ | $-0.20$ | $-0.21$ | $-4.61$ | $7.92$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. equity share (%) | | $0.86$ | $1.02$ | $0.65$ | $-0.13$ | $-1.07$ | $15.63$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Homeownership rate (%) | | $-0.27$ | $-5.76$ | $-0.74$ | $-2.69$ | $-5.41$ | $-16.75$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Housing share (%) | | $2.03$ | $-15.41$ | $0.23$ | $-6.49$ | $-12.03$ | $-17.51$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. housing share (%) | | $4.82$ | $-7.84$ | $3.07$ | $-2.58$ | $-3.17$ | $20.38$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Exp. return on wealth (%) | | $0.01$ | $-0.97$ | $-0.01$ | $-0.29$ | $-0.91$ | $-0.21$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Welfare:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Welfare (%) | | $-0.37$ | $-0.19$ | $0.06$ | | | |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, standalone effect:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.20$ | $-0.12$ | $-0.07$ | $-0.04$ | $0.19$ | $-0.56$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.25$ | $-0.15$ | $-0.09$ | $-0.04$ | $-0.50$ | $-0.71$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $15.33$ | $8.96$ | $5.59$ | $2.93$ | $-12.64$ | $42.99$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, interaction with other channels:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.01$ | $-0.08$ | $-0.17$ | $-0.01$ | $0.01$ | $-0.44$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.11$ | $-0.20$ | $-0.32$ | $-0.02$ | $-1.20$ | $-1.00$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $-3.70$ | $2.10$ | $7.54$ | $-0.59$ | $0.88$ | $11.71$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
-\
-Stock market part. (%) & & $-1.55$ & $-0.87$ & $-0.75$ & $-0.34$ & $-8.19$ & $9.61$\
-Equity share (%) & & $-0.54$ & $-0.15$ & $-0.20$ & $-0.21$ & $-4.61$ & $7.92$\
-Cond. equity share (%) & & $0.86$ & $1.02$ & $0.65$ & $-0.13$ & $-1.07$ & $15.63$\
-Homeownership rate (%) & & $-0.27$ & $-5.76$ & $-0.74$ & $-2.69$ & $-5.41$ & $-16.75$\
-Housing share (%) & & $2.03$ & $-15.41$& $0.23$ & $-6.49$ & $-12.03$& $-17.51$\
-Cond. housing share (%) & & $4.82$ & $-7.84$ & $3.07$ & $-2.58$ & $-3.17$ & $20.38$\
-Exp. return on wealth (%) & & $0.01$ & $-0.97$ & $-0.01$ & $-0.29$ & $-0.91$ & $-0.21$\
-\
-Welfare (%) & & $-0.37$ & $-0.19$ & $0.06$ & & &\
-\
-Wealth per adult & & $-0.20$ & $-0.12$ & $-0.07$ & $-0.04$ & $0.19$ & $-0.56$\
-Wealth per household & & $-0.25$ & $-0.15$ & $-0.09$ & $-0.04$ & $-0.50$ & $-0.71$\
-& $15.33$ & $8.96$ & $5.59$ & $2.93$ & $-12.64$ & $42.99$\
-\
-Wealth per adult & & $-0.01$ & $-0.08$ & $-0.17$ & $-0.01$ & $0.01$ & $-0.44$\
-Wealth per household & & $-0.11$ & $-0.20$ & $-0.32$ & $-0.02$ & $-1.20$ & $-1.00$\
-& $-3.70$ & $2.10$ & $7.54$ & $-0.59$ & $0.88$ & $11.71$\
+: **Effect of economic channels on Black balance sheet, cont.**
 
 The *standalone* wealth effects are obtained by turning off each economic factor while keeping all other model parameters at their calibration for Black households. The *interaction with other channels* is defined as the difference between the effect of an economic factor when all other parameters are calibrated for White households and the standalone effect. In column (2), the income risk channel is adjusted so that the expected wage remains constant when varying the volatility of log earnings.
 
 #### General-equilibrium spillovers
 
-Importantly, Table [\[tab:ChanelContribution\]](#tab:ChanelContribution) reports the effect of economic factors in partial equilibrium. In general equilibrium, changing mortgage rates and property taxes, for instance, may affect house prices for all households. Insofar as these spillovers exist, our decomposition will not capture them directly.[^21] That said, these equilibrium effects are unlikely to be large, since we are taking a relatively small subset of the population (Black households) and making their conditions more like the majority (White households). In equilibrium, such changes are unlikely to substantially affect the majority group, and thus the aggregate economy, even if the effect is substantial within the smaller group.
+Importantly, Table 6 reports the effect of economic factors in partial equilibrium. In general equilibrium, changing mortgage rates and property taxes, for instance, may affect house prices for all households. Insofar as these spillovers exist, our decomposition will not capture them directly.[^21] That said, these equilibrium effects are unlikely to be large, since we are taking a relatively small subset of the population (Black households) and making their conditions more like the majority (White households). In equilibrium, such changes are unlikely to substantially affect the majority group, and thus the aggregate economy, even if the effect is substantial within the smaller group.
 
 ## Decomposing effects on wealth 
 
-Because households adjust their consumption and portfolios, economic disparities can have smaller effects on wealth than their direct cash flow effects would suggest. To illustrate this point, Table 1 decomposes the effect of selected economic channels into four parts: first, its (i) direct and (ii) indirect (i.e., post-transfer) cash flow effects, and then its effect induced by changes in (iii) portfolios and (iv) consumption choices.
+Because households adjust their consumption and portfolios, economic disparities can have smaller effects on wealth than their direct cash flow effects would suggest. To illustrate this point, Table 7 decomposes the effect of selected economic channels into four parts: first, its (i) direct and (ii) indirect (i.e., post-transfer) cash flow effects, and then its effect induced by changes in (iii) portfolios and (iv) consumption choices.
 
-To disentangle these channels, we compare simulated data from our baseline and counterfactual models. We reconstruct the evolution of each household's wealth, taking into account, in order, direct cash flow effects, changes in taxes and benefits, changes in portfolios, and changes in consumption. Specifically, we iterate over equation ([\[wealthdynamics\]](#wealthdynamics)) and progressively replace baseline simulated variables with their counterfactual values. To establish general results, we conduct this exercise using stochastic returns (as opposed to historical ones as in Table 1).[^22]
+To disentangle these channels, we compare simulated data from our baseline and counterfactual models. We reconstruct the evolution of each household's wealth, taking into account, in order, direct cash flow effects, changes in taxes and benefits, changes in portfolios, and changes in consumption. Specifically, we iterate over equation ) and progressively replace baseline simulated variables with their counterfactual values. To establish general results, we conduct this exercise using stochastic returns (as opposed to historical ones as in Table 7).[^22]
 
-The direct cash flow effects measure how much returning the direct monetary cost of each disparity to Black households increases their mean wealth. It is computed by adding this cost to the baseline level of income and iterating over equation ([\[wealthdynamics\]](#wealthdynamics)), holding other variables at their baseline values. For example, in column (1), we increase Black workers' earnings to eliminate the racial wage gap. In columns (6) and (7), we adjust interest payments and property tax payments to what Black households would have paid on the same houses if there were no difference in loan terms or property tax rates. These direct cash flow effects compound over time based on baseline rates of return to wealth.
+The direct cash flow effects measure how much returning the direct monetary cost of each disparity to Black households increases their mean wealth. It is computed by adding this cost to the baseline level of income and iterating over equation ), holding other variables at their baseline values. For example, in column (1), we increase Black workers' earnings to eliminate the racial wage gap. In columns (6) and (7), we adjust interest payments and property tax payments to what Black households would have paid on the same houses if there were no difference in loan terms or property tax rates. These direct cash flow effects compound over time based on baseline rates of return to wealth.
 
 Indirect cash flow effects account for other changes in disposable income---taxes and benefits. For example, in column (1), if the racial earnings gap disappeared, part of the gains for Black workers would be offset by increases in taxes and losses of social benefits. Hence, in this case, indirect cash flow effects tend to moderate the negative effect of the earnings gap on the wealth gap.
 
@@ -724,38 +813,38 @@ In a third stage, we replace baseline housing choices and financial portfolio we
 
 Finally, in the last step, we replace the baseline consumption expenditure by its counterfactual value. For example, if the earnings gap disappeared, Black workers would not save all of their additional income: a large proportion would be consumed, attenuating the impact of the earnings gap on the wealth gap. Combined with the indirect effect, this means that, overall, closing the earnings gap raises Black wealth by roughly 30%, which is close in magnitude to the earnings gap itself. In column (2), we see that higher income risk increases wealth through precautionary savings: due to the increased desire to save a buffer stock, households do not consume the extra (indirect) income. Under stochastic returns, this effect dominates the portfolio effect, so income risk increases Black wealth.[^23]
 
-Overall, Table 1 demonstrates why studying the racial wealth gap in the context of a household's full life-cycle problem is important. After considering changes in portfolio and consumption behaviors, the net effect of disparities in economic factors on wealth are quite different, and often smaller, than their direct cash flow effects.
+Overall, Table 7 demonstrates why studying the racial wealth gap in the context of a household's full life-cycle problem is important. After considering changes in portfolio and consumption behaviors, the net effect of disparities in economic factors on wealth are quite different, and often smaller, than their direct cash flow effects.
 
-  ------------------------- ---------- ---------- ------------ ---------- ---------- ---------- ------------- ----------- -------------
-                                 \(1\)      \(2\)        \(3\)      \(4\)      \(5\)      \(6\)         \(7\)       \(8\)         \(9\)
-                              Earnings     Income   Distressed      House   Mortgage   Property   Inheritance   Race-dep.   Health exp.
-                                   gap       risk         sale      price       rate        tax                    return 
-  Direct cash flow effect     $-4.440$    $0.000$      $0.000$    $0.000$   $-0.051$   $-0.125$      $-0.531$    $-0.478$       $0.036$
-  Indirect income effect       $1.316$    $0.333$      $0.000$   $-0.001$    $0.000$    $0.000$       $0.000$    $-0.001$       $0.000$
-  Portfolio effect            $-0.170$   $-0.145$      $0.001$    $0.209$    $0.020$    $0.032$       $0.009$     $0.075$      $-0.017$
-  Consumption effect           $2.573$   $-0.002$      $0.006$   $-0.011$    $0.021$    $0.063$       $0.298$     $0.280$      $-0.105$
-  Total                       $-0.721$    $0.186$      $0.007$    $0.197$   $-0.010$   $-0.030$      $-0.224$    $-0.124$      $-0.086$
-  ------------------------- ---------- ---------- ------------ ---------- ---------- ---------- ------------- ----------- -------------
+ ------------------------- ---------- ---------- ------------ ---------- ---------- ---------- ------------- ----------- -------------
+ \(1\) \(2\) \(3\) \(4\) \(5\) \(6\) \(7\) \(8\) \(9\)
+ Earnings Income Distressed House Mortgage Property Inheritance Race-dep. Health exp.
+ gap risk sale price rate tax return 
+ Direct cash flow effect $-4.440$ $0.000$ $0.000$ $0.000$ $-0.051$ $-0.125$ $-0.531$ $-0.478$ $0.036$
+ Indirect income effect $1.316$ $0.333$ $0.000$ $-0.001$ $0.000$ $0.000$ $0.000$ $-0.001$ $0.000$
+ Portfolio effect $-0.170$ $-0.145$ $0.001$ $0.209$ $0.020$ $0.032$ $0.009$ $0.075$ $-0.017$
+ Consumption effect $2.573$ $-0.002$ $0.006$ $-0.011$ $0.021$ $0.063$ $0.298$ $0.280$ $-0.105$
+ Total $-0.721$ $0.186$ $0.007$ $0.197$ $-0.010$ $-0.030$ $-0.224$ $-0.124$ $-0.086$
+ ------------------------- ---------- ---------- ------------ ---------- ---------- ---------- ------------- ----------- -------------
 
-  : **Decomposition of the wealth effect of economic disparities**
+ : **Decomposition of the wealth effect of economic disparities**
 
 This table decomposes the effect of each economic disparity on the mean wealth of Black households into four components: (i) the *direct cash flow effect*, obtained by adding the direct monetary loss from each disparity to baseline income; (ii) the *indirect income effect*, capturing the resulting changes in taxes and transfer benefits; (iii) the *portfolio effect*, reflecting adjustments in portfolio shares and housing choices; and (iv) the *consumption effect*, reflecting adjustments in consumption expenditures.
 
-To identify these components, we use simulated data from the baseline specification and iterate over equation ([\[wealthdynamics\]](#wealthdynamics)), which defines the evolution of wealth between $t$ and $t+1$. At each stage, we sequentially replace one element of the wealth accumulation equation with its counterpart from the relevant counterfactual simulation, while holding all other variables fixed.
+To identify these components, we use simulated data from the baseline specification and iterate over equation ), which defines the evolution of wealth between $t$ and $t+1$. At each stage, we sequentially replace one element of the wealth accumulation equation with its counterpart from the relevant counterfactual simulation, while holding all other variables fixed.
 
-1.  We first add the monetary cost of the economic disparity to baseline income, keeping taxes, consumption, and portfolio shares at their baseline values.
+1. We first add the monetary cost of the economic disparity to baseline income, keeping taxes, consumption, and portfolio shares at their baseline values.
 
-2.  Next, we adjust income for the associated changes in taxes and transfers, again holding consumption and portfolio shares fixed.
+2. Next, we adjust income for the associated changes in taxes and transfers, again holding consumption and portfolio shares fixed.
 
-3.  We then replace baseline portfolio shares and housing choices with their counterfactual values to capture portfolio rebalancing effects.
+3. We then replace baseline portfolio shares and housing choices with their counterfactual values to capture portfolio rebalancing effects.
 
-4.  Finally, we incorporate counterfactual consumption choices to account for behavioral adjustments in saving and spending.
+4. Finally, we incorporate counterfactual consumption choices to account for behavioral adjustments in saving and spending.
 
 At each step, we record the resulting change in average household wealth. This sequential replacement isolates how each mechanism---income, fiscal transfers, portfolio reallocation, and consumption---contributes to the total wealth effect of the disparity.
 
 ## Pairwise interaction effects between economic factors 
 
-In the previous sections, we examined the impact of each economic factor both in isolation and in combination with all other factors. Here, we turn to pairwise interactions between mechanisms. Overall, these interactions are limited in magnitude, reinforcing a central insight of our analysis: interactions also generate offsetting effects. We illustrate this intuition with three representative examples, for which we provide further quantitative details in Appendix Table 7.
+In the previous sections, we examined the impact of each economic factor both in isolation and in combination with all other factors. Here, we turn to pairwise interactions between mechanisms. Overall, these interactions are limited in magnitude, reinforcing a central insight of our analysis: interactions also generate offsetting effects. We illustrate this intuition with three representative examples, for which we provide further quantitative details in Appendix Table 13.
 
 Consider, for example, the interplay between family structure and income risk. Black families are more likely to rely on a single earner, which increases their exposure to unemployment risk during recessions. This lack of a secondary income source amplifies the adverse effect of countercyclical income risk on equity holdings and thus on returns to wealth. At the same time, it also strengthens the precautionary motive for saving, which works in the opposite direction. As a result, the net impact of this interaction on wealth accumulation is limited.
 
@@ -765,53 +854,51 @@ One exception is when we consider an economic factor that households did not ant
 
 ## Role of Social Security and welfare programs 
 
-[]
-
 In previous sections, we decompose the effects on wealth of economic factors that are calibrated differently for Black and White households. Although progressive social programs such as Social Security, EITC, SNAP, and SSI serve Americans regardless of their racial groups, the benefits they offer depend on income and wealth, which themselves differ substantially between Black and White households. In this section, we explore whether the progressivity of Social Security and the existence of the social safety net contribute to the racial wealth gap.
 
-Social Security benefits are concave in lifetime earnings and thus offer higher replacement rates to low earners. In our first experiment, we remove this progressivity by setting benefits at 40% of each individual's AIYE. As column (2) of Table 2 shows, since Black households typically have lower lifetime earnings and thus gain more from the progressive formula, eliminating it encourages them to save more to offset reduced retirement income, raising their wealth from 2.34 to 2.42 $\times$ the wage index. Conversely, White households receive higher benefits under the flat rate and, therefore, reduce savings, lowering their wealth from 7.55 to 7.47 $\times$ the wage index. Overall, Social Security's progressivity accounts for about 4% of the excess racial wealth gap.
+Social Security benefits are concave in lifetime earnings and thus offer higher replacement rates to low earners. In our first experiment, we remove this progressivity by setting benefits at 40% of each individual's AIYE. As column (2) of Table 8 shows, since Black households typically have lower lifetime earnings and thus gain more from the progressive formula, eliminating it encourages them to save more to offset reduced retirement income, raising their wealth from 2.34 to 2.42 $\times$ the wage index. Conversely, White households receive higher benefits under the flat rate and, therefore, reduce savings, lowering their wealth from 7.55 to 7.47 $\times$ the wage index. Overall, Social Security's progressivity accounts for about 4% of the excess racial wealth gap.
 
-In the second experiment, we cut benefits from safety net programs (SNAP and SSI) and the EITC by 90%. Black wealth rises by 15.3% and White wealth by 7.74%. Column (3) of Table 2 reports our findings. Since safety net programs serve as an insurance for low-income households against negative events such as unemployment, they reduce the need for precautionary savings. Moreover, their means-tested nature discourages low earners from saving so they can remain eligible. Consistent with the finding of (Hubbard et al. 1995) and (Nardi et al. 2010), these effects are stronger for low-income Black households and thus exacerbate the racial wealth gap.
+In the second experiment, we cut benefits from safety net programs (SNAP and SSI) and the EITC by 90%. Black wealth rises by 15.3% and White wealth by 7.74%. Column (3) of Table 8 reports our findings. Since safety net programs serve as an insurance for low-income households against negative events such as unemployment, they reduce the need for precautionary savings. Moreover, their means-tested nature discourages low earners from saving so they can remain eligible. Consistent with the finding of (Hubbard et al. 1995) and (Nardi et al. 2010), these effects are stronger for low-income Black households and thus exacerbate the racial wealth gap.
 
-Finally, in column (4) of Table 2, we simultaneously remove Social Security progressivity and cut safety net and EITC benefits by 90%. Together, these changes explain about 4% of the excess racial wealth gap. Since lower-income Black households benefit from these social programs more, the reduction in progressivity and benefit levels encourages Black households to increase savings proportionally more than White households. This partially narrows the racial wealth gap relative to the baseline.
+Finally, in column (4) of Table 8, we simultaneously remove Social Security progressivity and cut safety net and EITC benefits by 90%. Together, these changes explain about 4% of the excess racial wealth gap. Since lower-income Black households benefit from these social programs more, the reduction in progressivity and benefit levels encourages Black households to increase savings proportionally more than White households. This partially narrows the racial wealth gap relative to the baseline.
 
 Overall, we conclude that the progressivity of these programs explains only a small part of the racial wealth gap. Importantly, Social Security taxes and replaces earnings only up to 2.5 times the national wage index. This means that, even under a non-progressive benefit formula, workers earning above that threshold must save more privately for retirement. Since these workers are disproportionately White, the existence of Social Security may have a larger effect on the racial wealth gap than what is implied by the progressivity of the benefit formula alone.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                                                                                                                                                                 |
-+:================================================+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+
-| 2-13                                            | \(1\)                                                 | \(2\)                                                 | \(3\)                                                 | \(4\)                                                 |
-+-------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+
-|                                                 | Baseline                                              | Remove SS progressivity                               | Cut SN and EITC by $90\%$                             | All                                                   |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| 2-4 (lr)5-7 (lr)8-10 (lr)11-13                  | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Stock market part. (%)                          | $28.58$      | $56.76$      | $-28.18$                | $31.21$      | $60.01$      | $-28.80$                | $28.27$      | $58.55$      | $-30.28$                | $31.36$      | $63.39$      | $-32.03$                |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Equity share (%)                                | $14.73$      | $22.61$      | $-7.89$                 | $15.86$      | $23.99$      | $-8.13$                 | $13.36$      | $22.26$      | $-8.90$                 | $14.55$      | $23.33$      | $-8.78$                 |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Cond. equity share (%)                          | $51.52$      | $39.84$      | $11.68$                 | $50.80$      | $39.97$      | $10.83$                 | $47.26$      | $38.02$      | $9.24$                  | $46.40$      | $36.80$      | $9.60$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Homeownership rate (%)                          | $52.30$      | $80.56$      | $-28.27$                | $55.18$      | $82.88$      | $-27.71$                | $57.90$      | $88.43$      | $-30.53$                | $63.79$      | $90.13$      | $-26.34$                |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Housing share (%)                               | $98.61$      | $118.84$     | $-20.24$                | $101.92$     | $119.34$     | $-17.42$                | $90.12$      | $119.79$     | $-29.67$                | $98.33$      | $96.69$      | $1.64$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Cond. housing share (%)                         | $188.55$     | $147.52$     | $41.03$                 | $184.71$     | $143.98$     | $40.73$                 | $155.66$     | $135.46$     | $20.20$                 | $154.15$     | $107.28$     | $46.87$                 |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-|                                                 |              |              |                         |              |              |                         |              |              |                         |              |              |                         |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-|                                                 | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| 2-4 (lr)5-7 (lr)8-10 (lr)11-13 Wealth per adult | $1.83$       | $4.39$       | $0.42$                  | $1.89$       | $4.34$       | $0.44$                  | $2.11$       | $4.73$       | $0.45$                  | $2.22$       | $5.10$       | $0.44$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Wealth per household                            | $2.34$       | $7.55$       | $0.31$                  | $2.42$       | $7.47$       | $0.32$                  | $2.70$       | $8.14$       | $0.33$                  | $2.83$       | $8.78$       | $0.32$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Share of excess wealth gap (%)                  |              |              | $0$                     |              |              | $4.11$                  |              |              | $6.81$                  |              |              | $4.00$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| |
++:===============================+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+
+| | \(1\) | \(2\) | \(3\) | \(4\) |
++--------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+
+| | Baseline | Remove SS progressivity | Cut SN and EITC by $90\%$ | All |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Stock market part. (%) | $28.58$ | $56.76$ | $-28.18$ | $31.21$ | $60.01$ | $-28.80$ | $28.27$ | $58.55$ | $-30.28$ | $31.36$ | $63.39$ | $-32.03$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Equity share (%) | $14.73$ | $22.61$ | $-7.89$ | $15.86$ | $23.99$ | $-8.13$ | $13.36$ | $22.26$ | $-8.90$ | $14.55$ | $23.33$ | $-8.78$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Cond. equity share (%) | $51.52$ | $39.84$ | $11.68$ | $50.80$ | $39.97$ | $10.83$ | $47.26$ | $38.02$ | $9.24$ | $46.40$ | $36.80$ | $9.60$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Homeownership rate (%) | $52.30$ | $80.56$ | $-28.27$ | $55.18$ | $82.88$ | $-27.71$ | $57.90$ | $88.43$ | $-30.53$ | $63.79$ | $90.13$ | $-26.34$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Housing share (%) | $98.61$ | $118.84$ | $-20.24$ | $101.92$ | $119.34$ | $-17.42$ | $90.12$ | $119.79$ | $-29.67$ | $98.33$ | $96.69$ | $1.64$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Cond. housing share (%) | $188.55$ | $147.52$ | $41.03$ | $184.71$ | $143.98$ | $40.73$ | $155.66$ | $135.46$ | $20.20$ | $154.15$ | $107.28$ | $46.87$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| | | | | | | | | | | | | |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Wealth per adult | $1.83$ | $4.39$ | $0.42$ | $1.89$ | $4.34$ | $0.44$ | $2.11$ | $4.73$ | $0.45$ | $2.22$ | $5.10$ | $0.44$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Wealth per household | $2.34$ | $7.55$ | $0.31$ | $2.42$ | $7.47$ | $0.32$ | $2.70$ | $8.14$ | $0.33$ | $2.83$ | $8.78$ | $0.32$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Share of excess wealth gap (%) | | | $0$ | | | $4.11$ | | | $6.81$ | | | $4.00$ |
++--------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
 
 : **Racial portfolio gap and social programs**
 
-This table presents the model-implied racial balance sheet and wealth under various social program scenarios. Scenario (1) is our baseline model, with real-life levels of Social Security, safety net, and EITC benefits. In scenario (2), we remove the progressivity of Social Security. Specifically, we replace baseline Social Security cash flow with 40% of lifetime income, measured by average indexed yearly earnings (AIYE) at age 60 defined in equation ([\[AIYEeuqation\]](#AIYEeuqation)). In scenario (3), we cut down safety net and EITC programs by $90\%$; eligible households will receive only $10\%$ of the baseline benefits. In scenario (4), we both remove the progressivity of Social Security and cut down safety net and EITC simultaneously. The term \"share of excess wealth gap\" refers to the portion of the wealth gap that cannot be explained by the income gap and is defined in equation ([\[eq:shareexcesswealth\]](#eq:shareexcesswealth)).
+This table presents the model-implied racial balance sheet and wealth under various social program scenarios. Scenario (1) is our baseline model, with real-life levels of Social Security, safety net, and EITC benefits. In scenario (2), we remove the progressivity of Social Security. Specifically, we replace baseline Social Security cash flow with 40% of lifetime income, measured by average indexed yearly earnings (AIYE) at age 60 defined in equation ). In scenario (3), we cut down safety net and EITC programs by $90\%$; eligible households will receive only $10\%$ of the baseline benefits. In scenario (4), we both remove the progressivity of Social Security and cut down safety net and EITC simultaneously. The term "share of excess wealth gap" refers to the portion of the wealth gap that cannot be explained by the income gap and is defined in equation ).
 
 # Model extensions 
 
@@ -823,24 +910,24 @@ We first examine whether differences in subjective expectations of stock returns
 
 Appendix 14 provides suggestive evidence from the Health and Retirement Study (HRS) consistent with this hypothesis. However, the survey responses imply negative expected returns for both groups, which makes them unsuitable for calibration: if taken literally, no household would invest in equities. Moreover, because households cannot short sell stocks, the heterogeneity of beliefs would also be important to predict the average equity share. For these reasons, our baseline model assumes rational expectations.
 
-To quantify the potential importance of beliefs, we re-solve the model for Black households under alternative expected stock returns, varying the mean of the stock return process ($\mu_s^+$ and $\mu_s^-$) while keeping all other parameters constant. We adjust only the ex-ante expectations under which portfolios are chosen, not the realized distribution of returns. Figure [\[fig:ModelExtension\]](#fig:ModelExtension) (a) shows that more pessimistic beliefs about equity returns lower stockholding and, consequently, the rate of return on wealth. A one--percentage-point lower expected stock return increases the racial wealth gap by 6.3%.
+To quantify the potential importance of beliefs, we re-solve the model for Black households under alternative expected stock returns, varying the mean of the stock return process ($\mu_s^+$ and $\mu_s^-$) while keeping all other parameters constant. We adjust only the ex-ante expectations under which portfolios are chosen, not the realized distribution of returns. Figure  (a) shows that more pessimistic beliefs about equity returns lower stockholding and, consequently, the rate of return on wealth. A one--percentage-point lower expected stock return increases the racial wealth gap by 6.3%.
 
 ## Inertia in mortgage refinancing 
 
-Gerardi et al. (2023) document that White households are substantially more likely than Black households to refinance or move when interest rates fall. This refinancing inertia implies that Black homeowners pay persistently higher mortgage rates, even after controlling for observable characteristics. To quantify the potential effect of this inertia, we model a higher effective mortgage premium for Black households. Figure [\[fig:ModelExtension\]](#fig:ModelExtension) (b) shows that a higher premium reduces wealth accumulation by discouraging homeownership and lowering average returns to housing. A one--percentage-point increase in the mortgage premium widens the racial wealth gap by 3.3%.
+Gerardi et al. (2023) document that White households are substantially more likely than Black households to refinance or move when interest rates fall. This refinancing inertia implies that Black homeowners pay persistently higher mortgage rates, even after controlling for observable characteristics. To quantify the potential effect of this inertia, we model a higher effective mortgage premium for Black households. Figure  (b) shows that a higher premium reduces wealth accumulation by discouraging homeownership and lowering average returns to housing. A one--percentage-point increase in the mortgage premium widens the racial wealth gap by 3.3%.
 
 ## Preference for tangible assets 
 
-Evidence suggests that households have a preference for "tangible\" assets such as housing. Gomes et al. (2021) argue that this preference strengthens when households view financial markets as less trustworthy or efficient. Given historical experiences in the U.S., Black households may plausibly exhibit greater mistrust in financial institutions, translating into a stronger preference for tangible assets.[^24]
+Evidence suggests that households have a preference for "tangible" assets such as housing. Gomes et al. (2021) argue that this preference strengthens when households view financial markets as less trustworthy or efficient. Given historical experiences in the U.S., Black households may plausibly exhibit greater mistrust in financial institutions, translating into a stronger preference for tangible assets.[^24]
 
 In our model, housing is the primary tangible asset. We therefore allow for a utility premium on owner-occupied housing:[^25]
 
-$$\begin{equation}
-    \label{eq:utility_tangible}
-    u(C,H,N) = \frac{1}{1-\gamma}\left(\frac{C^{1-\nu}\left[(1+\mathbb{I}_{\rm own}\xi)H\right]^\nu}{\sqrt{N}}\right)^{1-\gamma},
-\end{equation}$$ where $\mathbb{I}_{\rm own}$ indicates homeownership and $\xi\geq0$ measures the intensity of the tangibility preference. For example, with $\xi=0.1$, a homeowner perceives their house as providing 10% more housing services than an equivalent rental unit.
+$$
+ 
+ u(C,H,N) = \frac{1}{1-\gamma}\left(\frac{C^{1-\nu}\left[(1+\mathbb{I}_{\rm own}\xi)H\right]^\nu}{\sqrt{N}}\right)^{1-\gamma},
+$$ where $\mathbb{I}_{\rm own}$ indicates homeownership and $\xi\geq0$ measures the intensity of the tangibility preference. For example, with $\xi=0.1$, a homeowner perceives their house as providing 10% more housing services than an equivalent rental unit.
 
-Figure [\[fig:ModelExtension\]](#fig:ModelExtension) (c) shows that as $\xi$ increases, wealth accumulation rises. The main mechanism is that stronger tangibility preferences encourage households to save for and attain homeownership. Higher homeownership and leverage raise average wealth returns, since housing yields exceed mortgage rates. However, greater investment in housing crowds out equity holdings, which partly offsets this effect (Cocco 2005; Yao and Zhang 2005). On balance, the first channel dominates: with $\xi=0.1$, the racial wealth gap shrinks by 2.8% relative to the baseline.
+Figure  (c) shows that as $\xi$ increases, wealth accumulation rises. The main mechanism is that stronger tangibility preferences encourage households to save for and attain homeownership. Higher homeownership and leverage raise average wealth returns, since housing yields exceed mortgage rates. However, greater investment in housing crowds out equity holdings, which partly offsets this effect (Cocco 2005; Yao and Zhang 2005). On balance, the first channel dominates: with $\xi=0.1$, the racial wealth gap shrinks by 2.8% relative to the baseline.
 
 <figure data-latex-placement="H">
 <div class="center">
@@ -881,11 +968,11 @@ Finally, and critically, wealth is not welfare. In our model, many economic disp
 
 This section details the construction of Figure 1. Let $W_{jt}$ denote the average net worth of households in racial group $j\in\{{\rm W},{\rm B}\}$ at time $t$. The White-to-Black wealth gap is then the ratio $W_{{\rm W}t}/W_{{\rm B}t}$. Net worth includes the values of equity ($E_{jt}$), housing ($H_{jt}$), and mortgages ($M_{jt}$), as well as a residual for other assets for which we account below.[^26]
 
-For our counterfactual with equal portfolio shares, we need to compute (i) portfolio shares and (ii) returns on each asset between survey waves. Let $r_{k,t,t+3}$ denote the cumulative net return on asset $k$ from year $t$ to year $t+3$. By definition, average wealth must evolve as $$\begin{equation}
+For our counterfactual with equal portfolio shares, we need to compute (i) portfolio shares and (ii) returns on each asset between survey waves. Let $r_{k,t,t+3}$ denote the cumulative net return on asset $k$ from year $t$ to year $t+3$. By definition, average wealth must evolve as $$
 W_{j,t+3} = W_{jt}\left(1 + \frac{E_{jt}}{W_{jt}}r_{E,t,t+3} + \frac{H_{jt}}{W_{jt}}r_{H,t,t+3} - \frac{M_{jt}}{W_{jt}}r_{M,t,t+3} + \theta_{j,t,t+3}\right),
-\end{equation}$$ where $\theta_{j,t,t+3}$ is a residual. We use this identity to first back out these residuals from the data. Then, to do our counterfactual, we compute Black wealth assuming everything about this identity remains the same except for the portfolio weights. In particular, the counterfactual black wealth equals $$\begin{equation}
+$$ where $\theta_{j,t,t+3}$ is a residual. We use this identity to first back out these residuals from the data. Then, to do our counterfactual, we compute Black wealth assuming everything about this identity remains the same except for the portfolio weights. In particular, the counterfactual black wealth equals $$
 W_{{\rm B},t+3}^{\rm CF} = W_{{\rm B}t}^{\rm CF}\left(1 + \frac{E_{{\rm W}t}}{W_{{\rm W}t}}r_{E,t,t+3} + \frac{H_{{\rm W}t}}{W_{{\rm W}t}}r_{H,t,t+3} - \frac{M_{{\rm W}t}}{W_{{\rm W}t}}r_{M,t,t+3} + \theta_{{\rm B},t,t+3}\right),
-\end{equation}$$ starting from the initial condition $W_{{\rm B}t_0}^{\rm CF} = W_{{\rm B}t_0}$ in the first year $t_0$. The counterfactual White-to-Black wealth gap is then the ratio $W_{{\rm W}t}/W_{{\rm B}t}^{\rm CF}$.
+$$ starting from the initial condition $W_{{\rm B}t_0}^{\rm CF} = W_{{\rm B}t_0}$ in the first year $t_0$. The counterfactual White-to-Black wealth gap is then the ratio $W_{{\rm W}t}/W_{{\rm B}t}^{\rm CF}$.
 
 ## Data 
 
@@ -897,180 +984,180 @@ The variables $W_t$, $E_t$, $H_t$, and $M_t$ above are listed as *networth*, *eq
 
 ## SNAP eligibility criteria 
 
-As discussed in Section 1.4, SNAP-eligibility requires that the household pass two income tests.[^31] The first is that "gross income\" is lower than 130% of the poverty line for a family of that size. In reality, SNAP gross income includes both earned and unearned income, such as rental income and dividend and interest income. Since we do not model unearned income explicitly, we use SCF data and find that earned income is on average 85% of earned plus unearned income; hence, we model gross income as $$\begin{equation}
-\label{eq:snap_grossincome}
-    L_{it}^{\rm g} \equiv \frac{L_{it}}{0.85}.
-\end{equation}$$ The poverty line for a family of size $N=n_A+n_C$ equals $\varrho(N)L_{1t}$ and takes the following values relative to the wage: $$\begin{equation}
+As discussed in Section 1.4, SNAP-eligibility requires that the household pass two income tests.[^31] The first is that "gross income" is lower than 130% of the poverty line for a family of that size. In reality, SNAP gross income includes both earned and unearned income, such as rental income and dividend and interest income. Since we do not model unearned income explicitly, we use SCF data and find that earned income is on average 85% of earned plus unearned income; hence, we model gross income as $$
+
+ L_{it}^{\rm g} \equiv \frac{L_{it}}{0.85}.
+$$ The poverty line for a family of size $N=n_A+n_C$ equals $\varrho(N)L_{1t}$ and takes the following values relative to the wage: $$
 \varrho(N) = \left\{
 \begin{array}{lcl}
-    0.23    & & if  N=1, \\
-    0.32    & & if  N=2, \\
-    0.40    & & if  N=3, \\
-    0.48    & & if  N=4, \\
-    0.57    & & if  N=5, \\
-    0.65    & & if  N=6, \\
-    0.73    & & if  N=7, \\
-    0.81    & & if  N\geq8.
+ 0.23 & & if N=1, \\
+ 0.32 & & if N=2, \\
+ 0.40 & & if N=3, \\
+ 0.48 & & if N=4, \\
+ 0.57 & & if N=5, \\
+ 0.65 & & if N=6, \\
+ 0.73 & & if N=7, \\
+ 0.81 & & if N\geq8.
 \end{array}
 \right.
-\end{equation}$$ Because we model the number of children $n_C$ as a continuous variable over the life cycle, we linearly interpolate the poverty line between these points. The second test is that "net income\" is below 100% of the poverty line. Net income is defined as $$\begin{multline}
-\label{eq:snap_netincome}
-    L_{it}^{\rm n} \equiv L_{it}^{\rm g} - \underbrace{d(N_{it})L_{1t}}_{\substack{\text{standard} \\ \text{deduction}}} - \underbrace{0.2L_{it}}_{\substack{\text{earned-income} \\ \text{deduction}}} \\
-    - \underbrace{\min\{0.1123L_{1t},\max\{0,\mathrm{Shelter}_{it} - 0.5\times(L_{it}^{\rm g} - d(N_{it})L_{1t} - 0.2L_{it})\}\}}_{\text{shelter deduction}},
-\end{multline}$$ which is gross income, less a standard deduction, earned-income deduction, and a shelter deduction. The standard deduction depends on family size as $$\begin{equation}
+$$ Because we model the number of children $n_C$ as a continuous variable over the life cycle, we linearly interpolate the poverty line between these points. The second test is that "net income" is below 100% of the poverty line. Net income is defined as $$\begin{multline}
+
+ L_{it}^{\rm n} \equiv L_{it}^{\rm g} - \underbrace{d(N_{it})L_{1t}}_{\substack{\text{standard} \\ \text{deduction}}} - \underbrace{0.2L_{it}}_{\substack{\text{earned-income} \\ \text{deduction}}} \\
+ - \underbrace{\min\{0.1123L_{1t},\max\{0,\mathrm{Shelter}_{it} - 0.5\times(L_{it}^{\rm g} - d(N_{it})L_{1t} - 0.2L_{it})\}\}}_{\text{shelter deduction}},
+\end{multline}$$ which is gross income, less a standard deduction, earned-income deduction, and a shelter deduction. The standard deduction depends on family size as $$
 d(N) = \left\{
 \begin{array}{lcl}
-    0.0333  & & if  N\leq3, \\
-    0.0346  & & if  N=4, \\
-    0.0404  & & if  N=5, \\
-    0.0463  & & if  N\geq6,
+ 0.0333 & & if N\leq3, \\
+ 0.0346 & & if N=4, \\
+ 0.0404 & & if N=5, \\
+ 0.0463 & & if N\geq6,
 \end{array}
 \right.
-\end{equation}$$ where, again, we linearly interpolate between points for $N$. The shelter deduction defines shelter cost as either rent expense (for renters) or property tax and mortgage payments (for homeowners): $$\begin{equation}
-\label{eq:snap_shelter}
-    \mathrm{Shelter}_{it}\equiv 
-    \left\{
-    \begin{array}{ll}
-        X_{it}                                  & if renter,\\
-        T_{it}^{\rm H} + (R_{Mit}-1)(P_tH_{it} - W_{it})^+  & if homeowner.\\
-    \end{array}
-    \right.
-\end{equation}$$ In words, net income deducts any shelter costs in excess of the household's post-standard-deduction income, up to a cap of 11.23% of the wage index.
+$$ where, again, we linearly interpolate between points for $N$. The shelter deduction defines shelter cost as either rent expense (for renters) or property tax and mortgage payments (for homeowners): $$
 
-If a household passes these income tests, then it receives size-dependent benefits $(b^{\rm SN}(N_{it})L_{1t}-0.3L_{it}^{\rm n})^+$, where the maximum benefit percentage is given by $$\begin{equation}
-\label{eq:snapbenefitfun}
+ \mathrm{Shelter}_{it}\equiv 
+ \left\{
+ \begin{array}{ll}
+ X_{it} & if renter,\\
+ T_{it}^{\rm H} + (R_{Mit}-1)(P_tH_{it} - W_{it})^+ & if homeowner.\\
+ \end{array}
+ \right.
+$$ In words, net income deducts any shelter costs in excess of the household's post-standard-deduction income, up to a cap of 11.23% of the wage index.
+
+If a household passes these income tests, then it receives size-dependent benefits $(b^{\rm SN}(N_{it})L_{1t}-0.3L_{it}^{\rm n})^+$, where the maximum benefit percentage is given by $$
+
 b^{\rm SN}(N) = \left\{
 \begin{array}{lcl}
-    0.053   & & if  N=1, \\
-    0.087   & & if  N=2, \\
-    0.138   & & if  N=3, \\
-    0.176   & & if  N=4, \\
-    0.209   & & if  N=5, \\
-    0.250   & & if  N=6, \\
-    0.277   & & if  N=7, \\
-    0.316   & & if  N\geq8,
+ 0.053 & & if N=1, \\
+ 0.087 & & if N=2, \\
+ 0.138 & & if N=3, \\
+ 0.176 & & if N=4, \\
+ 0.209 & & if N=5, \\
+ 0.250 & & if N=6, \\
+ 0.277 & & if N=7, \\
+ 0.316 & & if N\geq8,
 \end{array}
 \right.
-\end{equation}$$ with linear interpolation between points.
+$$ with linear interpolation between points.
 
 ## Details of Medicare and Medicaid 
 
-As described in the main text, Total medical benefits $B_{it}^{\rm M}$ are the sum of Medicare benefits $B_{it}^{\rm M1}$ and Medicaid benefits from being categorically needy $B_{it}^{\rm M2}$ or medically needy $B_{it}^{\rm M3}$. In retirement, households pay the Medicare premium if they are not eligible for Medicaid $$\begin{equation}
-    \label{eq:MedicarePremium}
-    \Phi_{Mt} = 
-    \left\{
-    \begin{array}{ll}
-        0.03n_AL_{1t}   & if  B_{it}^{\rm M2} + B_{it}^{\rm M3}= 0,\\
-        0   & if  B_{it}^{\rm M2} + B_{it}^{\rm M3} > 0,\\
-    \end{array}
-    \right.
-\end{equation}$$
+As described in the main text, Total medical benefits $B_{it}^{\rm M}$ are the sum of Medicare benefits $B_{it}^{\rm M1}$ and Medicaid benefits from being categorically needy $B_{it}^{\rm M2}$ or medically needy $B_{it}^{\rm M3}$. In retirement, households pay the Medicare premium if they are not eligible for Medicaid $$
+ 
+ \Phi_{Mt} = 
+ \left\{
+ \begin{array}{ll}
+ 0.03n_AL_{1t} & if B_{it}^{\rm M2} + B_{it}^{\rm M3}= 0,\\
+ 0 & if B_{it}^{\rm M2} + B_{it}^{\rm M3} > 0,\\
+ \end{array}
+ \right.
+$$
 
-and they receive benefits $$\begin{equation}
-    \label{eq:medicareben}
-    B_{it}^{\rm M1} = 0.66M_{it} \quad\textrm{if }t<t_{\rm ret}.
-\end{equation}$$ A household receives Medicaid benefits by way of being categorically needy if it meets the following criteria: $$\begin{equation}
-    \label{eq:medicaid_catneedy}
-    B_{it}^{\rm M2} = 
-    \left\{
-    \begin{array}{ll}
-        M_{it}      & if  L_{it} \leq 1.38\varrho(N_{it})L_{1t} \text{ and } t < t_{\rm ret},\\
-        M_{it} - B_{it}^{\rm M0}    & if  B_{it}^{\rm SN}>0\text{ and } t \geq t_{\rm ret},\\
-    \end{array}
-    \right.
-\end{equation}$$ where $\varrho(N)$ is the poverty line for a household of size $N$, defined in Appendix 8.1. Alternatively, a household receives Medicaid benefits by way of being medically needy if it meets the following criteria: $$\begin{equation}
-    \label{eq:medicaid_medneedy}
-    B_{it}^{\rm M3} = 
-    \left\{
-    \begin{array}{ll}
-        (M_{it} - (L_{it} - 0.104L_{1t})^+ - (W_{it}-P_tH_{it} - 0.3L_{1t})^+)^+                            \\ \hspace{7cm} if  B_{it}^{\rm M2} = 0 \text{, } n_A=1, \text{ and } t < t_{\rm ret},\\
-        (M_{it} - (L_{it} - 0.141L_{1t})^+ - (W_{it}-P_tH_{it} - 0.564L_{1t})^+)^+                      \\ \hspace{7cm} if  B_{it}^{\rm M2} = 0 \text{, } n_A=2, \text{ and } t < t_{\rm ret},\\
-        (M_{it} - B_{it}^{\rm M1} - (B_{it}^{\rm SS} - 0.104L_{1t})^+ - (W_{it}-P_tH_{it} - 0.3L_{1t})^+)^+     \\ \hspace{7cm} if  B_{it}^{\rm M2} = 0 \text{, } n_A=1, \text{ and } t \geq t_{\rm ret},\\
-        (M_{it} - B_{it}^{\rm M1} - (B_{it}^{\rm SS} - 0.141L_{1t})^+ - (W_{it}-P_tH_{it} - 0.564L_{1t})^+)^+   \\ \hspace{7cm} if  B_{it}^{\rm M2} = 0 \text{, } n_A=2, \text{ and } t \geq t_{\rm ret}.\\
-    \end{array}
-    \right.
-\end{equation}$$ The total Medicare and Medicaid benefit is then $B_{it}^{\rm M} = B_{it}^{\rm M1}+B_{it}^{\rm M2}+B_{it}^{\rm M3}$.
+and they receive benefits $$
+ 
+ B_{it}^{\rm M1} = 0.66M_{it} \quad\textrm{if }t<t_{\rm ret}.
+$$ A household receives Medicaid benefits by way of being categorically needy if it meets the following criteria: $$
+ 
+ B_{it}^{\rm M2} = 
+ \left\{
+ \begin{array}{ll}
+ M_{it} & if L_{it} \leq 1.38\varrho(N_{it})L_{1t} \text{ and } t < t_{\rm ret},\\
+ M_{it} - B_{it}^{\rm M0} & if B_{it}^{\rm SN}>0\text{ and } t \geq t_{\rm ret},\\
+ \end{array}
+ \right.
+$$ where $\varrho(N)$ is the poverty line for a household of size $N$, defined in Appendix 8.1. Alternatively, a household receives Medicaid benefits by way of being medically needy if it meets the following criteria: $$
+ 
+ B_{it}^{\rm M3} = 
+ \left\{
+ \begin{array}{ll}
+ (M_{it} - (L_{it} - 0.104L_{1t})^+ - (W_{it}-P_tH_{it} - 0.3L_{1t})^+)^+ \\ if B_{it}^{\rm M2} = 0 \text{, } n_A=1, \text{ and } t < t_{\rm ret},\\
+ (M_{it} - (L_{it} - 0.141L_{1t})^+ - (W_{it}-P_tH_{it} - 0.564L_{1t})^+)^+ \\ if B_{it}^{\rm M2} = 0 \text{, } n_A=2, \text{ and } t < t_{\rm ret},\\
+ (M_{it} - B_{it}^{\rm M1} - (B_{it}^{\rm SS} - 0.104L_{1t})^+ - (W_{it}-P_tH_{it} - 0.3L_{1t})^+)^+ \\ if B_{it}^{\rm M2} = 0 \text{, } n_A=1, \text{ and } t \geq t_{\rm ret},\\
+ (M_{it} - B_{it}^{\rm M1} - (B_{it}^{\rm SS} - 0.141L_{1t})^+ - (W_{it}-P_tH_{it} - 0.564L_{1t})^+)^+ \\ if B_{it}^{\rm M2} = 0 \text{, } n_A=2, \text{ and } t \geq t_{\rm ret}.\\
+ \end{array}
+ \right.
+$$ The total Medicare and Medicaid benefit is then $B_{it}^{\rm M} = B_{it}^{\rm M1}+B_{it}^{\rm M2}+B_{it}^{\rm M3}$.
 
 ## Income tax rates and EITC 
 
 #### Federal income taxes
 
-In working life, the marginal income tax rates paid on labor income $L_{it}$ are as follows: $$\begin{equation}
-    \textrm{Marginal Tax Rate}_{it} = \left\{
-    \begin{array}{lcl}
-        0.10    & & if  L_{it} < 0.18L_{1t}, \\
-        0.12    & & if  0.18L_{1t} < L_{it} < 0.72L_{1t}, \\
-        0.22    & & if  0.72L_{1t} < L_{it} < 1.54L_{1t}, \\
-        0.24    & & if  1.54L_{1t} < L_{it} < 2.94L_{1t}, \\
-        0.32    & & if  2.94L_{1t} < L_{it} < 3.73L_{1t}, \\
-        0.35    & & if  3.73L_{1t} < L_{it} < 9.32L_{1t}, \\
-        0.37    & & if   L_{it} > 9.32L_{1t}.
-    \end{array}
-    \right.
-\end{equation}$$ In retirement, the exact same marginal tax rates and tax brackets are applied to Social Security benefits $B_{it}^{\rm SS}$ instead of labor income.
+In working life, the marginal income tax rates paid on labor income $L_{it}$ are as follows: $$
+ \textrm{Marginal Tax Rate}_{it} = \left\{
+ \begin{array}{lcl}
+ 0.10 & & if L_{it} < 0.18L_{1t}, \\
+ 0.12 & & if 0.18L_{1t} < L_{it} < 0.72L_{1t}, \\
+ 0.22 & & if 0.72L_{1t} < L_{it} < 1.54L_{1t}, \\
+ 0.24 & & if 1.54L_{1t} < L_{it} < 2.94L_{1t}, \\
+ 0.32 & & if 2.94L_{1t} < L_{it} < 3.73L_{1t}, \\
+ 0.35 & & if 3.73L_{1t} < L_{it} < 9.32L_{1t}, \\
+ 0.37 & & if L_{it} > 9.32L_{1t}.
+ \end{array}
+ \right.
+$$ In retirement, the exact same marginal tax rates and tax brackets are applied to Social Security benefits $B_{it}^{\rm SS}$ instead of labor income.
 
 #### Medicare tax
 
-Medicare taxes in working life are determined according to the following thresholds, where $k$ is number of earners: $$\begin{equation}
-    \label{eq:medicaretax}
-    T_{it}^{\rm M} = 
-    \left\{
-    \begin{array}{ll}
-        0.029 L_{it}                                        & if  L_{it} \leq 3.135 L_{1t} \text{, } k=1, \text{ and } t < t_{\rm ret},\\
-        0.029 (3.135 L_{1t}) + 0.009(L_{it} -3.135 L_{1t})      & if  L_{it} > 3.135 L_{1t} \text{, } k=1, \text{ and } t < t_{\rm ret},\\
-        0.029 L_{it}                                        & if  L_{it} \leq 3.918 L_{1t} \text{, } k=2, \text{ and } t < t_{\rm ret},\\
-        0.029 (3.918 L_{1t}) + 0.009(L_{it} - 3.918 L_{1t})     & if  L_{it} > 3.918 L_{1t} \text{, } k=2, \text{ and } t < t_{\rm ret}.\\
-    \end{array}
-    \right.
-\end{equation}$$
+Medicare taxes in working life are determined according to the following thresholds, where $k$ is number of earners: $$
+ 
+ T_{it}^{\rm M} = 
+ \left\{
+ \begin{array}{ll}
+ 0.029 L_{it} & if L_{it} \leq 3.135 L_{1t} \text{, } k=1, \text{ and } t < t_{\rm ret},\\
+ 0.029 (3.135 L_{1t}) + 0.009(L_{it} -3.135 L_{1t}) & if L_{it} > 3.135 L_{1t} \text{, } k=1, \text{ and } t < t_{\rm ret},\\
+ 0.029 L_{it} & if L_{it} \leq 3.918 L_{1t} \text{, } k=2, \text{ and } t < t_{\rm ret},\\
+ 0.029 (3.918 L_{1t}) + 0.009(L_{it} - 3.918 L_{1t}) & if L_{it} > 3.918 L_{1t} \text{, } k=2, \text{ and } t < t_{\rm ret}.\\
+ \end{array}
+ \right.
+$$
 
 #### Earned Income Tax Credit (EITC) 
 
-The Earned Income Tax Credit (EITC) provides a refundable benefit to low-income households. For a one-parent, one-child household, the EITC gives a benefit of 34 cents for each dollar of income earned up to 19% of the wage index. For income between 19% and 35% of the wage index, the benefit remains fixed at this level. Then, for each additional dollar of income earned beyond this amount, the benefit decreases by 16 cents, until a benefit of zero is received. In units of the wage index, this one-child benefit formula is[^32] $$\begin{equation}
-    B_{it}^{\rm EITC} =
-    \left\{
-    \begin{array}{ll}
-        0.34L_{it}               & if  L_{it}/L_{1t} < 0.19,\\
-        0.065L_{1t}     & if  0.19 < L_{it}/L_{1t} < 0.35,\\
-        \left(0.065L_{1t}-0.16(L_{it}-0.35L_{1t})\right)^+      & if  L_{it}/L_{1t} > 0.35.\\
-    \end{array}
-    \right.
-\end{equation}$$ For a two-parent, two-child household, the formula is $$\begin{equation}
-    B_{it}^{\rm EITC} =
-    \left\{
-    \begin{array}{ll}
-        0.40L_{it}               & if  L_{it}/L_{1t} < 0.27,\\
-        0.108L_{1t}         & if  0.27 < L_{it}/L_{1t} < 0.45,\\
-        \left(0.108L_{1t}-0.21(L_{it}-0.45L_{1t})\right)^+      & if  L_{it}/L_{1t} > 0.45.\\
-    \end{array}
-    \right.
-\end{equation}$$ In the data (see Appendix Figure 9), we find that, before retirement and regardless of race, the typical single-adult household ($n_A=1$) has one child while the typical two-adult household ($n_A=2$) has two children. Thus, which of the above formulas applies depends only on the state $n_A$.
+The Earned Income Tax Credit (EITC) provides a refundable benefit to low-income households. For a one-parent, one-child household, the EITC gives a benefit of 34 cents for each dollar of income earned up to 19% of the wage index. For income between 19% and 35% of the wage index, the benefit remains fixed at this level. Then, for each additional dollar of income earned beyond this amount, the benefit decreases by 16 cents, until a benefit of zero is received. In units of the wage index, this one-child benefit formula is[^32] $$
+ B_{it}^{\rm EITC} =
+ \left\{
+ \begin{array}{ll}
+ 0.34L_{it} & if L_{it}/L_{1t} < 0.19,\\
+ 0.065L_{1t} & if 0.19 < L_{it}/L_{1t} < 0.35,\\
+ \left(0.065L_{1t}-0.16(L_{it}-0.35L_{1t})\right)^+ & if L_{it}/L_{1t} > 0.35.\\
+ \end{array}
+ \right.
+$$ For a two-parent, two-child household, the formula is $$
+ B_{it}^{\rm EITC} =
+ \left\{
+ \begin{array}{ll}
+ 0.40L_{it} & if L_{it}/L_{1t} < 0.27,\\
+ 0.108L_{1t} & if 0.27 < L_{it}/L_{1t} < 0.45,\\
+ \left(0.108L_{1t}-0.21(L_{it}-0.45L_{1t})\right)^+ & if L_{it}/L_{1t} > 0.45.\\
+ \end{array}
+ \right.
+$$ In the data (see Appendix Figure 9), we find that, before retirement and regardless of race, the typical single-adult household ($n_A=1$) has one child while the typical two-adult household ($n_A=2$) has two children. Thus, which of the above formulas applies depends only on the state $n_A$.
 
 ## Solving the model 
 
-To solve the model, we first rescale the household's problem to reduce its dimensionality. Denote variables scaled by the aggregate wage index with hats: $\hat{Z}\equiv Z/L_1$. To see how the problem rescales, we first note the following facts. First, the utility function can be rewritten in terms of scaled variables as $$\begin{equation}
+To solve the model, we first rescale the household's problem to reduce its dimensionality. Denote variables scaled by the aggregate wage index with hats: $\hat{Z}\equiv Z/L_1$. To see how the problem rescales, we first note the following facts. First, the utility function can be rewritten in terms of scaled variables as $$
 u(C_t,H_t,N_t) = L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}u(\hat{C}_t,\hat{P}_tH_t,N_t).% \quad \textrm{and} \quad b(W,L_1,P) = L_1^{1-\gamma}P^{-\nu(1-\gamma)}b(\hat{W},1,1).
-\label{eq:app_rescaledutility}
-\end{equation}$$ Likewise, the budget constraints scale so that $$\begin{equation}
-\hat{W}_{t+1} = (\hat{W}_t + \hat{Y}_t - \hat{C}_t - \hat{X}_t - \hat{\Phi}_{Ht} - c_\pi)R_{W,t+1}\frac{L_{1t}}{L_{1,t+1}},
-\label{eq:app_budgetconstraint}
-\end{equation}$$ where, for renters, $$\begin{equation}
-\hat{X}_t = \frac{\hat{P}_tH_t}{\chi_j}
-\label{eq:app_rescaledrent}
-\end{equation}$$ and, for house sellers, $$\begin{equation}
-\hat{\Phi}_{Ht} = c_H\hat{P}_tH_t + (1-\theta_j)\mathbb{I}_{\zeta_{it}=\zeta_{it}^-}\hat{P}_tH_{t-1}.
-\label{eq:app_rescaledsellcost}
-\end{equation}$$ The house size constraints can be rescaled $$\begin{equation}
-\hat{P}_tH_t \leq \kappa_{\rm max}\hat{W}_t  \quad\textrm{and}\quad \hat{P}_tH_t \geq \kappa_{\rm min}.
-\label{eq:app_houseconstraints}
-\end{equation}$$ Finally, the liquidity constraint can be rescaled $$\begin{equation}
-(\hat{Y}_t+\varpi\hat{W}_t-\hat{C}_t)\mathbb{I}_{\zeta_{it}=\zeta_{it}^-} \geq0.
-\label{eq:app_rescaledliq}
-\end{equation}$$ What is particularly important to note about these rescaled constraints is that they are all independent of the level of $L_{1t}$ and, instead of depending on $P_t$, now depend on $\hat{P}_tH_t$ and $\hat{P}_tH_{t-1}$.
 
-Because the utility function rescales as ([\[eq:app_rescaledutility\]](#eq:app_rescaledutility)), a reasonable conjecture is that the value function can similarly be rescaled as $$V(P_t,H_{t-1},L_{1t},z_t,\eta_t,\textrm{AIYE}_t,W_t) = L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}V(1,\hat{P}_tH_{t-1},1,z_t,\eta_t,\textrm{AIYE}_t,\hat{W}_t).$$ Henceforth, we will use the shorthand $V_t=L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}\hat{V}_t$. We prove this conjecture by induction. The conjecture is true at the maximum time period $t_{\rm max}$, since $V_{t_{\rm max}} = u_{t_{\rm max}}$, and so $$\hat{V}_{t_{\rm max}} = u(\hat{C}_{t_{\rm max}},\hat{P}_{t_{\rm max}}H_{t_{\rm max}},N_{t_{\rm max}}).$$ For the induction step, suppose that the conjecture is true at time $t+1$ (i.e., $V_{t+1}=L_{1,t+1}^{1-\gamma}P_{t+1}^{-\nu(1-\gamma)}\hat{V}_{t+1}$). Then $$\begin{equation}
+$$ Likewise, the budget constraints scale so that $$
+\hat{W}_{t+1} = (\hat{W}_t + \hat{Y}_t - \hat{C}_t - \hat{X}_t - \hat{\Phi}_{Ht} - c_\pi)R_{W,t+1}\frac{L_{1t}}{L_{1,t+1}},
+
+$$ where, for renters, $$
+\hat{X}_t = \frac{\hat{P}_tH_t}{\chi_j}
+
+$$ and, for house sellers, $$
+\hat{\Phi}_{Ht} = c_H\hat{P}_tH_t + (1-\theta_j)\mathbb{I}_{\zeta_{it}=\zeta_{it}^-}\hat{P}_tH_{t-1}.
+
+$$ The house size constraints can be rescaled $$
+\hat{P}_tH_t \leq \kappa_{\rm max}\hat{W}_t \quad\textrm{and}\quad \hat{P}_tH_t \geq \kappa_{\rm min}.
+
+$$ Finally, the liquidity constraint can be rescaled $$
+(\hat{Y}_t+\varpi\hat{W}_t-\hat{C}_t)\mathbb{I}_{\zeta_{it}=\zeta_{it}^-} \geq0.
+
+$$ What is particularly important to note about these rescaled constraints is that they are all independent of the level of $L_{1t}$ and, instead of depending on $P_t$, now depend on $\hat{P}_tH_t$ and $\hat{P}_tH_{t-1}$.
+
+Because the utility function rescales as ), a reasonable conjecture is that the value function can similarly be rescaled as $$V(P_t,H_{t-1},L_{1t},z_t,\eta_t,\textrm{AIYE}_t,W_t) = L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}V(1,\hat{P}_tH_{t-1},1,z_t,\eta_t,\textrm{AIYE}_t,\hat{W}_t).$$ Henceforth, we will use the shorthand $V_t=L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}\hat{V}_t$. We prove this conjecture by induction. The conjecture is true at the maximum time period $t_{\rm max}$, since $V_{t_{\rm max}} = u_{t_{\rm max}}$, and so $$\hat{V}_{t_{\rm max}} = u(\hat{C}_{t_{\rm max}},\hat{P}_{t_{\rm max}}H_{t_{\rm max}},N_{t_{\rm max}}).$$ For the induction step, suppose that the conjecture is true at time $t+1$ (i.e., $V_{t+1}=L_{1,t+1}^{1-\gamma}P_{t+1}^{-\nu(1-\gamma)}\hat{V}_{t+1}$). Then $$
 V_t = \max_{\{C_t,\pi_t,H_t,\mathbb{I}_{{\rm own},t}\}} \left\{L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}u(\hat{C}_t,\hat{P}_tH_t,N_t) + \beta\mathbb{E}_t\left[L_{1,t+1}^{1-\gamma}P_{t+1}^{-\nu(1-\gamma)}\hat{V}_{t+1}\right]\right\}.
-\end{equation}$$ Note that the maximum this function over $\{C_t,\pi_t,H_t,\mathbb{I}_{{\rm own},t}\}$ is identical to the maximum over $\{\hat{C}_t,\pi_t,\hat{P}_tH_t,\mathbb{I}_{{\rm own},t}\}$. Thus, we can change the arguments of the maximization and factor out $L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}$ to see that $$\begin{align*}
+$$ Note that the maximum this function over $\{C_t,\pi_t,H_t,\mathbb{I}_{{\rm own},t}\}$ is identical to the maximum over $\{\hat{C}_t,\pi_t,\hat{P}_tH_t,\mathbb{I}_{{\rm own},t}\}$. Thus, we can change the arguments of the maximization and factor out $L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}$ to see that $$\begin{align*}
 V_t &= L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)} \\
 &\quad\times\max_{\{\hat{C}_t,\pi_t,\hat{P}_tH_t,\mathbb{I}_{{\rm own},t}\}}\left\{u(\hat{C}_t,\hat{P}_tH_t,N_t) + \beta\mathbb{E}_t\left[\left(\frac{L_{1,t+1}}{L_{1t}}\right)^{1-\gamma}\left(\frac{P_{t+1}}{P_t}\right)^{-\nu(1-\gamma)}\hat{V}_{t+1}\right]\right\} \\
 &= L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)}\hat{V}_t.
@@ -1080,9 +1167,7 @@ V_t &= L_{1t}^{1-\gamma}P_t^{-\nu(1-\gamma)} \\
 
 ## Income profile fit
 
-We model the income profiles $f_{it}$ as a cubic polynomial of age. There are six types of households, and Table [\[table:incomecoef\]](#table:incomecoef) reports the coefficients.
-
-[]
+We model the income profiles $f_{it}$ as a cubic polynomial of age. There are six types of households, and Table reports the coefficients.
 
 lSSSSSS & Single & One-earner & Two-earner & Single & One-earner & Two-earner \
 & (W) & (W) & (W) & (B) & (B) & (B)\
@@ -1099,7 +1184,7 @@ Figure 7 presents the values and fit of targeted and simulated moments from the 
 
 <figure id="fig:idiofitness" data-latex-placement="H">
 <div class="center">
-<p><span>-2cm</span></p>
+<p></p>
 <table>
 <tbody>
 <tr>
@@ -1129,43 +1214,43 @@ Figure 7 presents the values and fit of targeted and simulated moments from the 
 
 ## Medical expenditure 
 
-We estimate the process for medical expenditures in two steps. First, to estimate the deterministic component $g(a_t,j,n_A)$, we run the regressions $$\begin{equation}
-\label{eq:medical_exp_regression}
-\log M_{it} = \beta_0(j,n_A) + \beta_1(j,n_A)a_{it} + \beta_2(j,n_A)\frac{a_{it}^2}{10} + \beta_3(j,n_A)\frac{a_{it}^3}{100} + \delta_{it},
-\end{equation}$$ for each combination of race and age $(j,n_A)\in\{{\rm B},{\rm W}\}\times\{1,2\}$. Panel A of Table 3 reports the coefficient estimates.
+We estimate the process for medical expenditures in two steps. First, to estimate the deterministic component $g(a_t,j,n_A)$, we run the regressions $$
 
-+----------------------------------+------------------------+------------------------+
-|                                  | White                  | Black                  |
-+:=================================+:==========+:===========+:==========+:===========+
-| 2-3 (lr)4-5                      | One adult | Two adults | One adult | Two adults |
+\log M_{it} = \beta_0(j,n_A) + \beta_1(j,n_A)a_{it} + \beta_2(j,n_A)\frac{a_{it}^2}{10} + \beta_3(j,n_A)\frac{a_{it}^3}{100} + \delta_{it},
+$$ for each combination of race and age $(j,n_A)\in\{{\rm B},{\rm W}\}\times\{1,2\}$. Panel A of Table 9 reports the coefficient estimates.
+
++:---------------------------------+:----------+:-----------+:----------+:-----------+
+| | White | Black |
 +----------------------------------+-----------+------------+-----------+------------+
-| Panel A: Deterministic component |           |            |           |            |
+| | One adult | Two adults | One adult | Two adults |
 +----------------------------------+-----------+------------+-----------+------------+
-| Age                              | $-0.059$  | $-0.138$   | $-0.085$  | $-0.175$   |
+| Panel A: Deterministic component | | | | |
 +----------------------------------+-----------+------------+-----------+------------+
-|                                  | (0.006)   | (0.007)    | (0.011)   | (0.020)    |
+| Age | $-0.059$ | $-0.138$ | $-0.085$ | $-0.175$ |
 +----------------------------------+-----------+------------+-----------+------------+
-| Age$^2$ / 10                     | $0.017$   | $0.033$    | $0.022$   | $0.040$    |
+| | (0.006) | (0.007) | (0.011) | (0.020) |
 +----------------------------------+-----------+------------+-----------+------------+
-|                                  | (0.001)   | (0.001)    | (0.002)   | (0.004)    |
+| Age$^2$ / 10 | $0.017$ | $0.033$ | $0.022$ | $0.040$ |
 +----------------------------------+-----------+------------+-----------+------------+
-| Age$^3$ / 100                    | $-0.001$  | $-0.002$   | $-0.001$  | $-0.002$   |
+| | (0.001) | (0.001) | (0.002) | (0.004) |
 +----------------------------------+-----------+------------+-----------+------------+
-|                                  | (0.0001)  | (0.0001)   | (0.0001)  | (0.0003)   |
+| Age$^3$ / 100 | $-0.001$ | $-0.002$ | $-0.001$ | $-0.002$ |
 +----------------------------------+-----------+------------+-----------+------------+
-| Constant                         | $-2.897$  | $-1.350$   | $-2.564$  | $-0.954$   |
+| | (0.0001) | (0.0001) | (0.0001) | (0.0003) |
 +----------------------------------+-----------+------------+-----------+------------+
-|                                  | (0.100)   | (0.116)    | (0.177)   | (0.316)    |
+| Constant | $-2.897$ | $-1.350$ | $-2.564$ | $-0.954$ |
 +----------------------------------+-----------+------------+-----------+------------+
-| Observations                     | 104,464   | 123,498    | 38,377    | 17,101     |
+| | (0.100) | (0.116) | (0.177) | (0.316) |
 +----------------------------------+-----------+------------+-----------+------------+
-| Adjusted $R^2$                   | 0.143     | 0.179      | 0.118     | 0.146      |
+| Observations | 104,464 | 123,498 | 38,377 | 17,101 |
 +----------------------------------+-----------+------------+-----------+------------+
-| Panel B: Stochastic component    |           |            |           |            |
+| Adjusted $R^2$ | 0.143 | 0.179 | 0.118 | 0.146 |
 +----------------------------------+-----------+------------+-----------+------------+
-| $\rho_\delta$                    | 0.5381    | 0.4953     | 0.5430    | 0.4768     |
+| Panel B: Stochastic component | | | | |
 +----------------------------------+-----------+------------+-----------+------------+
-| $\sigma_\delta$                  | 0.9399    | 0.9837     | 0.9651    | 1.0218     |
+| $\rho_\delta$ | 0.5381 | 0.4953 | 0.5430 | 0.4768 |
++----------------------------------+-----------+------------+-----------+------------+
+| $\sigma_\delta$ | 0.9399 | 0.9837 | 0.9651 | 1.0218 |
 +----------------------------------+-----------+------------+-----------+------------+
 
 : Coefficient estimates for medical expenditure
@@ -1175,7 +1260,7 @@ The table reports estimates for the health expenditure process by race and numbe
 Second, we take the residuals $\delta_{it} = \log M_{it} - \log\hat{M}_{it}$ and directly compute estimators for the persistence and volatility of the stochastic component. Specifically, we invert the two moments $\text{var}(\delta_{it}| j,n_A)$ and $\text{var}(\delta_{i,t+1} - \delta_{it}| j,n_A)$ to get $$\begin{align}
 \rho_\delta(j,n_A) &= 1 - \frac{\text{var}(\delta_{i,t+1} - \delta_{it} | j,n_A)}{2\text{var}(\delta_{it} | j,n_A)}, \\
 \sigma_\delta(j,n_A)^2 &= \text{var}(\delta_{it} | j,n_A) (1 - \rho_\delta(j,n_A)^2).
-\end{align}$$ Panel B of Table 3 reports these values. Figure 8 A shows model-simulated medical expenditures incurred by Black and White American households over the life cycle. Figure 8 B displays the total medical bill, defined as the sum of out-of-pocket medical payments and insurance premiums. The discontinuity around retirement arises from switching from private insurance to Medicare and from tighter Medicaid eligibility at retirement. For higher-earning two-adult households, the total medical bill declines at retirement because Medicare premiums are lower than private insurance premiums. In contrast, low-earning single Black households are more likely to rely on Medicaid. As Medicaid eligibility tightens at retirement, many become ineligible and face higher medical costs. The hump-shaped pattern in medical expenditures during working years also reflects Medicaid eligibility: younger and older workers are more likely to receive Medicaid coverage, while middle-aged households are more likely to rely on private insurance.
+\end{align}$$ Panel B of Table 9 reports these values. Figure 8 A shows model-simulated medical expenditures incurred by Black and White American households over the life cycle. Figure 8 B displays the total medical bill, defined as the sum of out-of-pocket medical payments and insurance premiums. The discontinuity around retirement arises from switching from private insurance to Medicare and from tighter Medicaid eligibility at retirement. For higher-earning two-adult households, the total medical bill declines at retirement because Medicare premiums are lower than private insurance premiums. In contrast, low-earning single Black households are more likely to rely on Medicaid. As Medicaid eligibility tightens at retirement, many become ineligible and face higher medical costs. The hump-shaped pattern in medical expenditures during working years also reflects Medicaid eligibility: younger and older workers are more likely to receive Medicaid coverage, while middle-aged households are more likely to rely on private insurance.
 
 <figure id="fig:MedicalExp" data-latex-placement="H">
 <div class="center">
@@ -1187,91 +1272,91 @@ Second, we take the residuals $\delta_{it} = \log M_{it} - \log\hat{M}_{it}$ and
 
 ## Mortgage spread 
 
-We estimate the mortgage spread as a function of a household's wage-indexed income, debt-to-value ratio, and race. Specifically, we run the regression[^34] $$\log(R_{M,it}-R_{ft}) = \beta_0 - \beta_1\log(\textrm{income}_{it})+\beta_2\mathbb{I}_{\textrm{B}it} + \beta_3\log\left(\frac{\textrm{debt}_{it}}{\textrm{value}_{it}}\right),$$ where $\mathbb{I}_{\textrm{B}it}$ equals one if the household is Black. Table 4 reports the main results (specification (4)), along with results for each individual regressor.
+We estimate the mortgage spread as a function of a household's wage-indexed income, debt-to-value ratio, and race. Specifically, we run the regression[^34] $$\log(R_{M,it}-R_{ft}) = \beta_0 - \beta_1\log(\textrm{income}_{it})+\beta_2\mathbb{I}_{\textrm{B}it} + \beta_3\log\left(\frac{\textrm{debt}_{it}}{\textrm{value}_{it}}\right),$$ where $\mathbb{I}_{\textrm{B}it}$ equals one if the household is Black. Table 10 reports the main results (specification (4)), along with results for each individual regressor.
 
 We use all waves of SCF surveys from 1989 to 2022 to estimate the coefficients. Our analysis is restricted to White or Black households that own only one residential property. The mortgage spread is defined as the ratio between the weighted average of initial mortgage and refinancing rates and the 10-year Treasury bill rate. We scale household income, which is the sum of labor income and benefits including Social Security, by the wage index. Debt-to-value is calculated as the sum of initial mortgage and refinancing amounts divided by initial price of the property.
 
-                      \(1\)                       \(2\)     \(3\)     \(4\)
-  ------------------- --------------------------- --------- --------- ---------------------------
-  Log income          $-$`<!-- -->`{=html}0.119                       $-$`<!-- -->`{=html}0.110
-                      (0.005)                                         (0.005)
-  Log debt-to-value                               0.075               0.070
-                                                  (0.007)             (0.007)
-  Race (Black)                                              0.157     0.111
-                                                            (0.011)   (0.011)
-  Constant            0.723                       0.685     0.660     0.710
-                      (0.004)                     (0.003)   (0.004)   (0.005)
-  Observations        47,505                      48,562    48,677    47,404
-  Adjusted $R^2$      0.014                       0.002     0.004     0.015
+ \(1\) \(2\) \(3\) \(4\)
+ ------------------- --------------------------- --------- --------- ---------------------------
+ Log income $-$0.119 $-$0.110
+ (0.005) (0.005)
+ Log debt-to-value 0.075 0.070
+ (0.007) (0.007)
+ Race (Black) 0.157 0.111
+ (0.011) (0.011)
+ Constant 0.723 0.685 0.660 0.710
+ (0.004) (0.003) (0.004) (0.005)
+ Observations 47,505 48,562 48,677 47,404
+ Adjusted $R^2$ 0.014 0.002 0.004 0.015
 
-  : Coefficient estimates for mortgage spread
+ : Coefficient estimates for mortgage spread
 
 The table reports the result of regression of the log mortgage spread on log income (scaled by the wage index), log debt-to-value ratio, and a race indicator (0 if White and 1 if Black). The data include 12 waves of SCF surveys from 1989 to 2022. Standard errors are reported in parentheses.
 
 ## Inheritance 
 
 The SCF asks respondents about their three largest inheritances received and the years in which they received them. Using this information, we compute the probability and the cross-sectional distribution of inheritances that Black and White households receive at each age. The probability $p_I(a_t,j,\hat{y}_t)$ and conditional mean inheritance size $\mu_I(a_t,j,\hat{y}_t)$ are polynomials of age $a_{it}$, race $j$, and log income $\hat{y}_{it}$, defined in the data as either labor income or Social Security benefits. Let $\mathbb{I}_I$ and $\mathbb{I}_{\rm B}$ denote indicators that equal one if the household received inheritance and is Black, respectively. The regression for the probability of receiving inheritance is then $$\mathbb{I}_{Iit} = \beta_0 + \beta_1 a_{it} + \beta_2\frac{a_{it}^2}{10} + \beta_3\frac{a_{it}^3}{100}
-    + \beta_4 \mathbb{I}_{{\rm B}it} + \beta_5 a_{it} \times \mathbb{I}_{{\rm B}it}
-    + \beta_6 \frac{a_{it}^2}{10}\times\mathbb{I}_{{\rm B}it} + \beta_7\frac{a_{it}^3}{100}\times\mathbb{I}_{{\rm B}it} 
-    + \beta_8\hat{y}_i + \varepsilon_{Iit},$$ and the regression for the mean of log inheritance, conditional on receiving it, is analogous, with $\log I_{it}^+$ as the dependent variable. The variance $\sigma_I(j)^2$ of log inheritance, conditional on receiving it, is simply estimated by race, using the residuals from the regression on $\log I_{it}^+$. Table 5 reports the results of these two regressions.
+ + \beta_4 \mathbb{I}_{{\rm B}it} + \beta_5 a_{it} \times \mathbb{I}_{{\rm B}it}
+ + \beta_6 \frac{a_{it}^2}{10}\times\mathbb{I}_{{\rm B}it} + \beta_7\frac{a_{it}^3}{100}\times\mathbb{I}_{{\rm B}it} 
+ + \beta_8\hat{y}_i + \varepsilon_{Iit},$$ and the regression for the mean of log inheritance, conditional on receiving it, is analogous, with $\log I_{it}^+$ as the dependent variable. The variance $\sigma_I(j)^2$ of log inheritance, conditional on receiving it, is simply estimated by race, using the residuals from the regression on $\log I_{it}^+$. Table 11 reports the results of these two regressions.
 
-  ---------------------------------------------------- ------------- ---------- ------------
-                                                        Probability     Mean     Volatility
-                                                           $p_I$      $\mu_I$    $\sigma_I$
-  age ($a$)                                               -0.0019      -0.049   
-                                                         (0.0001)     (0.020)   
-  Black ($\mathbb{I}_{\rm B}$)                            -0.0128      -0.521       1.58
-                                                         (0.0033)     (1.130)     (0.0234)
-  $\textrm{age} \times \mathbb{I}_{\rm B}$                0.0012       0.087    
-                                                         (0.0002)     (0.078)   
-  $\textrm{age}^2 / 10$                                   0.0005       0.0189   
-                                                         (0.0000)     (0.0042)  
-  $(\textrm{age}^2 / 10) \times \mathbb{I}_{\rm B}$       0.0002      -0.0088   
-                                                         (0.0000)     (0.0167)  
-  $\textrm{age}^3 / 100$                                  -0.0004     -0.0017   
-                                                         (0.0000)     (0.0003)  
-  $(\textrm{age}^3 / 100) \times \mathbb{I}_{\rm B}$      -0.0001      0.0006   
-                                                         (0.0000)     (0.0012)  
-  Income ($\hat{y}$)                                      0.0001       0.108    
-                                                         (0.0000)     (0.008)   
-  Constant                                                0.0237       -0.326       1.72
-                                                         (0.0013)     (0.307)     (0.0062)
-  Observations                                           5,007,370     40,715   
-  $R^2$                                                   0.0026       0.0172   
-  ---------------------------------------------------- ------------- ---------- ------------
+ ---------------------------------------------------- ------------- ---------- ------------
+ Probability Mean Volatility
+ $p_I$ $\mu_I$ $\sigma_I$
+ age ($a$) -0.0019 -0.049 
+ (0.0001) (0.020) 
+ Black ($\mathbb{I}_{\rm B}$) -0.0128 -0.521 1.58
+ (0.0033) (1.130) (0.0234)
+ $\textrm{age} \times \mathbb{I}_{\rm B}$ 0.0012 0.087 
+ (0.0002) (0.078) 
+ $\textrm{age}^2 / 10$ 0.0005 0.0189 
+ (0.0000) (0.0042) 
+ $(\textrm{age}^2 / 10) \times \mathbb{I}_{\rm B}$ 0.0002 -0.0088 
+ (0.0000) (0.0167) 
+ $\textrm{age}^3 / 100$ -0.0004 -0.0017 
+ (0.0000) (0.0003) 
+ $(\textrm{age}^3 / 100) \times \mathbb{I}_{\rm B}$ -0.0001 0.0006 
+ (0.0000) (0.0012) 
+ Income ($\hat{y}$) 0.0001 0.108 
+ (0.0000) (0.008) 
+ Constant 0.0237 -0.326 1.72
+ (0.0013) (0.307) (0.0062)
+ Observations 5,007,370 40,715 
+ $R^2$ 0.0026 0.0172 
+ ---------------------------------------------------- ------------- ---------- ------------
 
-  : Coefficient estimates for inheritance profiles
+ : Coefficient estimates for inheritance profiles
 
 This table reports OLS estimates for the probability of receiving inheritance ($p_I$) and the average log inheritance amount ($\mu_I$), modeled as polynomials of age, race, and income. Income $\hat{y}$ is defined as either labor income in working life and Social Security benefits in retirement. The indicator $\mathbb{I}_{\rm B}$ equals 1 if the household is Black. Standard errors are in parentheses.
 
 ## Family size 
 
-We model family size as polynomial of household head's age. We categorize Black and White households into single adult, two adults with one earner, and two adults with two earners, resulting in 6 types of households. We use the CPS from 1978 to 2021 to obtain the family size profile. Table 6 reports the model coefficients from OLS regression. Figure 9 plots the distribution of household size over age for the six types of households.
+We model family size as polynomial of household head's age. We categorize Black and White households into single adult, two adults with one earner, and two adults with two earners, resulting in 6 types of households. We use the CPS from 1978 to 2021 to obtain the family size profile. Table 12 reports the model coefficients from OLS regression. Figure 9 plots the distribution of household size over age for the six types of households.
 
-+----------------------+------------------------------------+-----------------------------------+
-|                      | White households                   | Black households                  |
-+:=====================+:=========+:===========+:===========+:========+:===========+:===========+
-| 2-4 (lr)5-7          | Single   | One-earner | Two-earner | Single  | One-earner | Two-earner |
++:---------------------+:---------+:-----------+:-----------+:--------+:-----------+:-----------+
+| | White households | Black households |
 +----------------------+----------+------------+------------+---------+------------+------------+
-| age                  | 0.20     | 0.90       | 0.75       | 0.37    | 0.75       | 0.59       |
+| | Single | One-earner | Two-earner | Single | One-earner | Two-earner |
 +----------------------+----------+------------+------------+---------+------------+------------+
-|                      | (0.04)   | (0.06)     | (0.07)     | (0.06)  | (0.09)     | (0.07)     |
+| age | 0.20 | 0.90 | 0.75 | 0.37 | 0.75 | 0.59 |
 +----------------------+----------+------------+------------+---------+------------+------------+
-| $\textrm{age}^2/10$  | -0.04    | -0.19      | -0.15      | -0.08   | -0.17      | -0.12      |
+| | (0.04) | (0.06) | (0.07) | (0.06) | (0.09) | (0.07) |
 +----------------------+----------+------------+------------+---------+------------+------------+
-|                      | (0.01)   | (0.01)     | (0.02)     | (0.01)  | (0.02)     | (0.02)     |
+| $\textrm{age}^2/10$ | -0.04 | -0.19 | -0.15 | -0.08 | -0.17 | -0.12 |
 +----------------------+----------+------------+------------+---------+------------+------------+
-| $\textrm{age}^3/100$ | 0.002    | 0.13       | 0.009      | 0.006   | 0.01       | 0.008      |
+| | (0.01) | (0.01) | (0.02) | (0.01) | (0.02) | (0.02) |
 +----------------------+----------+------------+------------+---------+------------+------------+
-|                      | (0.0007) | (0.001)    | (0.001)    | (0.001) | (0.002)    | (0.001)    |
+| $\textrm{age}^3/100$ | 0.002 | 0.13 | 0.009 | 0.006 | 0.01 | 0.008 |
 +----------------------+----------+------------+------------+---------+------------+------------+
-| Constant             | -1.33    | -8.92      | -8.05      | -2.49   | -6.18      | -5.03      |
+| | (0.0007) | (0.001) | (0.001) | (0.001) | (0.002) | (0.001) |
 +----------------------+----------+------------+------------+---------+------------+------------+
-|                      | (0.54)   | (0.78)     | (0.97)     | (0.74)  | (1.23)     | (0.09)     |
+| Constant | -1.33 | -8.92 | -8.05 | -2.49 | -6.18 | -5.03 |
 +----------------------+----------+------------+------------+---------+------------+------------+
-| Observations         | 42       | 42         | 423        | 42      | 42         | 42         |
+| | (0.54) | (0.78) | (0.97) | (0.74) | (1.23) | (0.09) |
 +----------------------+----------+------------+------------+---------+------------+------------+
-| Adjusted $R^2$       | 0.88     | 0.98       | 0.95       | 0.93    | 0.93       | 0.93       |
+| Observations | 42 | 42 | 423 | 42 | 42 | 42 |
++----------------------+----------+------------+------------+---------+------------+------------+
+| Adjusted $R^2$ | 0.88 | 0.98 | 0.95 | 0.93 | 0.93 | 0.93 |
 +----------------------+----------+------------+------------+---------+------------+------------+
 
 : **Coefficient estimates for household size**
@@ -1291,59 +1376,57 @@ This table reports the OLS coefficients of household size as a function of age. 
 In this section, we report the interaction effects on portfolio and wealth between pairs of economic channels. The discussion of these tables is in Section 4.4.
 
 +:--------------------------------------------------------------+--------------------------:+-------------------------:+
-| Panel A: Income risk $\times$ stochastic asset returns                                                               |
+| Panel A: Income risk $\times$ stochastic asset returns |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-|                                                               |                           |                          |
+| | | |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-|                                                               | Equity share (%)          | Wealth                   |
+| | Equity share (%) | Wealth |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3 Black baseline                                            | 14.73                     | 2.34                     |
+| Black baseline | 14.73 | 2.34 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| With White income risk                                        | $+$`<!-- -->`{=html}3.80  | $+$`<!-- -->`{=html}0.07 |
+| With White income risk | $+$3.80 | $+$0.07 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| With stochastic return realization                            | $+$`<!-- -->`{=html}0.48  | $+$`<!-- -->`{=html}0.16 |
+| With stochastic return realization | $+$0.48 | $+$0.16 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| **Interaction: income risk $\times$ stochastic asset return** | $-$**1.67**               | $-$**0.43**              |
+| **Interaction: income risk $\times$ stochastic asset return** | $-$**1.67** | $-$**0.43** |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3 Joint total effect                                        | $+$`<!-- -->`{=html}2.61  | $-$`<!-- -->`{=html}0.20 |
+| Joint total effect | $+$2.61 | $-$0.20 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3                                                           |                           |                          |
+| | | |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| Panel B: Earnings gap $\times$ health risk                                                                           |
+| Panel B: Earnings gap $\times$ health risk |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-|                                                               |                           |                          |
+| | | |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-|                                                               | Equity share (%)          | Wealth                   |
+| | Equity share (%) | Wealth |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3 Black without health risks                                | 16.38                     | 2.13                     |
+| Black without health risks | 16.38 | 2.13 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| With White earnings level                                     | $+$`<!-- -->`{=html}5.11  | $+$`<!-- -->`{=html}0.78 |
+| With White earnings level | $+$5.11 | $+$0.78 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| With health risks                                             | $-$`<!-- -->`{=html}1.65  | $+$`<!-- -->`{=html}0.21 |
+| With health risks | $-$1.65 | $+$0.21 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| **Interaction: earnings $\times$ health risks**               | $-$**0.43**               | $-$**0.08**              |
+| **Interaction: earnings $\times$ health risks** | $-$**0.43** | $-$**0.08** |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3 Joint total effect                                        | $+$`<!-- -->`{=html}3.03  | $+$`<!-- -->`{=html}0.91 |
+| Joint total effect | $+$3.03 | $+$0.91 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3                                                           |                           |                          |
+| | | |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| Panel C: Family structure $\times$ house prices                                                                      |
+| Panel C: Family structure $\times$ house prices |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-|                                                               |                           |                          |
+| | | |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-|                                                               | Housing share (%)         | Wealth                   |
+| | Housing share (%) | Wealth |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3 Black baseline                                            | 98.60                     | 2.34                     |
+| Black baseline | 98.60 | 2.34 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| With White family structure                                   | $+$`<!-- -->`{=html}12.05 | $+$`<!-- -->`{=html}0.50 |
+| With White family structure | $+$12.05 | $+$0.50 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| With White house prices                                       | $-$`<!-- -->`{=html}52.07 | $-$`<!-- -->`{=html}0.24 |
+| With White house prices | $-$52.07 | $-$0.24 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| **Interaction: family structure $\times$ house prices**       | $+$**2.57**               | $-$**0.05**              |
+| **Interaction: family structure $\times$ house prices** | $+$**2.57** | $-$**0.05** |
 +---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3 Joint total effect                                        | $-$`<!-- -->`{=html}37.45 | $+$`<!-- -->`{=html}0.21 |
-+---------------------------------------------------------------+---------------------------+--------------------------+
-| 1-3                                                           |                           |                          |
+| Joint total effect | $-$37.45 | $+$0.21 |
 +---------------------------------------------------------------+---------------------------+--------------------------+
 
 : **Interaction effects between economic channels**
@@ -1354,317 +1437,408 @@ This table documents the interaction effects between pairs of economic channels.
 
 # Effect of economic channels on White households
 
-In this section, we perform a complementary counterfactual analysis to the one presented in Section 4.2. Whereas the earlier exercise began with Black households and replaced their economic channels with those of White households, we now start with White households and substitute each channel with its Black household counterpart. This approach allows us to examine how adopting Black-specific economic characteristics, such as lower earnings or higher income risks, would affect White households' portfolios, wealth, and welfare. Table [\[tab:ChanelContribution_bis\]](#tab:ChanelContribution_bis) shows the results and the effects of these channels on White households are similar to those in Table [\[tab:ChanelContribution\]](#tab:ChanelContribution), confirming the robustness of our findings.
+In this section, we perform a complementary counterfactual analysis to the one presented in Section 4.2. Whereas the earlier exercise began with Black households and replaced their economic channels with those of White households, we now start with White households and substitute each channel with its Black household counterpart. This approach allows us to examine how adopting Black-specific economic characteristics, such as lower earnings or higher income risks, would affect White households' portfolios, wealth, and welfare. Table 14 shows the results and the effects of these channels on White households are similar to those in Table 6, confirming the robustness of our findings.
 
-to &\
-(lr)2-8 & & & & & & &\
-& & & & & & &\
-& & & & & & &\
-\
-Stock market part. (%) & $-28.18$ & $-8.34$ & $-12.73$ & $-0.09$ & $-0.25$ & $-0.13$ & $-0.15$\
-Equity share (%) & $-7.89$ & $-3.24$ & $-7.67$ & $-0.03$ & $-0.27$ & $-0.17$ & $0.08$\
-Cond. equity share (%) & $11.68$ & $0.16$ & $-5.90$ & $0.01$ & $-0.30$ & $-0.21$ & $0.25$\
-Homeownership rate (%) & $-28.27$ & $-6.78$& $-0.25$& $-0.07$& $6.67$& $-0.82$& $-1.01$\
-Housing share (%) & $-20.24$ & $-6.64$& $2.08$& $-0.02$& $12.61$& $-3.88$& $-3.63$\
-Cond. housing share (%) & $11.68$& $0.16$& $-5.90$& $0.01$& $-0.30$& $-0.21$& $0.25$\
-Exp. return on wealth (%) & $-1.10$ &$-0.47$ & $-0.54$ & $0.00$ & $2.01$ & $-0.18$ & $-0.29$\
-\
-Welfare (%) & & $-16.24$ & $-2.47$ & $-0.07$ & $9.19$ & $-0.04$ & $-0.06$\
-\
-Wealth per adult & $-2.55$ & $-0.91$& $-0.29$ & $-0.01$ & $0.07$ & $-0.01$ & $-0.04$\
-Wealth per household & $-5.20$ &$-1.56$ & $-0.50$ & $-0.01$ & $0.12$ & $-0.02$ & $-0.08$\
-& $12.85$ & $13.24$ & $0.34$ & $-3.83$ & $0.50$ & $2.44$\
++:--------------------------+----------------:+------------:+------------:+------------:+------------:+------------:+------------:+
+| | **Effect of channel on White households** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | \(0\) | \(1\) | \(2\) | \(3\) | \(4\) | \(5\) | \(6\) |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | Black--White | Earnings | Income | Distressed | House | Mortgage | Property |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | difference | gap | risk | sale | price | rate | tax |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Balance sheet composition:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Stock market part. (%) | $-28.18$ | $-8.34$ | $-12.73$ | $-0.09$ | $-0.25$ | $-0.13$ | $-0.15$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Equity share (%) | $-7.89$ | $-3.24$ | $-7.67$ | $-0.03$ | $-0.27$ | $-0.17$ | $0.08$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. equity share (%) | $11.68$ | $0.16$ | $-5.90$ | $0.01$ | $-0.30$ | $-0.21$ | $0.25$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Homeownership rate (%) | $-28.27$ | $-6.78$ | $-0.25$ | $-0.07$ | $6.67$ | $-0.82$ | $-1.01$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Housing share (%) | $-20.24$ | $-6.64$ | $2.08$ | $-0.02$ | $12.61$ | $-3.88$ | $-3.63$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. housing share (%) | $11.68$ | $0.16$ | $-5.90$ | $0.01$ | $-0.30$ | $-0.21$ | $0.25$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Exp. return on wealth (%) | $-1.10$ | $-0.47$ | $-0.54$ | $0.00$ | $2.01$ | $-0.18$ | $-0.29$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Welfare:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Welfare (%) | | $-16.24$ | $-2.47$ | $-0.07$ | $9.19$ | $-0.04$ | $-0.06$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, standalone effect:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | $-2.55$ | $-0.91$ | $-0.29$ | $-0.01$ | $0.07$ | $-0.01$ | $-0.04$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | $-5.20$ | $-1.56$ | $-0.50$ | $-0.01$ | $0.12$ | $-0.02$ | $-0.08$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $12.85$ | $13.24$ | $0.34$ | $-3.83$ | $0.50$ | $2.44$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
-This table decomposes the effect of each economic factor on White portfolio composition, wealth, and welfare in the model. Column (0) reports the total difference between Black and White households; a negative value means the variable is lower for Black than for White households. Each subsequent column (1) through (12) reports the difference between a White household and a White household with the parameters controlling a given economic factor set to their value for Black households. For example, (1) reports the difference between White households and White households with the same earnings level as Black households. Wealth is reported in units of the national wage index. The expected return to wealth is the portfolio weighted sum of bond returns, equity returns, mortgage costs, and housing returns. Housing returns can be further decomposed into changes in house prices, implicit rental yield, distress costs, and property tax. The excess wealth gap is defined in Eq. [\[eq:shareexcesswealth\]](#eq:shareexcesswealth). Welfare measures how Black households' lifetime consumption would change due to exposure to each channel. A negative welfare change indicates that that an economic factor adversely affects Black households, lowering their equivalent lifetime consumption by the reported percentage points.
+: **Effect of economic channels on White balance sheet**
 
-to &\
-(lr)2-8 & & & & & & &\
-& & & & & & &\
-& & & & & & &\
-\
-Stock market part. (%) & & $-0.70$ & $-1.02$ & $-1.98$ & $-13.39$ & $-0.17$ & $3.93$\
-Equity share (%) & & $-0.09$ & $0.08$ & $-0.16$ & $-5.86$ & $-0.14$ & $10.02$\
-Cond. equity share (%) & & $0.33$ & $0.87$ & $1.14$ & $-1.22$ & $-0.13$ & $13.94$\
-Homeownership rate (%) & & $0.07$ & $-3.93$ & $-1.32$ & $-6.84$ & $-0.91$ & $-14.10$\
-Housing share (%) & & $1.29$ & $-11.44$ & $2.82$ & $-9.46$ & $-2.59$ & $-10.84$\
-Cond. housing share (%) & & $1.47$ & $-7.36$ & $6.03$ & $0.85$ & $-1.56$ & $14.99$\
-Exp. return on wealth (%) & & $0.01$ & $-0.79$ & $0.01$ & $-0.82$ & $-0.11$ & $0.34$\
-\
-Welfare (%) & & $-0.34$ & $-0.48$ & $-0.72$ & & &\
-\
-Wealth per adult & & $-0.21$ & $-0.20$ & $-0.24$ & $0.20$ & $-0.05$ & $-0.99$\
-Wealth per household & & $-0.36$ & $-0.35$ & $-0.41$ & $-1.70$ & $-0.05$ & $-1.71$\
-& $11.63$ & $11.06$ & $13.13$ & $-11.76$ & $2.34$ & $54.70$\
+This table decomposes the effect of each economic factor on White portfolio composition, wealth, and welfare in the model. Column (0) reports the total difference between Black and White households; a negative value means the variable is lower for Black than for White households. Each subsequent column (1) through (12) reports the difference between a White household and a White household with the parameters controlling a given economic factor set to their value for Black households. For example, (1) reports the difference between White households and White households with the same earnings level as Black households. Wealth is reported in units of the national wage index. The expected return to wealth is the portfolio weighted sum of bond returns, equity returns, mortgage costs, and housing returns. Housing returns can be further decomposed into changes in house prices, implicit rental yield, distress costs, and property tax. The excess wealth gap is defined in Eq. . Welfare measures how Black households' lifetime consumption would change due to exposure to each channel. A negative welfare change indicates that that an economic factor adversely affects Black households, lowering their equivalent lifetime consumption by the reported percentage points.
 
-In column (2), the income risk channel is adjusted so that the expected wage remains constant when varying the volatility of log earnings. This table is comparable to Table [\[tab:ChanelContribution\]](#tab:ChanelContribution) but starts with White households.
++:--------------------------+----------------:+------------:+------------:+------------:+------------:+------------:+------------:+
+| | **Effect of channel on White households** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | \(7\) | \(8\) | \(9\) | \(10\) | \(11\) | \(12\) |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | Inheritance | Race-dep. | Health | Mortality | Family | Preference |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | | return | exp. | rate | structure | |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Balance sheet composition:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Stock market part. (%) | | $-0.70$ | $-1.02$ | $-1.98$ | $-13.39$ | $-0.17$ | $3.93$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Equity share (%) | | $-0.09$ | $0.08$ | $-0.16$ | $-5.86$ | $-0.14$ | $10.02$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. equity share (%) | | $0.33$ | $0.87$ | $1.14$ | $-1.22$ | $-0.13$ | $13.94$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Homeownership rate (%) | | $0.07$ | $-3.93$ | $-1.32$ | $-6.84$ | $-0.91$ | $-14.10$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Housing share (%) | | $1.29$ | $-11.44$ | $2.82$ | $-9.46$ | $-2.59$ | $-10.84$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. housing share (%) | | $1.47$ | $-7.36$ | $6.03$ | $0.85$ | $-1.56$ | $14.99$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Exp. return on wealth (%) | | $0.01$ | $-0.79$ | $0.01$ | $-0.82$ | $-0.11$ | $0.34$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Welfare:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Welfare (%) | | $-0.34$ | $-0.48$ | $-0.72$ | | | |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, standalone effect:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.21$ | $-0.20$ | $-0.24$ | $0.20$ | $-0.05$ | $-0.99$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.36$ | $-0.35$ | $-0.41$ | $-1.70$ | $-0.05$ | $-1.71$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $11.63$ | $11.06$ | $13.13$ | $-11.76$ | $2.34$ | $54.70$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+: **Effect of economic channels on White balance sheet, cont.**
+
+In column (2), the income risk channel is adjusted so that the expected wage remains constant when varying the volatility of log earnings. This table is comparable to Table 6 but starts with White households.
 
 # Results under stochastic returns 
 
-Consider the alternative assumption that asset returns in the simulated data are drawn from the ex-ante expected distribution. We call these "stochastic returns\" and contrast them with the realized "historical returns\" of the past decades. Historical returns on stocks in the last half-century were better-than-expected, so this alternative assumption is mainly studying the consequence of lower realized equity returns. Table [\[tab:ChanelContributionAppendix\]](#tab:ChanelContributionAppendix) reports how economic disparities affect Black portfolios, wealth, and welfare if housing and equity returns are stochastic. Table 8 reports how social programs influence balance sheets and wealth accumulation under the stochastic return assumption.
+Consider the alternative assumption that asset returns in the simulated data are drawn from the ex-ante expected distribution. We call these "stochastic returns" and contrast them with the realized "historical returns" of the past decades. Historical returns on stocks in the last half-century were better-than-expected, so this alternative assumption is mainly studying the consequence of lower realized equity returns. Table 15 reports how economic disparities affect Black portfolios, wealth, and welfare if housing and equity returns are stochastic. Table 16 reports how social programs influence balance sheets and wealth accumulation under the stochastic return assumption.
 
-to &\
-(lr)2-8 & & & & & & &\
-& & & & & & &\
-& & & & & & &\
++:--------------------------+----------------:+------------:+------------:+------------:+------------:+------------:+------------:+
+| | **Effect of channel on Black households** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | \(0\) | \(1\) | \(2\) | \(3\) | \(4\) | \(5\) | \(6\) |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | Black--White | Earnings | Income | Distressed | House | Mortgage | Property |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | difference | gap | risk | sale | price | rate | tax |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Balance sheet composition:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Stock market part. (%) | $-20.82$ | $-8.41$ | $-2.58$ | $-0.03$ | $-0.01$ | $-0.14$ | $-0.12$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Equity share (%) | $-5.28$ | $-4.45$ | $-3.02$ | $-0.01$ | $-1.17$ | $-0.13$ | $0.05$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. equity share (%) | $11.09$ | $-0.21$ | $-5.26$ | $0.02$ | $-3.98$ | $-0.20$ | $0.39$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Homeownership rate (%) | $-26.22$ | $-8.67$ | $1.37$ | $-0.08$ | $17.28$ | $-1.36$ | $-1.43$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Housing share (%) | $-25.77$ | $-12.59$ | $2.84$ | $-0.12$ | $45.89$ | $-5.77$ | $-4.96$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. housing share (%) | $33.25$ | $7.33$ | $0.36$ | $0.06$ | $38.08$ | $-6.15$ | $-4.26$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Exp. return on wealth (%) | $-0.70$ | $-0.65$ | $-0.13$ | $-0.01$ | $1.70$ | $-0.24$ | $-0.29$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Welfare:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Welfare (%) | | $-10.95$ | $-0.74$ | $-0.03$ | $8.14$ | $0.01$ | $0.01$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, standalone effect:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | $-1.73$ | $-0.57$ | $0.14$ | $-0.00$ | $0.16$ | $-0.01$ | $-0.02$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | $-3.84$ | $-0.72$ | $0.18$ | $-0.00$ | $0.20$ | $-0.01$ | $-0.03$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $19.57$ | $-13.82$ | $0.40$ | $-17.63$ | $0.89$ | $2.55$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, interaction with other channels:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.19$ | $-0.02$ | $-0.00$ | $-0.10$ | $-0.00$ | $-0.01$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.57$ | $0.03$ | $-0.01$ | $-0.10$ | $-0.01$ | $-0.02$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $-2.94$ | $2.99$ | $0.16$ | $12.31$ | $-0.13$ | $0.14$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
-\
-Stock market part. (%) & $-20.82$ & $-8.41$ & $-2.58$ & $-0.03$ & $-0.01$ & $-0.14$ & $-0.12$\
-Equity share (%) & $-5.28$ & $-4.45$ & $-3.02$ & $-0.01$ & $-1.17$ & $-0.13$ & $0.05$\
-Cond. equity share (%) & $11.09$ & $-0.21$ & $-5.26$ & $0.02$ & $-3.98$ & $-0.20$ & $0.39$\
-Homeownership rate (%) & $-26.22$ & $-8.67$ & $1.37$ & $-0.08$ & $17.28$ & $-1.36$ & $-1.43$\
-Housing share (%) & $-25.77$ & $-12.59$ & $2.84$ & $-0.12$ & $45.89$ & $-5.77$ & $-4.96$\
-Cond. housing share (%) & $33.25$ & $7.33$ & $0.36$ & $0.06$ & $38.08$ & $-6.15$ & $-4.26$\
-Exp. return on wealth (%) & $-0.70$ & $-0.65$ & $-0.13$ & $-0.01$ & $1.70$ & $-0.24$ & $-0.29$\
-\
-Welfare (%) & & $-10.95$ & $-0.74$ & $-0.03$ & $8.14$ & $0.01$ & $0.01$\
-\
-Wealth per adult & $-1.73$ & $-0.57$ & $0.14$ & $-0.00$ & $0.16$ & $-0.01$ & $-0.02$\
-Wealth per household & $-3.84$ & $-0.72$ & $0.18$ & $-0.00$ & $0.20$ & $-0.01$ & $-0.03$\
-& $19.57$ & $-13.82$ & $0.40$ & $-17.63$ & $0.89$ & $2.55$\
-\
-Wealth per adult & & $-0.19$ & $-0.02$ & $-0.00$ & $-0.10$ & $-0.00$ & $-0.01$\
-Wealth per household & & $-0.57$ & $0.03$ & $-0.01$ & $-0.10$ & $-0.01$ & $-0.02$\
-& $-2.94$ & $2.99$ & $0.16$ & $12.31$ & $-0.13$ & $0.14$\
+: **Effect of economic channels on Black balance sheet**
 
-This table decomposes the effect of each economic factor on Black portfolio composition, wealth, and welfare in the model. Column (0) reports the total difference between Black and White households; a negative value means the variable is lower for Black than for White households. Each subsequent column (1) through (12) reports the difference between a Black household and a Black household with the parameters controlling a given economic factor set to their value for White households. For example, (1) reports the difference between Black households and Black households with the same earnings level as White households. Wealth is reported in units of the national wage index. The expected return to wealth is the portfolio weighted sum of bond returns, equity returns, mortgage costs, and housing returns. Housing returns can be further decomposed into changes in house prices, implicit rental yield, distress costs, and property tax. The excess wealth gap is defined in Eq. [\[eq:shareexcesswealth\]](#eq:shareexcesswealth). Welfare measures how Black households' lifetime consumption would change due to exposure to each channel. A negative welfare change indicates that that an economic factor adversely affects Black households, lowering their equivalent lifetime consumption by the reported percentage points. This table is under the stochastic return assumption and is comparable to Table [\[tab:ChanelContribution\]](#tab:ChanelContribution).
+This table decomposes the effect of each economic factor on Black portfolio composition, wealth, and welfare in the model. Column (0) reports the total difference between Black and White households; a negative value means the variable is lower for Black than for White households. Each subsequent column (1) through (12) reports the difference between a Black household and a Black household with the parameters controlling a given economic factor set to their value for White households. For example, (1) reports the difference between Black households and Black households with the same earnings level as White households. Wealth is reported in units of the national wage index. The expected return to wealth is the portfolio weighted sum of bond returns, equity returns, mortgage costs, and housing returns. Housing returns can be further decomposed into changes in house prices, implicit rental yield, distress costs, and property tax. The excess wealth gap is defined in Eq. . Welfare measures how Black households' lifetime consumption would change due to exposure to each channel. A negative welfare change indicates that that an economic factor adversely affects Black households, lowering their equivalent lifetime consumption by the reported percentage points. This table is under the stochastic return assumption and is comparable to Table 6.
 
-to &\
-(lr)2-8 & & & & & & &\
-& & & & & & &\
-& & & & & & &\
-\
-Stock market part. (%) & & $-1.39$ & $-0.72$ & $-0.77$ & $-0.33$ & $-7.67$ & $9.92$\
-Equity share (%) & & $-0.51$ & $-0.05$ & $-0.21$ & $-0.22$ & $-4.37$ & $8.20$\
-Cond. equity share (%) & & $0.70$ & $1.10$ & $0.64$ & $-0.15$ & $-1.03$ & $15.75$\
-Homeownership rate (%) & & $-0.64$ & $-4.64$ & $-0.70$ & $-2.00$ & $-7.43$ & $-12.91$\
-Housing share (%) & & $1.17$ & $-15.02$ & $0.42$ & $-5.59$ & $-18.07$ & $-15.11$\
-Cond. housing share (%) & & $4.80$ & $-11.07$ & $3.54$ & $-3.33$ & $-6.36$ & $16.00$\
-Exp. return on wealth (%) & & $-0.00$ & $-0.87$ & $-0.03$ & $-0.23$ & $-0.80$ & $-0.11$\
-\
-Welfare (%) & & $-0.37$ & $-0.19$ & $0.06$ & & &\
-\
-Wealth per adult & & $-0.17$ & $-0.10$ & $-0.07$ & $-0.03$ & $0.17$ & $-0.47$\
-Wealth per household & & $-0.22$ & $-0.12$ & $-0.09$ & $-0.03$ & $-0.58$ & $-0.60$\
-& $19.49$ & $10.85$ & $7.67$ & $3.29$ & $-18.14$ & $52.54$\
-\
-Wealth per adult & & $-0.01$ & $-0.05$ & $-0.13$ & $-0.00$ & $0.00$ & $-0.29$\
-Wealth per household & & $-0.10$ & $-0.12$ & $-0.25$ & $-0.01$ & $-0.84$ & $-0.70$\
-& $-3.48$ & $1.47$ & $9.35$ & $-0.86$ & $1.99$ & $12.85$\
++:--------------------------+----------------:+------------:+------------:+------------:+------------:+------------:+------------:+
+| | **Effect of channel on Black households** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | \(7\) | \(8\) | \(9\) | \(10\) | \(11\) | \(12\) |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | Inheritance | Race-dep. | Health | Mortality | Family | Preference |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| | | | return | exp. | rate | structure | |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Balance sheet composition:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Stock market part. (%) | | $-1.39$ | $-0.72$ | $-0.77$ | $-0.33$ | $-7.67$ | $9.92$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Equity share (%) | | $-0.51$ | $-0.05$ | $-0.21$ | $-0.22$ | $-4.37$ | $8.20$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. equity share (%) | | $0.70$ | $1.10$ | $0.64$ | $-0.15$ | $-1.03$ | $15.75$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Homeownership rate (%) | | $-0.64$ | $-4.64$ | $-0.70$ | $-2.00$ | $-7.43$ | $-12.91$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Housing share (%) | | $1.17$ | $-15.02$ | $0.42$ | $-5.59$ | $-18.07$ | $-15.11$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Cond. housing share (%) | | $4.80$ | $-11.07$ | $3.54$ | $-3.33$ | $-6.36$ | $16.00$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Exp. return on wealth (%) | | $-0.00$ | $-0.87$ | $-0.03$ | $-0.23$ | $-0.80$ | $-0.11$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Welfare:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Welfare (%) | | $-0.37$ | $-0.19$ | $0.06$ | | | |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, standalone effect:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.17$ | $-0.10$ | $-0.07$ | $-0.03$ | $0.17$ | $-0.47$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.22$ | $-0.12$ | $-0.09$ | $-0.03$ | $-0.58$ | $-0.60$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $19.49$ | $10.85$ | $7.67$ | $3.29$ | $-18.14$ | $52.54$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| **Wealth, interaction with other channels:** |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per adult | | $-0.01$ | $-0.05$ | $-0.13$ | $-0.00$ | $0.00$ | $-0.29$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Wealth per household | | $-0.10$ | $-0.12$ | $-0.25$ | $-0.01$ | $-0.84$ | $-0.70$ |
++---------------------------+-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| Share of excess wealth gap (%) | $-3.48$ | $1.47$ | $9.35$ | $-0.86$ | $1.99$ | $12.85$ |
++---------------------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+: **Effect of economic channels on Black balance sheet, cont.**
 
 The *standalone* wealth effects are obtained by turning off each economic factor while keeping all other model parameters at their calibration for Black households. The *interaction with other channels* is defined as the difference between the effect of an economic factor when all other parameters are calibrated for White households and the standalone effect. In column (2), the income risk channel is adjusted so that the expected wage remains constant when varying the volatility of log earnings.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                                                                                                                                                                 |
-+:================================================+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+
-| 2-13                                            | \(1\)                                                 | \(2\)                                                 | \(3\)                                                 | \(4\)                                                 |
-+-------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+
-|                                                 | Baseline                                              | Remove SS Progressivity                               | Cut SN and EITC by $90\%$                             | All                                                   |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| 2-4 (lr)5-7 (lr)8-10 (lr)11-13                  | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Stock market part. (%)                          | $29.23$      | $50.04$      | $-20.82$                | $31.25$      | $52.52$      | $-21.27$                | $28.08$      | $51.11$      | $-23.03$                | $30.35$      | $55.25$      | $-24.90$                |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Equity share (%)                                | $115.21$     | $20.49$      | $-5.28$                 | $16.12$      | $21.71$      | $-5.58$                 | $13.47$      | $20.04$      | $-6.57$                 | $14.38$      | $21.33$      | $-6.94$                 |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Cond. equity share(%)                           | $52.03$      | $40.94$      | $11.09$                 | $51.59$      | $41.33$      | $10.26$                 | $47.99$      | $39.22$      | $8.77$                  | $47.39$      | $38.60$      | $8.79$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Homeownership rate (%)                          | $49.57$      | $75.79$      | $-26.22$                | $51.97$      | $78.20$      | $-26.23$                | $53.25$      | $82.91$      | $-29.66$                | $57.70$      | $85.58$      | $-27.88$                |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Housing share (%)                               | $96.37$      | $122.14$     | $-25.77$                | $99.41$      | $124.00$     | $-24.60$                | $85.96$      | $124.35$     | $-38.39$                | $92.77$      | $99.64$      | $-6.87$                 |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Cond. housing share (%)                         | $194.41$     | $161.16$     | $33.25$                 | $191.29$     | $158.58$     | $32.71$                 | $161.44$     | $149.99$     | $11.46$                 | $160.79$     | $116.44$     | $44.36$                 |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-|                                                 |              |              |                         |              |              |                         |              |              |                         |              |              |                         |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-|                                                 | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| 2-4 (lr)5-7 (lr)8-10 (lr)11-13 Wealth per adult | $1.96$       | $3.69$       | $0.53$                  | $1.98$       | $3.64$       | $0.54$                  | $2.19$       | $3.95$       | $0.55$                  | $2.24$       | $4.23$       | $0.53$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Wealth per household                            | $2.51$       | $6.35$       | $0.39$                  | $2.52$       | $6.26$       | $0.40$                  | $2.80$       | $6.80$       | $0.41$                  | $2.86$       | $7.28$       | $0.39$                  |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
-| Share of excess wealth gap(%)                   |              |              | $0$                     |              |              | $2.12$                  |              |              | $4.24$                  |              |              | $-0.57$                 |
-+-------------------------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| |
++:==============================+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+=============:+=============:+========================:+
+| | \(1\) | \(2\) | \(3\) | \(4\) |
++-------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------+
+| | Baseline | Remove SS Progressivity | Cut SN and EITC by $90\%$ | All |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}-\mathrm{W}$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Stock market part. (%) | $29.23$ | $50.04$ | $-20.82$ | $31.25$ | $52.52$ | $-21.27$ | $28.08$ | $51.11$ | $-23.03$ | $30.35$ | $55.25$ | $-24.90$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Equity share (%) | $115.21$ | $20.49$ | $-5.28$ | $16.12$ | $21.71$ | $-5.58$ | $13.47$ | $20.04$ | $-6.57$ | $14.38$ | $21.33$ | $-6.94$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Cond. equity share(%) | $52.03$ | $40.94$ | $11.09$ | $51.59$ | $41.33$ | $10.26$ | $47.99$ | $39.22$ | $8.77$ | $47.39$ | $38.60$ | $8.79$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Homeownership rate (%) | $49.57$ | $75.79$ | $-26.22$ | $51.97$ | $78.20$ | $-26.23$ | $53.25$ | $82.91$ | $-29.66$ | $57.70$ | $85.58$ | $-27.88$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Housing share (%) | $96.37$ | $122.14$ | $-25.77$ | $99.41$ | $124.00$ | $-24.60$ | $85.96$ | $124.35$ | $-38.39$ | $92.77$ | $99.64$ | $-6.87$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Cond. housing share (%) | $194.41$ | $161.16$ | $33.25$ | $191.29$ | $158.58$ | $32.71$ | $161.44$ | $149.99$ | $11.46$ | $160.79$ | $116.44$ | $44.36$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| | | | | | | | | | | | | |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ | $\mathrm{B}$ | $\mathrm{W}$ | $\mathrm{B}/\mathrm{W}$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Wealth per adult | $1.96$ | $3.69$ | $0.53$ | $1.98$ | $3.64$ | $0.54$ | $2.19$ | $3.95$ | $0.55$ | $2.24$ | $4.23$ | $0.53$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Wealth per household | $2.51$ | $6.35$ | $0.39$ | $2.52$ | $6.26$ | $0.40$ | $2.80$ | $6.80$ | $0.41$ | $2.86$ | $7.28$ | $0.39$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
+| Share of excess wealth gap(%) | | | $0$ | | | $2.12$ | | | $4.24$ | | | $-0.57$ |
++-------------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+--------------+--------------+-------------------------+
 
 : **Racial portfolio gap and social programs under stochastic returns**
 
-This table presents the model-implied racial balance sheet and wealth under various social program scenarios. Scenario (1) is our baseline model, with real-life levels of Social Security, safety net, and EITC benefits. In scenario (2), we remove the progressivity of Social Security. Specifically, we replace baseline Social Security cash flow with 40% of lifetime income, measured by average indexed yearly earnings (AIYE) at age 60 defined in equation ([\[AIYEeuqation\]](#AIYEeuqation)). In scenario (3), we cut down safety net and EITC programs by $90\%$; eligible households will receive only $10\%$ of the baseline benefits. In scenario (4), we both remove the progressivity of Social Security and cut down safety net and EITC simultaneously. The term \"share of excess wealth gap\" refers to the portion of the wealth gap that cannot be explained by the income gap and is defined in equation ([\[eq:shareexcesswealth\]](#eq:shareexcesswealth)).This table is under the stochastic return assumption and is comparable to Table 2
+This table presents the model-implied racial balance sheet and wealth under various social program scenarios. Scenario (1) is our baseline model, with real-life levels of Social Security, safety net, and EITC benefits. In scenario (2), we remove the progressivity of Social Security. Specifically, we replace baseline Social Security cash flow with 40% of lifetime income, measured by average indexed yearly earnings (AIYE) at age 60 defined in equation ). In scenario (3), we cut down safety net and EITC programs by $90\%$; eligible households will receive only $10\%$ of the baseline benefits. In scenario (4), we both remove the progressivity of Social Security and cut down safety net and EITC simultaneously. The term "share of excess wealth gap" refers to the portion of the wealth gap that cannot be explained by the income gap and is defined in equation ).This table is under the stochastic return assumption and is comparable to Table 8
 
 # Empirical evidence of differences in savings behavior 
 
 ## Survey evidence on savings behavior
 
-To corroborate our finding that the discount factor $\beta$ is on average lower for Black households, we examine survey data on savings behavior. The survey we consider is the 2019-2024 National Financial Capability Study (NFCS), which asks American households questions about their saving patterns and beliefs. Two survey questions serve as proxies for whether households are saving at high rates out of income. The first question (`J3`) asks, "Over the past year, would you say your \[household's\] spending was less than, more than, or about equal to your \[household's\] income?\" The possible answers are "Spending less than income,\" "Spending more than income,\" "Spending about equal to income,\" "Don't know,\" and "Prefer not to say.\" The second question (`J4`) asks, "In a typical month, how difficult is it for you to cover your expenses and pay all your bills?\" with possible responses "Very difficult,\" "Somewhat difficult,\" "Not at all difficult,\" "Don't know,\" and "Prefer not to say.\"
+To corroborate our finding that the discount factor $\beta$ is on average lower for Black households, we examine survey data on savings behavior. The survey we consider is the 2019-2024 National Financial Capability Study (NFCS), which asks American households questions about their saving patterns and beliefs. Two survey questions serve as proxies for whether households are saving at high rates out of income. The first question (`J3`) asks, "Over the past year, would you say your \[household's\] spending was less than, more than, or about equal to your \[household's\] income?" The possible answers are "Spending less than income," "Spending more than income," "Spending about equal to income," "Don't know," and "Prefer not to say." The second question (`J4`) asks, "In a typical month, how difficult is it for you to cover your expenses and pay all your bills?" with possible responses "Very difficult," "Somewhat difficult," "Not at all difficult," "Don't know," and "Prefer not to say."
 
 Our model says that, controlling for age, family structure, and income, a household's savings rate (and spending rate) out of income is a function of preferences: its discount factor $\beta$ and precautionary saving demand. Under the null hypothesis that Black and White households have identical discount factors $\beta$, we should see that households with the same age, family structure, and income have the same savings rates out of income on average.[^35] Thus, if after controlling for these characteristics we still see a significant effect of race on savings rates, then it suggests that group has a lower $\beta$.
 
-To estimate the relative response rate of Black versus White households, we run multinominal logit regressions of survey responses $Y_i$ on race $k_i$ and control characteristics $X_i$ (including a constant). Specifically, letting $Y_i\in\{0,1,\dots,J\}$ denote the categorical outcome for household $i$'s response to the question, we estimate $$\begin{equation}
+To estimate the relative response rate of Black versus White households, we run multinominal logit regressions of survey responses $Y_i$ on race $k_i$ and control characteristics $X_i$ (including a constant). Specifically, letting $Y_i\in\{0,1,\dots,J\}$ denote the categorical outcome for household $i$'s response to the question, we estimate $$
 \mathrm{P}(Y_i = j | k_i,X_i) = \frac{\exp\{\Gamma_{kj}k_i + \Gamma_{Xj}^\top X_i\}}{1+\sum_{j'=1}^J\exp\{\Gamma_{kj'}k_i + \Gamma_{Xj'}^\top X_i\}}
-\label{eq:mlogit_app}
-\end{equation}$$ The controls $X_i$ include bins for gender-age (`A3B`), marital status (`A7A`), and income (`A8`), as reported in the NFCS. The NFCS categorizes race (`A4A_new_w`) as either White and non-White. This poses a potential problem, as the majority of non-White Americans are not Black. To address this, we run the same regressions on only those households residing in states in which Black individuals account for more than 25% and 50% of the non-White population. For the 25% threshold, this subset includes 25 of the 50 states and D.C.; for the 50% threshold, this includes 14 of 51. All regressions are weighted using the survey weights.
 
-Table 9 reports the results of these regressions for the question: "Over the past year, would you say your \[household's\] spending was less than, more than, or about equal to your \[household's\] income?\" The reference response ($Y_i=0$) is "Spending less than income.\" The specifications (1), (2), and (3) correspond to Black-in-non-White proportions greater than 0%, 25%, and 50%, respectively. The coefficient reported is then the estimated relative-risk ratio for non-White versus White: $$\begin{equation}
+$$ The controls $X_i$ include bins for gender-age (`A3B`), marital status (`A7A`), and income (`A8`), as reported in the NFCS. The NFCS categorizes race (`A4A_new_w`) as either White and non-White. This poses a potential problem, as the majority of non-White Americans are not Black. To address this, we run the same regressions on only those households residing in states in which Black individuals account for more than 25% and 50% of the non-White population. For the 25% threshold, this subset includes 25 of the 50 states and D.C.; for the 50% threshold, this includes 14 of 51. All regressions are weighted using the survey weights.
+
+Table 17 reports the results of these regressions for the question: "Over the past year, would you say your \[household's\] spending was less than, more than, or about equal to your \[household's\] income?" The reference response ($Y_i=0$) is "Spending less than income." The specifications (1), (2), and (3) correspond to Black-in-non-White proportions greater than 0%, 25%, and 50%, respectively. The coefficient reported is then the estimated relative-risk ratio for non-White versus White: $$
 \frac{\widehat{\mathrm{P}}(Y_i = j | k_i=\textrm{non-White},X_i)/\widehat{\mathrm{P}}(Y_i = 0 | k_i=\textrm{non-White},X_i)}{\widehat{\mathrm{P}}(Y_i = j | k_i=\textrm{White},X_i)/\widehat{\mathrm{P}}(Y_i = 0 | k_i=\textrm{White},X_i)} = \exp\{\hat{\Gamma}_{\textrm{non-White},j}\},
-\label{eq:mlogitrrr_app}
-\end{equation}$$ which is the relative likelihood that a non-White household with characteristics $X$ will choose that response over "Spending less than income,\" compared to an otherwise equivalent White household. For example, the interpretation of the coefficient 1.092 in regression (1) of Table 9 is that a non-White household is 9.2% more likely to respond with "Spending more than income\" over "Spending less than income\" than a White household with the same age, composition, and income.
 
-Table 9 shows that, across all three regression specifications, non-White households are between 9% and 12% more likely to report that they spent more than their income over the past year. This higher rate of spending (lower rate of saving), controlling for age and income, is suggestive of a lower $\beta$ for Black households. Table 10 shows the analogous regression results for the question "In a typical month, how difficult is it for you to cover your expenses and pay all your bills?\" Non-White households are 3% to 8% more likely to say that saving is very difficult than that it is not difficult at all.
+$$ which is the relative likelihood that a non-White household with characteristics $X$ will choose that response over "Spending less than income," compared to an otherwise equivalent White household. For example, the interpretation of the coefficient 1.092 in regression (1) of Table 17 is that a non-White household is 9.2% more likely to respond with "Spending more than income" over "Spending less than income" than a White household with the same age, composition, and income.
 
-                                        \(1\)           \(2\)           \(3\)
-  -------------------------------- --------------- --------------- ---------------
-  Spending less than income                                        
-  Non-White                               1               1               1
-                                         \-              \-              \-
-  Spending more than income                                        
-  Non-White                         1.092$^{***}$   1.097$^{***}$   1.124$^{***}$
-                                      (0.0164)        (0.0199)        (0.0258)
-  Spending about equal to income                                   
-  Non-White                         0.873$^{***}$   0.861$^{***}$   0.891$^{***}$
-                                      (0.0112)        (0.0136)        (0.0181)
-  Don't know                                                       
-  Non-White                             1.003           0.992           1.009
-                                      (0.0307)        (0.0360)        (0.0490)
-  Prefer not to say                                                
-  Non-White                         1.186$^{**}$        1.147           1.111
-                                      (0.0840)         (0.100)         (0.130)
-  Controls                                                         
-  Gender-age                             Yes             Yes             Yes
-  Marital status                         Yes             Yes             Yes
-  Income bin                             Yes             Yes             Yes
-  Observations                         158,500         93,390          61,480
-  Black threshold                      $>0\%$          $>25\%$         $>50\%$
+Table 17 shows that, across all three regression specifications, non-White households are between 9% and 12% more likely to report that they spent more than their income over the past year. This higher rate of spending (lower rate of saving), controlling for age and income, is suggestive of a lower $\beta$ for Black households. Table 18 shows the analogous regression results for the question "In a typical month, how difficult is it for you to cover your expenses and pay all your bills?" Non-White households are 3% to 8% more likely to say that saving is very difficult than that it is not difficult at all.
 
-  : **Race and rate of spending more than income**
+ \(1\) \(2\) \(3\)
+ -------------------------------- --------------- --------------- ---------------
+ Spending less than income 
+ Non-White 1 1 1
+ \- \- \-
+ Spending more than income 
+ Non-White 1.092$^{***}$ 1.097$^{***}$ 1.124$^{***}$
+ (0.0164) (0.0199) (0.0258)
+ Spending about equal to income 
+ Non-White 0.873$^{***}$ 0.861$^{***}$ 0.891$^{***}$
+ (0.0112) (0.0136) (0.0181)
+ Don't know 
+ Non-White 1.003 0.992 1.009
+ (0.0307) (0.0360) (0.0490)
+ Prefer not to say 
+ Non-White 1.186$^{**}$ 1.147 1.111
+ (0.0840) (0.100) (0.130)
+ Controls 
+ Gender-age Yes Yes Yes
+ Marital status Yes Yes Yes
+ Income bin Yes Yes Yes
+ Observations 158,500 93,390 61,480
+ Black threshold $>0\%$ $>25\%$ $>50\%$
 
-The table reports the estimated relative-risk ratio ([\[eq:mlogitrrr_app\]](#eq:mlogitrrr_app)) for non-White versus White households in the multinomial logit regression ([\[eq:mlogit_app\]](#eq:mlogit_app)) for the question "Over the past year, would you say your \[household's\] spending was less than, more than, or about equal to your \[household's\] income?\" See the text for interpretation of coefficients. The "Black threshold\" conditions on only the subset of households residing in states (and D.C.) in which the percentage of the Black population in the total non-White population exceeds that threshold. Standard errors are in parentheses. $^{***}$ denotes significance at the 5% level against the null hypothesis that the coefficient equals 1.
+ : **Race and rate of spending more than income**
 
-                              \(1\)           \(2\)          \(3\)
-  ---------------------- --------------- --------------- --------------
-  Very difficult                                         
-  Non-White               1.061$^{***}$   1.075$^{***}$      1.034
-                            (0.0191)        (0.0232)        (0.0286)
-  Somewhat difficult                                     
-  Non-White               1.076$^{***}$   1.079$^{***}$   1.051$^{**}$
-                            (0.0138)        (0.0168)        (0.0210)
-  Not at all difficult                                   
-  Non-White                     1               1              1
-                               \-              \-              \-
-  Don't know                                             
-  Non-White               1.172$^{***}$    1.097$^{*}$       1.042
-                            (0.0501)        (0.0571)        (0.0732)
-  Prefer not to say                                      
-  Non-White               1.177$^{***}$   1.224$^{***}$      1.068
-                            (0.0716)        (0.0897)        (0.108)
-  Controls                                               
-  Gender-age                   Yes             Yes            Yes
-  Marital status               Yes             Yes            Yes
-  Income bin                   Yes             Yes            Yes
-  Observations               158,500         93,390          61,480
-  Black threshold            $>0\%$          $>25\%$        $>50\%$
+The table reports the estimated relative-risk ratio ) for non-White versus White households in the multinomial logit regression ) for the question "Over the past year, would you say your \[household's\] spending was less than, more than, or about equal to your \[household's\] income?" See the text for interpretation of coefficients. The "Black threshold" conditions on only the subset of households residing in states (and D.C.) in which the percentage of the Black population in the total non-White population exceeds that threshold. Standard errors are in parentheses. $^{***}$ denotes significance at the 5% level against the null hypothesis that the coefficient equals 1.
 
-  : **Race and perceived difficulty saving**
+ \(1\) \(2\) \(3\)
+ ---------------------- --------------- --------------- --------------
+ Very difficult 
+ Non-White 1.061$^{***}$ 1.075$^{***}$ 1.034
+ (0.0191) (0.0232) (0.0286)
+ Somewhat difficult 
+ Non-White 1.076$^{***}$ 1.079$^{***}$ 1.051$^{**}$
+ (0.0138) (0.0168) (0.0210)
+ Not at all difficult 
+ Non-White 1 1 1
+ \- \- \-
+ Don't know 
+ Non-White 1.172$^{***}$ 1.097$^{*}$ 1.042
+ (0.0501) (0.0571) (0.0732)
+ Prefer not to say 
+ Non-White 1.177$^{***}$ 1.224$^{***}$ 1.068
+ (0.0716) (0.0897) (0.108)
+ Controls 
+ Gender-age Yes Yes Yes
+ Marital status Yes Yes Yes
+ Income bin Yes Yes Yes
+ Observations 158,500 93,390 61,480
+ Black threshold $>0\%$ $>25\%$ $>50\%$
 
-The table reports the estimated relative-risk ratio ([\[eq:mlogitrrr_app\]](#eq:mlogitrrr_app)) for non-White versus White households in the multinomial logit regression ([\[eq:mlogit_app\]](#eq:mlogit_app)) for the question "In a typical month, how difficult is it for you to cover your expenses and pay all your bills?\" See the text for interpretation of coefficients. The "Black threshold\" conditions on only the subset of households residing in states (and D.C.) in which the percentage of the Black population in the total non-White population exceeds that threshold. Standard errors are in parentheses. $^{***}$ denotes significance at the 5% level against the null hypothesis that the coefficient equals 1.
+ : **Race and perceived difficulty saving**
+
+The table reports the estimated relative-risk ratio ) for non-White versus White households in the multinomial logit regression ) for the question "In a typical month, how difficult is it for you to cover your expenses and pay all your bills?" See the text for interpretation of coefficients. The "Black threshold" conditions on only the subset of households residing in states (and D.C.) in which the percentage of the Black population in the total non-White population exceeds that threshold. Standard errors are in parentheses. $^{***}$ denotes significance at the 5% level against the null hypothesis that the coefficient equals 1.
 
 ## Survey evidence on financial literacy and confidence 
 
-As discussed in the main text, one possible cause of a lower discount factor $\beta$ is cognitive discounting due to neglect of future states of the world. This could follow from a lack of financial education and literacy or from a discomfort with making financial decisions that causes an individual to think less about the future. The NFCS also asks respondents questions to assess their confidence making future-oriented financial decisions. We consider the question (`M1_1`), "How strongly do you agree or disagree with the following statements? - I am good at dealing with day-to-day financial matters, such as checking accounts, credit and debit cards, and tracking expenses.\" The responses range from 1 to 7, with 1 corresponding to "Strongly Agree,\" 4 to "Neither Agree nor Disagree,\" and 7 to "Strongly Disagree.\"
+As discussed in the main text, one possible cause of a lower discount factor $\beta$ is cognitive discounting due to neglect of future states of the world. This could follow from a lack of financial education and literacy or from a discomfort with making financial decisions that causes an individual to think less about the future. The NFCS also asks respondents questions to assess their confidence making future-oriented financial decisions. We consider the question (`M1_1`), "How strongly do you agree or disagree with the following statements? - I am good at dealing with day-to-day financial matters, such as checking accounts, credit and debit cards, and tracking expenses." The responses range from 1 to 7, with 1 corresponding to "Strongly Agree," 4 to "Neither Agree nor Disagree," and 7 to "Strongly Disagree."
 
-We estimate the same multinomial logit regressions as in the previous section, and the results are in Table 11. Across all three regression specifications, non-White households are 27% to 34% more likely to report that they strongly disagree with the statements, compared to otherwise similar White households.
+We estimate the same multinomial logit regressions as in the previous section, and the results are in Table 19. Across all three regression specifications, non-White households are 27% to 34% more likely to report that they strongly disagree with the statements, compared to otherwise similar White households.
 
-                                       \(1\)           \(2\)           \(3\)
-  ------------------------------- --------------- --------------- ---------------
-  -- Strongly Disagree                                            
-  Non-White                        1.338$^{***}$   1.308$^{***}$   1.273$^{***}$
-                                     (0.0417)        (0.0489)        (0.0605)
-                                                                  
-  Non-White                        1.111$^{***}$       1.011           0.956
-                                     (0.0417)        (0.0461)        (0.0557)
-                                                                  
-  Non-White                        1.078$^{***}$       0.981           0.975
-                                     (0.0312)        (0.0348)        (0.0431)
-  -- Neither Agree nor Disagree                                   
-  Non-White                        1.171$^{***}$   1.090$^{***}$    1.052$^{*}$
-                                     (0.0203)        (0.0227)        (0.0281)
-                                                                  
-  Non-White                        1.057$^{***}$       1.006           0.967
-                                     (0.0180)        (0.0209)        (0.0257)
-                                                                  
-  Non-White                            0.986       0.937$^{***}$   0.933$^{***}$
-                                     (0.0147)        (0.0172)        (0.0222)
-  -- Strongly Agree                                               
-  Non-White                              1               1               1
-                                        \-              \-              \-
-  Don't know                                                      
-  Non-White                        1.476$^{***}$   1.429$^{***}$   1.257$^{**}$
-                                     (0.0882)         (0.102)         (0.123)
-  Prefer not to say                                               
-  Non-White                        1.376$^{***}$   1.269$^{***}$    1.227$^{*}$
-                                     (0.0952)         (0.107)         (0.140)
-  Observations                        158,500         93,390          61,480
+ \(1\) \(2\) \(3\)
+ ------------------------------- --------------- --------------- ---------------
+ -- Strongly Disagree 
+ Non-White 1.338$^{***}$ 1.308$^{***}$ 1.273$^{***}$
+ (0.0417) (0.0489) (0.0605)
+ 
+ Non-White 1.111$^{***}$ 1.011 0.956
+ (0.0417) (0.0461) (0.0557)
+ 
+ Non-White 1.078$^{***}$ 0.981 0.975
+ (0.0312) (0.0348) (0.0431)
+ -- Neither Agree nor Disagree 
+ Non-White 1.171$^{***}$ 1.090$^{***}$ 1.052$^{*}$
+ (0.0203) (0.0227) (0.0281)
+ 
+ Non-White 1.057$^{***}$ 1.006 0.967
+ (0.0180) (0.0209) (0.0257)
+ 
+ Non-White 0.986 0.937$^{***}$ 0.933$^{***}$
+ (0.0147) (0.0172) (0.0222)
+ -- Strongly Agree 
+ Non-White 1 1 1
+ \- \- \-
+ Don't know 
+ Non-White 1.476$^{***}$ 1.429$^{***}$ 1.257$^{**}$
+ (0.0882) (0.102) (0.123)
+ Prefer not to say 
+ Non-White 1.376$^{***}$ 1.269$^{***}$ 1.227$^{*}$
+ (0.0952) (0.107) (0.140)
+ Observations 158,500 93,390 61,480
 
-  : **Race and confidence making financial decisions**
+ : **Race and confidence making financial decisions**
 
-The table reports the estimated relative-risk ratio ([\[eq:mlogitrrr_app\]](#eq:mlogitrrr_app)) for non-White versus White households in the multinomial logit regression ([\[eq:mlogit_app\]](#eq:mlogit_app)) for the question "How strongly do you agree or disagree with the following statements? - I am good at dealing with day-to-day financial matters, such as checking accounts, credit and debit cards, and tracking expenses.\" See the text for interpretation of coefficients. The "Black threshold\" conditions on only the subset of households residing in states (and D.C.) in which the percentage of the Black population in the total non-White population exceeds that threshold. Standard errors are in parentheses. $^{***}$ denotes significance at the 5% level against the null hypothesis that the coefficient equals 1.
+The table reports the estimated relative-risk ratio ) for non-White versus White households in the multinomial logit regression ) for the question "How strongly do you agree or disagree with the following statements? - I am good at dealing with day-to-day financial matters, such as checking accounts, credit and debit cards, and tracking expenses." See the text for interpretation of coefficients. The "Black threshold" conditions on only the subset of households residing in states (and D.C.) in which the percentage of the Black population in the total non-White population exceeds that threshold. Standard errors are in parentheses. $^{***}$ denotes significance at the 5% level against the null hypothesis that the coefficient equals 1.
 
 ## Survey evidence on time discounting 
 
 To further evaluate our finding of a lower discount factor $\beta$ among Black households, we use survey evidence about time discounting from Health and Retirement Study (HRS) and Understanding America Study (UAS). HRS 2014 module 5 (time inconsistency), HRS 2020 module 2 (time discounting), and UAS module 603 each give respondents a sequence of binary choices between receiving a dollar amount today versus a greater dollar amount in 12 months. The delayed amount escalates across nodes until the respondent switches from "today" to "in 12 months."
 
-We identify the dollar amount at which each respondent switches answers and use these switching points to construct a semi-annual discount rate following (Huffman et al. 2019). (Huffman et al. 2019) call this the internal rate of return (IRR). A higher discount rate means that the respondent has a lower discount factor and is less patient. To test whether Black households have a comparatively higher discount rate, we run the regression $$\mathrm{IRR}_i= \Gamma_{\rm B}\mathbb{I}_{\{j_i={\rm B}\}}+\Gamma_X^\top X_i+\epsilon_i,$$ where $\mathbb{I}_{\{j_i={\rm B}\}}$ is the indicator variable that takes a value of 1 if the respondent is Black. The controls $X_i$ include marital status, gender, age, income, and a constant. Table 12 shows that, in the HRS, Black household have a discount rate 13 to 16 percentage points higher than otherwise similar White respondents. Table 13 shows a very similar magnitude of difference in discount rate for Black and White households in the UAS data (about 13 to 19 percentage points).
+We identify the dollar amount at which each respondent switches answers and use these switching points to construct a semi-annual discount rate following (Huffman et al. 2019). (Huffman et al. 2019) call this the internal rate of return (IRR). A higher discount rate means that the respondent has a lower discount factor and is less patient. To test whether Black households have a comparatively higher discount rate, we run the regression $$\mathrm{IRR}_i= \Gamma_{\rm B}\mathbb{I}_{\{j_i={\rm B}\}}+\Gamma_X^\top X_i+\epsilon_i,$$ where $\mathbb{I}_{\{j_i={\rm B}\}}$ is the indicator variable that takes a value of 1 if the respondent is Black. The controls $X_i$ include marital status, gender, age, income, and a constant. Table 20 shows that, in the HRS, Black household have a discount rate 13 to 16 percentage points higher than otherwise similar White respondents. Table 21 shows a very similar magnitude of difference in discount rate for Black and White households in the UAS data (about 13 to 19 percentage points).
 
-                      \(1\)           \(2\)           \(3\)
-  -------------- --------------- --------------- ----------------
-  Black           0.164$^{***}$   0.166$^{***}$   0.132$^{***}$
-                     (0.030)         (0.031)         (0.032)
-  Married                            -0.022           0.033
-                                     (0.021)         (0.023)
-  Age                             0.002$^{**}$        0.000
-                                     (0.001)         (0.001)
-  Male                               -0.025           -0.017
-                                     (0.021)         (0.022)
-  Log income                                      -0.067$^{***}$
-                                                     (0.011)
-  Constant        0.551$^{***}$   0.417$^{***}$   1.245$^{***}$
-                     (0.011)         (0.080)         (0.164)
-  Observations        1171            1171             1063
-  $R^{2}$             0.024           0.032           0.061
+ \(1\) \(2\) \(3\)
+ -------------- --------------- --------------- ----------------
+ Black 0.164$^{***}$ 0.166$^{***}$ 0.132$^{***}$
+ (0.030) (0.031) (0.032)
+ Married -0.022 0.033
+ (0.021) (0.023)
+ Age 0.002$^{**}$ 0.000
+ (0.001) (0.001)
+ Male -0.025 -0.017
+ (0.021) (0.022)
+ Log income -0.067$^{***}$
+ (0.011)
+ Constant 0.551$^{***}$ 0.417$^{***}$ 1.245$^{***}$
+ (0.011) (0.080) (0.164)
+ Observations 1171 1171 1063
+ $R^{2}$ 0.024 0.032 0.061
 
-  : **Black-White differences in time discounting (discount rate), HRS**
+ : **Black-White differences in time discounting (discount rate), HRS**
 
 This table reports the estimated semi-annual time-discount rate (IRR) implied by the Health and Retirement Study (HRS) 2014 time discounting module and 2020 time inconsistency module. The module asks respondents whether they are willing to trade off today's money for next year's (e.g., "Would you rather receive \$100 today or \$154 in 12 months?"), and we back out the implied semi-annual IRR following (Huffman et al. 2019). All regressions are weighted, and standard errors are in parentheses. Higher IRR indicates greater impatience (a lower annual discount factor $\beta$ in our model's notation). $^{***}$ denotes significance at the 1% level against the null that the coefficient equals zero.
 
-+--------------+-------------------------------------------------+
-|              | Predictors of time discount rate                |
-+:=============+:=============:+:==============:+:==============:+
-| 2-4          | \(1\)         | \(2\)          | \(3\)          |
++:-------------+:-------------:+:--------------:+:--------------:+
+| | Predictors of time discount rate |
 +--------------+---------------+----------------+----------------+
-| Black        | 0.188$^{***}$ | 0.161$^{***}$  | 0.129$^{***}$  |
+| | \(1\) | \(2\) | \(3\) |
 +--------------+---------------+----------------+----------------+
-|              | (0.009)       | (0.009)        | (0.009)        |
+| Black | 0.188$^{***}$ | 0.161$^{***}$ | 0.129$^{***}$ |
 +--------------+---------------+----------------+----------------+
-| Married      |               | -0.043$^{***}$ | -0.009         |
+| | (0.009) | (0.009) | (0.009) |
 +--------------+---------------+----------------+----------------+
-|              |               | (0.006)        | (0.006)        |
+| Married | | -0.043$^{***}$ | -0.009 |
 +--------------+---------------+----------------+----------------+
-| Age          |               | -0.003$^{***}$ | -0.002$^{***}$ |
+| | | (0.006) | (0.006) |
 +--------------+---------------+----------------+----------------+
-|              |               | (0.000)        | (0.000)        |
+| Age | | -0.003$^{***}$ | -0.002$^{***}$ |
 +--------------+---------------+----------------+----------------+
-| Male         |               | -0.041$^{***}$ | -0.035$^{***}$ |
+| | | (0.000) | (0.000) |
 +--------------+---------------+----------------+----------------+
-|              |               | (0.006)        | (0.006)        |
+| Male | | -0.041$^{***}$ | -0.035$^{***}$ |
 +--------------+---------------+----------------+----------------+
-| Log income   |               |                | -0.098$^{***}$ |
+| | | (0.006) | (0.006) |
 +--------------+---------------+----------------+----------------+
-|              |               |                | (0.005)        |
+| Log income | | | -0.098$^{***}$ |
 +--------------+---------------+----------------+----------------+
-| Constant     | 0.453$^{***}$ | 0.634$^{***}$  | 0.834$^{***}$  |
+| | | | (0.005) |
 +--------------+---------------+----------------+----------------+
-|              | (0.003)       | (0.011)        | (0.014)        |
+| Constant | 0.453$^{***}$ | 0.634$^{***}$ | 0.834$^{***}$ |
 +--------------+---------------+----------------+----------------+
-| Observations | 10485         | 10474          | 10448          |
+| | (0.003) | (0.011) | (0.014) |
 +--------------+---------------+----------------+----------------+
-| $R^{2}$      | 0.044         | 0.076          | 0.112          |
+| Observations | 10485 | 10474 | 10448 |
++--------------+---------------+----------------+----------------+
+| $R^{2}$ | 0.044 | 0.076 | 0.112 |
 +--------------+---------------+----------------+----------------+
 
 : **Black-White differences in time discounting, UAS**
@@ -1681,13 +1855,13 @@ We emphasize that this evidence is at best suggestive, and should be interpreted
 
 <figure id="fig:hrsexpectations" data-latex-placement="H">
 <div class="center">
-<p><embed src="Figs/hrs_expectations_allyear.eps" style="width:100.0%" /> <span>-2cm</span></p>
+<p><embed src="Figs/hrs_expectations_allyear.eps" style="width:100.0%" /> </p>
 </div>
 <p>This figure shows the average probability distribution of stock returns by Black and White respondents to the Health and Retirement Study (HRS). Each bar represents the average stated probability that the stock return next year will be within the stated range. See the text for details of computation.</p>
 <figcaption><strong>Subjective probability distribution of stock returns by race</strong></figcaption>
 </figure>
 
-Aaronson, Daniel, Daniel Hartley, and Bhashkar Mazumder. 2021. "The Effects of the 1930s HOLC \"Redlining\" Maps." *American Economic Journal: Economic Policy* 13 (4): 355---92.
+Aaronson, Daniel, Daniel Hartley, and Bhashkar Mazumder. 2021. "The Effects of the 1930s HOLC "Redlining" Maps." *American Economic Journal: Economic Policy* 13 (4): 355---92.
 
 Aiyagari, S. Rao. 1994. "Uninsured Idiosyncratic Risk and Aggregate Saving." *The Quarterly Journal of Economics* 109 (3): 659--84. <http://www.jstor.org/stable/2118417>.
 
@@ -1829,9 +2003,9 @@ Zeldes, Stephen P. 1989. "Optimal Consumption with Stochastic Income: Deviations
 
 [^17]: Specifically, we run ordinary least squares (OLS) regressions with the assumptions that year dummies sum to zero and are orthogonal to a time trend.
 
-[^18]: To make the comparison clear, we assume that both Black and White households have the same risk aversion $\gamma$ and stock-market participation costs $c_\pi$, equal to the White estimates in Table [\[tab:Estimated params\]](#tab:Estimated params). Households thus differ only in economic factors.
+[^18]: To make the comparison clear, we assume that both Black and White households have the same risk aversion $\gamma$ and stock-market participation costs $c_\pi$, equal to the White estimates in Table 5. Households thus differ only in economic factors.
 
-[^19]: Specifically, we find that, if asset returns had been as expected in our sample period, the net effect of income risk on Black wealth would have been positive, not negative. Appendix Table [\[tab:ChanelContributionAppendix\]](#tab:ChanelContributionAppendix) shows this by re-computing Table [\[tab:ChanelContribution\]](#tab:ChanelContribution) assuming that the distribution of returns was as expected.
+[^19]: Specifically, we find that, if asset returns had been as expected in our sample period, the net effect of income risk on Black wealth would have been positive, not negative. Appendix Table 15 shows this by re-computing Table 6 assuming that the distribution of returns was as expected.
 
 [^20]: The housing return used to compute total wealth returns includes the imputed rental yield on owner-occupied housing, as recommended by (Diamond and Diamond 2023).
 
@@ -1839,7 +2013,7 @@ Zeldes, Stephen P. 1989. "Optimal Consumption with Stochastic Income: Deviations
 
 [^22]: Note that we cannot conduct this exercise for the family structure counterfactual, as this counterfactual would change the shares of household types in the population, as opposed to changing their environment.
 
-[^23]: By contrast, in Table [\[tab:ChanelContribution\]](#tab:ChanelContribution), the portfolio channel dominates because we use actual returns from a period where stocks performed above the historical average.
+[^23]: By contrast, in Table 6, the portfolio channel dominates because we use actual returns from a period where stocks performed above the historical average.
 
 [^24]: Several historical episodes have fueled this distrust, including the collapse of the Freedman's Savings Trust (Osthaus 1976) and the Tuskegee experiment (Alsan and Wanamaker 2018).
 
@@ -1859,7 +2033,7 @@ Zeldes, Stephen P. 1989. "Optimal Consumption with Stochastic Income: Deviations
 
 [^32]: The values in this formula correspond to the EITC in 2020, when the wage index was \$55,629.
 
-[^33]: To be more precise, $\hat{V}$ is independent of $L_1$ and $P$ because, given the household's choices, both rescaled preferences and budget constraints are independent of $L_1$ and $P$. We changed the household's choice variables from $C_t$ and $H_t$ to $\hat{C}_t$ and $\hat{P}_tH_t$. Hence, given choices, the dynamic budget constraint ([\[eq:app_budgetconstraint\]](#eq:app_budgetconstraint)) shows that the distribution of next period's rescaled wealth depends only on the time-$t$ states in $\hat{V}_t$. Likewise, given choices, the rescaled housing constraints depend only on scaled wealth $\hat{W}_t$. Thus, this rescaled problem with rescaled choice variables yields identical policies to the original problem, but without explicit dependence on $L_1$ and $P$.
+[^33]: To be more precise, $\hat{V}$ is independent of $L_1$ and $P$ because, given the household's choices, both rescaled preferences and budget constraints are independent of $L_1$ and $P$. We changed the household's choice variables from $C_t$ and $H_t$ to $\hat{C}_t$ and $\hat{P}_tH_t$. Hence, given choices, the dynamic budget constraint ) shows that the distribution of next period's rescaled wealth depends only on the time-$t$ states in $\hat{V}_t$. Likewise, given choices, the rescaled housing constraints depend only on scaled wealth $\hat{W}_t$. Thus, this rescaled problem with rescaled choice variables yields identical policies to the original problem, but without explicit dependence on $L_1$ and $P$.
 
 [^34]: Note that, in the data, we estimate mortgage spreads relative to the riskfree rate. In the model, differences in implicit riskfree rates (i.e., $r_{f{\rm B}}<r_{f{\rm W}}$) are an additional, separate spread over these estimates.
 
