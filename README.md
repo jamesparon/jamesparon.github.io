@@ -6,6 +6,11 @@ structured data, and the **full paper text with mathematics in TeX/MathJax**,
 plus a sitemap, `robots.txt`, and `llms.txt`. Humans are pointed to
 [jamesparon.com](https://jamesparon.com); each PDF is the definitive version.
 
+> **Updating the site (esp. for AI agents):** see **[AGENTS.md](AGENTS.md)** for
+> the full step-by-step procedure, and **[sources/README.md](sources/README.md)**
+> for how to drop in new paper files. Run **`./.venv/bin/python check.py`** to
+> verify any change.
+
 ## How content is produced
 
 Two stages, so the heavy LaTeX conversion runs locally while GitHub Pages

@@ -494,8 +494,6 @@ $$ If there were zero humanities majors that resembled Tom W. in subjects' datab
 
 However, there is a wide range of probabilities under which our model would produce a different result than the Bayesian model. This range consists of cases that broadly resemble Study 1 of (Bordalo et al. 2021), namely instances of Tom W. appear more frequently among humanities majors than computer science majors, but that they are difficult to recall because there are many other types of people majoring in the humanities. Table  maps the Tom W. experiment into the words/numbers experiment.
 
--2cm 
-
  ----------------- -- ------------------------------------------------------------------- -- ----------------------------- -- ----------------------- -- --
  Role in Theorem 1 Kahneman and Tversky (1973) Bordalo et al. (2021) 
  cognitive model notation experiment experiment 
@@ -716,8 +714,6 @@ Growth stocks---those with low book-to-market ratios---earn lower average return
 
 Let $\Omega$ denote the population of firms. Each firm $i\in\Omega$ has an expected annual growth rate of earnings $\lambda_i\in\{\lambda_\ell,\lambda_\calh\}$, where $\lambda_\ell<\lambda_\calh$. Let $G_{iT}$ denote average past growth for firm $i$, categorized as either high ($G_{iT}\in\mathcal{G}_\calh\equiv d$) or low ($G_{iT}\in\mathcal{G}_\ell\equiv {-d}$). Analysts observe each firm and encode the pair $\{G_{iT},\lambda_i\}$ in the same context, forming the memory matrix $M$.[^18] We are in the setting of Theorem 1. The cue is past growth $\calG_\calh$; the targets are $\lambda_\calh$ and $\lambda_\ell$. The agent judges a high-past-growth firm to be high-growth if $$\boldsymbol{x}_{\lambda_\calh}\cdot\boldsymbol{x}_{\calG_\calh} = \frac{P(\lambda_\calh,G\in\mathcal{G}_\calh)}{\sqrt{P(\lambda_\calh)}}
 > \frac{P(\lambda_\ell,G\in\mathcal{G}_\calh)}{\sqrt{P(\lambda_\ell)}} = \boldsymbol{x}_{\lambda_\ell}\cdot\boldsymbol{x}_{\calG_\calh},$$ which is more likely when high-growth firms are rare. Table 3 maps the variables. The mechanism is the same as in the experimental setting: the abundance of low-past-growth firms with $\lam_\ell$ erodes the retrieval strength of the decoy association ($\calG_\calh$, $\lam_\ell$). Investors bid up the prices of firms they judge as high-growth; as more data arrives and $P(\lam_\calh|\calG_\calh)\to 0$ or $1$ (Theorem 3), errors correct and returns disappoint---generating the value premium.
-
--2cm 
 
  ----------------- -- ------------------------------------------------------------------- -- ----------------------- -- --------------------------------- -- --------------------------------------- -- --
  Role in Theorem 1 Bordalo et al. (2021) Earnings Recession 

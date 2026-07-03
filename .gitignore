@@ -1,9 +1,11 @@
 # Generated site (built in CI, never committed)
 /site/
 
-# Author's raw paper project folders — READ-ONLY, NEVER a content source, NEVER deployed.
-# One of these zips is ~3.3 GB; GitHub rejects files >100 MB. Do not commit.
-/sources/
+# Author's raw paper uploads — NEVER deployed. Everything here is ignored EXCEPT
+# the README that documents the upload convention. (One zip was ~3.3 GB; GitHub
+# rejects files >100 MB — never commit sources.)
+/sources/*
+!/sources/README.md
 *.zip
 
 # Python
