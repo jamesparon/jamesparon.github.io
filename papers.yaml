@@ -16,13 +16,13 @@ papers:
   authors:
   - Tim de Silva
   - James D. Paron
-  date: '2026-06-25'
-  date_display: June 25, 2026
+  date: '2026-07-18'
+  date_display: July 18, 2026
   keywords: []
   jel: []
   pdf: pdfs/Depopulation.pdf
   legacy_pdf: Depopulation.pdf
-  tex_dir: _work/depopulation/Spatial Housing/Paper
+  tex_dir: depopulation/Spatial Housing/Paper
   tex_main: main.tex
   status: working
 - slug: wealth-of-stagnation

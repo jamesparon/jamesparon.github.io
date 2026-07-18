@@ -497,11 +497,11 @@ Despite the fact that wages fall everywhere, Panel C shows that aggregate GDP pe
  \underbrace{\frac{N_{Yt}}{N_t} \vphantom{\sum\nolimits_i\biggl(\frac{N_{iYt}}{N_{Yt}}\biggr)^{1+\sigma}}}_{\text{goods emp.~share}}
  \times\underbrace{N_{Yt}^{\sigma} \vphantom{\sum\nolimits_i\biggl(\frac{N_{iYt}}{N_{Yt}}\biggr)^{1+\sigma}}}_{\text{scale}}
  \times\underbrace{\sum\nolimits_iA_i\biggl(\frac{N_{iYt}}{N_{Yt}}\biggr)^{1+\sigma}}_{\text{allocation}}
-$$ where $N_{Yt}=\sum_iN_{iYt}$. The goods employment share converts output per goods-sector worker into a contribution to aggregate GDP per capita. The scale term captures the loss of agglomeration as the aggregate population falls. The allocation term reflects the sorting of households across prefectures: it is a productivity-weighted average that puts more mass on prefectures with higher goods-sector population shares. With scale independence, the allocation term is unchanged because population shares do not change, so the scale term dominates and causes aggregate GDP per capita to fall by approximately 12%. In the baseline model with scale dependence, households reallocate toward Tokyo and Osaka, which have the highest values of $A_i$, and the rise in the allocation term more than offsets the scale term. With just CES supply or PIGL demand, GDP per capita still rises but by less.
+$$ where $N_{Yt}=\sum_iN_{iYt}$. The goods employment share converts output per goods-sector worker into a contribution to aggregate GDP per capita. The scale term captures the loss of agglomeration as the aggregate population falls. The allocation term reflects the sorting of households across prefectures: it is a productivity-weighted average that puts more mass on prefectures with higher goods-sector population shares. With scale independence, the allocation term is unchanged because population shares do not change, so the scale term dominates and causes aggregate GDP per capita to fall by approximately 12%. In the baseline model with scale dependence, households reallocate toward Tokyo and Osaka, which have the highest values of $A_i$, and the rise in the allocation term more than offsets the scale term. With just CES supply or PIGL demand, GDP per capita still rises but by less.[^50]
 
 #### House prices. 
 
-Panel D of 7 shows the log change in house prices across prefectures.[^50] Unlike population shares and wages, which fall by less in high-density prefectures, house prices fall by similar amounts across prefectures in the baseline model. To understand why the fall in house prices is similar even with scale dependence, recall ), which shows that there are two offsetting forces that affect house prices. The first is the effect of CES supply, which creates heterogeneity in the local price response $d\log p_i/d\log N_i$: prices fall more in dense prefectures because housing supply per capita goes up by more. Because this shows up in both the numerator and the denominator, this implies that prices should fall by more in dense prefectures, holding $p_ih_i/w_i$ constant. The blue points in Panel D show this is the case in the model with CES supply but Cobb-Douglas demand.
+Panel D of 7 shows the log change in house prices across prefectures.[^51] Unlike population shares and wages, which fall by less in high-density prefectures, house prices fall by similar amounts across prefectures in the baseline model. To understand why the fall in house prices is similar even with scale dependence, recall ), which shows that there are two offsetting forces that affect house prices. The first is the effect of CES supply, which creates heterogeneity in the local price response $d\log p_i/d\log N_i$: prices fall more in dense prefectures because housing supply per capita goes up by more. Because this shows up in both the numerator and the denominator, this implies that prices should fall by more in dense prefectures, holding $p_ih_i/w_i$ constant. The blue points in Panel D show this is the case in the model with CES supply but Cobb-Douglas demand.
 
 However, ) shows that there is a second force from the demand side that works in the opposite direction. PIGL demand creates heterogeneity in the housing expenditure share, with higher shares in dense prefectures. Given the expenditure share shows up in the denominator, this implies that, holding $d\log p_i/d\log N_i$ constant, prices should fall by less in dense prefectures. This is consistent with the red points in Panel D, which show results for the model with Cobb-Douglas supply and PIGL demand. Intuitively, Cobb-Douglas supply means that housing supply per capita increases everywhere by the same amount, holding migration choices fixed. PIGL demand then creates an equilibrium migration response that drives up the population shares of dense prefectures, causing their housing supply per capita and, hence, prices to fall by less.
 
@@ -523,11 +523,11 @@ Panels A and B of 8 show the cumulative changes in population shares and house p
 
 #### Comparison with data. 
 
-Given the actual population in Japan was unchanged between 2000 and 2020, we can compare the empirical relationship between the change in population shares and initial density from 2 to what happens in our model. 9 reproduces 2 pooling 2000--2019 in the model (left) and in the data (right).[^51] The results show that the model generates a similar qualitative pattern to the data, where denser prefectures experienced larger increases in population shares. Quantitatively, the model generates a slope of approximately $0.017$ relative to a data slope of approximately $0.079$, explaining approximately one-quarter of the observed rise in spatial concentration. We view this as a meaningful share of the observed reallocation, given that the model contains only two mechanisms related to housing. Importantly, this exercise holds prefecture fundamentals constant and imposes constant birth and death rates across prefectures, while some of Tokyo's population increase has reflected differential birth rates (12, Giannone et al. (2026)). In 5.3, we discuss some other mechanisms that may be at work in the data.[^52]
+Given the actual population in Japan was unchanged between 2000 and 2020, we can compare the empirical relationship between the change in population shares and initial density from 2 to what happens in our model. 9 reproduces 2 pooling 2000--2019 in the model (left) and in the data (right).[^52] The results show that the model generates a similar qualitative pattern to the data, where denser prefectures experienced larger increases in population shares. Quantitatively, the model generates a slope of approximately $0.017$ relative to a data slope of approximately $0.079$, explaining approximately one-quarter of the observed rise in spatial concentration. We view this as a meaningful share of the observed reallocation, given that the model contains only two mechanisms related to housing. Importantly, this exercise holds prefecture fundamentals constant and imposes constant birth and death rates across prefectures, while some of Tokyo's population increase has reflected differential birth rates (12, Giannone et al. (2026)). In 5.3, we discuss some other mechanisms that may be at work in the data.[^53]
 
 #### Full transition. 
 
-Panels C and D of 8 show the same objects as Panels A and B over the full transition between the two steady states.[^53] Population shares continue to diverge during the population decline, but take over 200 years after the end of the decline to reach the new steady state. This long lag reflects the slow depreciation and irreversibility of structures. House prices, while rising in anticipation in Tokyo, begin falling everywhere once the population decline begins because the increase in housing supply per capita is so large. Additionally, once housing supply per capita starts increasing, the relationship between house price changes and initial density flattens out, as described in ).
+Panels C and D of 8 show the same objects as Panels A and B over the full transition between the two steady states.[^54] Population shares continue to diverge during the population decline, but take over 200 years after the end of the decline to reach the new steady state. This long lag reflects the slow depreciation and irreversibility of structures. House prices, while rising in anticipation in Tokyo, begin falling everywhere once the population decline begins because the increase in housing supply per capita is so large. Additionally, once housing supply per capita starts increasing, the relationship between house price changes and initial density flattens out, as described in ).
 
 <figure id="fig:transition_model_data" data-latex-placement="!t">
 <div class="center">
@@ -597,7 +597,7 @@ To understand these results, we first characterize optimal policy in our static 
  
 $$ where $\bar{w}\equiv \sum_jN_jw_j/N$ is average income and $Y/N = \sum_jY_j/N$ is per-capita goods output.*
 
-The optimal transfers ) are the same as those derived by (Fajgelbaum and Gaubert 2020) and balance two competing forces.[^54] On the one hand, the planner wants to tax high-income places (Tokyo) and subsidize low-income places (Hokkaido) as a form of insurance against taste shocks. On the other hand, because goods producers do not internalize the agglomeration benefits $\sigma>0$, there is an inefficiently low number of workers in high-output areas, so the planner wants to subsidize Tokyo to attract workers there. Importantly, although housing creates congestion, it does not show up in ) because it is priced by the competitive housing sector that returns profits to households.
+The optimal transfers ) are the same as those derived by (Fajgelbaum and Gaubert 2020) and balance two competing forces.[^55] On the one hand, the planner wants to tax high-income places (Tokyo) and subsidize low-income places (Hokkaido) as a form of insurance against taste shocks. On the other hand, because goods producers do not internalize the agglomeration benefits $\sigma>0$, there is an inefficiently low number of workers in high-output areas, so the planner wants to subsidize Tokyo to attract workers there. Importantly, although housing creates congestion, it does not show up in ) because it is priced by the competitive housing sector that returns profits to households.
 
 Given the values of $\theta$ and $\sigma$ in our dynamic model, 5 implies that redistribution should dominate agglomeration, resulting in $\tau_w < 0$. However, as shown in 10, solving ) in our dynamic model delivers a positive $\tau_w$. In 13.6, we progressively remove the differences between our dynamic model and the static model in which 5 is derived: moving costs, depreciation, and occupation-specific taste shocks. We find the change in sign of $\tau_w$ is driven by moving costs. To see why moving costs affect optimal transfers, differentiate the planner's objective in ) to obtain: $$
  \frac{dW^\text{SP}}{d\tau_w} = \sum_i\frac{N_i}{N}\frac{d\widehat{V}_i}{d\tau_w} + \sum_i\frac{d N_i/N}{d\tau_w}\widehat{V}_i
@@ -609,7 +609,7 @@ These differences in utility across prefectures are the key reason that the opti
 
 Several governments have introduced policies and policy proposals in response to concerns about the spatial consequences of depopulation. Examples include local *akiya* banks and renovation subsidies for vacant homes in Japan (Akiya Japan 2026), Italy's "1 Euro home" programs and related renovation grants (Iacubino 2025), rent and job incentives in Spain ([thinkSPAIN] 2021), grants for vacant or run-down island homes in Ireland (Picchi 2023), relocation payments in Switzerland (Municipality of Albinen 2017), selective island stipends and rural property-tax reductions in Greece (Giannopoulos 2026), and Scotland's Addressing Depopulation Action Plan, which funds settlement officers, rural housing, connectivity, and local recruitment strategies (Scottish Government 2024). While these policies differ in their details, they share a common goal: retain or attract residents in declining rural areas.
 
-Relative to these proposals, the social planner that we consider chooses transfers that go in the opposite direction. Three caveats are important when comparing our results with these policies. First, we solve the planner's problem in steady state, which allows the planner to choose transfers internalizing their long-run effects on migration decisions. However, along a transition path, a planner may want to move more slowly in order to protect households who are temporarily locked into declining regions.[^55] Second, several of these policies are targeted at abandoned homes, which our model does not generate and may have negative externalities.[^56] Finally, households may value the preservation of existing communities (e.g., historic sites) in ways they do not internalize, which creates a direct rationale for transfers targeted at declining regions.
+Relative to these proposals, the social planner that we consider chooses transfers that go in the opposite direction. Three caveats are important when comparing our results with these policies. First, we solve the planner's problem in steady state, which allows the planner to choose transfers internalizing their long-run effects on migration decisions. However, along a transition path, a planner may want to move more slowly in order to protect households who are temporarily locked into declining regions.[^56] Second, several of these policies are targeted at abandoned homes, which our model does not generate and may have negative externalities.[^57] Finally, households may value the preservation of existing communities (e.g., historic sites) in ways they do not internalize, which creates a direct rationale for transfers targeted at declining regions.
 
 # Conclusion 
 
@@ -745,7 +745,7 @@ To prove the first statement, we need to first determine $d\log p_i/d\log N_i$. 
  \frac{d\log h_i^\text{S}}{d\log N_i} = \frac{H_i'(X_i)X_i}{H_i(X_i)}\frac{d\log X_i}{d\log N_i} -1.
 $$ To express this in terms of price changes, differentiate the construction sector's first-order condition ) to get $$
  \frac{d\log w_i}{d\log N_i} = \frac{d\log p_i}{d\log N_i} + \frac{H_i''(X_i)X_i}{H_i'(X_i)}\frac{d\log X_i}{d\log N_i}.
-$$ and substitute this back in to get[^57] $$
+$$ and substitute this back in to get[^58] $$
  \frac{d\log h_i^\text{S}}{d\log N_i} = -\frac{H_i'(X_i)}{H_i(X_i)}\frac{H_i'(X_i)}{H_i''(X_i)}\left(\frac{d\log p_i}{d\log N_i}-\frac{d\log w_i}{d\log N_i}\right)-1 = \zeta_i^\text{S}\left(\frac{d\log p_i}{d\log N_i}-\sigma\right)-1.
  
 $$ Setting change in supply equal to change in demand and solving for the price change, we have $$
@@ -778,7 +778,7 @@ $$ Substituting in $A_i=w_i/N_i^\sigma$, then $w_i = p_iH'(X_i)A_X$, this implie
 $$ Moreover, equating housing supply $h_i^\text{S}=H(X_i)/N_i$ with housing demand $h_i^\text{D} = \alpha w_i p_i^{-\zeta_p}$ (and again using $w_i = p_iH'(X_i)A_X$), we have $$
  N_i = \frac{H(X_i)}{\alpha A_XH'(X_i)p_i^{1-\zeta_p}}.
  
-$$ The conditions ) and ) imply that all locations lie on the same equilibrium locus $(X(N_i),p(N_i))$. We now prove that this locus is increasing in $N_i$. Differentiating ) and ) across population levels $N_i$ gives the system[^58] $$\begin{align}
+$$ The conditions ) and ) imply that all locations lie on the same equilibrium locus $(X(N_i),p(N_i))$. We now prove that this locus is increasing in $N_i$. Differentiating ) and ) across population levels $N_i$ gives the system[^59] $$\begin{align}
  \theta &= \left(1-\frac{p_ih_i}{w_i}\right)\frac{d\log p_i}{d\log N_i} + \frac{H''(X_i)X_i}{H'(X_i)}\frac{d\log X_i}{d\log N_i} \\
  1 &= - (1-\zeta_p)\frac{d\log p_i}{d\log N_i} + \left(\frac{H'(X_i)X_i}{H(X_i)}-\frac{H''(X_i)X_i}{H'(X_i)}\right)\frac{d\log X_i}{d\log N_i} .
 \end{align}$$ where we have used $v'(p_i)p_i/v(p_i) = -p_ih_i/w_i$. The solution to this system is $$\begin{align}
@@ -892,7 +892,7 @@ $$ and therefore the optimal transfer ) becomes $$\begin{align}
 
 ## Robustness: Trade, commuting, and amenities 
 
-To assess the robustness of our scale-dependence results, we consider three extensions of the theory that are common in the spatial literature: trade, commuting, and amenities. In all three cases, we follow the conventional approaches to modeling these mechanisms and show that they do not introduce any new source of scale dependence.[^59] They can change the level of equilibrium population shares, but they do not change the condition under which rescaling $N$ leaves those shares unchanged.
+To assess the robustness of our scale-dependence results, we consider three extensions of the theory that are common in the spatial literature: trade, commuting, and amenities. In all three cases, we follow the conventional approaches to modeling these mechanisms and show that they do not introduce any new source of scale dependence.[^60] They can change the level of equilibrium population shares, but they do not change the condition under which rescaling $N$ leaves those shares unchanged.
 
 #### Trade. 
 
@@ -919,7 +919,7 @@ $$ CES demand implies that the share of location $i$'s goods expenditure spent o
 $$ Goods-market clearing therefore takes the form $$
  q_jA_jN_j^\sigma N_{jY}=\sum_i\lambda_{ij}E_i,
  
-$$ where $E_i$ is total expenditure on the differentiated goods by households in $i$.[^60]
+$$ where $E_i$ is total expenditure on the differentiated goods by households in $i$.[^61]
 
 Now define $s_i\equiv N_i/N$, $s_{iY}\equiv N_{iY}/N$, and $e_i\equiv E_i/(N_i\tilde{w}_i)$ as the goods expenditure share. If all population shares are held fixed and $N$ is rescaled, then )--) are homogeneous in exactly the same way as the baseline goods-market condition: wages scale with $N^\sigma$, while the relative goods prices $\{q_{ij}/Q_i\}_{i,j}$ are functions of population shares, employment shares, and the goods expenditure shares. Hence real wages can be written $$
  \tilde{w}_i=\omega_i(\{s_j,s_{jY},e_j\}_j)N^\sigma,
@@ -965,7 +965,7 @@ With non-Cobb-Douglas demand or supply, the same objects that generated scale de
 
 #### Amenities. 
 
-Finally, suppose that local amenities multiply utility and take the standard power form $a_iN_i^\gamma$, where $a_i$ and $\gamma$ are constants.[^61] Indirect utility in location $i$ is then $$
+Finally, suppose that local amenities multiply utility and take the standard power form $a_iN_i^\gamma$, where $a_i$ and $\gamma$ are constants.[^62] Indirect utility in location $i$ is then $$
  a_iN_i^\gamma U^*(w_i,p_i)=a_iN_i^\gamma w_iv(p_i).
 $$ After substituting $w_i=A_iN_i^\sigma$, population shares satisfy $$
  \frac{N_i}{N}
@@ -978,7 +978,7 @@ $$ provided $\theta>\sigma+\gamma$. Thus a power amenity simply changes the effe
 
 #### Scale dependence. 
 
-Assume the setting from 2.3, but relax the assumption that $U(c_i,h_i)$ is homothetic. Now, we can no longer use the separation $U^*(w_i,p_i)=w_iv(p_i)$. Define the income and house-price elasticities of utility[^62] $$
+Assume the setting from 2.3, but relax the assumption that $U(c_i,h_i)$ is homothetic. Now, we can no longer use the separation $U^*(w_i,p_i)=w_iv(p_i)$. Define the income and house-price elasticities of utility[^63] $$
  \gamma_{wi} \equiv \frac{U^*_w(w_i,p_i)w_i}{U^*(w_i,p_i)} \quad\text{and}\quad \gamma_{pi} \equiv -\frac{U^*_p(w_i,p_i)p_i}{U^*(w_i,p_i)}.
 $$ By Roy's identity, we have housing demand $$
  h_i^\text{D}(w_i,p_i) = -\frac{U^*_p(w_i,p_i)}{U^*_w(w_i,p_i)} = \frac{w_i}{p_i}\frac{\gamma_{pi}}{\gamma_{wi}}.
@@ -1014,7 +1014,7 @@ $$ with $\eta_c<1$ corresponding to the standard structural-transformation case 
  w_{is} \geq p_nc_{in}+p_ac_{ia}.
 $$ The associated price index $P(p_a,p_n)$ is normalized to one. As in the main text, households receive i.i.d. Fréchet location shocks with dispersion $\theta$.
 
-To simplify the math, we define locations to be arbitrarily small plots of land of equal measure $L_i=L$, so that there is a continuum of locations $i\in[0,J]$. We order these locations by their innate productivity, $A_i$, which is continuously differentiable and strictly increasing in $i$. While $i$ is technically just an indexing convention, it is intuitive to think about $A_i$ as being positively spatially autocorrelated, so that two adjacent plots of land are likely to have similar $A_i$.[^63] Because plots of land are small, we assume that they each specialize in only one sector $s\in\{a,n\}$. If location $i$ specializes in sector $s$, total output in that location will be[^64] $$
+To simplify the math, we define locations to be arbitrarily small plots of land of equal measure $L_i=L$, so that there is a continuum of locations $i\in[0,J]$. We order these locations by their innate productivity, $A_i$, which is continuously differentiable and strictly increasing in $i$. While $i$ is technically just an indexing convention, it is intuitive to think about $A_i$ as being positively spatially autocorrelated, so that two adjacent plots of land are likely to have similar $A_i$.[^64] Because plots of land are small, we assume that they each specialize in only one sector $s\in\{a,n\}$. If location $i$ specializes in sector $s$, total output in that location will be[^65] $$
  Y_{is}=A_i\Gamma_sN_i^{1-\mu_s}L^{\mu_s}, \quad 0<\mu_n<\mu_a<1.
  
 $$ Non-agriculture is less land-intensive than agriculture, so it has stronger returns to population density. We could also allow for sector-specific agglomeration elasticities, replacing $A_i\Gamma_s$ with $A_i\Gamma_sN_i^{\sigma_s}$ and assuming $\sigma_n>\sigma_a$, as in (Michaels et al. 2012). The effect of $\sigma_n>\sigma_a$ is qualitatively the same as the effect of $\mu_n<\mu_a$, since both increase returns to density.
@@ -1038,7 +1038,7 @@ $$ Combining )--) gives a simple density cutoff: defining $$
 $$ location $i$ specializes in non-agriculture if and only if $$
  \frac{N_i}{L}\geq\bar{n}.
  
-$$ Thus, in any equilibrium, all non-agricultural regions will have higher density than all agricultural regions. Let $\bar{\imath}\equiv\{i\in[0,J]:N_{\bar{\imath}}/L=\bar{n}\}\in(0,J)$.[^65]
+$$ Thus, in any equilibrium, all non-agricultural regions will have higher density than all agricultural regions. Let $\bar{\imath}\equiv\{i\in[0,J]:N_{\bar{\imath}}/L=\bar{n}\}\in(0,J)$.[^66]
 
 The goods prices are determined by national goods-market clearing. The first-order conditions for ) imply $$
  \frac{p_a}{p_n} = \frac{\alpha_c}{1-\alpha_c}\left(\frac{Y_n}{Y_a}\right)^\frac{1}{\eta_c},
@@ -1095,7 +1095,7 @@ $$ which is strictly positive. Moreover, since $$
 $$ equation ) implies $$
  \frac{d\log \bar{n}}{d\bar{\imath}}>\frac{1}{\theta+\mu_n}\frac{d\log A_{\bar{\imath}}}{d\bar{\imath}}.
  
-$$ Next, differentiating ) gives[^66] $$\begin{align}
+$$ Next, differentiating ) gives[^67] $$\begin{align}
  \frac{d\log N}{d\bar{\imath}}&=\frac{d\log \bar{n}}{d\bar{\imath}}-\frac{d\log A_{\bar{\imath}}}{d\bar{\imath}}\frac{\frac{1}{\theta+\mu_a}\int_0^{\bar{\imath}}\bigl(\frac{A_i}{A_{\bar{\imath}}}\bigr)^\frac{1}{\theta+\mu_a}di+\frac{1}{\theta+\mu_n}\int_{\bar{\imath}}^J\bigl(\frac{A_i}{A_{\bar{\imath}}}\bigr)^\frac{1}{\theta+\mu_n}di}{\int_0^{\bar{\imath}}\bigl(\frac{A_i}{A_{\bar{\imath}}}\bigr)^\frac{1}{\theta+\mu_a}di+\int_{\bar{\imath}}^J\bigl(\frac{A_i}{A_{\bar{\imath}}}\bigr)^\frac{1}{\theta+\mu_n}di}.
  
 \end{align}$$ The fraction multiplying $d\log A_{\bar{\imath}}/d\bar{\imath}$ in ) is a weighted average of $1/(\theta+\mu_a)$ and $1/(\theta+\mu_n)$, and is therefore strictly less than $1/(\theta+\mu_n)$. Combining this with ) gives $$
@@ -1558,7 +1558,7 @@ $$ Thus, when a prefecture loses population or wage income, its tax rate rises t
 
 #### Calibration and estimation. 
 
-We calibrate the additional parameters in this extension to the values listed in . First, we set the target steady state tax rate to 10%, matching the standard local inhabitant tax rate in Japan.[^67] Second, we set the weight of public spending in utility equal to $0.0741$. We choose this value because a planner that chooses a location-specific tax rate in steady state to maximize the weighted sum of flow utilities across the two occupations would choose a tax rate of $\tau^{sp} = \alpha_g/(\alpha_g + 1- s_{h,i}/\zeta_p)$, where $s_{h,i}$ is the housing expenditure share in region $i$. Setting $\tau^{sp}=0.1$ and $s_{h,i}$ equal to the aggregate housing expenditure share for all regions gives $\alpha_g=0.0741$. Finally, we set the persistence of government spending to $0.9$. We choose this value, which is higher than estimates in Japan from (Morita 2020), for two reasons. First, we are interested in how the components of government spending that finance local public goods adjust, which are likely more persistent. Second, our interest is in assessing the quantitative importance of this mechanism, and choosing a high $\phi$ allows us to place an upper bound on its importance. After calibrating these parameters, we then estimate the remaining model parameters following the procedure in 12. reports the estimated parameters and model fit.
+We calibrate the additional parameters in this extension to the values listed in . First, we set the target steady state tax rate to 10%, matching the standard local inhabitant tax rate in Japan.[^68] Second, we set the weight of public spending in utility equal to $0.0741$. We choose this value because a planner that chooses a location-specific tax rate in steady state to maximize the weighted sum of flow utilities across the two occupations would choose a tax rate of $\tau^{sp} = \alpha_g/(\alpha_g + 1- s_{h,i}/\zeta_p)$, where $s_{h,i}$ is the housing expenditure share in region $i$. Setting $\tau^{sp}=0.1$ and $s_{h,i}$ equal to the aggregate housing expenditure share for all regions gives $\alpha_g=0.0741$. Finally, we set the persistence of government spending to $0.9$. We choose this value, which is higher than estimates in Japan from (Morita 2020), for two reasons. First, we are interested in how the components of government spending that finance local public goods adjust, which are likely more persistent. Second, our interest is in assessing the quantitative importance of this mechanism, and choosing a high $\phi$ allows us to place an upper bound on its importance. After calibrating these parameters, we then estimate the remaining model parameters following the procedure in 12. reports the estimated parameters and model fit.
 
 *Notes:* The table reports the additional parameter values used in the spending commitment extension.
 
@@ -1566,7 +1566,7 @@ We calibrate the additional parameters in this extension to the values listed in
 
 #### Results. 
 
-This spending-commitment extension introduces two distinct changes to the baseline model: (i) adding local public goods that are financed with proportional taxes; and (ii) making the spending on these goods adjust slowly. Because we are interested in the effects of the latter but the former also affects our results, we highlight the effects of spending commitments by comparing the same re-estimated model with $\phi=0$ to the model in which $\phi$ is set to the value in .[^68] Note that changing $\phi$ does not require re-estimating the model, since the estimation is done in a steady state and $\phi$ affects only transition dynamics.
+This spending-commitment extension introduces two distinct changes to the baseline model: (i) adding local public goods that are financed with proportional taxes; and (ii) making the spending on these goods adjust slowly. Because we are interested in the effects of the latter but the former also affects our results, we highlight the effects of spending commitments by comparing the same re-estimated model with $\phi=0$ to the model in which $\phi$ is set to the value in .[^69] Note that changing $\phi$ does not require re-estimating the model, since the estimation is done in a steady state and $\phi$ affects only transition dynamics.
 
 30 plots how tax rates evolve in the model with $\phi > 0$ in anticipation of the population decline and along the full transition path. In anticipation of the transition, Panel A shows that less dense prefectures see increases in tax rates, while denser prefectures see decreases. These differences are driven by the migration responses in anticipation of the decline discussed in 5.2: ) implies that tax rates move inversely to population growth. Once the population decline begins, Panel B shows that tax rates begin increasing in all prefectures because population levels start declining everywhere. By the end of the population decline, the differences in tax rates are substantial: Hokkaido's tax rate rises from 10% to 15.5%, while Tokyo's remains below 11% for the entire transition.
 
@@ -1608,7 +1608,7 @@ $$ This expression replaces ). The migration probabilities in ) and the populati
 
 #### Calibration and estimation. 
 
-The key question is how to calibrate $\gamma$, about which there is a wide range of estimates. (Fajgelbaum and Gaubert 2020) use the estimates from (Diamond 2016) to back out the implied spillovers across workers of different skills. Depending on the relative share of high- vs. low-skilled workers, these estimates imply a negative spillover elasticity between $-0.25$ and $-0.47$.[^69] In contrast, (Ahlfeldt et al. 2015) estimate a positive amenity spillover of $\gamma \approx 0.08$ that declines rapidly with distance, which (Giannone et al. 2026) argue is consistent with declines in amenities in depopulating Japanese prefectures, and (Ahlfeldt and Pietrostefani 2019) conduct a review of amenity spillover estimates, many of which are positive. Given this range of estimates, we choose a value of $\gamma=-0.18$, which is in the middle of this range. We view this choice as conservative because these estimates are typically at more granular levels of aggregation than a prefecture and (as described below) the degree of scale dependence is increasing in $\gamma$. We then re-estimate the remaining model parameters following the procedure in 12. reports the estimated parameters and model fit.
+The key question is how to calibrate $\gamma$, about which there is a wide range of estimates. (Fajgelbaum and Gaubert 2020) use the estimates from (Diamond 2016) to back out the implied spillovers across workers of different skills. Depending on the relative share of high- vs. low-skilled workers, these estimates imply a negative spillover elasticity between $-0.25$ and $-0.47$.[^70] In contrast, (Ahlfeldt et al. 2015) estimate a positive amenity spillover of $\gamma \approx 0.08$ that declines rapidly with distance, which (Giannone et al. 2026) argue is consistent with declines in amenities in depopulating Japanese prefectures, and (Ahlfeldt and Pietrostefani 2019) conduct a review of amenity spillover estimates, many of which are positive. Given this range of estimates, we choose a value of $\gamma=-0.18$, which is in the middle of this range. We view this choice as conservative because these estimates are typically at more granular levels of aggregation than a prefecture and (as described below) the degree of scale dependence is increasing in $\gamma$. We then re-estimate the remaining model parameters following the procedure in 12. reports the estimated parameters and model fit.
 
 *Notes:* This table reproduces the results in when estimating the model with the amenity spillover extension.
 
@@ -1628,14 +1628,14 @@ The key question is how to calibrate $\gamma$, about which there is a wide range
 
 Here we consider what would happen in the model if fertility endogenously responded to housing supply, consistent with the evidence in (Fazio et al. 2025). We focus on the implications of our key model assumption: CES housing supply with complements instead of Cobb-Douglas.
 
-We adapt the economic setting )--) as follows. The utility function $U(c,h)$ is now also increasing in births $b$, becoming $U(c,h,b)$. The opportunity cost of child-rearing is the wage, so the budget constraint becomes $(1-b_{jot})w_{jot} \geq c_{jot}+p_{jt}h_{jot}$. This gives rise to indirect flow utility $U^*(w_{jot},p_{jt})$ and Marshallian demand functions for goods consumption $c(w_{jot},p_{jt})$, housing consumption $h(w_{jot},p_{jt})$, and births $b_t(w_{jot},p_{jt})$.[^70] To directly capture the intuition that fertility responds to housing consumption, we assume that utility is such that the birth rate can be written in terms of just housing consumption, $b(w_{jot},p_{jt}) = b(h_{jot})$. We give an example below of a simple setup that gives rise to this. Finally, we assume households in all locations die between periods at a mortality rate $d$. Under these assumptions, population dynamics )--) become $$\begin{align}
+We adapt the economic setting )--) as follows. The utility function $U(c,h)$ is now also increasing in births $b$, becoming $U(c,h,b)$. The opportunity cost of child-rearing is the wage, so the budget constraint becomes $(1-b_{jot})w_{jot} \geq c_{jot}+p_{jt}h_{jot}$. This gives rise to indirect flow utility $U^*(w_{jot},p_{jt})$ and Marshallian demand functions for goods consumption $c(w_{jot},p_{jt})$, housing consumption $h(w_{jot},p_{jt})$, and births $b_t(w_{jot},p_{jt})$.[^71] To directly capture the intuition that fertility responds to housing consumption, we assume that utility is such that the birth rate can be written in terms of just housing consumption, $b(w_{jot},p_{jt}) = b(h_{jot})$. We give an example below of a simple setup that gives rise to this. Finally, we assume households in all locations die between periods at a mortality rate $d$. Under these assumptions, population dynamics )--) become $$\begin{align}
  N_{jt} &= \sum\nolimits_i N_{i,t-1}(1+g_{it})\mathbb{P}(j_{kt}=j \mid j_{k,t-1}=i), \\
  g_{it} &\equiv \sum\nolimits_o\frac{N_{io,t-1}}{N_{i,t-1}}(b_{t-1}(h_{io,t-1}) - d).
 \end{align}$$ This then implies aggregate population growth $$
  \frac{N_t}{N_{t-1}} = 1 + g_t = 1 + \sum_i\frac{N_{i,t-1}}{N_{t-1}}g_{it}.
 $$ If birth rates $b_t(h_{iot})$ are increasing in housing consumption, then, all else equal, an increase in per-capita housing supply will raise the aggregate population growth rate.
 
-We are interested in the conditions under which this setting gives rise to a stable population level ($\lim_{t\to\infty}N_t=N^*\in(0,\infty)$), an "expanding cosmos" ($\lim_{t\to\infty}N_t=\infty$), or an "empty planet" ($\lim_{t\to\infty}N_t=0$).[^71] This will ultimately come down to two things: the responsiveness of per-capita housing supply $h_i=H_i/N_i$ to population level $N_i$, and the responsiveness of the fertility rate $b(h_i)$ to per-capita housing supply. Assume that the birth rate is strictly increasing in $h$, with bounds $$
+We are interested in the conditions under which this setting gives rise to a stable population level ($\lim_{t\to\infty}N_t=N^*\in(0,\infty)$), an "expanding cosmos" ($\lim_{t\to\infty}N_t=\infty$), or an "empty planet" ($\lim_{t\to\infty}N_t=0$).[^72] This will ultimately come down to two things: the responsiveness of per-capita housing supply $h_i=H_i/N_i$ to population level $N_i$, and the responsiveness of the fertility rate $b(h_i)$ to per-capita housing supply. Assume that the birth rate is strictly increasing in $h$, with bounds $$
  \lim_{h\downarrow0}b(h) = \underaccent{\bar}{b} \quad\text{and}\quad \lim_{h\to\infty}b(h) = \bar{b}.
 $$ Of course, if $\bar{b}<d$, then we will always drift toward an empty planet; and if $\underaccent{\bar}{b}>d$, we will always have an expanding cosmos. Assume then that $\underaccent{\bar}{b}<d<\bar{b}$, so that it is in principle possible to have either growth or decline. In this case, long run population dynamics will depend on the behavior of per-capita housing supply. For Cobb-Douglas housing supply and CES housing supply with complements, per-capita housing supply falls toward zero as $N_i\to\infty$. What is unclear is whether housing supply is infinite or finite on an empty planet. Under our assumption of CES housing supply ), for example, $$
  \lim_{N_{it}\downarrow0}\frac{H(X_{it},L_i)}{N_{it}} =
@@ -1653,7 +1653,7 @@ $$ Under Cobb-Douglas or substitutes ($\eta\geq1$), the population eventually fa
 
 With complements ($\eta<1$), the story is potentially very different. Housing supply per capita is bounded above, and hence fertility may never rise enough to stabilize the population. For example, suppose $b((1-\nu)^\frac{\eta}{\eta-1}A_{iX})<d$ for all $i$. Then we will inevitably reach an empty planet. The reason this happens in the complements case is that, as population declines, so does the supply of labor available to build structures. Land per capita becomes abundant, but structures become a weak link everywhere. Having infinite land is of no value without any people to build houses on it.
 
-This same logic applies to population dynamics in response to a fertility shock. Suppose that we start out in an initial steady state $N_0=N^*$ with corresponding fixed housing supplies $\{H(X_j,L_j)\}$ and regional population growth rates $\{g_j\}$ and shares $\{N_j/N\}$.[^72] Then, suppose there is a preference shock that reduces fertility, so that birth rates fall instantly everywhere. Aggregate population will begin to decline. As population declines, housing supply will tend to rise everywhere. Under Cobb-Douglas, population will fall until housing supply has risen enough to stabilize growth back to $g_t=0$. Under CES with complements, population may fall indefinitely.
+This same logic applies to population dynamics in response to a fertility shock. Suppose that we start out in an initial steady state $N_0=N^*$ with corresponding fixed housing supplies $\{H(X_j,L_j)\}$ and regional population growth rates $\{g_j\}$ and shares $\{N_j/N\}$.[^73] Then, suppose there is a preference shock that reduces fertility, so that birth rates fall instantly everywhere. Aggregate population will begin to decline. As population declines, housing supply will tend to rise everywhere. Under Cobb-Douglas, population will fall until housing supply has risen enough to stabilize growth back to $g_t=0$. Under CES with complements, population may fall indefinitely.
 
 33 illustrates these dynamics for Cobb-Douglas housing supply and CES with complements. Panel A shows the dynamics before a permanent negative fertility shock and Panel B shows the dynamics after. Before the shock (Panel A), both cases give rise to a positive steady state population level. This level is stable, in that population always drifts toward that level asymptotically. In Panel B, however, the fertility decline is large enough that, under CES with complements, the birth rate can never rise enough to stabilize population---we drift toward an empty planet.
 
@@ -1679,13 +1679,15 @@ $$ is a normalizing term. This term offsets the direct effect of $\varepsilon_t^
 
 ## Differences in optimal transfers between static and dynamic models 
 
-This section discusses the differences between the sign of the optimal transfers in our dynamic model and the optimal formula from 5 that applies in our static model. We begin by replicating the latter quantitatively by removing dynamics in the household and construction problems, taste shocks across occupations, and agglomeration, in which case the model becomes our static model. The first column of shows that the optimal $\tau_w$ is between $-0.66$ and $-0.68$, depending on the specification of housing supply and demand, which is close to the redistribution slope $-\theta/(\theta+1)\approx -0.67$ in ). The second column of adds back agglomeration, which has minimal effects because the amount of agglomeration is small.[^73] The third column introduces taste shocks across occupations. These shocks generate construction wage premia and make wage-indexed transfers redistribute across occupations within locations as well as across locations. With CES housing supply, within-location occupation wage differences are smaller in denser areas that tend to have higher wages, which causes $\tau_w$ to increase to around $-0.56$. In the fourth column, we add back dynamics in the construction sector, which reduces the demand for construction labor and construction wages. These effects differ across places with PIGL demand, which again interacts with the redistributive motive and causes $\tau_w$ to rise closer to zero.
+This section discusses the differences between the sign of the optimal transfers in our dynamic model and the optimal formula from 5 that applies in our static model. We begin by replicating the latter quantitatively by removing dynamics in the household and construction problems, taste shocks across occupations, and agglomeration, in which case the model becomes our static model. The first column of shows that the optimal $\tau_w$ is between $-0.66$ and $-0.68$, depending on the specification of housing supply and demand, which is close to the redistribution slope $-\theta/(\theta+1)\approx -0.67$ in ). The second column of adds back agglomeration, which has minimal effects because the amount of agglomeration is small.[^74] The third column introduces taste shocks across occupations. These shocks generate construction wage premia and make wage-indexed transfers redistribute across occupations within locations as well as across locations. With CES housing supply, within-location occupation wage differences are smaller in denser areas that tend to have higher wages, which causes $\tau_w$ to increase to around $-0.56$. In the fourth column, we add back dynamics in the construction sector, which reduces the demand for construction labor and construction wages. These effects differ across places with PIGL demand, which again interacts with the redistributive motive and causes $\tau_w$ to rise closer to zero.
 
 The first four columns of show that occupation-specific taste shocks, depreciation, and agglomeration cannot explain the differences in the sign of $\tau_w$ between our static and dynamic models. The final column shows that the difference comes from moving costs. As discussed in 6.2, moving costs create differences in utility across places that allow the planner to improve welfare in steady state by moving people to higher-utility places.
 
 *Notes:* The table reports the planner's optimal value of $\tau_w$ in the post-transfer expenditure rule $x_{jot}=(1+\tau_w)w_{jot}+\tau_0$, with $\tau_0$ chosen to balance the government budget, solved separately in the initial and terminal steady states. The first two columns indicate the specifications of housing supply and demand, and Columns (1)--(5) vary the parameters listed in the bottom panel. The parameter values in the bottom panel correspond to the baseline estimates with CES supply and PIGL demand, reported in ; for the alternative models, any parameter not fixed externally uses the corresponding estimate reported in , , and .
 
 Aaron, Henry J. 1966. "The Social Insurance Paradox." *Canadian Journal of Economics and Political Science* 32 (3): 371--74. <https://doi.org/10.2307/139995>.
+
+Acemoglu, Daron, David Autor, Keelan Beirne, and Andrew Scott. 2026. *Baby Busts and Growth Booms: Demographic Change and the Macroeconomy*. NBER Working Paper No. 35401. National Bureau of Economic Research. <https://doi.org/10.3386/w35401>.
 
 Acemoglu, Daron, and Pascual Restrepo. 2017. "Secular Stagnation? The Effect of Aging on Economic Growth in the Age of Automation." *American Economic Review* 107 (5): 174--79. <https://doi.org/10.1257/aer.p20171101>.
 
@@ -1726,6 +1728,8 @@ Boppart, Timo. 2014. "Structural Change and the Kaldor Facts in a Growth Model w
 Borck, Rainald, Tadashi Morita, and Yasuhiro Sato. 2026. *Optimal City Size with Endogenous Fertility*. Working Paper No. 12595. CESifo. <https://ssrn.com/abstract=6540442>.
 
 Branas, Charles C., Rose A. Cheney, John M. MacDonald, Vicky W. Tam, Tara D. Jackson, and Thomas R. Ten Have. 2011. "A Difference-in-Differences Analysis of Health, Safety, and Greening Vacant Urban Space." *American Journal of Epidemiology* 174 (11): 1296--306. <https://doi.org/10.1093/aje/kwr273>.
+
+Bricker, Darrell, and John Ibbitson. 2019. *Empty Planet: The Shock of Global Population Decline*. Crown.
 
 Caliendo, Lorenzo, Maximiliano Dvorkin, and Fernando Parro. 2019. "Trade and Labor Market Dynamics: General Equilibrium Analysis of the China Trade Shock." *Econometrica* 87 (3): 741--835. <https://doi.org/10.3982/ECTA13758>.
 
@@ -1897,7 +1901,7 @@ Weil, David N. 2026. "How Much Would Continued Low Fertility Affect the US Stand
 
 [^13]: For details on the construction of GHSL, see (Pesaresi et al. 2024) and the [GHSL Data Package](https://human-settlement.emergency.copernicus.eu/documents/GHSL_Data_Package_2023.pdf?t=1727170839).
 
-[^14]: We choose to start our sample in 2000 because this is when the GHSL begins using [GPWv4](https://www.earthdata.nasa.gov/data/catalog/sedac-ciesin-sedac-gpwv4-popdens-r11-4.11#toc-general-documentation) to compute its population estimates. Before 2000, we could not find clear documentation on how GHSL's estimates are constructed.
+[^14]: Although GHS-POP provides estimates beginning in 1975, 2000 is the first target year published for the [GPWv4.11 population product](https://www.earthdata.nasa.gov/data/catalog/sedac-ciesin-sedac-gpwv4-popdens-r11-4.11#toc-general-documentation). We therefore begin in 2000 to keep our sample within GPWv4.11's published coverage and reduce reliance on the historical reconstruction required for the pre-2000 epochs ([GHSL Data Package](https://human-settlement.emergency.copernicus.eu/documents/GHSL_Data_Package_2023.pdf?t=1727170839), Section 2.5.1).
 
 [^15]: Fixing the high-density set in 2000 ensures that changes in the share over time reflect changes in where people live, not changes in which cells are classified as high-density.
 
@@ -1969,50 +1973,52 @@ Weil, David N. 2026. "How Much Would Continued Low Fertility Affect the US Stand
 
 [^49]: We could instead consider a terminal steady state with zero population, which is what the IPSS projection implies. However, reaching this steady state takes a very long time, and the computational cost of solving for the transition path increases with its length.
 
-[^50]: 24 shows the changes in the remaining endogenous variables across steady states.
+[^50]: This prediction is consistent with evidence in (Acemoglu et al. 2026), who find that lower birth rates are associated with higher growth in GDP per capita across countries. While they highlight the role of endogenous labor-saving technological change induced by labor scarcity, our model provides a different explanation based on scale dependence.
 
-[^51]: We choose 2019 instead of 2020 to avoid any effects of COVID-19.
+[^51]: 24 shows the changes in the remaining endogenous variables across steady states.
 
-[^52]: One mechanism that is missing from our model is a notion of distance between prefectures. However, 27 shows that the model-implied and observed origins of net migration to Tokyo over 2010--2019 are not extremely different.
+[^52]: We choose 2019 instead of 2020 to avoid any effects of COVID-19.
 
-[^53]: Additional variables along the transition path are reported in 25 and 26.
+[^53]: One mechanism that is missing from our model is a notion of distance between prefectures. However, 27 shows that the model-implied and observed origins of net migration to Tokyo over 2010--2019 are not extremely different.
 
-[^54]: There are two minor differences from (Fajgelbaum and Gaubert 2020). First, the agglomeration externality in ) only applies to goods output $Y_i/N_i$, not income to all sectors $w_i$, because we have assumed that the construction sector does not enjoy the agglomeration externality. Second, (Fajgelbaum and Gaubert 2020) also show that negative amenity externalities---non-priced spillovers like crime and congestion---generate large additional externalities that cause the planner to want to tax cities and subsidize sparse areas. When we prove 5 in 9.5, we allow for an exogenous spillover $N_i^{-\gamma}$ and show that ) is the same, except $\theta$ is replaced with $\theta+\gamma$.
+[^54]: Additional variables along the transition path are reported in 25 and 26.
 
-[^55]: This concern is present in some policy plans for managing depopulation. For example, Detroit's strategic framework commits to continuing to serve residents who remain in the most depopulated areas within Detroit, "especially those who have stayed through the hardest times." (Detroit Future City 2012).
+[^55]: There are two minor differences from (Fajgelbaum and Gaubert 2020). First, the agglomeration externality in ) only applies to goods output $Y_i/N_i$, not income to all sectors $w_i$, because we have assumed that the construction sector does not enjoy the agglomeration externality. Second, (Fajgelbaum and Gaubert 2020) also show that negative amenity externalities---non-priced spillovers like crime and congestion---generate large additional externalities that cause the planner to want to tax cities and subsidize sparse areas. When we prove 5 in 9.5, we allow for an exogenous spillover $N_i^{-\gamma}$ and show that ) is the same, except $\theta$ is replaced with $\theta+\gamma$.
 
-[^56]: Vacant and abandoned homes are associated with higher crime (Spelman 1993; Stacy 2018), as well as elevated premature mortality, disease, and fire risk (Cohen et al. 2003; Schachterle et al. 2012). A growing body of evidence finds that demolishing vacant buildings or converting vacant lots to green, community, and agricultural uses mitigates these externalities (Branas et al. 2011; Kondo et al. 2016; Beam et al. 2021; Stacy 2018).
+[^56]: This concern is present in some policy plans for managing depopulation. For example, Detroit's strategic framework commits to continuing to serve residents who remain in the most depopulated areas within Detroit, "especially those who have stayed through the hardest times." (Detroit Future City 2012).
 
-[^57]: This is why $\zeta_i^\text{S}$ can be interpreted as the price elasticity: it is the change in per-capita housing supply in response to a change in house prices, holding wages fixed.
+[^57]: Vacant and abandoned homes are associated with higher crime (Spelman 1993; Stacy 2018), as well as elevated premature mortality, disease, and fire risk (Cohen et al. 2003; Schachterle et al. 2012). A growing body of evidence finds that demolishing vacant buildings or converting vacant lots to green, community, and agricultural uses mitigates these externalities (Branas et al. 2011; Kondo et al. 2016; Beam et al. 2021; Stacy 2018).
 
-[^58]: This is a derivative along the locus, and hence a comparison across different locations in equilibrium. It is not the local change in $p_i$ and $X_i$ in response to a local population change.
+[^58]: This is why $\zeta_i^\text{S}$ can be interpreted as the price elasticity: it is the change in per-capita housing supply in response to a change in house prices, holding wages fixed.
 
-[^59]: Of course, this does not mean that there are not other modeling approaches that would lead to scale dependence. Indeed, we consider two such approaches in below.
+[^59]: This is a derivative along the locus, and hence a comparison across different locations in equilibrium. It is not the local change in $p_i$ and $X_i$ in response to a local population change.
 
-[^60]: As in the main text, absentee land rents leave the economy in the form of lost goods. Including those lost goods on the right-hand side of ) would not affect the argument, since the lost-goods term is also homogeneous of degree one in nominal income and rents.
+[^60]: Of course, this does not mean that there are not other modeling approaches that would lead to scale dependence. Indeed, we consider two such approaches in below.
 
-[^61]: These amenity spillovers are often taken to be exogenous, but they can also arise endogenously from local spending on public goods. 10.4 below derives such a result.
+[^61]: As in the main text, absentee land rents leave the economy in the form of lost goods. Including those lost goods on the right-hand side of ) would not affect the argument, since the lost-goods term is also homogeneous of degree one in nominal income and rents.
 
-[^62]: The income elasticity $\gamma_{wi}$ also equals $(U_c(c_i,h_i)c_i+U_h(c_i,h_i)h_i)/U(c_i,h_i)$.
+[^62]: These amenity spillovers are often taken to be exogenous, but they can also arise endogenously from local spending on public goods. 10.4 below derives such a result.
 
-[^63]: One can define larger regions (e.g., prefectures or MSAs) as collections of adjacent land plots. With positive spatial autocorrelation, these larger regions would have heterogeneous sectoral mixes and populations.
+[^63]: The income elasticity $\gamma_{wi}$ also equals $(U_c(c_i,h_i)c_i+U_h(c_i,h_i)h_i)/U(c_i,h_i)$.
 
-[^64]: Notice that each location has the same relative productivity in agriculture and non-agriculture $\Gamma_a/\Gamma_n$, but differs in its overall productivity $A_i$. This simplifies the results but is not necessary.
+[^64]: One can define larger regions (e.g., prefectures or MSAs) as collections of adjacent land plots. With positive spatial autocorrelation, these larger regions would have heterogeneous sectoral mixes and populations.
 
-[^65]: The equilibrium will always have an interior solution $\bar{\imath}\in(0,J)$, because, under ), zero aggregate supply of either good would imply an infinite relative price for that good. Since every location can produce either good, such a corner cannot be an equilibrium, so any equilibrium must feature $\bar{\imath}(N)\in(0,J)$.
+[^65]: Notice that each location has the same relative productivity in agriculture and non-agriculture $\Gamma_a/\Gamma_n$, but differs in its overall productivity $A_i$. This simplifies the results but is not necessary.
 
-[^66]: The boundary terms cancel because the cutoff location has density $\bar{n}$ whether it is assigned to agriculture or non-agriculture.
+[^66]: The equilibrium will always have an interior solution $\bar{\imath}\in(0,J)$, because, under ), zero aggregate supply of either good would imply an infinite relative price for that good. Since every location can produce either good, such a corner cannot be an equilibrium, so any equilibrium must feature $\bar{\imath}(N)\in(0,J)$.
 
-[^67]: The 10% local inhabitant tax combines prefectural and municipal taxes; see, for example, the [Japanese Local Tax Act](https://toma.co.jp/en/blog/jtg/japanese-residents-tax/) summary.
+[^67]: The boundary terms cancel because the cutoff location has density $\bar{n}$ whether it is assigned to agriculture or non-agriculture.
 
-[^68]: The introduction of local public goods has minimal effects on our results, increasing Tokyo's population share in the terminal steady state from 39% to 43%.
+[^68]: The 10% local inhabitant tax combines prefectural and municipal taxes; see, for example, the [Japanese Local Tax Act](https://toma.co.jp/en/blog/jtg/japanese-residents-tax/) summary.
 
-[^69]: (Fajgelbaum and Gaubert 2020) use the estimates from (Diamond 2016) to estimate the following parameters: $\gamma_{UU}=-0.43$, $\gamma_{SU}=0.18$, $\gamma_{SS}=-1.24$, $\gamma_{US}=0.77$. Their definition of these terms implies that for a constant spillover elasticity to be consistent with these estimates, it must be between $\gamma_{UU}+\gamma_{SU}=-0.25$ and $\gamma_{SS}+\gamma_{US}=-0.47$.
+[^69]: The introduction of local public goods has minimal effects on our results, increasing Tokyo's population share in the terminal steady state from 39% to 43%.
 
-[^70]: The time subscript on the birth rate allows for exogenous shifts in preferences that can initiate a decline in fertility.
+[^70]: (Fajgelbaum and Gaubert 2020) use the estimates from (Diamond 2016) to estimate the following parameters: $\gamma_{UU}=-0.43$, $\gamma_{SU}=0.18$, $\gamma_{SS}=-1.24$, $\gamma_{US}=0.77$. Their definition of these terms implies that for a constant spillover elasticity to be consistent with these estimates, it must be between $\gamma_{UU}+\gamma_{SU}=-0.25$ and $\gamma_{SS}+\gamma_{US}=-0.47$.
 
-[^71]: We borrow this terminology from (Jones 2022).
+[^71]: The time subscript on the birth rate allows for exogenous shifts in preferences that can initiate a decline in fertility.
 
-[^72]: In a steady state, locations with lower per-capita housing supply (like Tokyo) have $g_i<0$, but this is offset exactly by above-average in-migration rates $\{\mathbb{P}(j_{kt}=i \mid j_{k,t-1}=j)\}_j$, consistent with fixed equilibrium population shares.
+[^72]: We borrow this terminology from (Bricker and Ibbitson 2019) and (Jones 2022).
 
-[^73]: The optimal $\tau_w$ does not change exactly according to ) because agglomeration is based on $N_{iY}$ rather than $N_i$ as in our static model. Therefore, the planner makes transfers to shift people from regions with high to low construction employment shares. If we change agglomeration to be based on $N_i$, the optimal $\tau_w$ increases, consistent with ).
+[^73]: In a steady state, locations with lower per-capita housing supply (like Tokyo) have $g_i<0$, but this is offset exactly by above-average in-migration rates $\{\mathbb{P}(j_{kt}=i \mid j_{k,t-1}=j)\}_j$, consistent with fixed equilibrium population shares.
+
+[^74]: The optimal $\tau_w$ does not change exactly according to ) because agglomeration is based on $N_{iY}$ rather than $N_i$ as in our static model. Therefore, the planner makes transfers to shift people from regions with high to low construction employment shares. If we change agglomeration to be based on $N_i$, the optimal $\tau_w$ increases, consistent with ).
