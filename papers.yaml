@@ -62,6 +62,7 @@ papers:
   tex_dir: _work/who-gains-interest-rates/CMPS/aer_revision/text
   tex_main: CMPS_AER.tex
   status: working
+  review_status: Reject and Resubmit, American Economic Review
 - slug: treasury-ai
   title: U.S. Treasury Investors Are Long in AI
   authors:

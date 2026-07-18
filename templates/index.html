@@ -30,8 +30,9 @@
   {% for p in items %}
   <li class="paper-item">
     <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
-    <p class="meta">{{ p.authors_str }} · {{ p.date_display }}{% if p.venue %} ·
-      <span class="venue">Forthcoming, {{ p.venue }}</span>{% endif %}</p>
+    <p class="meta">{{ p.authors_str }} · {{ p.date_display }}</p>
+    {% if p.venue %}<p class="meta status"><span class="venue">Forthcoming, {{ p.venue }}</span></p>
+    {% elif p.review_status %}<p class="meta status"><span class="venue">{{ p.review_status }}</span></p>{% endif %}
     {% if p.abstract %}<p class="abstract-snippet">{{ p.abstract_short }}</p>{% endif %}
     <p class="links">
       <a href="{{ p.url }}">Details &amp; full text</a> ·
