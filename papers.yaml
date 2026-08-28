@@ -16,13 +16,13 @@ papers:
   authors:
   - Tim de Silva
   - James D. Paron
-  date: '2026-07-18'
-  date_display: July 18, 2026
+  date: '2026-08-21'
+  date_display: August 21, 2026
   keywords: []
   jel: []
   pdf: pdfs/Depopulation.pdf
   legacy_pdf: Depopulation.pdf
-  tex_dir: depopulation/Spatial Housing/Paper
+  tex_dir: Depopulation
   tex_main: main.tex
   status: working
 - slug: wealth-of-stagnation
@@ -86,7 +86,7 @@ papers:
   - O33
   pdf: pdfs/TreasuryAI.pdf
   legacy_pdf: TreasuryAI.pdf
-  tex_dir: _work/treasury-ai/treasury_ai_replication/paper
+  tex_dir: treasury-ai
   tex_main: bonds_long_ai.tex
   status: working
 - slug: representativeness
